@@ -1,16 +1,1 @@
-package SiecPrzeplywowa;
-
-public class Main {
-    public static void main(String[] args) {
-        Siec S = new Siec(4);
-        S.addNode(10, 0, 1);
-        S.addNode(8, 0, 2);
-        S.addNode(5, 1, 3);
-        S.addNode(8, 2, 3);
-        S.printGraph();
-        System.out.println();
-        System.out.println(S.maxFlow(0, 3));
-
-        //System.out.println(S.getData(2, 1).getCurrentFlow() + " " + S.getData(2, 1).getMaxFlow());
-    }
-}
+package SiecPrzeplywowa;public class Main {    public static void main(String[] args) {        Siec S = new Siec(9);        S.addNode(5, 0, 1);        S.addNode(7, 0, 4);        S.addNode(5, 1, 2);        S.addNode(4, 2, 3);        S.addNode(6, 4, 2);        S.addNode(4, 4, 5);        S.addNode(7, 4, 6);        S.addNode(3, 5, 7);        S.addNode(2, 6, 7);        S.addNode(4, 7, 3);        S.addNode(6, 7, 8);        S.addNode(2, 3, 8);        S.printGraph();        System.out.println();        System.out.println(S.maxFlow(0, 8));        S.printGraph();        System.out.println();        //System.out.println(S.getData(2, 1).getCurrentFlow() + " " + S.getData(2, 1).getMaxFlow());    }}

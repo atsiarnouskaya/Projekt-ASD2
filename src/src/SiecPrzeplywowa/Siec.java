@@ -27,16 +27,13 @@ public class Siec {
 
     //dodajemy krawedz a -> b
     public void addNode(int maxFlow, int a, int b) {
-        graph[a][b].setCurrentFlow(0);
-        graph[a][b].setMaxFlow(maxFlow);
-        graph[a][b].setResidualFlow(0);
+        graph[a][b] = new Node(maxFlow, 0);
     }
 
     public void updateNode(int currentFlow, int a, int b) {
-        graph[a][b].setCurrentFlow(currentFlow);
+        graph[a][b].setCurrentFlow(graph[a][b].getCurrentFlow() + currentFlow);
         graph[a][b].setMaxFlow(graph[a][b].getMaxFlow() - currentFlow);
         graph[a][b].setResidualFlow(graph[a][b].getResidualFlow() + currentFlow);
-        graph[b][a].setResidualFlow(graph[a][b].getResidualFlow() + currentFlow);
     }
 
     public Node getData(int a, int b) {
@@ -46,7 +43,7 @@ public class Siec {
     public void printGraph() {
         for (var row : graph) {
             for (var node : row) {
-                System.out.print("(" + node.getCurrentFlow() + " " + node.getMaxFlow() + " " + node.getResidualFlow() + ") ");
+                System.out.print("(" + node.getMaxFlow() + " " + node.getCurrentFlow() + " " + node.getResidualFlow() + ") ");
             }
             System.out.println();
         }

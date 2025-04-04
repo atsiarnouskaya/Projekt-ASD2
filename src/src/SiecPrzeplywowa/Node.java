@@ -11,7 +11,7 @@ public class Node {
     public Node(int maxFlow, int currentFlow) {
         this.maxFlow = maxFlow;
         this.currentFlow = currentFlow;
-        this.residualFlow = maxFlow - currentFlow;
+        this.residualFlow = 0;
     }
 
     public int getMaxFlow() {
