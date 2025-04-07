@@ -1,10 +1,8 @@
 package GeneratorDanych;
 
-import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Stack;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.lang.Math.pow;
@@ -22,20 +20,12 @@ public class Generator {
     private int breweriesCount;
     private int tavernsCount;
 
-    public Generator() {
-        random = new Random(System.nanoTime());
-        farmlandsCount = 15;
-        breweriesCount = 6;
-        tavernsCount = 8;
-        roadsCount = 6;
-    }
-
     public Generator(int seed) {
         random = new Random(seed);
         farmlandsCount = 15;
         breweriesCount = 6;
         tavernsCount = 8;
-        roadsCount = 6;
+        roadsCount = 20;
     }
 
     public Generator(int seed, int roadsCount, int farmlandsCount, int breweriesCount, int tavernsCount) {
@@ -60,34 +50,34 @@ public class Generator {
 //        return minDistance;
 //    }
 
-    private Line2D.Double GenerateRandomRoad(double minLength, double maxLength) {
+    private Road GenerateRandomRoad(double minLength, double maxLength) {
         var p1 = new Point2D.Double(random.nextDouble(minCoordinates, maxCoordinates), random.nextDouble(minCoordinates, maxCoordinates));
         var p2 = new Point2D.Double(random.nextDouble(minCoordinates, maxCoordinates), random.nextDouble(minCoordinates, maxCoordinates));
         while (calculateDistance(p1, p2) < minLength || calculateDistance(p1, p2) > maxLength)
             p2 = new Point2D.Double(random.nextDouble(minCoordinates, maxCoordinates), random.nextDouble(minCoordinates, maxCoordinates));
-        return new Line2D.Double(p1, p2);
+        return new Road(p1, p2);
     }
 
 
-    public ArrayList<Line2D.Double> generateRoads() {
-        ArrayList<Line2D.Double> roads = new ArrayList<>();
-        var road = GenerateRandomRoad(minRoadLength, maxRoadLength);
+    public ArrayList<Road> generateRoads() {
+        ArrayList<Road> roads = new ArrayList<>();
+        Road road = GenerateRandomRoad(minRoadLength, maxRoadLength);
         roads.add(road);
         while (roads.size() < roadsCount) {
             while (true) {
-                Line2D.Double newRoad = GenerateRandomRoad(minRoadLength, maxRoadLength);
+                Road newRoad = GenerateRandomRoad(minRoadLength, maxRoadLength);
                 if (roads.stream().noneMatch(r -> r.intersectsLine(newRoad)))
                     break;
                 roads.add(newRoad);
             }
         }
 
-        Stack<Line2D.Double> roadsStack = new Stack<>();
-        for (Line2D.Double r : roads)
+        Stack<Road> roadsStack = new Stack<>();
+        for (Road r : roads)
             roadsStack.push(r);
 
         while (!roadsStack.isEmpty()) {
-            Line2D.Double currentRoad = roadsStack.pop();
+            Road currentRoad = roadsStack.pop();
 
             for (int i = 0; i < roads.size(); i++) {
                 var przecinana = roads.get(i);
@@ -97,11 +87,11 @@ public class Generator {
 
                     if (p != null && currentRoad.getP1() != p && currentRoad.getP2() != p) {
                         var p2 = p;
-                        Line2D.Double newRoad1 = new Line2D.Double(currentRoad.getP1(), p2);
-                        Line2D.Double newRoad2 = new Line2D.Double(p2, currentRoad.getP2());
+                        Road newRoad1 = new Road(currentRoad.getP1(), p2);
+                        Road newRoad2 = new Road(p2, currentRoad.getP2());
 
-                        Line2D.Double newRoad3 = new Line2D.Double(przecinana.getP1(), p2);
-                        Line2D.Double newRoad4 = new Line2D.Double(p2, przecinana.getP2());
+                        Road newRoad3 = new Road(przecinana.getP1(), p2);
+                        Road newRoad4 = new Road(p2, przecinana.getP2());
 
                         roads.remove(przecinana);
                         roadsStack.remove(przecinana);
@@ -122,17 +112,15 @@ public class Generator {
             }
         }
 
-        while (true) {
-            var roadsToRemove = roads.stream().filter(r -> DrogaLuzna(roads, r)).findFirst();
-            if (roadsToRemove.isEmpty())
-                break;
-            roads.remove(roadsToRemove.get());
-        }
-
         return roads;
     }
 
-    public boolean DrogaLuzna(ArrayList<Line2D.Double> roads, Line2D r) {
+    public boolean DrogaLuzna(ArrayList<Road> roads,
+                              ArrayList<Farmland> farmlands,
+                              ArrayList<Brewery> breweries,
+                              ArrayList<Tavern> taverns,
+                              Road r) {
+
         var twoIntersections = roads
                 .stream()
                 .flatMap(r2 -> Stream.of(r2.getP1(), r2.getP2()))
@@ -145,26 +133,19 @@ public class Generator {
                 .filter(p -> p.getX() == r.getP2().getX() && p.getY() == r.getP2().getY())
                 .count() > 1;
 
-        return calculateDistance(r.getP1(), r.getP2()) < minRoadLength && !twoIntersections;
-    }
-
-    public ArrayList<Intersection> generateIntersections(ArrayList<Line2D.Double> roads) {
-        ArrayList<Intersection> intersections = new ArrayList<>();
-        for (Line2D.Double road : roads) {
-            if (!intersections.contains(road.getP1()))
-                intersections.add(new Intersection(road.getP1()));
-
-            if (!intersections.contains(road.getP2()))
-                intersections.add(new Intersection(road.getP2()));
-        }
-        return intersections;
+        return // calculateDistance(r.getP1(), r.getP2()) < minRoadLength &&
+                !twoIntersections
+                && !(farmlands.stream().anyMatch(p -> p.equals(r.getP1()) || p.equals(r.getP2()))
+                || breweries.stream().anyMatch(p -> p.equals(r.getP1()) || p.equals(r.getP2()))
+                || taverns.stream().anyMatch(p -> p.equals(r.getP1()) || p.equals(r.getP2()))
+                );
     }
 
     public <T extends Point2D> ArrayList<T> generateObjects(
-            ArrayList<Intersection> intersections,
-            ArrayList<Line2D.Double> roads,
+            ArrayList<Road> roads,
             IFactory<T> factory,
             int count) {
+        List<Point2D> intersections = findRoadEnds(roads);
         ArrayList<T> objects = new ArrayList<>();
         int currentCount = 0;
         while (currentCount != count) {
@@ -172,7 +153,7 @@ public class Generator {
             Point2D currentIntersection = intersections.get(rand);
             T object = factory.Create(random, currentIntersection.getX() + random.nextInt(-30, 30), currentIntersection.getY() + random.nextInt(-30, 30));
 
-            Line2D.Double road = new Line2D.Double(object, currentIntersection);
+            Road road = new Road(object, currentIntersection);
             if ((calculateDistance(road.getP1(), road.getP2()) < minDistanceBetweenPoints) || (roads.stream()
                     .filter(r -> !r.getP1().equals(currentIntersection) && !r.getP2().equals(currentIntersection))
                     .anyMatch(r -> r.intersectsLine(road))))
@@ -185,14 +166,14 @@ public class Generator {
         return objects;
     }
 
-    public boolean linesEndsTouch(Line2D.Double line1, Line2D.Double line2) {
+    public boolean linesEndsTouch(Road line1, Road line2) {
         return calculateDistance(line1.getP1(), line2.getP1()) < 0.001
                 || calculateDistance(line1.getP2(), line2.getP1()) < 0.001
                 || calculateDistance(line1.getP1(), line2.getP2()) < 0.001
                 || calculateDistance(line1.getP2(), line2.getP2()) < 0.001;
     }
 
-    public Point2D intersection(Line2D a, Line2D b) {
+    public Point2D intersection(Road a, Road b) {
         double x1 = a.getX1(), y1 = a.getY1(), x2 = a.getX2(), y2 = a.getY2(), x3 = b.getX1(), y3 = b.getY1(),
                 x4 = b.getX2(), y4 = b.getY2();
         double d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
@@ -205,68 +186,43 @@ public class Generator {
         return new Point2D.Double(xi, yi);
     }
 
-    public int getFarmlandsCount() {
-        return farmlandsCount;
-    }
-
-    public int getBreweriesCount() {
-        return breweriesCount;
-    }
-
-    public int getTavernsCount() {
-        return tavernsCount;
-    }
-
     public Data generate() {
+        ArrayList<Road> roads = generateRoads();
+        ArrayList<Farmland> farmlands = generateObjects(roads, new FarmlandFactory(), farmlandsCount);
+        ArrayList<Brewery> breweries = generateObjects(roads, new BreweryFactory(), breweriesCount);
+        ArrayList<Tavern> taverns = generateObjects(roads, new TavernFactory(), tavernsCount);
 
-        ArrayList<Line2D.Double> roads = generateRoads();
-        ArrayList<Intersection> intersections = generateIntersections(roads);
-        ArrayList<Farmland> farmlands = generateObjects(intersections, roads, new FarmlandFactory(), getFarmlandsCount());
-        ArrayList<Brewery> breweries = generateObjects(intersections, roads, new BreweryFactory(), getBreweriesCount());
-        ArrayList<Tavern> taverns = generateObjects(intersections, roads, new TavernFactory(), getTavernsCount());
-
+        RemoveLuzneDrogi(roads, farmlands, breweries,taverns);
         return new Data(roads, farmlands, breweries, taverns);
     }
-}
 
-class Data {
-    public ArrayList<Line2D.Double> roads;
-    public ArrayList<Point2D> intersections;
-    public ArrayList<Farmland> farmlands;
-    public ArrayList<Brewery> breweries;
-    public ArrayList<Tavern> taverns;
+    public void RemoveLuzneDrogi(ArrayList<Road> roads, ArrayList<Farmland> farmlands, ArrayList<Brewery> breweries, ArrayList<Tavern> taverns) {
+        while (true) {
+            var roadsToRemove = roads.stream().filter(r -> DrogaLuzna(roads, farmlands, breweries, taverns, r)).findFirst();
+            if (roadsToRemove.isEmpty())
+                break;
+            roads.remove(roadsToRemove.get());
+        }
+    }
 
-    public Data(ArrayList<Line2D.Double> roads, ArrayList<Farmland> farmlands, ArrayList<Brewery> breweries, ArrayList<Tavern> taverns) {
-        this.roads = roads;
-        this.farmlands = farmlands;
-        this.breweries = breweries;
-        this.taverns = taverns;
+    public static List<Point2D> findRoadEnds(ArrayList<Road> roads) {
+        return roads.stream()
+                .flatMap(r -> Stream.of(r.getP1(), r.getP2()))
+                .distinct()
+                .toList();
+    }
+
+    public static List<Point2D> findIntersections(ArrayList<Road> roads) {
+        List<Point2D> points = roads.stream()
+                .flatMap(r -> Stream.of(r.getP1(), r.getP2()))
+                .toList();
+
+        var intersections = points.stream()
+                .filter(i -> Collections.frequency(points, i) > 1)
+                .collect(Collectors.toSet())
+                .stream().toList();
+
+        return intersections;
     }
 }
 
-interface IFactory<T> {
-    T Create(Random random, double x, double y);
-}
-
-class FarmlandFactory implements IFactory<Farmland> {
-    @Override
-    public Farmland Create(Random random, double x, double y) {
-        double prodCap = random.nextDouble(10, 10000);
-        return new Farmland(x, y, prodCap);
-    }
-}
-
-class BreweryFactory implements IFactory<Brewery> {
-    @Override
-    public Brewery Create(Random random, double x, double y) {
-        double prodCap = random.nextDouble(10, 10000);
-        return new Brewery(x, y, prodCap);
-    }
-}
-
-class TavernFactory implements IFactory<Tavern> {
-    @Override
-    public Tavern Create(Random random, double x, double y) {
-        return new Tavern(x, y);
-    }
-}
