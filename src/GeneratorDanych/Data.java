@@ -1,7 +1,10 @@
 package GeneratorDanych;
 
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
+import SiecPrzeplywowa.Brewery;
+import SiecPrzeplywowa.Farmland;
+import SiecPrzeplywowa.Road;
+import SiecPrzeplywowa.Tavern;
+
 import java.util.ArrayList;
 
 class Data {

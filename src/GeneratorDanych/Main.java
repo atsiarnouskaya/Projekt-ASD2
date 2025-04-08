@@ -6,6 +6,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import SiecPrzeplywowa.Brewery;
+import SiecPrzeplywowa.Farmland;
+import SiecPrzeplywowa.Road;
+import SiecPrzeplywowa.Tavern;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -20,7 +24,9 @@ public class Main {
 
     public static void generateJSONfile(Data data) {
         try (PrintWriter writer = new PrintWriter(new FileWriter("data.json"))) {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            Gson gson = new GsonBuilder()
+                    .setPrettyPrinting()
+                    .create();
             String json = gson.toJson(data);
             writer.write(json);
         } catch (IOException e) {
@@ -38,22 +44,22 @@ public class Main {
                     "<svg height=\"1000\" width=\"1000\" xmlns=\"http://www.w3.org/2000/svg\">");
 
             for (Line2D.Double road : roads) {
-                writer.println("<line x1=\"" + String.format("%.2f", road.x1) + "\" y1=\"" + String.format("%.2f", road.y1) + "\" x2=\"" + String.format("%.2f", road.x2) + "\" y2=\"" + String.format("%.2f", road.y2) + "\"  style=\"stroke:brown; stroke-width:1; opacity:0.6; \" />");
+                writer.println("<line x1=\"" + String.format("%.0f", road.x1) + "\" y1=\"" + String.format("%.0f", road.y1) + "\" x2=\"" + String.format("%.0f", road.x2) + "\" y2=\"" + String.format("%.0f", road.y2) + "\"  style=\"stroke:brown; stroke-width:1; opacity:0.6; \" />");
             }
             for (Point2D intersection : intersections) {
-                writer.println("<circle cx=\"" + String.format("%.2f", intersection.getX()) + "\" cy=\"" + String.format("%.2f", intersection.getY()) + "\" r=\"2\" fill=\"brown\" />");
+                writer.println("<circle cx=\"" + String.format("%.0f", intersection.getX()) + "\" cy=\"" + String.format("%.0f", intersection.getY()) + "\" r=\"2\" fill=\"brown\" />");
             }
 
             for (Point2D farmland : farmlands) {
-                writer.println("<circle cx=\"" + String.format("%.2f", farmland.getX()) + "\" cy=\"" + String.format("%.2f", farmland.getY()) + "\" r=\"3\" fill=\"lightGreen\"  style=\"opacity:0.6; \"/>");
+                writer.println("<circle cx=\"" + String.format("%.0f", farmland.getX()) + "\" cy=\"" + String.format("%.0f", farmland.getY()) + "\" r=\"3\" fill=\"lightGreen\"  style=\"opacity:0.6; \"/>");
             }
 
             for (Point2D brewery : breweries) {
-                writer.println("<circle cx=\"" + String.format("%.2f", brewery.getX()) + "\" cy=\"" + String.format("%.2f", brewery.getY()) + "\" r=\"3\" fill=\"gold\"  style=\"opacity:0.6; \" />");
+                writer.println("<circle cx=\"" + String.format("%.0f", brewery.getX()) + "\" cy=\"" + String.format("%.0f", brewery.getY()) + "\" r=\"3\" fill=\"gold\"  style=\"opacity:0.6; \" />");
             }
 
             for (Point2D tavern : taverns) {
-                writer.println("<circle cx=\"" + String.format("%.2f", tavern.getX()) + "\" cy=\"" + String.format("%.2f", tavern.getY()) + "\" r=\"3\" fill=\"PaleVioletRed\"   style=\"opacity:0.6; \"/>");
+                writer.println("<circle cx=\"" + String.format("%.0f", tavern.getX()) + "\" cy=\"" + String.format("%.0f", tavern.getY()) + "\" r=\"3\" fill=\"PaleVioletRed\"   style=\"opacity:0.6; \"/>");
             }
 
 

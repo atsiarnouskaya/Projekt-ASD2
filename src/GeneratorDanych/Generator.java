@@ -1,5 +1,10 @@
 package GeneratorDanych;
 
+import SiecPrzeplywowa.Brewery;
+import SiecPrzeplywowa.Farmland;
+import SiecPrzeplywowa.Road;
+import SiecPrzeplywowa.Tavern;
+
 import java.awt.geom.Point2D;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -9,7 +14,7 @@ import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 public class Generator {
-    private double minDistanceBetweenPoints = 20;
+    private int minDistanceBetweenPoints = 20;
     private Random random;
     private int roadsCount;
     private int minRoadLength = 50;
@@ -41,10 +46,10 @@ public class Generator {
     }
 
     private Road GenerateRandomRoad(double minLength, double maxLength) {
-        var p1 = new Point2D.Double(random.nextDouble(minCoordinates, maxCoordinates), random.nextDouble(minCoordinates, maxCoordinates));
-        var p2 = new Point2D.Double(random.nextDouble(minCoordinates, maxCoordinates), random.nextDouble(minCoordinates, maxCoordinates));
+        Point2D.Double p1 = new Point2D.Double(random.nextInt(minCoordinates, maxCoordinates), random.nextInt(minCoordinates, maxCoordinates));
+        Point2D.Double p2 = new Point2D.Double(random.nextInt(minCoordinates, maxCoordinates), random.nextInt(minCoordinates, maxCoordinates));
         while (calculateDistance(p1, p2) < minLength || calculateDistance(p1, p2) > maxLength)
-            p2 = new Point2D.Double(random.nextDouble(minCoordinates, maxCoordinates), random.nextDouble(minCoordinates, maxCoordinates));
+            p2 = new Point2D.Double(random.nextInt(minCoordinates, maxCoordinates), random.nextInt(minCoordinates, maxCoordinates));
         return new Road(p1, p2);
     }
 
@@ -75,7 +80,7 @@ public class Generator {
                     Point2D p = intersection(currentRoad, przecinana);
 
                     if (p != null && currentRoad.getP1() != p && currentRoad.getP2() != p) {
-                        var p2 = p;
+                        Point2D p2 = p;
                         Road newRoad1 = new Road(currentRoad.getP1(), p2);
                         Road newRoad2 = new Road(p2, currentRoad.getP2());
 
@@ -140,7 +145,7 @@ public class Generator {
         while (currentCount != count) {
             int rand = random.nextInt(0, intersections.size());
             Point2D currentIntersection = intersections.get(rand);
-            T object = factory.Create(random, currentIntersection.getX() + random.nextInt(-30, 30), currentIntersection.getY() + random.nextInt(-30, 30));
+            T object = factory.Create(random, (int)(currentIntersection.getX() + random.nextInt(-30, 30)), (int)(currentIntersection.getY() + random.nextInt(-30, 30)));
 
             if(roads.stream().anyMatch(r -> r.ptLineDist(object)<8))
                 continue;
@@ -166,14 +171,14 @@ public class Generator {
     }
 
     public Point2D intersection(Road a, Road b) {
-        double x1 = a.getX1(), y1 = a.getY1(), x2 = a.getX2(), y2 = a.getY2(), x3 = b.getX1(), y3 = b.getY1(),
-                x4 = b.getX2(), y4 = b.getY2();
-        double d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+        int x1 = (int)a.getX1(), y1 = (int)a.getY1(), x2 = (int)a.getX2(), y2 = (int)a.getY2(), x3 = (int)b.getX1(), y3 = (int)b.getY1(),
+                x4 = (int)b.getX2(), y4 = (int)b.getY2();
+        int d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
         if (d == 0)
             return null;
 
-        double xi = ((x3 - x4) * (x1 * y2 - y1 * x2) - (x1 - x2) * (x3 * y4 - y3 * x4)) / d;
-        double yi = ((y3 - y4) * (x1 * y2 - y1 * x2) - (y1 - y2) * (x3 * y4 - y3 * x4)) / d;
+        int xi = ((x3 - x4) * (x1 * y2 - y1 * x2) - (x1 - x2) * (x3 * y4 - y3 * x4)) / d;
+        int yi = ((y3 - y4) * (x1 * y2 - y1 * x2) - (y1 - y2) * (x3 * y4 - y3 * x4)) / d;
 
         return new Point2D.Double(xi, yi);
     }
@@ -190,7 +195,8 @@ public class Generator {
 
         RemoveRoadsWithoutObjects(roads, farmlands, breweries, taverns);
         for(var r: roads){
-            r.setThroughputs(random.nextInt(0, 20), random.nextInt(0, 20));
+            r.setMaxBeerFlow(random.nextInt(0, 20));
+            r.setMaxBarleyFlow(random.nextInt(0, 20));
         }
         return new Data(roads, farmlands, breweries, taverns);
     }
@@ -230,8 +236,8 @@ public class Generator {
         var p1 = road.getP2();
         var p2 = road.getP2();
         while (calculateDistance(p1, p2) < minRoadLength || calculateDistance(p1, p2) > maxRoadLength) {
-            p2 = new Point2D.Double(road.getP2().getX() + random.nextDouble(-maxRoadLength, maxRoadLength),
-                    road.getP2().getY() + random.nextDouble(-maxRoadLength, maxRoadLength));
+            p2 = new Point2D.Double(road.getP2().getX() + random.nextInt(-maxRoadLength, maxRoadLength),
+                    road.getP2().getY() + random.nextInt(-maxRoadLength, maxRoadLength));
         }
 
         return new Road(p1, p2);
@@ -241,10 +247,10 @@ public class Generator {
         ArrayList<Road> roads = new ArrayList<>();
         roads.add(GenerateRandomRoad(minRoadLength, maxRoadLength));
 
-        var k = 0;
+        int k = 0;
         while (roads.size() < roadsCount) {
             var existingRoad = roads.get(k++ % roads.size());
-            var z = random.nextInt(1, 3);
+            int z = random.nextInt(1, 3);
             for(int j = 0; j < z; j++){
                 Road newRoad = GenerateRandomRoad2(existingRoad);
                 while (true) {

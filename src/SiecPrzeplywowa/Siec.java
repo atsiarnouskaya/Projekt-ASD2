@@ -8,8 +8,7 @@ public class Siec {
     private Node[][] graph;
     private int[] previousElements;
 
-    public Siec() {
-    }
+    public Siec() {}
 
     public Siec(Node[][] graph) {
         this.graph = graph;
