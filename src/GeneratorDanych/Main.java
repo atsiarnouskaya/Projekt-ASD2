@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-import SiecPrzeplywowa.Brewery;
-import SiecPrzeplywowa.Farmland;
-import SiecPrzeplywowa.Road;
-import SiecPrzeplywowa.Tavern;
+import SiecPrzeplywowa.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -32,6 +29,7 @@ public class Main {
         } catch (IOException e) {
             System.err.println("Wystąpił błąd podczas zapisywania do pliku: " + e.getMessage());
         }
+
     }
 
     public static void generateSVGfile(ArrayList<Road> roads, ArrayList<Farmland> farmlands, ArrayList<Brewery> breweries, ArrayList<Tavern> taverns) {
