@@ -5,10 +5,7 @@
       <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.12.1/gson-2.12.1.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.12.1/gson-2.12.1-javadoc.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0-javadoc.jar!/" />
-    </JAVADOC>
+    <JAVADOC />
     <SOURCES />
   </library>
 </component>
