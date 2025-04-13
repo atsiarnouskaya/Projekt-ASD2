@@ -1,13 +1,8 @@
-package GeneratorDanych;
-
-import SiecPrzeplywowa.Brewery;
-import SiecPrzeplywowa.Farmland;
-import SiecPrzeplywowa.Road;
-import SiecPrzeplywowa.Tavern;
+package SiecPrzeplywowa;
 
 import java.util.ArrayList;
 
-class Data {
+public class Data {
     public ArrayList<Road> roads;
     public ArrayList<Farmland> farmlands;
     public ArrayList<Brewery> breweries;
