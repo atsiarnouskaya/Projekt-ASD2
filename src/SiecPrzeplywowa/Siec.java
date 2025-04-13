@@ -12,11 +12,12 @@ import java.lang.Object;
 public class Siec {
     private ArrayList<HashMap<Vertex, Edge>> graph;
     private Map<String, Vertex> vertexByCoord;
-    private ArrayList<Integer> previousElements;
+    private ArrayList<Vertex> previousElements;
 
     public Siec() {
         this.graph = new ArrayList<>();
         this.vertexByCoord = new HashMap<>();
+        this.previousElements = new ArrayList<>();
     }
 
     public void addVertex(int x, int y) {
@@ -56,60 +57,62 @@ public class Siec {
     public void printGraph() {
         int i = 0;
         for (var row : graph) {
-            System.out.println(i++ + ":");
+            System.out.println("Vertex number " + i++ + " is connected to: ");
             System.out.println(row.toString());
             System.out.println();
         }
     }
 
-//    private boolean BFS(int src, int dest) {
-//        int[] visited = new int[graph.size()];
-//        Arrays.fill(visited, 0); //0 - nie odwiedzona, 1 - dodana do koleki, 2 - przetworzona
-//        for (int i = 0; i < graph.size(); i++) {
-//            previousElements.add(-1);
-//        }
-//        Queue<Integer> queue = new LinkedList<>();
-//        queue.add(src);
-//        visited[src] = 1;
-//        while (!queue.isEmpty()) {
-//            int c = queue.poll();
-//            visited[c] = 2;
-//            if (c == dest) {
-//                return true;
-//            }
-//            for (int i = 0; i < graph.get(c).size(); i++) {
-//                if (graph.get(c).get(i).getMaxFlow() == 0) continue;
-//                if (visited[i] == 0 && (graph.get(c).get(i).getMaxFlow() >= graph.get(c).get(i).getCurrentFlow())) {
-//                    visited[i] = 1;
-//                    previousElements.set(i, c);
-//                    queue.add(i);
-//                }
-//            }
-//        }
-//        return false;
-//    }
-//
-//    public int maxFlow(int src, int dest) {
-//        int maxFlow = 0;
-//        int minFlow;
-//        while (BFS(src, dest)) {
-//            minFlow = Integer.MAX_VALUE;
-//            int currentVertex = dest;
-//            while (previousElements.get(currentVertex) != -1) {
-//                int prevVert = previousElements.get(currentVertex);
-//                if (minFlow > graph.get(prevVert).get(currentVertex).getMaxFlow()) {
-//                    minFlow =  graph.get(prevVert).get(currentVertex).getMaxFlow();
-//                }
-//                currentVertex = previousElements.get(currentVertex);
-//            }
-//            currentVertex = dest;
-//            while (previousElements.get(currentVertex) != -1) {
-//                int prevVert = previousElements.get(currentVertex);
-//                updateEdge(minFlow, prevVert, currentVertex);
-//                currentVertex = previousElements.get(currentVertex);
-//            }
-//            maxFlow += minFlow;
-//        }
-//        return maxFlow;
-//    }
+    public boolean BFS(Vertex src, Vertex dest) {
+        int[] visited = new int[vertexByCoord.size() + 1];
+        previousElements.clear();
+        src = vertexByCoord.get(src.getX() + "," + src.getY());
+        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
+        Arrays.fill(visited, 0); //0 - nie odwiedzona, 1 - dodana do koleki, 2 - przetworzona
+        for (int i = 0; i <= vertexByCoord.size(); i++) {
+            previousElements.add(null);
+        }
+        Queue<Vertex> queue = new LinkedList<>();
+        queue.add(src);
+        visited[src.getLocalId()] = 1;
+        while (!queue.isEmpty()) {
+            Vertex c = queue.poll();
+            visited[c.getLocalId()] = 2;
+            if (c.equals(dest)) {
+                return true;
+            }
+            graph.get(c.getLocalId()).forEach((v, e) -> {
+                if (visited[v.getLocalId()] == 0 && (e.getMaxFlow() > e.getCurrentFlow())) {
+                    visited[v.getLocalId()] = 1;
+                    previousElements.set(v.getLocalId(), c);
+                    queue.add(v);
+                }
+            });
+        }
+        return false;
+    }
+
+    public int maxFlow(Vertex src, Vertex dest) {
+        int maxFlow = 0;
+        int minFlow;
+        while (BFS(src, dest)) {
+            minFlow = Integer.MAX_VALUE;
+            Vertex currentVertex = dest;
+            while (previousElements.get(currentVertex.getLocalId()) != null) {
+                Vertex prevVert = previousElements.get(currentVertex.getLocalId());
+                if (minFlow > graph.get(prevVert.getLocalId()).get(currentVertex).getMaxFlow()) {
+                    minFlow =  graph.get(prevVert.getLocalId()).get(currentVertex).getMaxFlow();
+                }
+                currentVertex = previousElements.get(currentVertex.getLocalId());
+            }
+            currentVertex = dest;
+            while (previousElements.get(currentVertex.getLocalId()) != null) {
+                Vertex prevVert = previousElements.get(currentVertex.getLocalId());
+                updateEdge(minFlow, prevVert, currentVertex);
+                currentVertex = previousElements.get(currentVertex.getLocalId());
+            }
+            maxFlow += minFlow;
+        }
+        return maxFlow;
+    }
 }

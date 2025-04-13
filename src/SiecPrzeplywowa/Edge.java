@@ -62,11 +62,10 @@ public class Edge {
 
     @Override
     public String toString() {
-        return "Edge{" +
-                "localId=" + localId +
-                ", maxFlow=" + maxFlow +
-                ", currentFlow=" + currentFlow +
-                ", residualFlow=" + residualFlow +
-                '}';
+        return ("edge (from " + from + " to " + to + " properties: " +
+                "maxFlow = " + maxFlow +
+                ", currentFlow = " + currentFlow +
+                ", residualFlow = " + residualFlow +
+                ')');
     }
 }

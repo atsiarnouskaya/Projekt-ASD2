@@ -1,5 +1,7 @@
 package SiecPrzeplywowa;
 
+import java.util.Objects;
+
 public class Vertex {
     private static int idCounter = 0;
 
@@ -35,10 +37,18 @@ public class Vertex {
 
     @Override
     public String toString() {
-        return "Vertex{" +
-                "localId=" + localId +
-                ", x=" + x +
-                ", y=" + y +
-                '}';
+        return "(" + x + ", " + y + ") via ";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Vertex vertex = (Vertex) o;
+        return localId == vertex.localId && x == vertex.x && y == vertex.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(localId, x, y);
     }
 }
