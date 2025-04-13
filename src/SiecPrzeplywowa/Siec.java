@@ -1,12 +1,6 @@
 package SiecPrzeplywowa;
 
-
-import java.awt.geom.Point2D;
-import java.beans.VetoableChangeListener;
-import java.security.KeyPair;
-import java.sql.SQLOutput;
 import java.util.*;
-import java.lang.Object;
 
 
 public class Siec {
@@ -26,8 +20,8 @@ public class Siec {
         graph.add(new HashMap<>());
     }
 
-    //dodajemy krawedz a -> b
-    public void addEdge(int maxFlow, int x1, int y1, int x2, int y2) {    //a - id wierzcholka #1, v2 - x2 i y2 wierzcholka 2
+    //dodajemy krawedz a -> b i a <- b
+    public void addEdge(int maxFlow, int x1, int y1, int x2, int y2) {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
         if (from == null) {
