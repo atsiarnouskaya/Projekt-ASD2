@@ -39,15 +39,20 @@ public class Siec {
             to = vertexByCoord.get(x2 + "," + y2);
         }
 
-        Edge edge = new Edge(to.getLocalId(), from.getLocalId(), maxFlow);
-        graph.get(from.getLocalId()).put(to, edge);
+        Edge forwardEdge = new Edge(to.getLocalId(), from.getLocalId(), maxFlow);
+        Edge backwardEdge = new Edge(from.getLocalId(), to.getLocalId(), 0);
+        graph.get(from.getLocalId()).put(to, forwardEdge);
+        graph.get(to.getLocalId()).put(from, backwardEdge);
+        forwardEdge.setReverseEdge(backwardEdge);
+        backwardEdge.setReverseEdge(forwardEdge);
     }
 
     public void updateEdge(int currentFlow, Vertex from, Vertex to) {
         Edge currentEdge = graph.get(from.getLocalId()).get(to);
+        Edge currentBackwardEdge = currentEdge.getReverseEdge();
         currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + currentFlow);
-        currentEdge.setMaxFlow(currentEdge.getMaxFlow() - currentFlow);
-        currentEdge.setResidualFlow(currentEdge.getResidualFlow() + currentFlow);
+        currentEdge.setResidualFlow(currentEdge.getResidualFlow() - currentFlow);
+        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + currentFlow);
     }
 
     public Edge getData(Vertex from, Vertex to) {
@@ -82,7 +87,7 @@ public class Siec {
                 return true;
             }
             graph.get(c.getLocalId()).forEach((v, e) -> {
-                if (visited[v.getLocalId()] == 0 && (e.getMaxFlow() > e.getCurrentFlow())) {
+                if (visited[v.getLocalId()] == 0 && (e.getResidualFlow() > 0)) {
                     visited[v.getLocalId()] = 1;
                     previousElements.set(v.getLocalId(), c);
                     queue.add(v);
@@ -95,13 +100,15 @@ public class Siec {
     public int maxFlow(Vertex src, Vertex dest) {
         int maxFlow = 0;
         int minFlow;
+        src = vertexByCoord.get(src.getX() + "," + src.getY());
+        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
         while (BFS(src, dest)) {
             minFlow = Integer.MAX_VALUE;
             Vertex currentVertex = dest;
             while (previousElements.get(currentVertex.getLocalId()) != null) {
                 Vertex prevVert = previousElements.get(currentVertex.getLocalId());
-                if (minFlow > graph.get(prevVert.getLocalId()).get(currentVertex).getMaxFlow()) {
-                    minFlow =  graph.get(prevVert.getLocalId()).get(currentVertex).getMaxFlow();
+                if (minFlow > graph.get(prevVert.getLocalId()).get(currentVertex).getResidualFlow()) {
+                    minFlow = graph.get(prevVert.getLocalId()).get(currentVertex).getResidualFlow();
                 }
                 currentVertex = previousElements.get(currentVertex.getLocalId());
             }

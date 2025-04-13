@@ -8,6 +8,7 @@ public class Edge {
     private int residualFlow;
     private int from;
     private int to;
+    private Edge reverseEdge;
 
     public Edge() {
     }
@@ -16,7 +17,7 @@ public class Edge {
         this.localId = id++;
         this.to = to;
         this.from = from;
-        this.residualFlow = 0;
+        this.residualFlow = maxFlow;
         this.currentFlow = 0;
         this.maxFlow = maxFlow;
     }
@@ -24,7 +25,7 @@ public class Edge {
     public Edge(int maxFlow, int currentFlow) {
         this.maxFlow = maxFlow;
         this.currentFlow = currentFlow;
-        this.residualFlow = 0;
+        this.residualFlow = maxFlow - currentFlow;
         this.localId = id;
     }
 
@@ -58,6 +59,14 @@ public class Edge {
 
     public void setLocalId(int localId) {
         this.localId = localId;
+    }
+
+    public void setReverseEdge(Edge e) {
+        this.reverseEdge = e;
+    }
+
+    public Edge getReverseEdge() {
+        return this.reverseEdge;
     }
 
     @Override
