@@ -14,9 +14,9 @@ import com.google.gson.GsonBuilder;
 public class Main {
 
     public static void main(String[] args) {
-        //Generator generator = new Generator(666);
-        //Data data = generator.generate();
-        Data data = readFile();
+        Generator generator = new Generator(666);
+        Data data = generator.generate();
+        //Data data = readFile();
         generateSVGfile(data.roads, data.farmlands, data.breweries, data.taverns);
         generateJSONfile(data);
     }
