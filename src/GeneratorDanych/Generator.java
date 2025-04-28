@@ -1,9 +1,6 @@
 package GeneratorDanych;
 
-import SiecPrzeplywowa.Brewery;
-import SiecPrzeplywowa.Farmland;
-import SiecPrzeplywowa.Road;
-import SiecPrzeplywowa.Tavern;
+import SiecPrzeplywowa.*;
 
 import java.awt.geom.Point2D;
 import java.util.*;

@@ -17,5 +17,13 @@ public class Road extends Line2D.Double {
     public void setMaxBarleyFlow(int maxBarleyFlow) {
         this.maxBarleyFlow = maxBarleyFlow;
     }
+
+    public int getMaxBeerFlow() {
+        return maxBeerFlow;
+    }
+
+    public int getMaxBarleyFlow() {
+        return maxBarleyFlow;
+    }
 }
 
