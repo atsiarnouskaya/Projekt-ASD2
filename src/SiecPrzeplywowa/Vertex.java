@@ -9,6 +9,7 @@ public class Vertex {
     private int x;
     private int y;
 
+
     public Vertex(int x, int y) {
         this.localId = idCounter++;
         this.x = x;
