@@ -8,12 +8,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Siec {
     private Map<Vertex, HashMap<Vertex, Edge>> graph;
     private Map<String, Vertex> vertexByCoord;
-    private ArrayList<Vertex> previousElements;
+    private Map<Vertex, Vertex> previousElements;
 
     public Siec() {
         this.graph = new ConcurrentHashMap<>();
         this.vertexByCoord = new ConcurrentHashMap<>();
-        this.previousElements = new ArrayList<>();
+        this.previousElements = new HashMap<>();
     }
 
     public Vertex addVertex(int x, int y) {
@@ -36,8 +36,8 @@ public class Siec {
             to = vertexByCoord.get(x2 + "," + y2);
         }
 
-        Edge forwardEdge = new Edge(to.getLocalId(), from.getLocalId(), maxFlow);
-        Edge backwardEdge = new Edge(from.getLocalId(), to.getLocalId(), maxFlow);
+        Edge forwardEdge = new Edge(from, to, maxFlow);
+        Edge backwardEdge = new Edge(to, from, maxFlow);
         forwardEdge.setReverseEdge(backwardEdge);
         backwardEdge.setReverseEdge(forwardEdge);
         graph.get(from).put(to, forwardEdge);
@@ -105,7 +105,7 @@ public class Siec {
         System.out.println("=== Flow Network Graph ===");
 
         for (Vertex from : graph.keySet()) {
-            System.out.println("Vertex " + from.getLocalId() + " (" + from.getType() + ") [" + (int)from.getX() + "," + (int)from.getY() + "]:");
+            System.out.println("Vertex " + "[" + (int)from.getX() + "," + (int)from.getY() + "]" + " (" + from.getType() + "): ");
 
             Map<Vertex, Edge> edges = graph.get(from);
             if (edges.isEmpty()) {
@@ -114,11 +114,10 @@ public class Siec {
                 for (Map.Entry<Vertex, Edge> entry : edges.entrySet()) {
                     Vertex to = entry.getKey();
                     Edge edge = entry.getValue();
-                    System.out.printf("   --> to Vertex %d (%s) [%d,%d]: flow = %d / %d, residual = %d%n",
-                            to.getLocalId(),
-                            to.getType(),
+                    System.out.printf("   --> to Vertex [%d,%d] (%s): flow = %d / %d, residual = %d%n",
                             (int)to.getX(),
                             (int)to.getY(),
+                            to.getType(),
                             edge.getCurrentFlow(),
                             edge.getMaxFlow(),
                             edge.getResidualFlow()
@@ -133,29 +132,39 @@ public class Siec {
 
 
     public boolean BFS(Vertex src, Vertex dest) {
-        int[] visited = new int[vertexByCoord.size() + 1];
+        Map<Vertex, Integer> visited = new HashMap<>();  //0 - nie odwiedzona, 1 - dodana do koleki, 2 - przetworzona
         previousElements.clear();
         src = vertexByCoord.get((int)src.getX() + "," + (int)src.getY());
         dest = vertexByCoord.get((int)dest.getX() + "," + (int)dest.getY());
-        Arrays.fill(visited, 0); //0 - nie odwiedzona, 1 - dodana do koleki, 2 - przetworzona
-        for (int i = 0; i <= vertexByCoord.size(); i++) {
-            previousElements.add(null);
-        }
+        vertexByCoord.forEach((key, vertex) -> {
+            previousElements.put(vertexByCoord.get(key), null);
+            visited.put(vertexByCoord.get(key), 0);
+        });
+//        for (int i = 0; i <= vertexByCoord.size(); i++) {
+//            previousElements.put(vertexByCoord.get((int)src.getX() + "," + (int)src.getY()), null);
+//            visited.put(vertexByCoord.get((int)src.getX() + "," + (int)src.getY()), 0);
+//        }
         Queue<Vertex> queue = new LinkedList<>();
         queue.add(src);
-        visited[src.getLocalId()] = 1;
+        visited.put(src, 0);
         while (!queue.isEmpty()) {
             Vertex c = queue.poll();
-            visited[c.getLocalId()] = 2;
+            visited.put(c, 2);
+            //visited[c.getLocalId()] = 2;
             if (c.equals(dest)) {
                 return true;
             }
             graph.get(c).forEach((v, e) -> {
-                if (visited[v.getLocalId()] == 0 && (e.getResidualFlow() > 0)) {
-                    visited[v.getLocalId()] = 1;
-                    previousElements.set(v.getLocalId(), c);
+                if (visited.get(v) == 0 && (e.getResidualFlow() > 0)) {
+                    visited.put(c, 1);
+                    previousElements.put(v, c);
                     queue.add(v);
                 }
+//                if (visited[v.getLocalId()] == 0 && (e.getResidualFlow() > 0)) {
+//                    visited[v.getLocalId()] = 1;
+//                    previousElements.set(v.getLocalId(), c);
+//                    queue.add(v);
+//                }
             });
         }
         return false;
@@ -169,18 +178,18 @@ public class Siec {
         while (BFS(src, dest)) {
             minFlow = Integer.MAX_VALUE;
             Vertex currentVertex = dest;
-            while (previousElements.get(currentVertex.getLocalId()) != null) {
-                Vertex prevVert = previousElements.get(currentVertex.getLocalId());
+            while (previousElements.get(currentVertex) != null) {
+                Vertex prevVert = previousElements.get(currentVertex);
                 if (minFlow > graph.get(prevVert).get(currentVertex).getResidualFlow()) {
                     minFlow = graph.get(prevVert).get(currentVertex).getResidualFlow();
                 }
-                currentVertex = previousElements.get(currentVertex.getLocalId());
+                currentVertex = previousElements.get(currentVertex);
             }
             currentVertex = dest;
-            while (previousElements.get(currentVertex.getLocalId()) != null) {
-                Vertex prevVert = previousElements.get(currentVertex.getLocalId());
+            while (previousElements.get(currentVertex) != null) {
+                Vertex prevVert = previousElements.get(currentVertex);
                 updateEdge(minFlow, prevVert, currentVertex);
-                currentVertex = previousElements.get(currentVertex.getLocalId());
+                currentVertex = previousElements.get(currentVertex);
             }
             maxFlow += minFlow;
         }

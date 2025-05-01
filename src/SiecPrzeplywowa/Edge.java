@@ -1,22 +1,20 @@
 package SiecPrzeplywowa;
 
 public class Edge {
-    static private int id = 0;
     private int localId;
     private int maxFlow;
     private int currentFlow;
     private int residualFlow;
-    private int from;
-    private int to;
+    private Vertex from;
+    private Vertex to;
     private Edge reverseEdge;
 
     public Edge() {
     }
 
-    public Edge(int to, int from, int maxFlow) {
-        this.localId = id++;
-        this.to = to;
+    public Edge(Vertex from, Vertex to, int maxFlow) {
         this.from = from;
+        this.to = to;
         this.residualFlow = maxFlow;
         this.currentFlow = 0;
         this.maxFlow = maxFlow;
@@ -26,7 +24,6 @@ public class Edge {
         this.maxFlow = maxFlow;
         this.currentFlow = currentFlow;
         this.residualFlow = maxFlow - currentFlow;
-        this.localId = id;
     }
 
     public int getMaxFlow() {
