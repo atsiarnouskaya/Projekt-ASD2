@@ -3,7 +3,6 @@ package SiecPrzeplywowa;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-
 public class Siec {
     private final Map<Vertex, HashMap<Vertex, Edge>> graph;
     private final Map<String, Vertex> vertexByCoord;
@@ -22,10 +21,19 @@ public class Siec {
         return v;
     }
 
-    //dodajemy krawedz a -> b i a <- b
+    // Dodajemy krawędź od a do b oraz od b do a.
+    // Żeby krawędź była dwukierunkowa, maksymalny przepływ (maxFlow) w obie strony musi być taki sam.
+    // Na przykład, jeśli z a do b maxFlow = 5, to z b do a też będzie 5.
+    // Gdy puścimy przepływ np. currentFlow = 3, to w sieci rezydualnej:
+    //    z a do b zostanie 2 (czyli 5 - 3),
+    //    a z b do a będzie można „cofnąć” 3 (czyli to, co już przeszło).
+    // Ale jeśli te dwie krawędzie są zsynchronizowane i mają wspólną przepustowość,
+    //    to zostaje tylko 2 w którąkolwiek stronę.
+    // Czyli całkowita przepustowość to 5 — i ona się nigdy nie zmienia.
     public void addEdge(int maxFlow, int x1, int y1, int x2, int y2) {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
+
         if (from == null) {
             Vertex v = addVertex(x1, y1);
             from = vertexByCoord.get(x1 + "," + y1);
@@ -104,7 +112,7 @@ public class Siec {
         System.out.println("=== Flow Network Graph ===");
 
         for (Vertex from : graph.keySet()) {
-            System.out.println("Vertex " + "[" + (int)from.getX() + "," + (int)from.getY() + "]" + " (" + from.getType() + "): ");
+            System.out.println("Vertex " + "[" + from.getX() + "," + from.getY() + "]" + " (" + from.getType() + "): ");
 
             Map<Vertex, Edge> edges = graph.get(from);
             if (edges.isEmpty()) {
@@ -114,8 +122,8 @@ public class Siec {
                     Vertex to = entry.getKey();
                     Edge edge = entry.getValue();
                     System.out.printf("   --> to Vertex [%d,%d] (%s): flow = %d / %d, residual = %d%n",
-                            (int)to.getX(),
-                            (int)to.getY(),
+                            to.getX(),
+                            to.getY(),
                             to.getType(),
                             edge.getCurrentFlow(),
                             edge.getMaxFlow(),
@@ -133,23 +141,18 @@ public class Siec {
     public boolean BFS(Vertex src, Vertex dest) {
         Map<Vertex, Integer> visited = new HashMap<>();  //0 - nie odwiedzona, 1 - dodana do koleki, 2 - przetworzona
         previousElements.clear();
-        src = vertexByCoord.get((int)src.getX() + "," + (int)src.getY());
-        dest = vertexByCoord.get((int)dest.getX() + "," + (int)dest.getY());
+        src = vertexByCoord.get(src.getX() + "," + src.getY());
+        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
         vertexByCoord.forEach((key, vertex) -> {
             previousElements.put(vertexByCoord.get(key), null);
             visited.put(vertexByCoord.get(key), 0);
         });
-//        for (int i = 0; i <= vertexByCoord.size(); i++) {
-//            previousElements.put(vertexByCoord.get((int)src.getX() + "," + (int)src.getY()), null);
-//            visited.put(vertexByCoord.get((int)src.getX() + "," + (int)src.getY()), 0);
-//        }
         Queue<Vertex> queue = new LinkedList<>();
         queue.add(src);
         visited.put(src, 0);
         while (!queue.isEmpty()) {
             Vertex c = queue.poll();
             visited.put(c, 2);
-            //visited[c.getLocalId()] = 2;
             if (c.equals(dest)) {
                 return true;
             }
@@ -159,11 +162,6 @@ public class Siec {
                     previousElements.put(v, c);
                     queue.add(v);
                 }
-//                if (visited[v.getLocalId()] == 0 && (e.getResidualFlow() > 0)) {
-//                    visited[v.getLocalId()] = 1;
-//                    previousElements.set(v.getLocalId(), c);
-//                    queue.add(v);
-//                }
             });
         }
         return false;
@@ -172,8 +170,8 @@ public class Siec {
     public int maxFlow(Vertex src, Vertex dest) {
         int maxFlow = 0;
         int minFlow;
-        src = vertexByCoord.get((int)src.getX() + "," + (int)src.getY());
-        dest = vertexByCoord.get((int)dest.getX() + "," + (int)dest.getY());
+        src = vertexByCoord.get(src.getX() + "," + src.getY());
+        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
         while (BFS(src, dest)) {
             minFlow = Integer.MAX_VALUE;
             Vertex currentVertex = dest;
