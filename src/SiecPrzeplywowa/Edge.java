@@ -1,7 +1,6 @@
 package SiecPrzeplywowa;
 
 public class Edge {
-    private int localId;
     private int maxFlow;
     private int currentFlow;
     private int residualFlow;
@@ -48,14 +47,6 @@ public class Edge {
 
     public void setResidualFlow(int residualFlow) {
         this.residualFlow = residualFlow;
-    }
-
-    public int getLocalId() {
-        return localId;
-    }
-
-    public void setLocalId(int localId) {
-        this.localId = localId;
     }
 
     public void setReverseEdge(Edge e) {

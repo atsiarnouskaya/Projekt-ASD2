@@ -1,14 +1,13 @@
 package SiecPrzeplywowa;
 
-import java.awt.geom.Point2D;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 
 public class Siec {
-    private Map<Vertex, HashMap<Vertex, Edge>> graph;
-    private Map<String, Vertex> vertexByCoord;
-    private Map<Vertex, Vertex> previousElements;
+    private final Map<Vertex, HashMap<Vertex, Edge>> graph;
+    private final Map<String, Vertex> vertexByCoord;
+    private final Map<Vertex, Vertex> previousElements;
 
     public Siec() {
         this.graph = new ConcurrentHashMap<>();

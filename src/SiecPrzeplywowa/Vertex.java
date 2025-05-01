@@ -3,6 +3,7 @@ package SiecPrzeplywowa;
 import java.util.Objects;
 
 public class Vertex {
+    static int count = 0;
     private int localId;
     private int x;
     private int y;
@@ -13,12 +14,14 @@ public class Vertex {
     public Vertex(int x, int y) {
         this.x = x;
         this.y = y;
+        this.localId = count++;
     }
 
     public Vertex(int x, int y, String type) {
         this.x = x;
         this.y = y;
         this.type = type;
+        this.localId = count++;
     }
 
     public int getX() {

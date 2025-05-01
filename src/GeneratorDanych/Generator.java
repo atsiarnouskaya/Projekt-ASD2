@@ -24,10 +24,14 @@ public class Generator {
 
     public Generator(int seed) {
         random = new Random(seed);
-        farmlandsCount = 15;
-        breweriesCount = 6;
-        tavernsCount = 8;
-        roadsCount = 20;
+        farmlandsCount = 2;
+        breweriesCount = 2;
+        tavernsCount = 2;
+        roadsCount = 2;
+//        farmlandsCount = 15;
+//        breweriesCount = 6;
+//        tavernsCount = 8;
+//        roadsCount = 20;
     }
 
     public Generator(int seed, int roadsCount, int farmlandsCount, int breweriesCount, int tavernsCount) {
