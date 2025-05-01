@@ -8,12 +8,21 @@ public class Vertex {
     private int localId;
     private int x;
     private int y;
+    private String type;
+    private int capacity;
 
 
     public Vertex(int x, int y) {
         this.localId = idCounter++;
         this.x = x;
         this.y = y;
+    }
+
+    public Vertex(int x, int y, String type) {
+        this.localId = idCounter++;
+        this.x = x;
+        this.y = y;
+        this.type = type;
     }
 
     public int getX() {
@@ -32,13 +41,29 @@ public class Vertex {
         this.y = y;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
     public int getLocalId() {
         return localId;
     }
 
     @Override
     public String toString() {
-        return "(" + x + ", " + y + ") via ";
+        return "(" + x + ", " + y + "), type = " + type;
     }
 
     @Override

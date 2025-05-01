@@ -2,26 +2,23 @@ package SiecPrzeplywowa;
 
 import java.awt.geom.Point2D;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 public class Siec {
-    private HashMap<Vertex, HashMap<Vertex, Edge>> graph;
+    private Map<Vertex, HashMap<Vertex, Edge>> graph;
     private Map<String, Vertex> vertexByCoord;
     private ArrayList<Vertex> previousElements;
 
     public Siec() {
-        this.graph = new HashMap<>();
-        this.vertexByCoord = new HashMap<>();
+        this.graph = new ConcurrentHashMap<>();
+        this.vertexByCoord = new ConcurrentHashMap<>();
         this.previousElements = new ArrayList<>();
     }
 
     public Vertex addVertex(int x, int y) {
         Vertex v = new Vertex(x, y);
         vertexByCoord.put(x + "," + y, v);
-        // Ciężko było mi zrozumieć dlaczego przy dodawaniu nowego wierzchołka dodajemy nowy element w grafie
-        // Dopiero po pewnym czasie zrozumiałam, że wartości locationId w Vertex są rosnące od zera
-        // co pokyrwa się z indeksami arraylisty. Wydaje mi się, że łatwiej pracować na kluczu, który jest referencją
-        // do wierzchołka. Wydaje mi się, że tak jest czytelniej
         graph.put(v, new HashMap<>());
         return v;
     }
@@ -31,27 +28,21 @@ public class Siec {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
         if (from == null) {
-            addVertex(x1, y1);
+            Vertex v = addVertex(x1, y1);
             from = vertexByCoord.get(x1 + "," + y1);
         }
         if (to == null) {
-            addVertex(x2, y2);
+            Vertex v = addVertex(x2, y2);
             to = vertexByCoord.get(x2 + "," + y2);
         }
 
         Edge forwardEdge = new Edge(to.getLocalId(), from.getLocalId(), maxFlow);
-        // Wydaje mi się, że max flow w drugą stronę powinien być taki sam celem umożliwienia
-        // transportu towarów w obie strony tą samą drogą.
-        // Uzgodniłyśmy, że narazie droga ma taką samą i rozdzielną przepustowość w każdym kierunku
-        // Czyli droga o przepustowości 2 pozwala przewieźć 2 zboża od A do B oraz 2 zboża od B do A
-        //
-        // W przeciwnym wypadku, wydaje mi się, że nie powinnyśmy mieć dwóch oddzielnych krawędzi
-        // na dwa oddzielne kierunki drogi
         Edge backwardEdge = new Edge(from.getLocalId(), to.getLocalId(), maxFlow);
-        graph.get(from).put(to, forwardEdge);
-        graph.get(to).put(from, backwardEdge);
         forwardEdge.setReverseEdge(backwardEdge);
         backwardEdge.setReverseEdge(forwardEdge);
+        graph.get(from).put(to, forwardEdge);
+        graph.get(to).put(from, backwardEdge);
+
     }
 
     public void updateEdge(int currentFlow, Vertex from, Vertex to) {
@@ -78,8 +69,32 @@ public class Siec {
         // Drogą o rozdzielnej przepustowości 2 można:
         // A. Przewieźć 2 od A do B i 2 od B do A
 
-        // Edge currentBackwardEdge = currentEdge.getReverseEdge();
-        // currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + currentFlow);
+//        Edge currentBackwardEdge = currentEdge.getReverseEdge();
+//        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + currentFlow);
+    }
+
+    public Vertex addSourceVertex(String sourceName) {
+        Vertex source = new Vertex(Integer.MIN_VALUE, Integer.MIN_VALUE, "source");
+        vertexByCoord.put(Integer.MIN_VALUE + "," + Integer.MIN_VALUE, source);
+        graph.put(source, new HashMap<>());
+        vertexByCoord.forEach((key, vertex) -> {
+            if (sourceName.equals(vertex.getType())){
+                addEdge(vertex.getCapacity(), source.getX(), source.getY(), vertex.getX(), vertex.getY());
+            }
+        });
+        return source;
+    }
+
+    public Vertex addSinkVertex(String sinkName) {
+        Vertex sink = new Vertex(Integer.MAX_VALUE, Integer.MAX_VALUE, "sink");
+        vertexByCoord.put(Integer.MAX_VALUE + "," + Integer.MAX_VALUE, sink);
+        graph.put(sink, new HashMap<>());
+        vertexByCoord.forEach((key, vertex) -> {
+            if (sinkName.equals(vertex.getType())){
+                addEdge(vertex.getCapacity(), vertex.getX(), vertex.getY(), sink.getX(), sink.getY());
+            }
+        });
+        return sink;
     }
 
     public Edge getData(Vertex from, Vertex to) {
@@ -87,12 +102,35 @@ public class Siec {
     }
 
     public void printGraph() {
-        for (Vertex row : graph.keySet()) {
-            System.out.println("Vertex number " + row.getLocalId() + " is connected to: ");
-            System.out.println(graph.get(row).toString());
+        System.out.println("=== Flow Network Graph ===");
+
+        for (Vertex from : graph.keySet()) {
+            System.out.println("Vertex " + from.getLocalId() + " (" + from.getType() + ") [" + (int)from.getX() + "," + (int)from.getY() + "]:");
+
+            Map<Vertex, Edge> edges = graph.get(from);
+            if (edges.isEmpty()) {
+                System.out.println("   No outgoing edges.");
+            } else {
+                for (Map.Entry<Vertex, Edge> entry : edges.entrySet()) {
+                    Vertex to = entry.getKey();
+                    Edge edge = entry.getValue();
+                    System.out.printf("   --> to Vertex %d (%s) [%d,%d]: flow = %d / %d, residual = %d%n",
+                            to.getLocalId(),
+                            to.getType(),
+                            (int)to.getX(),
+                            (int)to.getY(),
+                            edge.getCurrentFlow(),
+                            edge.getMaxFlow(),
+                            edge.getResidualFlow()
+                    );
+                }
+            }
             System.out.println();
         }
+
+        System.out.println("=== End of Graph ===\n");
     }
+
 
     public boolean BFS(Vertex src, Vertex dest) {
         int[] visited = new int[vertexByCoord.size() + 1];
@@ -123,11 +161,11 @@ public class Siec {
         return false;
     }
 
-    public int maxFlow(Point2D.Double srcPoint, Point2D.Double destPoint) {
+    public int maxFlow(Vertex src, Vertex dest) {
         int maxFlow = 0;
         int minFlow;
-        Vertex src = vertexByCoord.get((int)srcPoint.getX() + "," + (int)srcPoint.getY());
-        Vertex dest = vertexByCoord.get((int)destPoint.getX() + "," + (int)destPoint.getY());
+        src = vertexByCoord.get((int)src.getX() + "," + (int)src.getY());
+        dest = vertexByCoord.get((int)dest.getX() + "," + (int)dest.getY());
         while (BFS(src, dest)) {
             minFlow = Integer.MAX_VALUE;
             Vertex currentVertex = dest;

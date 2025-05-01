@@ -71,7 +71,7 @@ public class Edge {
 
     @Override
     public String toString() {
-        return ("edge (from " + from + " to " + to + " properties: " +
+        return ("edge (from " + from + " to " + to + ". Properties: " +
                 "maxFlow = " + maxFlow +
                 ", currentFlow = " + currentFlow +
                 ", residualFlow = " + residualFlow +
