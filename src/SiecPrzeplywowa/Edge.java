@@ -33,6 +33,14 @@ public class Edge {
         this.maxFlow = maxFlow;
     }
 
+    public Vertex getFrom() {
+        return from;
+    }
+
+    public Vertex getTo() {
+        return to;
+    }
+
     public int getCurrentFlow() {
         return currentFlow;
     }

@@ -28,10 +28,6 @@ public class Generator {
         breweriesCount = 2;
         tavernsCount = 2;
         roadsCount = 2;
-//        farmlandsCount = 15;
-//        breweriesCount = 6;
-//        tavernsCount = 8;
-//        roadsCount = 20;
     }
 
     public Generator(int seed, int roadsCount, int farmlandsCount, int breweriesCount, int tavernsCount) {
@@ -251,7 +247,7 @@ public class Generator {
         int k = 0;
         while (roads.size() < roadsCount) {
             var existingRoad = roads.get(k++ % roads.size());
-            int z = random.nextInt(1, 3);
+            int z =Math.min(random.nextInt(1, 3),  roadsCount - roads.size());
             for(int j = 0; j < z; j++){
                 Road newRoad = GenerateRandomRoad2(existingRoad);
                 while (true) {

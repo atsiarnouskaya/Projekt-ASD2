@@ -1,48 +1,230 @@
 {
   "roads": [
     {
-      "maxBeerFlow": 0,
+      "maxBeerFlow": 3,
+      "maxBarleyFlow": 3,
+      "x1": 169.0,
+      "y1": 200.0,
+      "x2": 56.0,
+      "y2": 132.0
+    },
+    {
+      "maxBeerFlow": 9,
+      "maxBarleyFlow": 9,
+      "x1": 169.0,
+      "y1": 200.0,
+      "x2": 144.0,
+      "y2": 134.0
+    },
+    {
+      "maxBeerFlow": 18,
+      "maxBarleyFlow": 17,
+      "x1": 56.0,
+      "y1": 132.0,
+      "x2": 134.0,
+      "y2": 148.0
+    },
+    {
+      "maxBeerFlow": 2,
+      "maxBarleyFlow": 13,
+      "x1": 134.0,
+      "y1": 148.0,
+      "x2": 48.0,
+      "y2": 46.0
+    },
+    {
+      "maxBeerFlow": 6,
+      "maxBarleyFlow": 9,
+      "x1": 144.0,
+      "y1": 134.0,
+      "x2": 186.0,
+      "y2": 185.0
+    },
+    {
+      "maxBeerFlow": 16,
+      "maxBarleyFlow": 15,
+      "x1": 186.0,
+      "y1": 185.0,
+      "x2": 190.0,
+      "y2": 190.0
+    },
+    {
+      "maxBeerFlow": 2,
+      "maxBarleyFlow": 5,
+      "x1": 237.0,
+      "y1": 142.0,
+      "x2": 186.0,
+      "y2": 185.0
+    },
+    {
+      "maxBeerFlow": 16,
+      "maxBarleyFlow": 17,
+      "x1": 186.0,
+      "y1": 185.0,
+      "x2": 169.0,
+      "y2": 200.0
+    },
+    {
+      "maxBeerFlow": 18,
       "maxBarleyFlow": 4,
-      "x1": 250.0,
-      "y1": 250.0,
-      "x2": 250.0,
-      "y2": 400.0
+      "x1": 221.0,
+      "y1": 114.0,
+      "x2": 237.0,
+      "y2": 142.0
     },
     {
-      "maxBeerFlow": 0,
-      "maxBarleyFlow": 6,
-      "x1": 250.0,
-      "y1": 250.0,
-      "x2": 400.0,
-      "y2": 250.0
+      "maxBeerFlow": 3,
+      "maxBarleyFlow": 16,
+      "x1": 34.0,
+      "y1": 152.0,
+      "x2": 56.0,
+      "y2": 132.0
     },
     {
-      "maxBeerFlow": 0,
-      "maxBarleyFlow": 11,
-      "x1": 250.0,
-      "y1": 250.0,
-      "x2": 150.0,
-      "y2": 300.0
+      "maxBeerFlow": 18,
+      "maxBarleyFlow": 14,
+      "x1": 41.0,
+      "y1": 159.0,
+      "x2": 56.0,
+      "y2": 132.0
+    },
+    {
+      "maxBeerFlow": 6,
+      "maxBarleyFlow": 3,
+      "x1": 173.0,
+      "y1": 112.0,
+      "x2": 144.0,
+      "y2": 134.0
+    },
+    {
+      "maxBeerFlow": 11,
+      "maxBarleyFlow": 13,
+      "x1": 215.0,
+      "y1": 183.0,
+      "x2": 190.0,
+      "y2": 190.0
+    },
+    {
+      "maxBeerFlow": 7,
+      "maxBarleyFlow": 4,
+      "x1": 172.0,
+      "y1": 137.0,
+      "x2": 144.0,
+      "y2": 134.0
+    },
+    {
+      "maxBeerFlow": 6,
+      "maxBarleyFlow": 1,
+      "x1": 150.0,
+      "y1": 113.0,
+      "x2": 144.0,
+      "y2": 134.0
+    },
+    {
+      "maxBeerFlow": 13,
+      "maxBarleyFlow": 13,
+      "x1": 20.0,
+      "y1": 63.0,
+      "x2": 48.0,
+      "y2": 46.0
+    },
+    {
+      "maxBeerFlow": 19,
+      "maxBarleyFlow": 18,
+      "x1": 64.0,
+      "y1": 160.0,
+      "x2": 56.0,
+      "y2": 132.0
+    },
+    {
+      "maxBeerFlow": 18,
+      "maxBarleyFlow": 12,
+      "x1": 141.0,
+      "y1": 194.0,
+      "x2": 169.0,
+      "y2": 200.0
+    },
+    {
+      "maxBeerFlow": 3,
+      "maxBarleyFlow": 1,
+      "x1": 74.0,
+      "y1": 20.0,
+      "x2": 48.0,
+      "y2": 46.0
+    },
+    {
+      "maxBeerFlow": 10,
+      "maxBarleyFlow": 4,
+      "x1": 255.0,
+      "y1": 157.0,
+      "x2": 237.0,
+      "y2": 142.0
     }
   ],
   "farmlands": [
     {
-      "productionCapacity": 10.0,
-      "x": 400.0,
-      "y": 250.0
+      "productionCapacity": 9,
+      "x": 221.0,
+      "y": 114.0
+    },
+    {
+      "productionCapacity": 9,
+      "x": 34.0,
+      "y": 152.0
+    },
+    {
+      "productionCapacity": 9,
+      "x": 41.0,
+      "y": 159.0
+    },
+    {
+      "productionCapacity": 12,
+      "x": 173.0,
+      "y": 112.0
+    },
+    {
+      "productionCapacity": 6,
+      "x": 215.0,
+      "y": 183.0
     }
   ],
   "breweries": [
     {
-      "productionCapacity": 10.0,
-      "x": 250.0,
-      "y": 400.0
+      "productionCapacity": 25,
+      "x": 172.0,
+      "y": 137.0
+    },
+    {
+      "productionCapacity": 17,
+      "x": 150.0,
+      "y": 113.0
+    },
+    {
+      "productionCapacity": 26,
+      "x": 20.0,
+      "y": 63.0
     }
   ],
   "taverns": [
     {
-      "x": 150.0,
-      "y": 300.0
+      "consumptionCapacity": 28,
+      "x": 64.0,
+      "y": 160.0
+    },
+    {
+      "consumptionCapacity": 25,
+      "x": 141.0,
+      "y": 194.0
+    },
+    {
+      "consumptionCapacity": 20,
+      "x": 74.0,
+      "y": 20.0
+    },
+    {
+      "consumptionCapacity": 17,
+      "x": 255.0,
+      "y": 157.0
     }
   ]
 }

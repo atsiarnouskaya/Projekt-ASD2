@@ -14,6 +14,10 @@ public class Siec {
         this.previousElements = new HashMap<>();
     }
 
+    public Map<Vertex, HashMap<Vertex, Edge>> getGraph() {
+        return this.graph;
+    }
+
     public Vertex addVertex(int x, int y) {
         Vertex v = new Vertex(x, y);
         vertexByCoord.put(x + "," + y, v);
@@ -156,6 +160,7 @@ public class Siec {
             if (c.equals(dest)) {
                 return true;
             }
+
             graph.get(c).forEach((v, e) -> {
                 if (visited.get(v) == 0 && (e.getResidualFlow() > 0)) {
                     visited.put(c, 1);
@@ -182,10 +187,13 @@ public class Siec {
                 }
                 currentVertex = previousElements.get(currentVertex);
             }
+
             currentVertex = dest;
+
             while (previousElements.get(currentVertex) != null) {
                 Vertex prevVert = previousElements.get(currentVertex);
                 updateEdge(minFlow, prevVert, currentVertex);
+                Edge currentEdge = graph.get(prevVert).get(currentVertex);
                 currentVertex = previousElements.get(currentVertex);
             }
             maxFlow += minFlow;
