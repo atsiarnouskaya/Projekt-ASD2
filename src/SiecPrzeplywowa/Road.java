@@ -6,6 +6,7 @@ import java.awt.geom.Point2D;
 public class Road extends Line2D.Double {
     private int maxBeerFlow;
     private int maxBarleyFlow;
+    private int repairCost;
     public Road(Point2D x1, Point2D x2){
         super(x1, x2);
     }
@@ -24,6 +25,14 @@ public class Road extends Line2D.Double {
 
     public int getMaxBarleyFlow() {
         return maxBarleyFlow;
+    }
+
+    public int getRepairCost() {
+        return repairCost;
+    }
+
+    public void setRepairCost(int repairCost) {
+        this.repairCost = repairCost;
     }
 }
 
