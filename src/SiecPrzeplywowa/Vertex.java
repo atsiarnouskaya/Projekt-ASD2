@@ -9,11 +9,13 @@ public class Vertex {
     private int y;
     private String type;
     private int capacity;
+    private int gottenFlow;
 
 
     public Vertex(int x, int y) {
         this.x = x;
         this.y = y;
+        this.gottenFlow = 0;
         this.localId = count++;
     }
 
@@ -21,6 +23,7 @@ public class Vertex {
         this.x = x;
         this.y = y;
         this.type = type;
+        this.gottenFlow = 0;
         this.localId = count++;
     }
 
@@ -58,6 +61,23 @@ public class Vertex {
 
     public int getLocalId() {
         return localId;
+    }
+
+    public int getGottenFlow() {
+        return gottenFlow;
+    }
+
+    public void setGottenFlow(int gottenFlow) {
+        this.gottenFlow = gottenFlow;
+    }
+
+    public void addGottenFlow(int n) {
+        this.gottenFlow += n;
+    }
+
+    public void changeCapacity() {
+        this.capacity = this.gottenFlow;
+        this.gottenFlow = 0;
     }
 
     @Override

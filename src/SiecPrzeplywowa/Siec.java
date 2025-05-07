@@ -19,10 +19,17 @@ public class Siec {
     }
 
     public Vertex addVertex(int x, int y) {
+        String key = x + "," + y;
+        if (vertexByCoord.containsKey(key)) return vertexByCoord.get(key);
         Vertex v = new Vertex(x, y);
-        vertexByCoord.put(x + "," + y, v);
+        vertexByCoord.put(key, v);
         graph.put(v, new HashMap<>());
         return v;
+    }
+
+
+    public Vertex getVertex(int x, int y) {
+        return vertexByCoord.get(x + "," + y);
     }
 
     // Dodajemy krawędź od a do b oraz od b do a.
@@ -56,6 +63,24 @@ public class Siec {
 
     }
 
+    public void setBeerFlow (int flow, int x1, int y1, int x2, int y2) {
+        Vertex from = vertexByCoord.get(x1 + "," + y1);
+        Vertex to = vertexByCoord.get(x2 + "," + y2);
+        if (from == null) {
+            Vertex v = addVertex(x1, y1);
+        }
+        if (to == null) {
+            Vertex v = addVertex(x2, y2);
+        }
+        graph.get(from).get(to).setMaxFlow(flow);
+        graph.get(from).get(to).setResidualFlow(flow);
+        graph.get(from).get(to).setCurrentFlow(0);
+        graph.get(to).get(from).setMaxFlow(flow);
+        graph.get(to).get(from).setResidualFlow(flow);
+        graph.get(to).get(from).setCurrentFlow(0);
+
+    }
+
     public void updateEdge(int currentFlow, Vertex from, Vertex to) {
         Edge currentEdge = graph.get(from).get(to);
         currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + currentFlow);
@@ -84,9 +109,9 @@ public class Siec {
 //        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + currentFlow);
     }
 
-    public Vertex addSourceVertex(String sourceName) {
-        Vertex source = new Vertex(Integer.MIN_VALUE, Integer.MIN_VALUE, "source");
-        vertexByCoord.put(Integer.MIN_VALUE + "," + Integer.MIN_VALUE, source);
+    public Vertex addSourceVertex(String sourceName, int x1, int y1) {
+        Vertex source = new Vertex(x1, y1, "source");
+        vertexByCoord.put(x1 + "," + y1, source);
         graph.put(source, new HashMap<>());
         vertexByCoord.forEach((key, vertex) -> {
             if (sourceName.equals(vertex.getType())){
@@ -96,9 +121,9 @@ public class Siec {
         return source;
     }
 
-    public Vertex addSinkVertex(String sinkName) {
-        Vertex sink = new Vertex(Integer.MAX_VALUE, Integer.MAX_VALUE, "sink");
-        vertexByCoord.put(Integer.MAX_VALUE + "," + Integer.MAX_VALUE, sink);
+    public Vertex addSinkVertex(String sinkName, int x2, int y2) {
+        Vertex sink = new Vertex(x2, y2, "sink");
+        vertexByCoord.put(x2 + "," + y2, sink);
         graph.put(sink, new HashMap<>());
         vertexByCoord.forEach((key, vertex) -> {
             if (sinkName.equals(vertex.getType())){
@@ -106,6 +131,22 @@ public class Siec {
             }
         });
         return sink;
+    }
+
+    public void deleteSourceVertex(Vertex sourceVert) {
+        graph.forEach((key, vertex) -> {
+            graph.get(key).remove(sourceVert);
+        });
+        graph.remove(sourceVert);
+        vertexByCoord.remove(sourceVert.getX() + "," + sourceVert.getY());
+    }
+
+    public void deleteSinkVertex(Vertex sinkVert) {
+        graph.forEach((key, vertex) -> {
+            graph.get(key).remove(sinkVert);
+        });
+        graph.remove(sinkVert);
+        vertexByCoord.remove(sinkVert.getX() + "," + sinkVert.getY());
     }
 
     public Edge getData(Vertex from, Vertex to) {
@@ -151,9 +192,10 @@ public class Siec {
             previousElements.put(vertexByCoord.get(key), null);
             visited.put(vertexByCoord.get(key), 0);
         });
+        visited.get(dest);
         Queue<Vertex> queue = new LinkedList<>();
         queue.add(src);
-        visited.put(src, 0);
+        visited.put(src, 1);
         while (!queue.isEmpty()) {
             Vertex c = queue.poll();
             visited.put(c, 2);
@@ -162,7 +204,7 @@ public class Siec {
             }
 
             graph.get(c).forEach((v, e) -> {
-                if (visited.get(v) == 0 && (e.getResidualFlow() > 0)) {
+                if ((visited.get(v) == 0) && (e.getResidualFlow() > 0)) {
                     visited.put(c, 1);
                     previousElements.put(v, c);
                     queue.add(v);
@@ -177,6 +219,7 @@ public class Siec {
         int minFlow;
         src = vertexByCoord.get(src.getX() + "," + src.getY());
         dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
+
         while (BFS(src, dest)) {
             minFlow = Integer.MAX_VALUE;
             Vertex currentVertex = dest;
@@ -193,10 +236,10 @@ public class Siec {
             while (previousElements.get(currentVertex) != null) {
                 Vertex prevVert = previousElements.get(currentVertex);
                 updateEdge(minFlow, prevVert, currentVertex);
-                Edge currentEdge = graph.get(prevVert).get(currentVertex);
                 currentVertex = previousElements.get(currentVertex);
             }
             maxFlow += minFlow;
+            previousElements.get(dest).addGottenFlow(minFlow);
         }
         return maxFlow;
     }
