@@ -194,6 +194,7 @@ public class Generator {
         for(var r: roads){
             r.setMaxBeerFlow(random.nextInt(0, 20));
             r.setMaxBarleyFlow(random.nextInt(0, 20));
+            r.setRepairCost(random.nextInt(0, 30));
         }
         return new Data(roads, farmlands, breweries, taverns);
     }
