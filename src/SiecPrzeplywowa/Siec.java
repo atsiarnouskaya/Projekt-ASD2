@@ -109,9 +109,9 @@ public class Siec {
 //        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + currentFlow);
     }
 
-    public Vertex addSourceVertex(String sourceName, int x1, int y1) {
-        Vertex source = new Vertex(x1, y1, "source");
-        vertexByCoord.put(x1 + "," + y1, source);
+    public Vertex addSourceVertex(String sourceName) {
+        Vertex source = new Vertex(Integer.MIN_VALUE, Integer.MIN_VALUE, "source");
+        vertexByCoord.put(Integer.MIN_VALUE + "," + Integer.MIN_VALUE, source);
         graph.put(source, new HashMap<>());
         vertexByCoord.forEach((key, vertex) -> {
             if (sourceName.equals(vertex.getType())){
@@ -121,9 +121,9 @@ public class Siec {
         return source;
     }
 
-    public Vertex addSinkVertex(String sinkName, int x2, int y2) {
-        Vertex sink = new Vertex(x2, y2, "sink");
-        vertexByCoord.put(x2 + "," + y2, sink);
+    public Vertex addSinkVertex(String sinkName) {
+        Vertex sink = new Vertex(Integer.MAX_VALUE, Integer.MAX_VALUE, "sink");
+        vertexByCoord.put(Integer.MAX_VALUE + "," + Integer.MAX_VALUE, sink);
         graph.put(sink, new HashMap<>());
         vertexByCoord.forEach((key, vertex) -> {
             if (sinkName.equals(vertex.getType())){
