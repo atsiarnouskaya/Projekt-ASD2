@@ -2,6 +2,8 @@ package SiecPrzeplywowa;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Stream;
 
 public class Siec {
     private final Map<Vertex, HashMap<Vertex, Edge>> graph;
@@ -82,12 +84,16 @@ public class Siec {
 
     public void updateEdge(int flow, Vertex from, Vertex to) {
         Edge currentEdge = graph.get(from).get(to);
-        currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + flow);
-        currentEdge.setResidualFlow(currentEdge.getResidualFlow() - flow);
+        if(currentEdge != null){
+            currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + flow);
+            currentEdge.setResidualFlow(currentEdge.getResidualFlow() - flow);
+        }
 
-        Edge currentBackwardEdge = currentEdge.getReverseEdge();
-        currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
-        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
+        Edge currentBackwardEdge = graph.get(to).get(from);
+        if(currentBackwardEdge != null){
+            currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
+            currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
+        }
     }
 
     public Vertex addSourceVertex(String sourceName) {
@@ -230,47 +236,66 @@ public class Siec {
     public void refactorRoads(Vertex src, Vertex sink) {
         deleteSinkVertex(sink);
         deleteSourceVertex(src);
+        for (Vertex v1 : graph.keySet().stream().toList()) {
+            HashMap<Vertex, Edge> edges = graph.get(v1);
+            for(Vertex v2: edges.keySet().stream().toList())
+            {
+                var edge = graph.get(v1).get(v2);
+                if(edge.getCurrentFlow() < 0) {
+                    graph.get(v1).remove(v2);
+                }
+            }
+        }
+
         while (true) {
-            var cycle = findCycleWithNegativeCost();
-            if (cycle.isEmpty()) break;
+            List<Vertex> cycleWithNegativeCost = new ArrayList<>();
+            for (Vertex vertex : graph.keySet()) {
+                cycleWithNegativeCost = DFS(vertex, new HashSet<>(), new HashSet<>(), new HashMap<>(), new AtomicBoolean(false));
+                if (cycleWithNegativeCost != null)
+                    break;
+            }
+            if (cycleWithNegativeCost == null)
+                break;
+            System.out.println("----");
+            System.out.println(cycleWithNegativeCost);
+            System.out.println("koszt: " + countCycleCost(cycleWithNegativeCost));
+
+
             /// dwa razy to obliczam.. nie da się inaczej?
-            int minVal = getMinFlowInCycle(cycle);
-            System.out.println("___________");
-            System.out.println(cycle);
-            System.out.println("min val: " + minVal);
-            for (int i = 0; i < cycle.size(); i++) {
-                Vertex from = cycle.get(i);
-                Vertex to = cycle.get((i + 1) % cycle.size());
-                Edge e = graph.get(from).get(to);
-                System.out.println("Przed: "+e.getCurrentFlow()+", res: "+e.getResidualFlow());
-                updateEdge(minVal, e.getFrom(), e.getTo());
-
-                System.out.println("Po: "+e.getCurrentFlow()+", res: "+e.getResidualFlow());
+            int minVal = getMinFlowInCycle(cycleWithNegativeCost);
+            for (int i = 0; i < cycleWithNegativeCost.size(); i++) {
+                Vertex from = cycleWithNegativeCost.get(i);
+                Vertex to = cycleWithNegativeCost.get((i + 1) % cycleWithNegativeCost.size());
+                updateEdge(minVal, from, to);
             }
         }
     }
 
-    public List<Vertex> findCycleWithNegativeCost() {
-        for (Vertex vertex : graph.keySet()) {
-            List<List<Vertex>> cycles = new ArrayList<>();
-            DFS(vertex, new HashSet<>(), new HashSet<>(), new HashMap<>(), cycles);
-            for (List<Vertex> cycle : cycles) {
-                if (countCycleCost(cycle) < 0 && getMinFlowInCycle(cycle) > 0)
-                    return cycle;
-            }
-        }
-        return new ArrayList<>();
-    }
+    private List<Vertex> DFS(Vertex current, Set<Vertex> visited, Set<Vertex> stack,
+                             Map<Vertex, Vertex> parent, AtomicBoolean foundCycle) {
+        if (foundCycle.get()) return null;
 
-
-    private void DFS(Vertex current, Set<Vertex> visited, Set<Vertex> stack, Map<Vertex, Vertex> parent, List<List<Vertex>> cycles) {
         visited.add(current);
         stack.add(current);
-        Map<Vertex, Edge> neighbors = graph.getOrDefault(current, new HashMap<>());
-        for (Vertex neighbor : neighbors.keySet()) {
+
+        // Map<Vertex, Edge> neighbors = graph.getOrDefault(current, new HashMap<>());
+//        for (Vertex neighbor : neighbors.keySet()) {
+
+        var edges = getEdges();
+        List<Vertex> neighbors = edges.stream()
+                .filter(e -> e.getTo() == current || e.getFrom() == current)
+                .flatMap(e -> Stream.of(e.getFrom(), e.getTo()))
+                .filter(v -> v != current)
+                .distinct()
+                .toList();
+
+        for (Vertex neighbor : neighbors) {
+            if (foundCycle.get()) return null;
+
             if (!visited.contains(neighbor)) {
                 parent.put(neighbor, current);
-                DFS(neighbor, visited, stack, parent, cycles);
+                List<Vertex> cycle = DFS(neighbor, visited, stack, parent, foundCycle);
+                if (cycle != null) return cycle;
             } else if (stack.contains(neighbor)) {
                 List<Vertex> cycle = new ArrayList<>();
                 Vertex temp = current;
@@ -281,12 +306,17 @@ public class Siec {
                     cycle.add(temp);
                 }
                 Collections.reverse(cycle);
-                if (cycle.size() >= 3) {
-                    cycles.add(cycle);
+
+                var cycleCost = countCycleCost(cycle);
+                if (cycleCost < 0 && getMinFlowInCycle(cycle) > 0) {
+                    foundCycle.set(true);
+                    return cycle;
                 }
             }
         }
+
         stack.remove(current);
+        return null;
     }
 
 
@@ -295,9 +325,20 @@ public class Siec {
         for (int i = 0; i < cycle.size(); i++) {
             Vertex from = cycle.get(i);
             Vertex to = cycle.get((i + 1) % cycle.size());
+            var value = 0;
             Edge e = graph.get(from).get(to);
-            if (e.getResidualFlow() < minVal)
-                minVal = e.getResidualFlow();
+            if(e != null)
+                value = e.getResidualFlow();
+
+            if(e == null) {
+                e = graph.get(to).get(from);
+                value = e.getCurrentFlow();
+            }
+
+            minVal = Math.min(value, minVal);
+
+//            if (e.getResidualFlow() < minVal)
+//                minVal = e.getResidualFlow();
         }
         return minVal;
     }
@@ -308,8 +349,17 @@ public class Siec {
             Vertex from = cycle.get(i);
             Vertex to = cycle.get((i + 1) % cycle.size());
             Edge e = this.getGraph().get(from).get(to);
-            cost += (e.getRepairCost() * e.getCurrentFlow());
+            var direction = 1;
+            if(e == null){
+                e = this.getGraph().get(to).get(from);
+                direction = -1;
+            }
+            cost += (direction * e.getRepairCost() * e.getCurrentFlow());
         }
         return cost;
+    }
+
+    public List<Edge> getEdges(){
+        return graph.values().stream().flatMap(v -> v.values().stream()).toList();
     }
 }
