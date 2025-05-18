@@ -17,9 +17,11 @@ public class Main {
 
     public static void main(String[] args) {
         //Generator generator = new Generator(666);
-        Generator generator = new Generator(4, 7, 5, 3, 4);
-        Data data = generator.generate();
-        //Data data = readFile();
+        //Generator generator = new Generator(4, 7, 5, 3, 4);
+        //Generator generator = new Generator(3, 3, 2, 1, 1);
+        //Generator generator = new Generator(3, 4, 2, 1, 1);
+        //Data data = generator.generate();
+        Data data = readFile();
         generateSVGfile(data.roads, data.farmlands, data.breweries, data.taverns);
         generateJSONfile(data);
     }
@@ -106,7 +108,7 @@ public class Main {
     }
 
     public static Data readFile() {
-        try (FileReader reader = new FileReader("data.json")) {
+        try (FileReader reader = new FileReader("gutData.json")) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             Data data = gson.fromJson(reader, Data.class);
             return data;

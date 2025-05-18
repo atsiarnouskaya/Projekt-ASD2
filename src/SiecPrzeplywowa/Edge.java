@@ -4,6 +4,7 @@ public class Edge {
     private int maxFlow;
     private int currentFlow;
     private int residualFlow;
+    private int repairCost;
     private Vertex from;
     private Vertex to;
     private Edge reverseEdge;
@@ -11,18 +12,20 @@ public class Edge {
     public Edge() {
     }
 
-    public Edge(Vertex from, Vertex to, int maxFlow) {
+    public Edge(Vertex from, Vertex to, int maxFlow, int repairCost) {
         this.from = from;
         this.to = to;
         this.residualFlow = maxFlow;
         this.currentFlow = 0;
         this.maxFlow = maxFlow;
+        this.repairCost= repairCost;
     }
 
-    public Edge(int maxFlow, int currentFlow) {
+    public Edge(int maxFlow, int currentFlow, int repairCost) {
         this.maxFlow = maxFlow;
         this.currentFlow = currentFlow;
         this.residualFlow = maxFlow - currentFlow;
+        this.repairCost= repairCost;
     }
 
     public int getMaxFlow() {
@@ -72,5 +75,13 @@ public class Edge {
                 ", currentFlow = " + currentFlow +
                 ", residualFlow = " + residualFlow +
                 ')');
+    }
+
+    public int getRepairCost() {
+        return repairCost;
+    }
+
+    public void setRepairCost(int repairCost) {
+        this.repairCost = repairCost;
     }
 }

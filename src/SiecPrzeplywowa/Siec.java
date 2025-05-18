@@ -41,7 +41,7 @@ public class Siec {
     // Ale jeśli te dwie krawędzie są zsynchronizowane i mają wspólną przepustowość,
     //    to zostaje tylko 2 w którąkolwiek stronę.
     // Czyli całkowita przepustowość to 5 — i ona się nigdy nie zmienia.
-    public void addEdge(int maxFlow, int x1, int y1, int x2, int y2) {
+    public void addEdge(int maxFlow, int repairCost, int x1, int y1, int x2, int y2) {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
 
@@ -54,8 +54,8 @@ public class Siec {
             to = vertexByCoord.get(x2 + "," + y2);
         }
 
-        Edge forwardEdge = new Edge(from, to, maxFlow);
-        Edge backwardEdge = new Edge(to, from, maxFlow);
+        Edge forwardEdge = new Edge(from, to, maxFlow, repairCost);
+        Edge backwardEdge = new Edge(to, from, maxFlow, repairCost);
         forwardEdge.setReverseEdge(backwardEdge);
         backwardEdge.setReverseEdge(forwardEdge);
         graph.get(from).put(to, forwardEdge);
@@ -63,15 +63,14 @@ public class Siec {
 
     }
 
-    public void setBeerFlow (int flow, int x1, int y1, int x2, int y2) {
+    public void setFlow(int flow, int x1, int y1, int x2, int y2) {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
-        if (from == null) {
-            Vertex v = addVertex(x1, y1);
-        }
-        if (to == null) {
-            Vertex v = addVertex(x2, y2);
-        }
+        if (from == null)
+            from = addVertex(x1, y1);
+        if (to == null)
+            from = addVertex(x2, y2);
+
         graph.get(from).get(to).setMaxFlow(flow);
         graph.get(from).get(to).setResidualFlow(flow);
         graph.get(from).get(to).setCurrentFlow(0);
@@ -81,32 +80,14 @@ public class Siec {
 
     }
 
-    public void updateEdge(int currentFlow, Vertex from, Vertex to) {
+    public void updateEdge(int flow, Vertex from, Vertex to) {
         Edge currentEdge = graph.get(from).get(to);
-        currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + currentFlow);
-        currentEdge.setResidualFlow(currentEdge.getResidualFlow() - currentFlow);
+        currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + flow);
+        currentEdge.setResidualFlow(currentEdge.getResidualFlow() - flow);
 
-        // Wydaje mi się, że poniższy kod powinien zostać usunięty.
-        // Residual flow wyraża pozostałą przepustowość na danej krawędzi
-        // Ta krawędź reprezentuje przepływ towarów w innym kierunku.
-        // Zwiększenie residual flow na krawędzi w przeciwnym kierunku powoduje dziwną sytuację:
-        // Przewiezienie 2 zboża z farmy do browaru zwiększa możliwość przewozu piwa o 2 tą samą drogą w przeciwnym kierunku
-        // Drogi o przeciwnych kierunkach mają swoje rozdzielne flow i residual flow i nie powinny być łączone
-
-        // Alternatywnie, jeśli droga miałaby mieć wspólną przepustowość dla obu kierunków* to prawdopodobnie
-        // powinno być tam `- currentFlow` zamiast `+ currentFlow`
-        //
-        // * Wspólną przepustowość dla obu kierunków, czyli:
-        // Drogą o wspólnej przepustowości 2 można:
-        // A. Przewieźć 2 od A do B i 0 od B do A
-        // B. Przewieźć 0 od A do B i 2 od B do A
-        // C. Przewieźć 1 od A do B i 1 od B do A
-        // * Rozdzielną przepustowość dla obu kierunków, czyli:
-        // Drogą o rozdzielnej przepustowości 2 można:
-        // A. Przewieźć 2 od A do B i 2 od B do A
-
-//        Edge currentBackwardEdge = currentEdge.getReverseEdge();
-//        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + currentFlow);
+        Edge currentBackwardEdge = currentEdge.getReverseEdge();
+        currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
+        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
     }
 
     public Vertex addSourceVertex(String sourceName) {
@@ -114,8 +95,8 @@ public class Siec {
         vertexByCoord.put(Integer.MIN_VALUE + "," + Integer.MIN_VALUE, source);
         graph.put(source, new HashMap<>());
         vertexByCoord.forEach((key, vertex) -> {
-            if (sourceName.equals(vertex.getType())){
-                addEdge(vertex.getCapacity(), source.getX(), source.getY(), vertex.getX(), vertex.getY());
+            if (sourceName.equals(vertex.getType())) {
+                addEdge(vertex.getCapacity(), 0, source.getX(), source.getY(), vertex.getX(), vertex.getY());
             }
         });
         return source;
@@ -126,13 +107,15 @@ public class Siec {
         vertexByCoord.put(Integer.MAX_VALUE + "," + Integer.MAX_VALUE, sink);
         graph.put(sink, new HashMap<>());
         vertexByCoord.forEach((key, vertex) -> {
-            if (sinkName.equals(vertex.getType())){
-                addEdge(vertex.getCapacity(), vertex.getX(), vertex.getY(), sink.getX(), sink.getY());
+            if (sinkName.equals(vertex.getType())) {
+                addEdge(vertex.getCapacity(), 0, vertex.getX(), vertex.getY(), sink.getX(), sink.getY());
             }
         });
         return sink;
     }
 
+
+    /// Te dwie metody robią to samo
     public void deleteSourceVertex(Vertex sourceVert) {
         graph.forEach((key, vertex) -> {
             graph.get(key).remove(sourceVert);
@@ -242,5 +225,91 @@ public class Siec {
             previousElements.get(dest).addGottenFlow(minFlow);
         }
         return maxFlow;
+    }
+
+    public void refactorRoads(Vertex src, Vertex sink) {
+        deleteSinkVertex(sink);
+        deleteSourceVertex(src);
+        while (true) {
+            var cycle = findCycleWithNegativeCost();
+            if (cycle.isEmpty()) break;
+            /// dwa razy to obliczam.. nie da się inaczej?
+            int minVal = getMinFlowInCycle(cycle);
+            System.out.println("___________");
+            System.out.println(cycle);
+            System.out.println("min val: " + minVal);
+            for (int i = 0; i < cycle.size(); i++) {
+                Vertex from = cycle.get(i);
+                Vertex to = cycle.get((i + 1) % cycle.size());
+                Edge e = graph.get(from).get(to);
+                System.out.println("Przed: "+e.getCurrentFlow()+", res: "+e.getResidualFlow());
+                updateEdge(minVal, e.getFrom(), e.getTo());
+
+                System.out.println("Po: "+e.getCurrentFlow()+", res: "+e.getResidualFlow());
+            }
+        }
+    }
+
+    public List<Vertex> findCycleWithNegativeCost() {
+        for (Vertex vertex : graph.keySet()) {
+            List<List<Vertex>> cycles = new ArrayList<>();
+            DFS(vertex, new HashSet<>(), new HashSet<>(), new HashMap<>(), cycles);
+            for (List<Vertex> cycle : cycles) {
+                if (countCycleCost(cycle) < 0 && getMinFlowInCycle(cycle) > 0)
+                    return cycle;
+            }
+        }
+        return new ArrayList<>();
+    }
+
+
+    private void DFS(Vertex current, Set<Vertex> visited, Set<Vertex> stack, Map<Vertex, Vertex> parent, List<List<Vertex>> cycles) {
+        visited.add(current);
+        stack.add(current);
+        Map<Vertex, Edge> neighbors = graph.getOrDefault(current, new HashMap<>());
+        for (Vertex neighbor : neighbors.keySet()) {
+            if (!visited.contains(neighbor)) {
+                parent.put(neighbor, current);
+                DFS(neighbor, visited, stack, parent, cycles);
+            } else if (stack.contains(neighbor)) {
+                List<Vertex> cycle = new ArrayList<>();
+                Vertex temp = current;
+                cycle.add(temp);
+                while (!temp.equals(neighbor)) {
+                    temp = parent.get(temp);
+                    if (temp == null) break;
+                    cycle.add(temp);
+                }
+                Collections.reverse(cycle);
+                if (cycle.size() >= 3) {
+                    cycles.add(cycle);
+                }
+            }
+        }
+        stack.remove(current);
+    }
+
+
+    public int getMinFlowInCycle(List<Vertex> cycle) {
+        int minVal = Integer.MAX_VALUE;
+        for (int i = 0; i < cycle.size(); i++) {
+            Vertex from = cycle.get(i);
+            Vertex to = cycle.get((i + 1) % cycle.size());
+            Edge e = graph.get(from).get(to);
+            if (e.getResidualFlow() < minVal)
+                minVal = e.getResidualFlow();
+        }
+        return minVal;
+    }
+
+    public int countCycleCost(List<Vertex> cycle) {
+        int cost = 0;
+        for (int i = 0; i < cycle.size(); i++) {
+            Vertex from = cycle.get(i);
+            Vertex to = cycle.get((i + 1) % cycle.size());
+            Edge e = this.getGraph().get(from).get(to);
+            cost += (e.getRepairCost() * e.getCurrentFlow());
+        }
+        return cost;
     }
 }
