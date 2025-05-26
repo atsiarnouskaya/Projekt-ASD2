@@ -2,18 +2,14 @@ package SiecPrzeplywowa;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Stream;
 
 public class Siec {
     private final Map<Vertex, HashMap<Vertex, Edge>> graph;
     private final Map<String, Vertex> vertexByCoord;
-    private final Map<Vertex, Vertex> previousElements;
 
     public Siec() {
         this.graph = new ConcurrentHashMap<>();
         this.vertexByCoord = new ConcurrentHashMap<>();
-        this.previousElements = new HashMap<>();
     }
 
     public Map<Vertex, HashMap<Vertex, Edge>> getGraph() {
@@ -48,11 +44,11 @@ public class Siec {
         Vertex to = vertexByCoord.get(x2 + "," + y2);
 
         if (from == null) {
-            Vertex v = addVertex(x1, y1);
+            addVertex(x1, y1);
             from = vertexByCoord.get(x1 + "," + y1);
         }
         if (to == null) {
-            Vertex v = addVertex(x2, y2);
+            addVertex(x2, y2);
             to = vertexByCoord.get(x2 + "," + y2);
         }
 
@@ -62,16 +58,15 @@ public class Siec {
         backwardEdge.setReverseEdge(forwardEdge);
         graph.get(from).put(to, forwardEdge);
         graph.get(to).put(from, backwardEdge);
-
     }
 
-    public void setFlow(int flow, int x1, int y1, int x2, int y2) {
+    public void setMaxFlow(int flow, int x1, int y1, int x2, int y2) {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
         if (from == null)
             from = addVertex(x1, y1);
         if (to == null)
-            from = addVertex(x2, y2);
+            to = addVertex(x2, y2);
 
         graph.get(from).get(to).setMaxFlow(flow);
         graph.get(from).get(to).setResidualFlow(flow);
@@ -84,17 +79,14 @@ public class Siec {
 
     public void updateEdge(int flow, Vertex from, Vertex to) {
         Edge currentEdge = graph.get(from).get(to);
-        if(currentEdge != null){
-            currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + flow);
-            currentEdge.setResidualFlow(currentEdge.getResidualFlow() - flow);
-        }
+        currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + flow);
+        currentEdge.setResidualFlow(currentEdge.getResidualFlow() - flow);
 
         Edge currentBackwardEdge = graph.get(to).get(from);
-        if(currentBackwardEdge != null){
-            currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
-            currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
-        }
+        currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
+        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
     }
+
 
     public Vertex addSourceVertex(String sourceName) {
         Vertex source = new Vertex(Integer.MIN_VALUE, Integer.MIN_VALUE, "source");
@@ -120,8 +112,6 @@ public class Siec {
         return sink;
     }
 
-
-    /// Te dwie metody robią to samo
     public void deleteSourceVertex(Vertex sourceVert) {
         graph.forEach((key, vertex) -> {
             graph.get(key).remove(sourceVert);
@@ -171,195 +161,57 @@ public class Siec {
         System.out.println("=== End of Graph ===\n");
     }
 
+    public boolean dijkstra(Vertex source, Vertex dest, Map<Vertex, Vertex> previousVertices) {
+        Map<Vertex, Integer> costToReach = new HashMap<>();
+        Set<Vertex> visited = new HashSet<>();
+        PriorityQueue<Vertex> pq = new PriorityQueue<>(Comparator.comparingInt(costToReach::get));
 
-    public boolean BFS(Vertex src, Vertex dest) {
-        Map<Vertex, Integer> visited = new HashMap<>();  //0 - nie odwiedzona, 1 - dodana do koleki, 2 - przetworzona
-        previousElements.clear();
-        src = vertexByCoord.get(src.getX() + "," + src.getY());
-        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
-        vertexByCoord.forEach((key, vertex) -> {
-            previousElements.put(vertexByCoord.get(key), null);
-            visited.put(vertexByCoord.get(key), 0);
-        });
-        visited.get(dest);
-        Queue<Vertex> queue = new LinkedList<>();
-        queue.add(src);
-        visited.put(src, 1);
-        while (!queue.isEmpty()) {
-            Vertex c = queue.poll();
-            visited.put(c, 2);
-            if (c.equals(dest)) {
-                return true;
-            }
+        graph.keySet().forEach(v -> costToReach.put(v, Integer.MAX_VALUE));
+        costToReach.put(source, 0);
+        pq.add(source);
+        previousVertices.clear();
 
+        while (!pq.isEmpty()) {
+            Vertex c = pq.poll();
+            if (visited.contains(c)) continue;
+            visited.add(c);
             graph.get(c).forEach((v, e) -> {
-                if ((visited.get(v) == 0) && (e.getResidualFlow() > 0)) {
-                    visited.put(c, 1);
-                    previousElements.put(v, c);
-                    queue.add(v);
+                if (e.getResidualFlow() > 0) {
+                    //relaxation
+                    int newCost = costToReach.get(c) + e.getRepairCost();
+                    if (costToReach.get(v) > newCost) {
+                        costToReach.put(v, newCost);
+                        previousVertices.put(v, c);
+                        pq.add(v);
+                    }
                 }
             });
         }
-        return false;
+        return previousVertices.containsKey(dest);
     }
 
-    public int maxFlow(Vertex src, Vertex dest) {
+    public int minCostMaxFlow(Vertex src, Vertex dest) {
         int maxFlow = 0;
         int minFlow;
-        src = vertexByCoord.get(src.getX() + "," + src.getY());
-        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
-
-        while (BFS(src, dest)) {
+        Map<Vertex, Vertex> previousVertices = new HashMap<>();
+        while (dijkstra(src, dest, previousVertices)) {
             minFlow = Integer.MAX_VALUE;
             Vertex currentVertex = dest;
-            while (previousElements.get(currentVertex) != null) {
-                Vertex prevVert = previousElements.get(currentVertex);
-                if (minFlow > graph.get(prevVert).get(currentVertex).getResidualFlow()) {
-                    minFlow = graph.get(prevVert).get(currentVertex).getResidualFlow();
-                }
-                currentVertex = previousElements.get(currentVertex);
+            while (previousVertices.get(currentVertex) != null) {
+                Vertex prevVertex = previousVertices.get(currentVertex);
+                minFlow = Math.min(minFlow, graph.get(prevVertex).get(currentVertex).getResidualFlow());
+                currentVertex = prevVertex;
             }
-
             currentVertex = dest;
 
-            while (previousElements.get(currentVertex) != null) {
-                Vertex prevVert = previousElements.get(currentVertex);
-                updateEdge(minFlow, prevVert, currentVertex);
-                currentVertex = previousElements.get(currentVertex);
+            while (previousVertices.get(currentVertex) != null) {
+                Vertex prevVertex = previousVertices.get(currentVertex);
+                updateEdge(minFlow, prevVertex, currentVertex);
+                currentVertex = prevVertex;
             }
             maxFlow += minFlow;
-            previousElements.get(dest).addGottenFlow(minFlow);
+            previousVertices.get(dest).addGottenFlow(minFlow);
         }
         return maxFlow;
-    }
-
-    public void refactorRoads(Vertex src, Vertex sink) {
-        deleteSinkVertex(sink);
-        deleteSourceVertex(src);
-        for (Vertex v1 : graph.keySet().stream().toList()) {
-            HashMap<Vertex, Edge> edges = graph.get(v1);
-            for(Vertex v2: edges.keySet().stream().toList())
-            {
-                var edge = graph.get(v1).get(v2);
-                if(edge.getCurrentFlow() < 0) {
-                    graph.get(v1).remove(v2);
-                }
-            }
-        }
-
-        while (true) {
-            List<Vertex> cycleWithNegativeCost = new ArrayList<>();
-            for (Vertex vertex : graph.keySet()) {
-                cycleWithNegativeCost = DFS(vertex, new HashSet<>(), new HashSet<>(), new HashMap<>(), new AtomicBoolean(false));
-                if (cycleWithNegativeCost != null)
-                    break;
-            }
-            if (cycleWithNegativeCost == null)
-                break;
-            System.out.println("----");
-            System.out.println(cycleWithNegativeCost);
-            System.out.println("koszt: " + countCycleCost(cycleWithNegativeCost));
-
-
-            /// dwa razy to obliczam.. nie da się inaczej?
-            int minVal = getMinFlowInCycle(cycleWithNegativeCost);
-            for (int i = 0; i < cycleWithNegativeCost.size(); i++) {
-                Vertex from = cycleWithNegativeCost.get(i);
-                Vertex to = cycleWithNegativeCost.get((i + 1) % cycleWithNegativeCost.size());
-                updateEdge(minVal, from, to);
-            }
-        }
-    }
-
-    private List<Vertex> DFS(Vertex current, Set<Vertex> visited, Set<Vertex> stack,
-                             Map<Vertex, Vertex> parent, AtomicBoolean foundCycle) {
-        if (foundCycle.get()) return null;
-
-        visited.add(current);
-        stack.add(current);
-
-        // Map<Vertex, Edge> neighbors = graph.getOrDefault(current, new HashMap<>());
-//        for (Vertex neighbor : neighbors.keySet()) {
-
-        var edges = getEdges();
-        List<Vertex> neighbors = edges.stream()
-                .filter(e -> e.getTo() == current || e.getFrom() == current)
-                .flatMap(e -> Stream.of(e.getFrom(), e.getTo()))
-                .filter(v -> v != current)
-                .distinct()
-                .toList();
-
-        for (Vertex neighbor : neighbors) {
-            if (foundCycle.get()) return null;
-
-            if (!visited.contains(neighbor)) {
-                parent.put(neighbor, current);
-                List<Vertex> cycle = DFS(neighbor, visited, stack, parent, foundCycle);
-                if (cycle != null) return cycle;
-            } else if (stack.contains(neighbor)) {
-                List<Vertex> cycle = new ArrayList<>();
-                Vertex temp = current;
-                cycle.add(temp);
-                while (!temp.equals(neighbor)) {
-                    temp = parent.get(temp);
-                    if (temp == null) break;
-                    cycle.add(temp);
-                }
-                Collections.reverse(cycle);
-
-                var cycleCost = countCycleCost(cycle);
-                if (cycleCost < 0 && getMinFlowInCycle(cycle) > 0) {
-                    foundCycle.set(true);
-                    return cycle;
-                }
-            }
-        }
-
-        stack.remove(current);
-        return null;
-    }
-
-
-    public int getMinFlowInCycle(List<Vertex> cycle) {
-        int minVal = Integer.MAX_VALUE;
-        for (int i = 0; i < cycle.size(); i++) {
-            Vertex from = cycle.get(i);
-            Vertex to = cycle.get((i + 1) % cycle.size());
-            var value = 0;
-            Edge e = graph.get(from).get(to);
-            if(e != null)
-                value = e.getResidualFlow();
-
-            if(e == null) {
-                e = graph.get(to).get(from);
-                value = e.getCurrentFlow();
-            }
-
-            minVal = Math.min(value, minVal);
-
-//            if (e.getResidualFlow() < minVal)
-//                minVal = e.getResidualFlow();
-        }
-        return minVal;
-    }
-
-    public int countCycleCost(List<Vertex> cycle) {
-        int cost = 0;
-        for (int i = 0; i < cycle.size(); i++) {
-            Vertex from = cycle.get(i);
-            Vertex to = cycle.get((i + 1) % cycle.size());
-            Edge e = this.getGraph().get(from).get(to);
-            var direction = 1;
-            if(e == null){
-                e = this.getGraph().get(to).get(from);
-                direction = -1;
-            }
-            cost += (direction * e.getRepairCost() * e.getCurrentFlow());
-        }
-        return cost;
-    }
-
-    public List<Edge> getEdges(){
-        return graph.values().stream().flatMap(v -> v.values().stream()).toList();
     }
 }

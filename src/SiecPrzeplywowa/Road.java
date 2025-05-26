@@ -7,6 +7,7 @@ public class Road extends Line2D.Double {
     private int maxBeerFlow;
     private int maxBarleyFlow;
     private int repairCost;
+
     public Road(Point2D x1, Point2D x2){
         super(x1, x2);
     }
@@ -34,5 +35,6 @@ public class Road extends Line2D.Double {
     public void setRepairCost(int repairCost) {
         this.repairCost = repairCost;
     }
+
 }
 
