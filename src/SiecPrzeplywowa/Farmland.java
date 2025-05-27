@@ -3,14 +3,21 @@ package SiecPrzeplywowa;
 import java.awt.geom.Point2D;
 
 public class Farmland extends Point2D.Double {
-    private int productionCapacity;
-
-    public Farmland(int x, int y, int productionCapacity) {
+    private Quadrant quadrant;
+    private double productionCapacity;
+    public Farmland(double x, double y) {
         super(x, y);
-        this.productionCapacity = productionCapacity; // productionCapacity will depend on quadrant
     }
-
-    public int getProductionCapacity() {
+    public void setQuadrant(Quadrant quadrant) {
+        this.quadrant = quadrant;
+    }
+    public Quadrant getQuadrant() {
+        return quadrant;
+    }
+    public void setProductionCapacity(double productionCapacity) {
+        this.productionCapacity = productionCapacity;
+    }
+    public double getProductionCapacity() {
         return productionCapacity;
     }
 }
