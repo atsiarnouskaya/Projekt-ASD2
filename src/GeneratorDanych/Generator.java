@@ -181,7 +181,8 @@ public class Generator {
     }
 
     public Data generate() {
-        ArrayList<Road> roads = generateRoads2();
+        //ArrayList<Road> roads = generateRoads2();
+        ArrayList<Road> roads = generateRoads();
         ArrayList<Point2D> existingObjects = new ArrayList<>();
         ArrayList<Farmland> farmlands = generateObjects(roads, existingObjects, new FarmlandFactory(), farmlandsCount);
         existingObjects.addAll(farmlands);

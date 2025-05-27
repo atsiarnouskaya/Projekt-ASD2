@@ -6,12 +6,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Siec {
     private final Map<Vertex, HashMap<Vertex, Edge>> graph;
     private final Map<String, Vertex> vertexByCoord;
-    private final Map<Vertex, Vertex> previousElements;
 
     public Siec() {
         this.graph = new ConcurrentHashMap<>();
         this.vertexByCoord = new ConcurrentHashMap<>();
-        this.previousElements = new HashMap<>();
     }
 
     public Map<Vertex, HashMap<Vertex, Edge>> getGraph() {
@@ -41,37 +39,35 @@ public class Siec {
     // Ale jeśli te dwie krawędzie są zsynchronizowane i mają wspólną przepustowość,
     //    to zostaje tylko 2 w którąkolwiek stronę.
     // Czyli całkowita przepustowość to 5 — i ona się nigdy nie zmienia.
-    public void addEdge(int maxFlow, int x1, int y1, int x2, int y2) {
+    public void addEdge(int maxFlow, int repairCost, int x1, int y1, int x2, int y2) {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
 
         if (from == null) {
-            Vertex v = addVertex(x1, y1);
+            addVertex(x1, y1);
             from = vertexByCoord.get(x1 + "," + y1);
         }
         if (to == null) {
-            Vertex v = addVertex(x2, y2);
+            addVertex(x2, y2);
             to = vertexByCoord.get(x2 + "," + y2);
         }
 
-        Edge forwardEdge = new Edge(from, to, maxFlow);
-        Edge backwardEdge = new Edge(to, from, maxFlow);
+        Edge forwardEdge = new Edge(from, to, maxFlow, repairCost);
+        Edge backwardEdge = new Edge(to, from, maxFlow, repairCost);
         forwardEdge.setReverseEdge(backwardEdge);
         backwardEdge.setReverseEdge(forwardEdge);
         graph.get(from).put(to, forwardEdge);
         graph.get(to).put(from, backwardEdge);
-
     }
 
-    public void setBeerFlow (int flow, int x1, int y1, int x2, int y2) {
+    public void setMaxFlow(int flow, int x1, int y1, int x2, int y2) {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
-        if (from == null) {
-            Vertex v = addVertex(x1, y1);
-        }
-        if (to == null) {
-            Vertex v = addVertex(x2, y2);
-        }
+        if (from == null)
+            from = addVertex(x1, y1);
+        if (to == null)
+            to = addVertex(x2, y2);
+
         graph.get(from).get(to).setMaxFlow(flow);
         graph.get(from).get(to).setResidualFlow(flow);
         graph.get(from).get(to).setCurrentFlow(0);
@@ -81,41 +77,24 @@ public class Siec {
 
     }
 
-    public void updateEdge(int currentFlow, Vertex from, Vertex to) {
+    public void updateEdge(int flow, Vertex from, Vertex to) {
         Edge currentEdge = graph.get(from).get(to);
-        currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + currentFlow);
-        currentEdge.setResidualFlow(currentEdge.getResidualFlow() - currentFlow);
+        currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + flow);
+        currentEdge.setResidualFlow(currentEdge.getResidualFlow() - flow);
 
-        // Wydaje mi się, że poniższy kod powinien zostać usunięty.
-        // Residual flow wyraża pozostałą przepustowość na danej krawędzi
-        // Ta krawędź reprezentuje przepływ towarów w innym kierunku.
-        // Zwiększenie residual flow na krawędzi w przeciwnym kierunku powoduje dziwną sytuację:
-        // Przewiezienie 2 zboża z farmy do browaru zwiększa możliwość przewozu piwa o 2 tą samą drogą w przeciwnym kierunku
-        // Drogi o przeciwnych kierunkach mają swoje rozdzielne flow i residual flow i nie powinny być łączone
-
-        // Alternatywnie, jeśli droga miałaby mieć wspólną przepustowość dla obu kierunków* to prawdopodobnie
-        // powinno być tam `- currentFlow` zamiast `+ currentFlow`
-        //
-        // * Wspólną przepustowość dla obu kierunków, czyli:
-        // Drogą o wspólnej przepustowości 2 można:
-        // A. Przewieźć 2 od A do B i 0 od B do A
-        // B. Przewieźć 0 od A do B i 2 od B do A
-        // C. Przewieźć 1 od A do B i 1 od B do A
-        // * Rozdzielną przepustowość dla obu kierunków, czyli:
-        // Drogą o rozdzielnej przepustowości 2 można:
-        // A. Przewieźć 2 od A do B i 2 od B do A
-
-//        Edge currentBackwardEdge = currentEdge.getReverseEdge();
-//        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + currentFlow);
+        Edge currentBackwardEdge = graph.get(to).get(from);
+        currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
+        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
     }
+
 
     public Vertex addSourceVertex(String sourceName) {
         Vertex source = new Vertex(Integer.MIN_VALUE, Integer.MIN_VALUE, "source");
         vertexByCoord.put(Integer.MIN_VALUE + "," + Integer.MIN_VALUE, source);
         graph.put(source, new HashMap<>());
         vertexByCoord.forEach((key, vertex) -> {
-            if (sourceName.equals(vertex.getType())){
-                addEdge(vertex.getCapacity(), source.getX(), source.getY(), vertex.getX(), vertex.getY());
+            if (sourceName.equals(vertex.getType())) {
+                addEdge(vertex.getCapacity(), 0, source.getX(), source.getY(), vertex.getX(), vertex.getY());
             }
         });
         return source;
@@ -126,8 +105,8 @@ public class Siec {
         vertexByCoord.put(Integer.MAX_VALUE + "," + Integer.MAX_VALUE, sink);
         graph.put(sink, new HashMap<>());
         vertexByCoord.forEach((key, vertex) -> {
-            if (sinkName.equals(vertex.getType())){
-                addEdge(vertex.getCapacity(), vertex.getX(), vertex.getY(), sink.getX(), sink.getY());
+            if (sinkName.equals(vertex.getType())) {
+                addEdge(vertex.getCapacity(), 0, vertex.getX(), vertex.getY(), sink.getX(), sink.getY());
             }
         });
         return sink;
@@ -182,64 +161,56 @@ public class Siec {
         System.out.println("=== End of Graph ===\n");
     }
 
+    public boolean dijkstra(Vertex source, Vertex dest, Map<Vertex, Vertex> previousVertices) {
+        Map<Vertex, Integer> costToReach = new HashMap<>();
+        Set<Vertex> visited = new HashSet<>();
+        PriorityQueue<Vertex> pq = new PriorityQueue<>(Comparator.comparingInt(costToReach::get));
 
-    public boolean BFS(Vertex src, Vertex dest) {
-        Map<Vertex, Integer> visited = new HashMap<>();  //0 - nie odwiedzona, 1 - dodana do koleki, 2 - przetworzona
-        previousElements.clear();
-        src = vertexByCoord.get(src.getX() + "," + src.getY());
-        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
-        vertexByCoord.forEach((key, vertex) -> {
-            previousElements.put(vertexByCoord.get(key), null);
-            visited.put(vertexByCoord.get(key), 0);
-        });
-        visited.get(dest);
-        Queue<Vertex> queue = new LinkedList<>();
-        queue.add(src);
-        visited.put(src, 1);
-        while (!queue.isEmpty()) {
-            Vertex c = queue.poll();
-            visited.put(c, 2);
-            if (c.equals(dest)) {
-                return true;
-            }
+        graph.keySet().forEach(v -> costToReach.put(v, Integer.MAX_VALUE));
+        costToReach.put(source, 0);
+        pq.add(source);
+        previousVertices.clear();
 
+        while (!pq.isEmpty()) {
+            Vertex c = pq.poll();
+            if (visited.contains(c)) continue;
+            visited.add(c);
             graph.get(c).forEach((v, e) -> {
-                if ((visited.get(v) == 0) && (e.getResidualFlow() > 0)) {
-                    visited.put(c, 1);
-                    previousElements.put(v, c);
-                    queue.add(v);
+                if (e.getResidualFlow() > 0) {
+                    //relaxation
+                    int newCost = costToReach.get(c) + e.getRepairCost();
+                    if (costToReach.get(v) > newCost) {
+                        costToReach.put(v, newCost);
+                        previousVertices.put(v, c);
+                        pq.add(v);
+                    }
                 }
             });
         }
-        return false;
+        return previousVertices.containsKey(dest);
     }
 
-    public int maxFlow(Vertex src, Vertex dest) {
+    public int minCostMaxFlow(Vertex src, Vertex dest) {
         int maxFlow = 0;
         int minFlow;
-        src = vertexByCoord.get(src.getX() + "," + src.getY());
-        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
-
-        while (BFS(src, dest)) {
+        Map<Vertex, Vertex> previousVertices = new HashMap<>();
+        while (dijkstra(src, dest, previousVertices)) {
             minFlow = Integer.MAX_VALUE;
             Vertex currentVertex = dest;
-            while (previousElements.get(currentVertex) != null) {
-                Vertex prevVert = previousElements.get(currentVertex);
-                if (minFlow > graph.get(prevVert).get(currentVertex).getResidualFlow()) {
-                    minFlow = graph.get(prevVert).get(currentVertex).getResidualFlow();
-                }
-                currentVertex = previousElements.get(currentVertex);
+            while (previousVertices.get(currentVertex) != null) {
+                Vertex prevVertex = previousVertices.get(currentVertex);
+                minFlow = Math.min(minFlow, graph.get(prevVertex).get(currentVertex).getResidualFlow());
+                currentVertex = prevVertex;
             }
-
             currentVertex = dest;
 
-            while (previousElements.get(currentVertex) != null) {
-                Vertex prevVert = previousElements.get(currentVertex);
-                updateEdge(minFlow, prevVert, currentVertex);
-                currentVertex = previousElements.get(currentVertex);
+            while (previousVertices.get(currentVertex) != null) {
+                Vertex prevVertex = previousVertices.get(currentVertex);
+                updateEdge(minFlow, prevVertex, currentVertex);
+                currentVertex = prevVertex;
             }
             maxFlow += minFlow;
-            previousElements.get(dest).addGottenFlow(minFlow);
+            previousVertices.get(dest).addGottenFlow(minFlow);
         }
         return maxFlow;
     }
