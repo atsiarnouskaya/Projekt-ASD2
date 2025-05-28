@@ -17,7 +17,7 @@ public class Farmland extends Point2D.Double {
     public void setProductionCapacity(int productionCapacity) {
         this.productionCapacity = productionCapacity;
     }
-    public double getProductionCapacity() {
+    public int getProductionCapacity() {
         return productionCapacity;
     }
 }
