@@ -4,7 +4,7 @@ import java.awt.geom.Point2D;
 
 public class Farmland extends Point2D.Double {
     private Quadrant quadrant;
-    private double productionCapacity;
+    private int productionCapacity;
     public Farmland(double x, double y) {
         super(x, y);
     }
@@ -14,7 +14,7 @@ public class Farmland extends Point2D.Double {
     public Quadrant getQuadrant() {
         return quadrant;
     }
-    public void setProductionCapacity(double productionCapacity) {
+    public void setProductionCapacity(int productionCapacity) {
         this.productionCapacity = productionCapacity;
     }
     public double getProductionCapacity() {

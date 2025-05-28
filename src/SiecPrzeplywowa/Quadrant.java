@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Quadrant {
     private ArrayList<Point2D> hull = new ArrayList<>();
     private final ArrayList<Farmland> farmlands = new ArrayList<>();
-    private double productionPerPlot;
+    private int productionPerPlot;
     public void setHull(ArrayList<Point2D> hull) {
         this.hull = hull;
     }
@@ -30,11 +30,11 @@ public class Quadrant {
         return farmlands;
     }
 
-    public void setProductionPerPlot(double productionPerPlot) {
+    public void setProductionPerPlot(int productionPerPlot) {
         this.productionPerPlot = productionPerPlot;
     }
 
-    public double getProductionPerPlot() {
+    public int getProductionPerPlot() {
         return productionPerPlot;
     }
 }
