@@ -6,10 +6,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Siec {
     private final Map<Vertex, HashMap<Vertex, Edge>> graph;
     private final Map<String, Vertex> vertexByCoord;
+    private final Map<Vertex, Vertex> previousElements;
 
     public Siec() {
         this.graph = new ConcurrentHashMap<>();
         this.vertexByCoord = new ConcurrentHashMap<>();
+        this.previousElements = new HashMap<>();
     }
 
     public Map<Vertex, HashMap<Vertex, Edge>> getGraph() {
@@ -24,7 +26,6 @@ public class Siec {
         graph.put(v, new HashMap<>());
         return v;
     }
-
 
     public Vertex getVertex(int x, int y) {
         return vertexByCoord.get(x + "," + y);
@@ -60,6 +61,10 @@ public class Siec {
         graph.get(to).put(from, backwardEdge);
     }
 
+    public Edge getEdge(Vertex from, Vertex to) {
+        return graph.get(from).get(to);
+    }
+
     public void setMaxFlow(int flow, int x1, int y1, int x2, int y2) {
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
@@ -74,7 +79,6 @@ public class Siec {
         graph.get(to).get(from).setMaxFlow(flow);
         graph.get(to).get(from).setResidualFlow(flow);
         graph.get(to).get(from).setCurrentFlow(0);
-
     }
 
     public void updateEdge(int flow, Vertex from, Vertex to) {
@@ -128,10 +132,6 @@ public class Siec {
         vertexByCoord.remove(sinkVert.getX() + "," + sinkVert.getY());
     }
 
-    public Edge getData(Vertex from, Vertex to) {
-        return graph.get(from).get(to);
-    }
-
     public void printGraph() {
         System.out.println("=== Flow Network Graph ===");
 
@@ -159,6 +159,66 @@ public class Siec {
         }
 
         System.out.println("=== End of Graph ===\n");
+    }
+
+    public boolean BFS(Vertex src, Vertex dest) {
+        Map<Vertex, Integer> visited = new HashMap<>();  //0 - nie odwiedzona, 1 - dodana do koleki, 2 - przetworzona
+        previousElements.clear();
+        src = vertexByCoord.get(src.getX() + "," + src.getY());
+        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
+        vertexByCoord.forEach((key, vertex) -> {
+            previousElements.put(vertexByCoord.get(key), null);
+            visited.put(vertexByCoord.get(key), 0);
+        });
+        Queue<Vertex> queue = new LinkedList<>();
+        queue.add(src);
+        visited.put(src, 1);
+        while (!queue.isEmpty()) {
+            Vertex c = queue.poll();
+            visited.put(c, 2);
+            if (c.equals(dest)) {
+                return true;
+            }
+
+            graph.get(c).forEach((v, e) -> {
+                if ((visited.get(v) == 0) && (e.getResidualFlow() > 0)) {
+                    visited.put(c, 1);
+                    previousElements.put(v, c);
+                    queue.add(v);
+                }
+            });
+        }
+        return false;
+    }
+
+    public int BFSMaxFlow(Vertex src, Vertex dest) {
+        int maxFlow = 0;
+        int minFlow;
+        src = vertexByCoord.get(src.getX() + "," + src.getY());
+        dest = vertexByCoord.get(dest.getX() + "," + dest.getY());
+
+        while (BFS(src, dest)) {
+            minFlow = Integer.MAX_VALUE;
+            Vertex currentVertex = dest;
+            while (previousElements.get(currentVertex) != null) {
+                Vertex prevVert = previousElements.get(currentVertex);
+                if (minFlow > graph.get(prevVert).get(currentVertex).getResidualFlow()) {
+                    minFlow = graph.get(prevVert).get(currentVertex).getResidualFlow();
+                }
+                currentVertex = previousElements.get(currentVertex);
+            }
+
+            currentVertex = dest;
+
+            while (previousElements.get(currentVertex) != null) {
+                Vertex prevVert = previousElements.get(currentVertex);
+                updateEdge(minFlow, prevVert, currentVertex);
+                currentVertex = previousElements.get(currentVertex);
+            }
+            maxFlow += minFlow;
+            previousElements.get(dest).addGottenFlow(minFlow);
+        }
+        return maxFlow;
     }
 
     public boolean dijkstra(Vertex source, Vertex dest, Map<Vertex, Vertex> previousVertices) {
