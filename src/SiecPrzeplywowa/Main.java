@@ -19,10 +19,10 @@ public class Main {
         ArrayList<Quadrant> quadrants = manager.createQuadrants();
 
         Siec S2 = createNetwork(data);
-        barleyFlowBeforeDestroying(S2, data);
-        beerFlowBeforeDestroying(S2, data);
-        barleyFlowAfterDestroying(S2, data);
-        beerFlowAfterDestroying(S2, data);
+        barleyFlowBeforeDestroying(S2, data, quadrants);
+        beerFlowBeforeDestroying(S2, data, quadrants);
+        barleyFlowAfterDestroying(S2, data, quadrants);
+        beerFlowAfterDestroying(S2, data, quadrants);
         List<Point2D> intersections = data.getIntersections();
 
         for (int i = 0; i < quadrants.size(); i++) {
@@ -41,7 +41,7 @@ public class Main {
         }
     }
 
-    public static void barleyFlowBeforeDestroying(Siec S, Data data) {
+    public static void barleyFlowBeforeDestroying(Siec S, Data data, ArrayList<Quadrant> quadrants) {
         Vertex src = S.addSourceVertex("Farmland");
         Vertex sink = S.addSinkVertex("Brewery");
 
@@ -52,13 +52,13 @@ public class Main {
         //S.printGraph();
 
         System.out.println("Max barley flow before destroying roads: " + maxBarleyFlowBeforeDestroying);
-        generateSVGfile(S, "BARLEY FLOW BEFORE DESTROYING", "barleyFlowBeforeDestroying.svg", maxBarleyFlowBeforeDestroying, null);
+        generateSVGfile(S, "BARLEY FLOW BEFORE DESTROYING", "barleyFlowBeforeDestroying.svg", maxBarleyFlowBeforeDestroying, quadrants);
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
     }
 
-    public static void beerFlowBeforeDestroying(Siec S, Data data) {
+    public static void beerFlowBeforeDestroying(Siec S, Data data, ArrayList<Quadrant> quadrants) {
         for (Road road : data.roads) {
             S.setMaxFlow(road.getMaxBeerFlow(), (int) road.x1, (int) road.y1, (int) road.x2, (int) road.y2);
             if (S.getVertex((int) road.x1, (int) road.y1).getType().equals("Brewery"))
@@ -74,13 +74,13 @@ public class Main {
         //S.printGraph();
 
         System.out.println("Max beer flow before destroying roads: " + maxBeerFlowBeforeDestroing);
-        generateSVGfile(S, "BEER FLOW BEFORE DESTROYNG", "beerFlowBeforeDestroyng.svg", maxBeerFlowBeforeDestroing, null);
+        generateSVGfile(S, "BEER FLOW BEFORE DESTROYNG", "beerFlowBeforeDestroyng.svg", maxBeerFlowBeforeDestroing, quadrants);
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
     }
 
-    public static void barleyFlowAfterDestroying(Siec S, Data data) {
+    public static void barleyFlowAfterDestroying(Siec S, Data data, ArrayList<Quadrant> quadrants) {
         Vertex src = S.addSourceVertex("Farmland");
         Vertex sink = S.addSinkVertex("Brewery");
 
@@ -91,13 +91,13 @@ public class Main {
         //S.printGraph();
 
         System.out.println("Max barley flow after destroying roads: " + maxBarleyFlowAfterDestroying);
-        generateSVGfile(S, "BARLEY FLOW AFTER DESTROYING", "barleyFlowAfterDestroying.svg", maxBarleyFlowAfterDestroying, null);
+        generateSVGfile(S, "BARLEY FLOW AFTER DESTROYING", "barleyFlowAfterDestroying.svg", maxBarleyFlowAfterDestroying, quadrants);
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
     }
 
-    public static void beerFlowAfterDestroying(Siec S, Data data) {
+    public static void beerFlowAfterDestroying(Siec S, Data data, ArrayList<Quadrant> quadrants) {
         for (Road road : data.roads) {
             S.setMaxFlow(road.getMaxBeerFlow(), (int) road.x1, (int) road.y1, (int) road.x2, (int) road.y2);
             if (S.getVertex((int) road.x1, (int) road.y1).getType().equals("Brewery"))
@@ -113,7 +113,7 @@ public class Main {
         //S.printGraph();
 
         System.out.println("Max beer flow after destroying roads: " + maxBeerFlowAfterDestroying);
-        generateSVGfile(S, "BEER FLOW AFTER DESTROYING", "beerFlowAfterDestroying.svg", maxBeerFlowAfterDestroying, null);
+        generateSVGfile(S, "BEER FLOW AFTER DESTROYING", "beerFlowAfterDestroying.svg", maxBeerFlowAfterDestroying, quadrants);
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
@@ -164,6 +164,7 @@ public class Main {
     }
 
     public static void generateSVGfile(Siec siec, String mapName, String fileName, int maxFlow, ArrayList<Quadrant> quadrants) {
+
         int flowCost = 0;
         var roads = siec.getGraph().values().stream()
                 .flatMap(x -> x.values().stream())
@@ -193,13 +194,18 @@ public class Main {
         double mapHeight = maxYCoord + (margin * 2);
         double mapWidth = maxXCoord + (margin * 2);
 
+        for(Edge r: roads){
+            if(r.getCurrentFlow()>0)
+                flowCost+=r.getRepairCost();
+        }
+
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
             writer.println("<!DOCTYPE html>\n" +
                     "<html>\n" +
                     "<body>\n" +
                     "\n" +
                     "<svg display=\"block\" style=\"background-color:black;\" height=\"" + mapHeight + "\" width=\"" + mapWidth + "\" xmlns=\"http://www.w3.org/2000/svg\">");
-            writer.println("<text x=\"2\" y=\"" + (mapHeight - 2) + "\" font-family=\"Arial\" font-weight=\"600\" font-size=\"3.5px\" fill=\"white\">" + mapName + "  (max flow: " + maxFlow + "); flow cost: " + flowCost + ")</text>");
+            writer.println("<text x=\"2\" y=\"" + (mapHeight - 2) + "\" font-family=\"Arial\" font-weight=\"600\" font-size=\"3.5px\" fill=\"white\">" + mapName + "  (max flow: " + maxFlow + "; flow cost: " + flowCost + ")</text>");
 
             for (Edge road : roads) {
                 if (road.getCurrentFlow() != 0)
@@ -218,7 +224,6 @@ public class Main {
 
             for (Edge road : roads) {
                 if (road.getCurrentFlow() != 0) {
-                    flowCost += road.getRepairCost();
                     writer.println("<text x=\"" + ((road.getFrom().getX() - minXCoord + margin) + (road.getTo().getX() - minXCoord + margin)) / 2 + "\" y=\"" + ((road.getFrom().getY() - minYCoord + margin) + (road.getTo().getY() - minYCoord + margin)) / 2 + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-weight=\"600\" font-size=\"3.1\" text-anchor=\"middle\" dominant-baseline=\"middle\">" + road.getCurrentFlow() + "/" + road.getMaxFlow() + "</text>");
                     writer.println("<text x=\"" + ((road.getFrom().getX() - minXCoord + margin) + (road.getTo().getX() - minXCoord + margin)) / 2 + "\" y=\"" + ((((road.getFrom().getY() - minYCoord + margin) + (road.getTo().getY() - minYCoord + margin)) / 2) + 3.5) + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-weight=\"600\" font-size=\"2.6\" text-anchor=\"middle\" dominant-baseline=\"middle\">" + road.getRepairCost() + "$</text>");
                 }
@@ -252,7 +257,7 @@ public class Main {
                 writer.println("<text x=\"" + (tavern.getX() - minXCoord + margin) + "\" y=\"" + ((tavern.getY() - minYCoord + margin) + 2.5) + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-size=\"2.5\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"start\">" + incomingFlow + "/" + tavern.getCapacity() + "</text>");
             }
 
-            if (quadrants != null)
+            if (quadrants != null) {
                 for (var q : quadrants) {
                     StringBuilder polygonPoints = new StringBuilder();
                     for (Point2D p : q.getHull()) {
@@ -262,6 +267,8 @@ public class Main {
                     }
                     writer.println("<polygon points=\"" + polygonPoints.toString().trim() + "\" " + "style=\"fill:none;stroke:#fcba03;stroke-width:0.7;\" />");
                 }
+            }
+
             writer.println("\n" +
                     "</svg>\n" +
                     "\n" +
