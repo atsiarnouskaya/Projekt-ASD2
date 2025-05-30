@@ -1,6 +1,6 @@
 package GeneratorDanych;
 
-import SiecPrzeplywowa.Brewery;
+import FlowNetwork.Brewery;
 
 import java.util.Random;
 

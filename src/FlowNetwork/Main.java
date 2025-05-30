@@ -1,4 +1,4 @@
-package SiecPrzeplywowa;
+package FlowNetwork;
 
 import com.google.gson.*;
 
@@ -18,11 +18,11 @@ public class Main {
         QuadrantManager manager = new QuadrantManager(farmlands);
         ArrayList<Quadrant> quadrants = manager.createQuadrants();
 
-        Siec S2 = createNetwork(data);
-        barleyFlowBeforeDestroying(S2, data, quadrants);
-        beerFlowBeforeDestroying(S2, data, quadrants);
-        barleyFlowAfterDestroying(S2, data, quadrants);
-        beerFlowAfterDestroying(S2, data, quadrants);
+        Network S2 = createNetwork(data);
+        barleyFlowBeforeDamage(S2, data, quadrants);
+        beerFlowBeforeDamage(S2, data, quadrants);
+        barleyFlowAfterDamage(S2, data, quadrants);
+        beerFlowAfterDamage(S2, data, quadrants);
         List<Point2D> intersections = data.getIntersections();
 
         for (int i = 0; i < quadrants.size(); i++) {
@@ -41,24 +41,24 @@ public class Main {
         }
     }
 
-    public static void barleyFlowBeforeDestroying(Siec S, Data data, ArrayList<Quadrant> quadrants) {
+    public static void barleyFlowBeforeDamage(Network S, Data data, ArrayList<Quadrant> quadrants) {
         Vertex src = S.addSourceVertex("Farmland");
         Vertex sink = S.addSinkVertex("Brewery");
 
         for (Road road : data.roads)
             S.setMaxFlow(road.getMaxBarleyFlow(), (int) road.x1, (int) road.y1, (int) road.x2, (int) road.y2);
 
-        int maxBarleyFlowBeforeDestroying = S.BFSMaxFlow(src, sink);
+        int maxBarleyFlowBeforeDamage = S.BFSMaxFlow(src, sink);
         //S.printGraph();
 
-        System.out.println("Max barley flow before destroying roads: " + maxBarleyFlowBeforeDestroying);
-        generateSVGfile(S, "BARLEY FLOW BEFORE DESTROYING", "barleyFlowBeforeDestroying.svg", maxBarleyFlowBeforeDestroying, quadrants);
+        System.out.println("Max barley flow before damaging roads: " + maxBarleyFlowBeforeDamage);
+        generateSVGfile(S, "BARLEY FLOW BEFORE DAMAGING", "barleyFlowBeforeDamage.svg", maxBarleyFlowBeforeDamage, quadrants);
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
     }
 
-    public static void beerFlowBeforeDestroying(Siec S, Data data, ArrayList<Quadrant> quadrants) {
+    public static void beerFlowBeforeDamage(Network S, Data data, ArrayList<Quadrant> quadrants) {
         for (Road road : data.roads) {
             S.setMaxFlow(road.getMaxBeerFlow(), (int) road.x1, (int) road.y1, (int) road.x2, (int) road.y2);
             if (S.getVertex((int) road.x1, (int) road.y1).getType().equals("Brewery"))
@@ -70,34 +70,34 @@ public class Main {
         Vertex src = S.addSourceVertex("Brewery");
         Vertex sink = S.addSinkVertex("Tavern");
 
-        int maxBeerFlowBeforeDestroing = S.BFSMaxFlow(src, sink);
+        int maxBeerFlowBeforeDamage = S.BFSMaxFlow(src, sink);
         //S.printGraph();
 
-        System.out.println("Max beer flow before destroying roads: " + maxBeerFlowBeforeDestroing);
-        generateSVGfile(S, "BEER FLOW BEFORE DESTROYNG", "beerFlowBeforeDestroyng.svg", maxBeerFlowBeforeDestroing, quadrants);
+        System.out.println("Max beer flow before damaging roads: " + maxBeerFlowBeforeDamage);
+        generateSVGfile(S, "BEER FLOW BEFORE DAMAGING", "beerFlowBeforeDamage.svg", maxBeerFlowBeforeDamage, quadrants);
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
     }
 
-    public static void barleyFlowAfterDestroying(Siec S, Data data, ArrayList<Quadrant> quadrants) {
+    public static void barleyFlowAfterDamage(Network S, Data data, ArrayList<Quadrant> quadrants) {
         Vertex src = S.addSourceVertex("Farmland");
         Vertex sink = S.addSinkVertex("Brewery");
 
         for (Road road : data.roads)
             S.setMaxFlow(road.getMaxBarleyFlow(), (int) road.x1, (int) road.y1, (int) road.x2, (int) road.y2);
 
-        int maxBarleyFlowAfterDestroying = S.minCostMaxFlow(src, sink);
+        int maxBarleyFlowAfterDamage = S.minCostMaxFlow(src, sink);
         //S.printGraph();
 
-        System.out.println("Max barley flow after destroying roads: " + maxBarleyFlowAfterDestroying);
-        generateSVGfile(S, "BARLEY FLOW AFTER DESTROYING", "barleyFlowAfterDestroying.svg", maxBarleyFlowAfterDestroying, quadrants);
+        System.out.println("Max barley flow after damaging roads: " + maxBarleyFlowAfterDamage);
+        generateSVGfile(S, "BARLEY FLOW AFTER DAMAGING", "barleyFlowAfterDamage.svg", maxBarleyFlowAfterDamage, quadrants);
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
     }
 
-    public static void beerFlowAfterDestroying(Siec S, Data data, ArrayList<Quadrant> quadrants) {
+    public static void beerFlowAfterDamage(Network S, Data data, ArrayList<Quadrant> quadrants) {
         for (Road road : data.roads) {
             S.setMaxFlow(road.getMaxBeerFlow(), (int) road.x1, (int) road.y1, (int) road.x2, (int) road.y2);
             if (S.getVertex((int) road.x1, (int) road.y1).getType().equals("Brewery"))
@@ -109,18 +109,18 @@ public class Main {
         Vertex src = S.addSourceVertex("Brewery");
         Vertex sink = S.addSinkVertex("Tavern");
 
-        int maxBeerFlowAfterDestroying = S.minCostMaxFlow(src, sink);
+        int maxBeerFlowAfterDamage = S.minCostMaxFlow(src, sink);
         //S.printGraph();
 
-        System.out.println("Max beer flow after destroying roads: " + maxBeerFlowAfterDestroying);
-        generateSVGfile(S, "BEER FLOW AFTER DESTROYING", "beerFlowAfterDestroying.svg", maxBeerFlowAfterDestroying, quadrants);
+        System.out.println("Max beer flow after damaging roads: " + maxBeerFlowAfterDamage);
+        generateSVGfile(S, "BEER FLOW AFTER DAMAGING", "beerFlowAfterDamage.svg", maxBeerFlowAfterDamage, quadrants);
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
     }
 
-    public static Siec createNetwork(Data data) {
-        Siec S2 = new Siec();
+    public static Network createNetwork(Data data) {
+        Network S2 = new Network();
         List<Point2D> intersections = data.getIntersections();
 
         for (var point : intersections) {
@@ -163,10 +163,10 @@ public class Main {
         }
     }
 
-    public static void generateSVGfile(Siec siec, String mapName, String fileName, int maxFlow, ArrayList<Quadrant> quadrants) {
+    public static void generateSVGfile(Network network, String mapName, String fileName, int maxFlow, ArrayList<Quadrant> quadrants) {
 
         int flowCost = 0;
-        var roads = siec.getGraph().values().stream()
+        var roads = network.getGraph().values().stream()
                 .flatMap(x -> x.values().stream())
                 .filter(r -> r.getTo().getType() != "source"
                         && r.getTo().getType() != "sink"
@@ -180,16 +180,16 @@ public class Main {
                         )
                 )
                 .toList();
-        var intersections = siec.getGraph().keySet().stream().filter(v -> v.getType() == "Intersection").toList();
-        var farmlands = siec.getGraph().keySet().stream().filter(v -> v.getType() == "Farmland").toList();
-        var breweries = siec.getGraph().keySet().stream().filter(v -> v.getType() == "Brewery").toList();
-        var taverns = siec.getGraph().keySet().stream().filter(v -> v.getType() == "Tavern").toList();
+        var intersections = network.getGraph().keySet().stream().filter(v -> v.getType() == "Intersection").toList();
+        var farmlands = network.getGraph().keySet().stream().filter(v -> v.getType() == "Farmland").toList();
+        var breweries = network.getGraph().keySet().stream().filter(v -> v.getType() == "Brewery").toList();
+        var taverns = network.getGraph().keySet().stream().filter(v -> v.getType() == "Tavern").toList();
 
         double margin = 20;
-        int minXCoord = siec.getGraph().keySet().stream().filter(v -> v.getType() != "source" && v.getType() != "sink").min(Comparator.comparingInt(Vertex::getX)).get().getX();
-        int minYCoord = siec.getGraph().keySet().stream().filter(v -> v.getType() != "source" && v.getType() != "sink").min(Comparator.comparingInt(Vertex::getY)).get().getY();
-        int maxYCoord = siec.getGraph().keySet().stream().filter(v -> v.getType() != "source" && v.getType() != "sink").max(Comparator.comparingInt(Vertex::getY)).get().getY();
-        int maxXCoord = siec.getGraph().keySet().stream().filter(v -> v.getType() != "source" && v.getType() != "sink").max(Comparator.comparingInt(Vertex::getX)).get().getX();
+        int minXCoord = network.getGraph().keySet().stream().filter(v -> v.getType() != "source" && v.getType() != "sink").min(Comparator.comparingInt(Vertex::getX)).get().getX();
+        int minYCoord = network.getGraph().keySet().stream().filter(v -> v.getType() != "source" && v.getType() != "sink").min(Comparator.comparingInt(Vertex::getY)).get().getY();
+        int maxYCoord = network.getGraph().keySet().stream().filter(v -> v.getType() != "source" && v.getType() != "sink").max(Comparator.comparingInt(Vertex::getY)).get().getY();
+        int maxXCoord = network.getGraph().keySet().stream().filter(v -> v.getType() != "source" && v.getType() != "sink").max(Comparator.comparingInt(Vertex::getX)).get().getX();
 
         double mapHeight = maxYCoord + (margin * 2);
         double mapWidth = maxXCoord + (margin * 2);

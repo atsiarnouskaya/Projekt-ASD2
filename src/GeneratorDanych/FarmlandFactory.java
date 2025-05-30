@@ -1,6 +1,6 @@
 package GeneratorDanych;
 
-import SiecPrzeplywowa.Farmland;
+import FlowNetwork.Farmland;
 
 import java.util.Random;
 

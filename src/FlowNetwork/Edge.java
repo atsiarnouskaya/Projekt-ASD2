@@ -1,4 +1,4 @@
-package SiecPrzeplywowa;
+package FlowNetwork;
 
 public class Edge {
     private int maxFlow;

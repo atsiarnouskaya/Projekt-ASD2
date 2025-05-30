@@ -1,4 +1,4 @@
-package SiecPrzeplywowa;
+package FlowNetwork;
 
 import java.util.Objects;
 

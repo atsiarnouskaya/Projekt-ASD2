@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
-import SiecPrzeplywowa.*;
+import FlowNetwork.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
