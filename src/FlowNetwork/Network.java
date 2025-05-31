@@ -14,6 +14,10 @@ public class Network {
         this.previousElements = new HashMap<>();
     }
 
+    public Map<String, Vertex> getVertexByCoord() {
+        return vertexByCoord;
+    }
+
     public Map<Vertex, HashMap<Vertex, Edge>> getGraph() {
         return this.graph;
     }
@@ -41,6 +45,15 @@ public class Network {
     //    to zostaje tylko 2 w którąkolwiek stronę.
     // Czyli całkowita przepustowość to 5 — i ona się nigdy nie zmienia.
     public void addEdge(int maxFlow, int repairCost, int x1, int y1, int x2, int y2) {
+        if (maxFlow < 0) {
+            System.out.println("flow is negative");
+            maxFlow = 0;
+        }
+        if (repairCost < 0) {
+            System.out.println("repair cost is negative");
+            repairCost = 0;
+        }
+
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
 
@@ -62,6 +75,11 @@ public class Network {
     }
 
     public void setMaxFlow(int flow, int x1, int y1, int x2, int y2) {
+        if (flow < 0) {
+            System.out.println("flow is negative");
+            flow = 0;
+        }
+
         Vertex from = vertexByCoord.get(x1 + "," + y1);
         Vertex to = vertexByCoord.get(x2 + "," + y2);
         if (from == null)
@@ -78,13 +96,24 @@ public class Network {
     }
 
     public void updateEdge(int flow, Vertex from, Vertex to) {
+        if (flow < 0) {
+            System.out.println("flow is negative");
+            flow = 0;
+        }
+
+        if (!vertexByCoord.containsKey(from.getX() + "," + from.getY()) ||
+            !vertexByCoord.containsKey(to.getX() + "," + to.getY()) ||
+            from.equals(to)) {
+            throw new IllegalArgumentException("from, to is not in the graph or from == to");
+        }
+
         Edge currentEdge = graph.get(from).get(to);
         currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + flow);
         currentEdge.setResidualFlow(currentEdge.getResidualFlow() - flow);
 
-        Edge currentBackwardEdge = graph.get(to).get(from);
-        currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
-        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
+//        Edge currentBackwardEdge = graph.get(to).get(from);
+//        currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
+//        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
     }
 
 
@@ -126,6 +155,10 @@ public class Network {
         });
         graph.remove(sinkVert);
         vertexByCoord.remove(sinkVert.getX() + "," + sinkVert.getY());
+    }
+
+    public Edge getEdge(Vertex from, Vertex to) {
+        return graph.get(from).get(to);
     }
 
     public void printGraph() {

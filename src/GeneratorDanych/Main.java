@@ -17,7 +17,7 @@ import com.google.gson.GsonBuilder;
 public class Main {
 
     public static void main(String[] args) {
-        Generator generator = new Generator(21, 7, 13, 4, 6);
+        Generator generator = new Generator(21, 2, 2, 2, 2);
         Data data = generator.generate();
         //Data data = readFile();
         generateSVGfile(data.roads, data.farmlands, data.breweries, data.taverns);

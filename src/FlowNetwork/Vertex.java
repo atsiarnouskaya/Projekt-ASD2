@@ -89,11 +89,11 @@ public class Vertex {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Vertex vertex = (Vertex) o;
-        return localId == vertex.localId && x == vertex.x && y == vertex.y;
+        return x == vertex.x && y == vertex.y;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(localId, x, y);
+        return Objects.hash(x, y);
     }
 }
