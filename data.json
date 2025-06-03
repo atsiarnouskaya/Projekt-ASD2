@@ -84,19 +84,14 @@
   ],
   "farmlands": [
     {
-      "productionCapacity": 10,
+      "productionCapacity": 0,
       "x": 117.0,
       "y": 78.0
     },
     {
-      "productionCapacity": 20,
+      "productionCapacity": 0,
       "x": 51.0,
       "y": 96.0
-    },
-    {
-      "productionCapacity": 7,
-      "x": 50.0,
-      "y": 79.0
     }
   ],
   "breweries": [

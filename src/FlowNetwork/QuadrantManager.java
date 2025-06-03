@@ -35,6 +35,9 @@ public class QuadrantManager {
     }
     //graham algorithm to make a hull from a set of points
     public ArrayList<Point2D> grahamAlgorithm(ArrayList<Point2D> points) {
+        if (points.size() < 3) {
+            return new ArrayList<>(points); //return all points if there is less than 3 points (otherwise hull wont build)
+        }
         p0 = points.getFirst();
         //finding the lowest point(with smallest y, x if y are the same)
         for (Point2D p : points) {
@@ -97,10 +100,6 @@ public class QuadrantManager {
     // creates quadrant by farmland points and making a hull for each area. Also assings random production capacity to each quadrant
     //so farmlands in each quadrant produce the same amount of barley
     public ArrayList<Quadrant> createQuadrants() {
-        int k = 1;
-        while (k * 2 <= farmlands.size() / 3) { //at least 3 points per quadrant
-            k *= 2;
-        }
         ArrayList<ArrayList<Farmland>> clusters = dividePoints(farmlands, k, true);
         ArrayList<Quadrant> quadrants = new ArrayList<>();
         Random rand = new Random();

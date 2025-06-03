@@ -40,13 +40,10 @@
 <text x="98.0" y="68.5" fill="white" font-family="Arial, sans-serif" font-weight="600" font-size="2.6" text-anchor="middle" dominant-baseline="middle">10$</text>
 <circle cx="51.0" cy="96.0" r="4.1" fill="#FFC300"  style="opacity:0.7; "/>
 <text x="51.0" y="96.0" fill="white" font-family="Arial, sans-serif" font-size="3.2" font-weight="600" text-anchor="middle" dominant-baseline="end">F</text>
-<text x="51.0" y="98.5" fill="white" font-family="Arial, sans-serif" font-size="2.5" font-weight="600" text-anchor="middle" dominant-baseline="start">16</text>
+<text x="51.0" y="98.5" fill="white" font-family="Arial, sans-serif" font-size="2.5" font-weight="600" text-anchor="middle" dominant-baseline="start">18</text>
 <circle cx="117.0" cy="78.0" r="4.1" fill="#FFC300"  style="opacity:0.7; "/>
 <text x="117.0" y="78.0" fill="white" font-family="Arial, sans-serif" font-size="3.2" font-weight="600" text-anchor="middle" dominant-baseline="end">F</text>
-<text x="117.0" y="80.5" fill="white" font-family="Arial, sans-serif" font-size="2.5" font-weight="600" text-anchor="middle" dominant-baseline="start">16</text>
-<circle cx="50.0" cy="79.0" r="4.1" fill="#FFC300"  style="opacity:0.7; "/>
-<text x="50.0" y="79.0" fill="white" font-family="Arial, sans-serif" font-size="3.2" font-weight="600" text-anchor="middle" dominant-baseline="end">F</text>
-<text x="50.0" y="81.5" fill="white" font-family="Arial, sans-serif" font-size="2.5" font-weight="600" text-anchor="middle" dominant-baseline="start">16</text>
+<text x="117.0" y="80.5" fill="white" font-family="Arial, sans-serif" font-size="2.5" font-weight="600" text-anchor="middle" dominant-baseline="start">18</text>
 <circle cx="20.0" cy="58.0" r="4.1" fill="#90EE90"  style="opacity:0.7; " />
 <text x="20.0" y="58.0" fill="white" font-family="Arial, sans-serif" font-size="3.2" font-weight="600" text-anchor="middle" dominant-baseline="end">B</text>
 <text x="20.0" y="60.5" fill="white" font-family="Arial, sans-serif" font-size="2.5" font-weight="600" text-anchor="middle" dominant-baseline="start">0/3</text>
@@ -59,7 +56,7 @@
 <circle cx="118.0" cy="20.0" r="4.1" fill="#8B5A2B"   style="opacity:0.7; "/>
 <text x="118.0" y="20.0" fill="white" font-family="Arial, sans-serif" font-size="3.2" font-weight="600" text-anchor="middle" dominant-baseline="end">T</text>
 <text x="118.0" y="22.5" fill="white" font-family="Arial, sans-serif" font-size="2.5" font-weight="600" text-anchor="middle" dominant-baseline="start">4/8</text>
-<polygon points="117.0,78.0 51.0,96.0 50.0,79.0" style="fill:none;stroke:#fcba03;stroke-width:0.7;" />
+<polygon points="117.0,78.0 51.0,96.0" style="fill:none;stroke:#fcba03;stroke-width:0.7;" />
 
 </svg>
 
