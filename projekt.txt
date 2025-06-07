@@ -1,0 +1,63 @@
+Algorytmy i Struktury Danych II- Projekt 2025
+ Pracujac nad ponizszym projektem, nalezy: odfiltrowac informacje istotne od nieistot
+nych; sformalizowac problem i podac jego specyfikacje; do rozwiazania wykorzystac odpo
+wiednie struktury danych oraz algorytmy; opisac teoretycznie rozwiazanie; przeanalizowac
+ jego optymalnosc oraz zlozonosc czasowa/pamieciowa; zaimplementowac rozwiazanie w
+ dowolnym jezyku programowania; przeprowadzic testy na roznych przykladach.
+ Problem
+ Burmistrz Shire Samwise, chcac zapewnic dostatek mieszkancom swojego pieknego
+ kraju, marzy o dobrze zaopatrzonych karczmach. W tym celu zarzadzil spis pol, na kto
+rych uprawiany jest jeczmien, zna wiec ich polozenie i wie, ile srednio jeczmienia wyrasta
+ na jednym poletku. Zna tez rozmieszczenie browarow, z ktorych kazdy moze przetworzyc
+ okreslona liczbe jeczmienia.
+ Jako ze lud Shire jest pracowity i uczciwy, w kazdym z browarow z tony jeczmienia
+ uzyskuje sie jednakowa ilosc piwa. Samwise osobiscie odwiedzil i zna polozenie wszystkich
+ karczm w swoim kraju. Burmistrz w swych pamiatkach posiada rowniez mape przygo
+towana przez Bilba, gdzie oprocz zaznaczonych ulubionych sciezek spacerowych, autor
+ zaznaczyl rowniez ilosc zboza oraz piwa, ktora mozna przewiezc pomiedzy poszczegolny
+mi skrzyzowaniami.
+ Okazalo sie, ze posrod wielu lupow, ktore Bilbo przywiozl z wyprawy z krasnoludami,
+ znalazlo sie urzadzenie nazywane przez duzych ludzi komputerem. Samwise chce uzyc go
+ do znalezienia maksymalnej ilosci trunku, jaka mozna dostarczyc do karczm w jego kraju
+ (najpierw nalezy je wyprodukowac w browarach, a do tego potrzebny jest jeczmien, kto
+ry wyhoduja hobbici na swoich polach). Pomozcie Samwisowi przygotowac odpowiednia
+ strategie. Zaproponujcie jak informacje o polach, browarach, karczmach i drogach repre
+zentowac w komputerze. Opracujcie sposob znalezienia maksymalnej ilosci piwa, ktora
+ mozna dostarczyc do karczm w Shire.
+ Niestety, po okresie panowania Sharkeya wiele drog w Shire zostalo zniszczonych,
+ przez co wozy wiozace zboze i inne produkty czesto ulegaja awarii i nie zawsze udaje sie
+ zrealizowac zadania wczesniej zaplanowane. Samwise zlecil jednak Peregrinowi oraz Me
+riadokowi oszacowanie kosztu naprawy kazdej z drog w ich krainie. W planie transportu
+ zboza i piwa chcialby uwzglednic te drogi, ktorych naprawa bedzie mozliwie najtansza.
+ Pamieta jednak, ze dla hobbitow najwazniejszymi sprawami sa dobre jedzenie i trunek,
+ nie chce wiec zmniejszac ilosci piwa dostarczanego do karczm. Zmodyfikujcie swoje roz
+wiazanie tak, zeby przy zachowaniu ilosci przewozonego towaru koszt naprawy drog, po
+ ktorych poruszaja sie transporty, byl mozliwie najmniejszy.
+ Okazalo sie jednak, ze w roznych cwiartkach Shire ilosci jeczmienia wyrastajace na
+ jednym polu roznia sie od siebie. W tym celu Samwise kazal zebrac wspolrzedne punk
+tow granicznych kazdej cwiartki (kazda z cwiartek okazala sie byc wielokatem wypuklym,
+ rozlacznym z pozostalymi cwiartkami). Wie tez, ile jeczmienia wyrasta na polu w poszcze
+golnych cwiartkach. Zmodyfikujcie swoje rozwiazanie uwzgledniajac te nowe informacje
+ zebrane przez burmistrza Sama.
+ Burmistrz chce rowniez wykorzystac skromne zasoby pamieci komputera, zeby zapisac
+ sobie Wasze rozwiazania na przyszlosc. Marzy o tym, zeby szybko wyszukiwac w tych
+ rozwiazaniach slow: ,,piwo", ,,jeczmien", ,,browar" oraz innych, ktore przyjda mu kie
+dys do glowy. Chcialby przetestowac kilka sposobow wyszukiwania slow. Zaproponujcie
+ odpowiednie rozwiazania.
+ 1
+Co powinny przygotowac zespoly studenckie
+ Wramach projektu nalezy przygotowac rozwiazanie problemu przedstawionego poni
+zej. Rozwiazanie powinno skladac sie z:
+ ^
+ ^
+ ^
+ ^
+ dokumentacji,
+ plikow programow,
+ opisu poprawnosci rozwiazania,
+ raportow przeprowadzonych testow.
+ Wyniki pracy powinny byc zapisywane z wykorzystaniem systemu Git (prowadzacy
+ powinien miec dostep do repozytorium). Projekt bedzie oceniany zgodnie z informacjami
+ przedstawionymi na USOS. Kazda osoba bedzie musiala wypelnic dwie ankiety: opisujaca
+ jej wklad w rozwiazanie problemu oraz oceniajaca kompletnosc rozwiazania problemow
+ przez zespol, do ktorego nalezy
