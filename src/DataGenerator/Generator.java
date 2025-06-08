@@ -64,7 +64,7 @@ public class Generator {
                         if (p != null && currentRoad.getP1() != p && currentRoad.getP2() != p) {
                             //check if new intersections not too close to others
                             for (Point2D existing : intersections) {
-                                if(existing.distance(p)<15)
+                                if (existing.distance(p) < 15)
                                     return _roads;
                             }
                             intersections.add(p);
@@ -149,7 +149,7 @@ public class Generator {
                     .anyMatch(r -> r.intersectsLine(road)))
                     || objects.stream().anyMatch(o -> o.distance(object) < minDistanceBetweenPoints)
                     || existingObjects.stream().anyMatch(o -> o.distance(object) < minDistanceBetweenPoints)
-            ){
+            ) {
                 attempts++;
                 continue;
             }
@@ -158,7 +158,7 @@ public class Generator {
             allObjects.add(object);
             roads.add(road);
             currentCount++;
-            attempts=0;
+            attempts = 0;
         }
         if (currentCount < count) {
             System.out.println("Warning: Could only place " + currentCount + " out of " + count + " objects.");

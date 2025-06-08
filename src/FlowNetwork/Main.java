@@ -1,5 +1,6 @@
 package FlowNetwork;
 
+import FlowNetwork.Visualization.VisualizationGenerator;
 import com.google.gson.*;
 
 import java.awt.geom.Point2D;
@@ -53,7 +54,6 @@ public class Main {
 
         System.out.println("Max barley flow before damaging roads: " + maxBarleyFlowBeforeDamage + " with repair cost: " + S.getFlowRepairCost());
         generateSVGfile(S, "BARLEY FLOW BEFORE DAMAGING", "barleyFlowBeforeDamage.svg", maxBarleyFlowBeforeDamage, quadrants);
-
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
     }
@@ -114,9 +114,9 @@ public class Main {
 
         System.out.println("Max beer flow after damaging roads: " + maxBeerFlowAfterDamage + " with repair cost: " + S.getFlowRepairCost());
         generateSVGfile(S, "BEER FLOW AFTER DAMAGING", "beerFlowAfterDamage.svg", maxBeerFlowAfterDamage, quadrants);
-
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
+        VisualizationGenerator.GenerateCytoscapeJSONfile(S, quadrants);
     }
 
     public static Network createNetwork(Data data) {
@@ -160,6 +160,19 @@ public class Main {
             throw new RuntimeException(e);
         }
     }
+
+    public static void generateJSONfile(Data data) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("dataComplete.json"))) {
+            Gson gson = new GsonBuilder()
+                    .setPrettyPrinting()
+                    .create();
+            String json = gson.toJson(data);
+            writer.write(json);
+        } catch (IOException e) {
+            System.err.println("An error occurred while saving to the file: " + e.getMessage());
+        }
+    }
+
 
     public static void generateSVGfile(Network network, String mapName, String fileName, int maxFlow, ArrayList<Quadrant> quadrants) {
         var roads = network.getGraph().values().stream()
