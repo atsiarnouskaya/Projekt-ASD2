@@ -6,8 +6,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import FlowNetwork.*;
@@ -17,8 +19,7 @@ import com.google.gson.GsonBuilder;
 public class Main {
 
     public static void main(String[] args) {
-        //Generator generator = new Generator(21, 2, 2, 2, 2);
-        Generator generator = new Generator(23, 7, 13, 4, 6);
+        Generator generator = new Generator(2, 300, 150, 50, 35);
         Data data = generator.generate();
         //Data data = readFile();
         generateSVGfile(data.roads, data.farmlands, data.breweries, data.taverns);
@@ -33,7 +34,7 @@ public class Main {
             String json = gson.toJson(data);
             writer.write(json);
         } catch (IOException e) {
-            System.err.println("Wystąpił błąd podczas zapisywania do pliku: " + e.getMessage());
+            System.err.println("An error occurred while saving to the file: " + e.getMessage());
         }
     }
 
@@ -60,7 +61,15 @@ public class Main {
         double mapHeight = maxYCoord.getY() + (margin * 2);
         double mapWidth = maxXCoord.getX() + (margin * 2);
 
-        var intersections = Generator.findIntersections(roads);
+        List<Point2D> points = roads.stream()
+                .flatMap(r -> Stream.of(r.getP1(), r.getP2()))
+                .toList();
+
+        var intersections = points.stream()
+                .filter(i -> Collections.frequency(points, i) > 1)
+                .collect(Collectors.toSet())
+                .stream().toList();
+
         try (PrintWriter writer = new PrintWriter(new FileWriter("map.svg"))) {
             writer.println("<!DOCTYPE html>\n" +
                     "<html>\n" +
@@ -84,8 +93,6 @@ public class Main {
             for (Farmland farmland : farmlands) {
                 writer.println("<circle cx=\"" + String.format("%.0f", farmland.getX()) + "\" cy=\"" + String.format("%.0f", farmland.getY()) + "\" r=\"4.1\" fill=\"#FFC300\"  style=\"opacity:0.7; \"/>");
                 writer.println("<text x=\"" + String.format("%.0f", farmland.getX()) + "\" y=\"" + String.format("%.0f", farmland.getY()) + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-size=\"3.2\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"end\">F</text>");
-                writer.println("<text x=\"" + String.format("%.0f", farmland.getX()) + "\" y=\"" + String.format("%.0f", (farmland.getY() + 2.5)) + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-size=\"2.5\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"start\">" + farmland.getProductionCapacity() + "</text>");
-
             }
 
             for (Brewery brewery : breweries) {
@@ -106,7 +113,7 @@ public class Main {
                     "</body>\n" +
                     "</html>");
         } catch (IOException e) {
-            System.err.println("Wystąpił błąd podczas zapisywania do pliku: " + e.getMessage());
+            System.err.println("An error occurred while saving to the file: " + e.getMessage());
         }
     }
 
