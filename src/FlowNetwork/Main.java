@@ -51,7 +51,7 @@ public class Main {
         int maxBarleyFlowBeforeDamage = S.BFSMaxFlow(src, sink);
         //S.printGraph();
 
-        System.out.println("Max barley flow before damaging roads: " + maxBarleyFlowBeforeDamage);
+        System.out.println("Max barley flow before damaging roads: " + maxBarleyFlowBeforeDamage + " with repair cost: " + S.getFlowRepairCost());
         generateSVGfile(S, "BARLEY FLOW BEFORE DAMAGING", "barleyFlowBeforeDamage.svg", maxBarleyFlowBeforeDamage, quadrants);
 
         S.deleteSourceVertex(src);
@@ -73,7 +73,7 @@ public class Main {
         int maxBeerFlowBeforeDamage = S.BFSMaxFlow(src, sink);
         //S.printGraph();
 
-        System.out.println("Max beer flow before damaging roads: " + maxBeerFlowBeforeDamage);
+        System.out.println("Max beer flow before damaging roads: " + maxBeerFlowBeforeDamage + " with repair cost: " + S.getFlowRepairCost());
         generateSVGfile(S, "BEER FLOW BEFORE DAMAGING", "beerFlowBeforeDamage.svg", maxBeerFlowBeforeDamage, quadrants);
 
         S.deleteSourceVertex(src);
@@ -90,7 +90,7 @@ public class Main {
         int maxBarleyFlowAfterDamage = S.minCostMaxFlow(src, sink);
         //S.printGraph();
 
-        System.out.println("Max barley flow after damaging roads: " + maxBarleyFlowAfterDamage);
+        System.out.println("Max barley flow after damaging roads: " + maxBarleyFlowAfterDamage + " with repair cost: " + S.getFlowRepairCost());
         generateSVGfile(S, "BARLEY FLOW AFTER DAMAGING", "barleyFlowAfterDamage.svg", maxBarleyFlowAfterDamage, quadrants);
 
         S.deleteSourceVertex(src);
@@ -112,7 +112,7 @@ public class Main {
         int maxBeerFlowAfterDamage = S.minCostMaxFlow(src, sink);
         //S.printGraph();
 
-        System.out.println("Max beer flow after damaging roads: " + maxBeerFlowAfterDamage);
+        System.out.println("Max beer flow after damaging roads: " + maxBeerFlowAfterDamage + " with repair cost: " + S.getFlowRepairCost());
         generateSVGfile(S, "BEER FLOW AFTER DAMAGING", "beerFlowAfterDamage.svg", maxBeerFlowAfterDamage, quadrants);
 
         S.deleteSourceVertex(src);
@@ -133,7 +133,6 @@ public class Main {
             v.setType("Farmland");
             //v.setCapacity(farmland.getProductionCapacity());
             v.setCapacity(farmland.getQuadrant().getProductionPerPlot());
-
         }
 
         for (var breweries : data.breweries) {
@@ -150,7 +149,6 @@ public class Main {
 
         for (Road road : data.roads)
             S2.addEdge(road.getMaxBarleyFlow(), road.getRepairCost(), (int) road.x1, (int) road.y1, (int) road.x2, (int) road.y2);
-
         return S2;
     }
 
@@ -164,8 +162,6 @@ public class Main {
     }
 
     public static void generateSVGfile(Network network, String mapName, String fileName, int maxFlow, ArrayList<Quadrant> quadrants) {
-
-        int flowCost = 0;
         var roads = network.getGraph().values().stream()
                 .flatMap(x -> x.values().stream())
                 .filter(r -> r.getTo().getType() != "source"
@@ -194,18 +190,13 @@ public class Main {
         double mapHeight = maxYCoord + (margin * 2);
         double mapWidth = maxXCoord + (margin * 2);
 
-        for(Edge r: roads){
-            if(r.getCurrentFlow()>0)
-                flowCost+=r.getRepairCost();
-        }
-
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
             writer.println("<!DOCTYPE html>\n" +
                     "<html>\n" +
                     "<body>\n" +
                     "\n" +
                     "<svg display=\"block\" style=\"background-color:black;\" height=\"" + mapHeight + "\" width=\"" + mapWidth + "\" xmlns=\"http://www.w3.org/2000/svg\">");
-            writer.println("<text x=\"2\" y=\"" + (mapHeight - 2) + "\" font-family=\"Arial\" font-weight=\"600\" font-size=\"3.5px\" fill=\"white\">" + mapName + "  (max flow: " + maxFlow + "; flow cost: " + flowCost + ")</text>");
+            writer.println("<text x=\"2\" y=\"" + (mapHeight - 2) + "\" font-family=\"Arial\" font-weight=\"600\" font-size=\"3.5px\" fill=\"white\">" + mapName + "  (max flow: " + maxFlow + "; flow cost: " + network.getFlowRepairCost() + ")</text>");
 
             for (Edge road : roads) {
                 if (road.getCurrentFlow() != 0)
@@ -223,10 +214,8 @@ public class Main {
 
 
             for (Edge road : roads) {
-                if (road.getCurrentFlow() != 0) {
-                    writer.println("<text x=\"" + ((road.getFrom().getX() - minXCoord + margin) + (road.getTo().getX() - minXCoord + margin)) / 2 + "\" y=\"" + ((road.getFrom().getY() - minYCoord + margin) + (road.getTo().getY() - minYCoord + margin)) / 2 + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-weight=\"600\" font-size=\"3.1\" text-anchor=\"middle\" dominant-baseline=\"middle\">" + road.getCurrentFlow() + "/" + road.getMaxFlow() + "</text>");
-                    writer.println("<text x=\"" + ((road.getFrom().getX() - minXCoord + margin) + (road.getTo().getX() - minXCoord + margin)) / 2 + "\" y=\"" + ((((road.getFrom().getY() - minYCoord + margin) + (road.getTo().getY() - minYCoord + margin)) / 2) + 3.5) + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-weight=\"600\" font-size=\"2.6\" text-anchor=\"middle\" dominant-baseline=\"middle\">" + road.getRepairCost() + "$</text>");
-                }
+                writer.println("<text x=\"" + ((road.getFrom().getX() - minXCoord + margin) + (road.getTo().getX() - minXCoord + margin)) / 2 + "\" y=\"" + ((road.getFrom().getY() - minYCoord + margin) + (road.getTo().getY() - minYCoord + margin)) / 2 + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-weight=\"600\" font-size=\"3.1\" text-anchor=\"middle\" dominant-baseline=\"middle\">" + road.getCurrentFlow() + "/" + road.getMaxFlow() + "</text>");
+                writer.println("<text x=\"" + ((road.getFrom().getX() - minXCoord + margin) + (road.getTo().getX() - minXCoord + margin)) / 2 + "\" y=\"" + ((((road.getFrom().getY() - minYCoord + margin) + (road.getTo().getY() - minYCoord + margin)) / 2) + 3.5) + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-weight=\"600\" font-size=\"2.6\" text-anchor=\"middle\" dominant-baseline=\"middle\">" + road.getRepairCost() + "$</text>");
             }
 
             for (Vertex farmland : farmlands) {

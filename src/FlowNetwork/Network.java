@@ -22,6 +22,20 @@ public class Network {
         return this.graph;
     }
 
+    public List<Edge> getRoads() {
+        return this.graph.values().stream().flatMap(e->e.values().stream()).toList();
+    }
+
+    public int getFlowRepairCost(){
+        int result=0;
+        List<Edge> roads= getRoads();
+        for(var road: roads){
+            if(road.getCurrentFlow()>0)
+                result+=road.getRepairCost();
+        }
+        return result;
+    }
+
     public Vertex addVertex(int x, int y) {
         String key = x + "," + y;
         if (vertexByCoord.containsKey(key)) return vertexByCoord.get(key);
@@ -263,6 +277,8 @@ public class Network {
         while (!pq.isEmpty()) {
             Vertex c = pq.poll();
             if (visited.contains(c)) continue;
+            if (c.equals(dest)) return true;
+
             visited.add(c);
             graph.get(c).forEach((v, e) -> {
                 if (e.getResidualFlow() > 0) {

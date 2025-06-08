@@ -1,4 +1,4 @@
-package GeneratorDanych;
+package DataGenerator;
 
 import java.util.Random;
 

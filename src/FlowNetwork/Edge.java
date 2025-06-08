@@ -74,6 +74,7 @@ public class Edge {
                 "maxFlow = " + maxFlow +
                 ", currentFlow = " + currentFlow +
                 ", residualFlow = " + residualFlow +
+                ", repairCost = " + repairCost +
                 ')');
     }
 

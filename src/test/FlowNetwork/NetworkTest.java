@@ -69,7 +69,7 @@ public class NetworkTest {
         @Test
         void setMaxFlowTestNormalFlow() {
             network.addEdge(10, 3, 1, 1, 2, 2);
-            network.setMaxFlow(3, 1, 1,2,2);
+            network.setMaxFlow(3, 1, 1, 2, 2);
             Assertions.assertEquals(3, network.getEdge(v1, v2).getMaxFlow());
             Assertions.assertEquals(3, network.getEdge(v2, v1).getMaxFlow());
             Assertions.assertEquals(0, network.getEdge(v1, v2).getCurrentFlow());
@@ -81,7 +81,7 @@ public class NetworkTest {
         @Test
         void setMaxFlowTestNegativeFlow() {
             network.addEdge(10, 3, 1, 1, 2, 2);
-            network.setMaxFlow(-3, 1, 1,2,2);
+            network.setMaxFlow(-3, 1, 1, 2, 2);
             Assertions.assertEquals(0, network.getEdge(v1, v2).getMaxFlow());
             Assertions.assertEquals(0, network.getEdge(v2, v1).getMaxFlow());
             Assertions.assertEquals(0, network.getEdge(v1, v2).getCurrentFlow());
@@ -123,15 +123,15 @@ public class NetworkTest {
             v6.setType("Brewery");
             v6.setCapacity(8);
 
-            network.addEdge(2, 2, 1,1,3,3);
-            network.addEdge(2, 3, 2,2,3,3);
-            network.addEdge(2, 4, 4,4,3,3);
-            network.addEdge(2, 5, 5,5,3,3);
-            network.addEdge(2, 6, 6,6,3,3);
+            network.addEdge(2, 2, 1, 1, 3, 3);
+            network.addEdge(2, 3, 2, 2, 3, 3);
+            network.addEdge(2, 4, 4, 4, 3, 3);
+            network.addEdge(2, 5, 5, 5, 3, 3);
+            network.addEdge(2, 6, 6, 6, 3, 3);
         }
 
         @Test
-        void addSourceVertexTest(){
+        void addSourceVertexTest() {
             Vertex srcFarm = network.addSourceVertex("Farm");
             Assertions.assertEquals(2, network.getGraph().get(srcFarm).size());
             Assertions.assertEquals(5, network.getEdge(srcFarm, v1).getMaxFlow());
@@ -162,7 +162,7 @@ public class NetworkTest {
         }
 
         @Test
-        void addSinkVertexTest(){
+        void addSinkVertexTest() {
             Vertex sinkFarm = network.addSinkVertex("Farm");
             Assertions.assertEquals(2, network.getGraph().get(sinkFarm).size());
             Assertions.assertEquals(5, network.getEdge(sinkFarm, v1).getMaxFlow());
@@ -224,11 +224,11 @@ public class NetworkTest {
             v6 = network.addVertex(6, 6);
             v6.setType("Brewery");
 
-            network.addEdge(2, 2, 1,1,3,3);
-            network.addEdge(2, 3, 2,2,3,3);
-            network.addEdge(2, 4, 4,4,3,3);
-            network.addEdge(2, 5, 5,5,3,3);
-            network.addEdge(2, 6, 6,6,3,3);
+            network.addEdge(2, 2, 1, 1, 3, 3);
+            network.addEdge(2, 3, 2, 2, 3, 3);
+            network.addEdge(2, 4, 4, 4, 3, 3);
+            network.addEdge(2, 5, 5, 5, 3, 3);
+            network.addEdge(2, 6, 6, 6, 3, 3);
 
             srcFarm = network.addSourceVertex("Farm");
             srcIntersection = network.addSourceVertex("Intersection");
@@ -238,7 +238,7 @@ public class NetworkTest {
         }
 
         @Test
-        void deleteSourceVertexTest(){
+        void deleteSourceVertexTest() {
             network.deleteSourceVertex(srcFarm);
             Assertions.assertFalse(network.getGraph().containsKey(srcFarm));
             for (var e : network.getGraph().values()) {
@@ -257,7 +257,7 @@ public class NetworkTest {
         }
 
         @Test
-        void deleteSinkVertexTest(){
+        void deleteSinkVertexTest() {
             network.deleteSinkVertex(sinkBrewery);
             Assertions.assertFalse(network.getGraph().containsKey(sinkBrewery));
             for (var e : network.getGraph().values()) {
@@ -303,35 +303,36 @@ public class NetworkTest {
         }
 
         @Test
-        void bfsSimpleRoadTest(){
+        void GivenSimplePathExist_WhenRunningBFS_ThenReturnsTrue() {
             /*
              Graph looks like 0 — 1 — 2 — 3 — 4 — 5 — 6 — 7
             */
-            network.addEdge(10, 2, 0, 0, 1,1);
-            network.addEdge(10, 3, 1,1,2,2);
-            network.addEdge(10, 4, 2,2,3,3);
-            network.addEdge(10, 5, 3,3,4,4);
-            network.addEdge(10, 6,4,4, 5, 5);
+            network.addEdge(10, 2, 0, 0, 1, 1);
+            network.addEdge(10, 3, 1, 1, 2, 2);
+            network.addEdge(10, 4, 2, 2, 3, 3);
+            network.addEdge(10, 5, 3, 3, 4, 4);
+            network.addEdge(10, 6, 4, 4, 5, 5);
             network.addEdge(10, 7, 5, 5, 6, 6);
             network.addEdge(10, 8, 6, 6, 7, 7);
             Assertions.assertTrue(network.BFS(src, dest));
         }
 
         @Test
-        void bfsComplicatedRoadTest(){
+        void GivenMultiplePathsExist_WhenRunningBFS_ThenReturnsTrue() {
             /*
                                     1 — 4 ———
                                   /   /       \
                 Graph looks like 0 — 2         7
                                   \   \       /
-                                    3 — 5 — 6
+                                   3 — 5  —  6
              */
-            network.addEdge(10, 2, 0, 0, 1,1);
-            network.addEdge(10, 3, 0,0,2,2);
-            network.addEdge(10, 4, 0,0,3,3);
-            network.addEdge(10, 5, 1,1,4,4);
-            network.addEdge(10, 6,2, 2, 4,4);
-            network.addEdge(10, 6,2, 2, 5,5);
+            network.addEdge(10, 2, 0, 0, 1, 1);
+            network.addEdge(10, 3, 0, 0, 2, 2);
+            network.addEdge(10, 4, 0, 0, 3, 3);
+            network.addEdge(10, 5, 1, 1, 4, 4);
+            network.addEdge(10, 6, 2, 2, 4, 4);
+            network.addEdge(10, 6, 2, 2, 5, 5);
+            network.addEdge(10, 6, 3, 3, 5, 5);
             network.addEdge(10, 7, 5, 5, 6, 6);
             network.addEdge(10, 8, 4, 4, 7, 7);
             network.addEdge(10, 8, 6, 6, 7, 7);
@@ -339,28 +340,28 @@ public class NetworkTest {
         }
 
         @Test
-        void bfsSrcIsEqualDestTest() {
+        void GivenSourceEqualsDestination_WhenRunningBFS_ThenReturnsTrue() {
             Vertex destForTheTest = network.addVertex(0, 0);
             Assertions.assertTrue(network.BFS(src, destForTheTest));
         }
 
         @Test
-        void bfsSimpleRoadDoesNotExistsTest(){
+        void GivenNoPathsExist_WhenRunningBFS_ThenReturnsFalse() {
             /*
              Graph looks like 0 - 1 - 2 - 3
                                4 - 5 - 6 - 7
              */
-            network.addEdge(10, 2, 0, 0, 1,1);
-            network.addEdge(10, 3, 1,1,2,2);
-            network.addEdge(10, 4, 2,2,3,3);
-            network.addEdge(10, 6,4,4, 5, 5);
+            network.addEdge(10, 2, 0, 0, 1, 1);
+            network.addEdge(10, 3, 1, 1, 2, 2);
+            network.addEdge(10, 4, 2, 2, 3, 3);
+            network.addEdge(10, 6, 4, 4, 5, 5);
             network.addEdge(10, 7, 5, 5, 6, 6);
             network.addEdge(10, 8, 6, 6, 7, 7);
             Assertions.assertFalse(network.BFS(src, dest));
         }
 
         @Test
-        void maxFlowComplicatedRoadTest(){
+        void GivenMultiplePathsExist_WhenRunningMaxFlow_ThenFlowIs10AndRepairCostIs48() {
             /*
                                     1 — 4 ———
                                   /   /       \
@@ -368,21 +369,23 @@ public class NetworkTest {
                                   \   \       /
                                     3 — 5 — 6
              */
-            network.addEdge(10, 2, 0, 0, 1,1);
-            network.addEdge(8, 3, 0,0,2,2);
-            network.addEdge(6, 4, 0,0,3,3);
-            network.addEdge(5, 5, 1,1,4,4);
-            network.addEdge(4, 6,2, 2, 4,4);
-            network.addEdge(3, 6,2, 2, 5,5);
-            network.addEdge(3, 6,3, 3, 5,5);
-            network.addEdge(2, 7, 5, 5, 6, 6);
-            network.addEdge(10, 8, 4, 4, 7, 7);
-            network.addEdge(1, 8, 6, 6, 7, 7);
+            network.addEdge(10, 6, 0, 0, 1, 1);
+            network.addEdge(8, 4, 0, 0, 2, 2);
+            network.addEdge(6, 4, 0, 0, 3, 3);
+            network.addEdge(5, 6, 1, 1, 4, 4);
+            network.addEdge(4, 9, 2, 2, 4, 4);
+            network.addEdge(3, 0, 2, 2, 5, 5);
+            network.addEdge(3, 5, 3, 3, 5, 5);
+            network.addEdge(2, 3, 5, 5, 6, 6);
+            network.addEdge(10, 5, 4, 4, 7, 7);
+            network.addEdge(1, 6, 6, 6, 7, 7);
             Assertions.assertEquals(10, network.BFSMaxFlow(src, dest));
+            Assertions.assertEquals(48, network.getFlowRepairCost());
+
         }
 
         @Test
-        void maxFlowComplicatedRoadDoesNotExistsTest(){
+        void GivenNoPathsExist_WhenRunningMaxFlow_ThenReturns0() {
             /*
                                     1 — 4
                                   /
@@ -390,17 +393,17 @@ public class NetworkTest {
                                   \           /
                                     3   5 — 6
              */
-            network.addEdge(10, 2, 0, 0, 1,1);
-            network.addEdge(8, 3, 0,0,2,2);
-            network.addEdge(6, 4, 0,0,3,3);
-            network.addEdge(5, 5, 1,1,4,4);
+            network.addEdge(10, 2, 0, 0, 1, 1);
+            network.addEdge(8, 3, 0, 0, 2, 2);
+            network.addEdge(6, 4, 0, 0, 3, 3);
+            network.addEdge(5, 5, 1, 1, 4, 4);
             network.addEdge(2, 7, 5, 5, 6, 6);
             network.addEdge(1, 8, 6, 6, 7, 7);
             Assertions.assertEquals(0, network.BFSMaxFlow(src, dest));
         }
 
         @Test
-        void maxFlowWithBottleneckTest() {
+        void GivenBottleneckInGraph_WhenRunningMaxFlow_ThenReturns2() {
             /*
             0 — 1 — 2 — 7
             */
