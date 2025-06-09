@@ -23,7 +23,7 @@ public class Main {
         //Generator generator = new Generator(2, 5, 4, 2, 4);
         Data data = generator.generate();
         //Data data = readFile();
-        generateSVGfile(data.roads, data.farmlands, data.breweries, data.taverns);
+        //generateSVGfile(data.roads, data.farmlands, data.breweries, data.taverns);
         generateJSONfile(data);
     }
 

@@ -12,18 +12,42 @@ import java.util.ArrayList;
 public class VisualizationGenerator {
     public static void GenerateCytoscapeJSONfile(
             Network network,
-//            int maxFlow,
-            ArrayList<Quadrant> quadrants
+            ArrayList<Quadrant> quadrants,
+            String fileName,
+            int maxFlow,
+            int roadsRepairCost,
+            String jsName
     ) {
 
         ResultData resultData = new ResultData();
-        resultData.nodes = network.getGraph().keySet().stream().map(v -> {
+        resultData.maxFlow=maxFlow;
+        resultData.roadsRepairCost=roadsRepairCost;
+
+        resultData.nodes = network.getGraph()
+                .keySet()
+                .stream()
+                .filter(n->!n.getType().equals("source") && !n.getType().equals("sink"))
+                .map(v -> {
+
+            int incomingFlow = network
+                    .getRoads()
+                    .stream()
+                    .filter(r -> r.getTo() == v)
+                    .filter(r -> r.getFrom().getType() != "source" && r.getTo().getType() != "source")
+                    .filter(r -> r.getFrom().getType() != "sink" && r.getTo().getType() != "sink")
+                    .filter(r -> r.getCurrentFlow() > 0)
+                    .map(x -> x.getCurrentFlow())
+                    .findFirst()
+                    .orElse(0);
+
             var vv = new VisualizationVertex();
             vv.position.x = v.getX() * 10;
             vv.position.y = v.getY() * 10;
             vv.data.id = "" + v.getLocalId();
             vv.data.type = "" + v.getType();
             vv.data.label = "" + v.getType().charAt(0);
+            vv.data.productionCapacity = v.getCapacity();
+            vv.data.incomingFlow=incomingFlow;
             return vv;
         }).toList();
 
@@ -46,6 +70,8 @@ public class VisualizationGenerator {
             ee.data.label = e.getCurrentFlow() + "/" + e.getMaxFlow();
             ee.data.source = "" + e.getFrom().getLocalId();
             ee.data.target = "" + e.getTo().getLocalId();
+            ee.data.currentFlow =  e.getCurrentFlow();
+            ee.data.repairCost =  e.getRepairCost();
             return ee;
         }).toList());
 
@@ -61,6 +87,8 @@ public class VisualizationGenerator {
                         edge.data.label = "P";
                         edge.data.source = "" + network.getVertex((int)from.getX(),(int) from.getY()).getLocalId();
                         edge.data.target = "" + network.getVertex((int)to.getX(),(int) to.getY()).getLocalId();
+                        edge.data.currentFlow = 0;
+                        edge.data.repairCost = 0;
                         edge.data.type = "Polygon";
                         polygonEdges.add(edge);
                     }
@@ -71,12 +99,13 @@ public class VisualizationGenerator {
 
         resultData.edges.addAll(pedges);
 
-        try (PrintWriter writer = new PrintWriter(new FileWriter("cytoscape_data.json"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName+".js"))) {
             Gson gson = new GsonBuilder()
                     .setPrettyPrinting()
                     .create();
+
             String json = gson.toJson(resultData);
-            writer.write(json);
+            writer.write("const " + jsName + " = " + json + ";");
         } catch (IOException e) {
             System.err.println("An error occurred while saving to the file: " + e.getMessage());
         }

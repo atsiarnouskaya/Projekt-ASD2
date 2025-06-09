@@ -125,9 +125,9 @@ public class Network {
         currentEdge.setCurrentFlow(currentEdge.getCurrentFlow() + flow);
         currentEdge.setResidualFlow(currentEdge.getResidualFlow() - flow);
 
-//        Edge currentBackwardEdge = graph.get(to).get(from);
-//        currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
-//        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
+        Edge currentBackwardEdge = graph.get(to).get(from);
+        currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
+        currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
     }
 
 

@@ -1,7859 +1,9543 @@
-{
+const data4 = {
   "nodes": [
-    {
-      "data": {
-        "id": "99",
-        "type": "Intersection",
-        "label": "I"
-      },
-      "position": {
-        "x": 800,
-        "y": 6570
-      }
-    },
-    {
-      "data": {
-        "id": "357",
-        "type": "Brewery",
-        "label": "B"
-      },
-      "position": {
-        "x": 3540,
-        "y": 3560
-      }
-    },
-    {
-      "data": {
-        "id": "356",
-        "type": "Brewery",
-        "label": "B"
-      },
-      "position": {
-        "x": 4060,
-        "y": 7940
-      }
-    },
-    {
-      "data": {
-        "id": "226",
-        "type": "Farmland",
-        "label": "F"
-      },
-      "position": {
-        "x": 2100,
-        "y": 7280
-      }
-    },
-    {
-      "data": {
-        "id": "224",
-        "type": "Farmland",
-        "label": "F"
-      },
-      "position": {
-        "x": 4780,
-        "y": 6130
-      }
-    },
-    {
-      "data": {
-        "id": "64",
-        "type": "Intersection",
-        "label": "I"
-      },
-      "position": {
-        "x": 1170,
-        "y": 5430
-      }
-    },
-    {
-      "data": {
-        "id": "228",
-        "type": "Farmland",
-        "label": "F"
-      },
-      "position": {
-        "x": 780,
-        "y": 7280
-      }
-    },
-    {
-      "data": {
-        "id": "269",
-        "type": "Farmland",
-        "label": "F"
-      },
-      "position": {
-        "x": 880,
-        "y": 4190
-      }
-    },
-    {
-      "data": {
-        "id": "35",
-        "type": "Intersection",
-        "label": "I"
-      },
-      "position": {
-        "x": 2880,
-        "y": 3650
-      }
-    },
-    {
-      "data": {
-        "id": "216",
-        "type": "Farmland",
-        "label": "F"
-      },
-      "position": {
-        "x": 2590,
-        "y": 2400
-      }
-    },
-    {
-      "data": {
-        "id": "98",
-        "type": "Intersection",
-        "label": "I"
-      },
-      "position": {
-        "x": 1140,
-        "y": 6400
-      }
-    },
     {
       "data": {
         "id": "221",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4760,
-        "y": 6890
+        "x": 4390,
+        "y": 7940
       }
     },
     {
       "data": {
         "id": "168",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1790,
-        "y": 6810
+        "x": 1420,
+        "y": 7860
       }
     },
     {
       "data": {
         "id": "337",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5370,
-        "y": 8470
+        "x": 5000,
+        "y": 9520
       }
     },
     {
       "data": {
         "id": "262",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4030,
-        "y": 9060
+        "x": 3660,
+        "y": 10110
       }
     },
     {
       "data": {
         "id": "154",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 4060,
-        "y": 8170
+        "x": 3690,
+        "y": 9220
       }
     },
     {
       "data": {
         "id": "349",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3450,
-        "y": 6640
+        "x": 3080,
+        "y": 7690
       }
     },
     {
       "data": {
         "id": "231",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3710,
-        "y": 8830
+        "x": 3340,
+        "y": 9880
       }
     },
     {
       "data": {
         "id": "281",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 970,
-        "y": 1610
+        "x": 600,
+        "y": 2660
       }
     },
     {
       "data": {
         "id": "68",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 3520,
-        "y": 4540
+        "x": 3150,
+        "y": 5590
       }
     },
     {
       "data": {
         "id": "414",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 7,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1110,
-        "y": 7620
+        "x": 740,
+        "y": 8670
       }
     },
     {
       "data": {
         "id": "4",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 590,
-        "y": 3330
+        "x": 220,
+        "y": 4380
       }
     },
     {
       "data": {
         "id": "251",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 490,
-        "y": 6450
+        "x": 120,
+        "y": 7500
       }
     },
     {
       "data": {
         "id": "287",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5090,
-        "y": 7250
+        "x": 4720,
+        "y": 8300
       }
     },
     {
       "data": {
         "id": "55",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 530,
-        "y": 5260
+        "x": 160,
+        "y": 6310
       }
     },
     {
       "data": {
         "id": "376",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3520,
-        "y": 4750
+        "x": 3150,
+        "y": 5800
       }
     },
     {
       "data": {
         "id": "418",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 20,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2760,
-        "y": 7840
+        "x": 2390,
+        "y": 8890
       }
     },
     {
       "data": {
         "id": "373",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 10,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4790,
-        "y": 6370
+        "x": 4420,
+        "y": 7420
       }
     },
     {
       "data": {
         "id": "384",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 2,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 590,
-        "y": 3470
+        "x": 220,
+        "y": 4520
       }
     },
     {
       "data": {
         "id": "425",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 3,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 3050,
-        "y": 9140
+        "x": 2680,
+        "y": 10190
       }
     },
     {
       "data": {
         "id": "39",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2280,
-        "y": 2320
+        "x": 1910,
+        "y": 3370
       }
     },
     {
       "data": {
         "id": "417",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4480,
-        "y": 5800
+        "x": 4110,
+        "y": 6850
       }
     },
     {
       "data": {
         "id": "131",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3210,
-        "y": 4220
+        "x": 2840,
+        "y": 5270
       }
     },
     {
       "data": {
         "id": "124",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 3060,
-        "y": 8910
+        "x": 2690,
+        "y": 9960
       }
     },
     {
       "data": {
         "id": "219",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1620,
-        "y": 2370
+        "x": 1250,
+        "y": 3420
       }
     },
     {
       "data": {
         "id": "149",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1310,
-        "y": 1760
+        "x": 940,
+        "y": 2810
       }
     },
     {
       "data": {
         "id": "341",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2320,
-        "y": 1210
+        "x": 1950,
+        "y": 2260
       }
     },
     {
       "data": {
         "id": "148",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1640,
-        "y": 1840
+        "x": 1270,
+        "y": 2890
       }
     },
     {
       "data": {
         "id": "390",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1360,
-        "y": 290
+        "x": 990,
+        "y": 1340
       }
     },
     {
       "data": {
         "id": "85",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3820,
-        "y": 5970
+        "x": 3450,
+        "y": 7020
       }
     },
     {
       "data": {
         "id": "420",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 14,
+        "incomingFlow": 13
       },
       "position": {
-        "x": 2330,
-        "y": 1000
+        "x": 1960,
+        "y": 2050
       }
     },
     {
       "data": {
         "id": "107",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3790,
-        "y": 6970
+        "x": 3420,
+        "y": 8020
       }
     },
     {
       "data": {
         "id": "275",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3520,
-        "y": 5110
+        "x": 3150,
+        "y": 6160
       }
     },
     {
       "data": {
         "id": "26",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 900,
-        "y": 4420
+        "x": 530,
+        "y": 5470
       }
     },
     {
       "data": {
         "id": "52",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3870,
-        "y": 4510
+        "x": 3500,
+        "y": 5560
       }
     },
     {
       "data": {
         "id": "308",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5470,
-        "y": 6160
+        "x": 5100,
+        "y": 7210
       }
     },
     {
       "data": {
         "id": "239",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1610,
-        "y": 2960
+        "x": 1240,
+        "y": 4010
       }
     },
     {
       "data": {
         "id": "218",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2280,
-        "y": 2690
+        "x": 1910,
+        "y": 3740
       }
     },
     {
       "data": {
         "id": "263",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4420,
-        "y": 8030
+        "x": 4050,
+        "y": 9080
       }
     },
     {
       "data": {
         "id": "25",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 1550,
-        "y": 4850
+        "x": 1180,
+        "y": 5900
       }
     },
     {
       "data": {
         "id": "54",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2520,
-        "y": 5550
+        "x": 2150,
+        "y": 6600
       }
     },
     {
       "data": {
         "id": "348",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 12,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3920,
-        "y": 3110
+        "x": 3550,
+        "y": 4160
       }
     },
     {
       "data": {
         "id": "59",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 8
       },
       "position": {
-        "x": 1210,
-        "y": 5240
+        "x": 840,
+        "y": 6290
       }
     },
     {
       "data": {
         "id": "217",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2960,
-        "y": 2210
+        "x": 2590,
+        "y": 3260
       }
     },
     {
       "data": {
         "id": "138",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3290,
-        "y": 2230
+        "x": 2920,
+        "y": 3280
       }
     },
     {
       "data": {
         "id": "340",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4070,
-        "y": 8790
+        "x": 3700,
+        "y": 9840
       }
     },
     {
       "data": {
         "id": "109",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2580,
-        "y": 3790
+        "x": 2210,
+        "y": 4840
       }
     },
     {
       "data": {
         "id": "395",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 11,
+        "incomingFlow": 7
       },
       "position": {
-        "x": 5120,
-        "y": 6970
+        "x": 4750,
+        "y": 8020
       }
     },
     {
       "data": {
         "id": "415",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 25,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 5420,
-        "y": 7910
+        "x": 5050,
+        "y": 8960
       }
     },
     {
       "data": {
         "id": "229",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 800,
-        "y": 7780
+        "x": 430,
+        "y": 8830
       }
     },
     {
       "data": {
         "id": "403",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 4,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 4410,
-        "y": 8540
+        "x": 4040,
+        "y": 9590
       }
     },
     {
       "data": {
         "id": "404",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 8,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2880,
-        "y": 4780
+        "x": 2510,
+        "y": 5830
       }
     },
     {
       "data": {
         "id": "209",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3780,
-        "y": 7610
+        "x": 3410,
+        "y": 8660
       }
     },
     {
       "data": {
         "id": "104",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 4130,
-        "y": 7070
+        "x": 3760,
+        "y": 8120
       }
     },
     {
       "data": {
         "id": "115",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1850,
-        "y": 6070
+        "x": 1480,
+        "y": 7120
       }
     },
     {
       "data": {
         "id": "257",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3270,
-        "y": 3030
+        "x": 2900,
+        "y": 4080
       }
     },
     {
       "data": {
         "id": "40",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1970,
-        "y": 2410
+        "x": 1600,
+        "y": 3460
       }
     },
     {
       "data": {
         "id": "91",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 990,
-        "y": 2100
+        "x": 620,
+        "y": 3150
       }
     },
     {
       "data": {
         "id": "379",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 3,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 200,
-        "y": 6190
+        "x": -170,
+        "y": 7240
       }
     },
     {
       "data": {
         "id": "77",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 970,
-        "y": 2840
+        "x": 600,
+        "y": 3890
       }
     },
     {
       "data": {
         "id": "123",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 2770,
-        "y": 8480
+        "x": 2400,
+        "y": 9530
       }
     },
     {
       "data": {
         "id": "298",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 900,
-        "y": 5050
+        "x": 530,
+        "y": 6100
       }
     },
     {
       "data": {
         "id": "160",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4480,
-        "y": 6770
+        "x": 4110,
+        "y": 7820
       }
     },
     {
       "data": {
         "id": "90",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 670,
-        "y": 2020
+        "x": 300,
+        "y": 3070
       }
     },
     {
       "data": {
         "id": "196",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1540,
-        "y": 5770
+        "x": 1170,
+        "y": 6820
       }
     },
     {
       "data": {
         "id": "339",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5150,
-        "y": 6500
+        "x": 4780,
+        "y": 7550
       }
     },
     {
       "data": {
         "id": "372",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 9,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1690,
-        "y": 1120
+        "x": 1320,
+        "y": 2170
       }
     },
     {
       "data": {
         "id": "129",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3910,
-        "y": 3990
+        "x": 3540,
+        "y": 5040
       }
     },
     {
       "data": {
         "id": "236",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1280,
-        "y": 3610
+        "x": 910,
+        "y": 4660
       }
     },
     {
       "data": {
         "id": "250",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 220,
-        "y": 5780
+        "x": -150,
+        "y": 6830
       }
     },
     {
       "data": {
         "id": "350",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 4,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1890,
-        "y": 5210
+        "x": 1520,
+        "y": 6260
       }
     },
     {
       "data": {
         "id": "283",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3270,
-        "y": 3410
+        "x": 2900,
+        "y": 4460
       }
     },
     {
       "data": {
         "id": "150",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 990,
-        "y": 2430
+        "x": 620,
+        "y": 3480
       }
     },
     {
       "data": {
         "id": "118",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 9
       },
       "position": {
-        "x": 2010,
-        "y": 1580
+        "x": 1640,
+        "y": 2630
       }
     },
     {
       "data": {
         "id": "289",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4100,
-        "y": 8470
+        "x": 3730,
+        "y": 9520
       }
     },
     {
       "data": {
         "id": "61",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3200,
-        "y": 5670
+        "x": 2830,
+        "y": 6720
       }
     },
     {
       "data": {
         "id": "102",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 540,
-        "y": 6240
+        "x": 170,
+        "y": 7290
       }
     },
     {
       "data": {
         "id": "265",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3170,
-        "y": 6630
+        "x": 2800,
+        "y": 7680
       }
     },
     {
       "data": {
         "id": "206",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3790,
-        "y": 7900
+        "x": 3420,
+        "y": 8950
       }
     },
     {
       "data": {
         "id": "327",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4850,
-        "y": 5760
+        "x": 4480,
+        "y": 6810
       }
     },
     {
       "data": {
         "id": "121",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2630,
-        "y": 2920
+        "x": 2260,
+        "y": 3970
       }
     },
     {
       "data": {
         "id": "325",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1340,
-        "y": 1960
+        "x": 970,
+        "y": 3010
       }
     },
     {
       "data": {
         "id": "27",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 930,
-        "y": 4440
+        "x": 560,
+        "y": 5490
       }
     },
     {
       "data": {
         "id": "279",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1860,
-        "y": 6400
+        "x": 1490,
+        "y": 7450
       }
     },
     {
       "data": {
         "id": "167",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 5510,
-        "y": 5940
+        "x": 5140,
+        "y": 6990
       }
     },
     {
       "data": {
         "id": "62",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3200,
-        "y": 5880
+        "x": 2830,
+        "y": 6930
       }
     },
     {
       "data": {
         "id": "119",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 9
       },
       "position": {
-        "x": 2350,
-        "y": 1510
+        "x": 1980,
+        "y": 2560
       }
     },
     {
       "data": {
         "id": "330",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 12,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 320,
-        "y": 3090
+        "x": -50,
+        "y": 4140
       }
     },
     {
       "data": {
         "id": "72",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1250,
-        "y": 5020
+        "x": 880,
+        "y": 6070
       }
     },
     {
       "data": {
         "id": "142",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 4140,
-        "y": 7610
+        "x": 3770,
+        "y": 8660
       }
     },
     {
       "data": {
         "id": "183",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 4770,
-        "y": 8580
+        "x": 4400,
+        "y": 9630
       }
     },
     {
       "data": {
         "id": "366",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5770,
-        "y": 8300
+        "x": 5400,
+        "y": 9350
       }
     },
     {
       "data": {
         "id": "176",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2340,
-        "y": 2030
+        "x": 1970,
+        "y": 3080
       }
     },
     {
       "data": {
         "id": "208",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3150,
-        "y": 7660
+        "x": 2780,
+        "y": 8710
       }
     },
     {
       "data": {
         "id": "238",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1960,
-        "y": 3650
+        "x": 1590,
+        "y": 4700
       }
     },
     {
       "data": {
         "id": "175",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2670,
-        "y": 2130
+        "x": 2300,
+        "y": 3180
       }
     },
     {
       "data": {
         "id": "303",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1380,
-        "y": 1190
+        "x": 1010,
+        "y": 2240
       }
     },
     {
       "data": {
         "id": "315",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1920,
-        "y": 4970
+        "x": 1550,
+        "y": 6020
       }
     },
     {
       "data": {
         "id": "144",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 3450,
-        "y": 8770
+        "x": 3080,
+        "y": 9820
       }
     },
     {
       "data": {
         "id": "392",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 21,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2550,
-        "y": 5950
+        "x": 2180,
+        "y": 7000
       }
     },
     {
       "data": {
         "id": "71",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 910,
-        "y": 5620
+        "x": 540,
+        "y": 6670
       }
     },
     {
       "data": {
         "id": "293",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 12,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 340,
-        "y": 2840
+        "x": -30,
+        "y": 3890
       }
     },
     {
       "data": {
         "id": "276",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1210,
-        "y": 6640
+        "x": 840,
+        "y": 7690
       }
     },
     {
       "data": {
         "id": "215",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 23,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4280,
-        "y": 3640
+        "x": 3910,
+        "y": 4690
       }
     },
     {
       "data": {
         "id": "421",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 12,
+        "incomingFlow": 9
       },
       "position": {
-        "x": 2240,
-        "y": 5440
+        "x": 1870,
+        "y": 6490
       }
     },
     {
       "data": {
         "id": "12",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1630,
-        "y": 3880
+        "x": 1260,
+        "y": 4930
       }
     },
     {
       "data": {
         "id": "278",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3470,
-        "y": 8290
+        "x": 3100,
+        "y": 9340
       }
     },
     {
       "data": {
         "id": "324",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 23,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3630,
-        "y": 3360
+        "x": 3260,
+        "y": 4410
       }
     },
     {
       "data": {
         "id": "358",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4520,
-        "y": 6490
+        "x": 4150,
+        "y": 7540
       }
     },
     {
       "data": {
         "id": "284",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 8,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1690,
-        "y": 2080
+        "x": 1320,
+        "y": 3130
       }
     },
     {
       "data": {
         "id": "295",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1950,
-        "y": 4280
+        "x": 1580,
+        "y": 5330
       }
     },
     {
       "data": {
         "id": "385",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 2,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1960,
-        "y": 4040
+        "x": 1590,
+        "y": 5090
       }
     },
     {
       "data": {
         "id": "272",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 18,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2600,
-        "y": 4690
+        "x": 2230,
+        "y": 5740
       }
     },
     {
       "data": {
         "id": "310",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1180,
-        "y": 7810
+        "x": 810,
+        "y": 8860
       }
     },
     {
       "data": {
         "id": "57",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 590,
-        "y": 5670
+        "x": 220,
+        "y": 6720
       }
     },
     {
       "data": {
         "id": "255",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1550,
-        "y": 6720
+        "x": 1180,
+        "y": 7770
       }
     },
     {
       "data": {
         "id": "38",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2280,
-        "y": 4590
+        "x": 1910,
+        "y": 5640
       }
     },
     {
       "data": {
         "id": "299",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 18,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2620,
-        "y": 4300
+        "x": 2250,
+        "y": 5350
       }
     },
     {
       "data": {
         "id": "32",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 630,
-        "y": 4600
+        "x": 260,
+        "y": 5650
       }
     },
     {
       "data": {
         "id": "170",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1870,
-        "y": 7120
+        "x": 1500,
+        "y": 8170
       }
     },
     {
       "data": {
         "id": "197",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 300,
-        "y": 4620
+        "x": -70,
+        "y": 5670
       }
     },
     {
       "data": {
         "id": "145",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 3810,
-        "y": 8490
+        "x": 3440,
+        "y": 9540
       }
     },
     {
       "data": {
         "id": "242",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2330,
-        "y": 3180
+        "x": 1960,
+        "y": 4230
       }
     },
     {
       "data": {
         "id": "94",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1910,
-        "y": 5980
+        "x": 1540,
+        "y": 7030
       }
     },
     {
       "data": {
         "id": "365",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 6,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1220,
-        "y": 6940
+        "x": 850,
+        "y": 7990
       }
     },
     {
       "data": {
         "id": "174",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 870,
-        "y": 7560
+        "x": 500,
+        "y": 8610
       }
     },
     {
       "data": {
         "id": "96",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1250,
-        "y": 6070
+        "x": 880,
+        "y": 7120
       }
     },
     {
       "data": {
         "id": "169",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1890,
-        "y": 6740
+        "x": 1520,
+        "y": 7790
       }
     },
     {
       "data": {
         "id": "405",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 27,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2640,
-        "y": 3980
+        "x": 2270,
+        "y": 5030
       }
     },
     {
       "data": {
         "id": "367",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 9,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1430,
-        "y": 540
+        "x": 1060,
+        "y": 1590
       }
     },
     {
       "data": {
         "id": "400",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 10,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4230,
-        "y": 5930
+        "x": 3860,
+        "y": 6980
       }
     },
     {
       "data": {
         "id": "114",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1590,
-        "y": 5910
+        "x": 1220,
+        "y": 6960
       }
     },
     {
       "data": {
         "id": "190",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 12
       },
       "position": {
-        "x": 2250,
-        "y": 5950
+        "x": 1880,
+        "y": 7000
       }
     },
     {
       "data": {
         "id": "314",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 12,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 350,
-        "y": 3420
+        "x": -20,
+        "y": 4470
       }
     },
     {
       "data": {
         "id": "122",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3160,
-        "y": 8480
+        "x": 2790,
+        "y": 9530
       }
     },
     {
       "data": {
         "id": "363",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4300,
-        "y": 3880
+        "x": 3930,
+        "y": 4930
       }
     },
     {
       "data": {
         "id": "260",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5230,
-        "y": 5780
+        "x": 4860,
+        "y": 6830
       }
     },
     {
       "data": {
         "id": "370",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 930,
-        "y": 6030
+        "x": 560,
+        "y": 7080
       }
     },
     {
       "data": {
         "id": "159",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 10
       },
       "position": {
-        "x": 4550,
-        "y": 6710
+        "x": 4180,
+        "y": 7760
       }
     },
     {
       "data": {
         "id": "31",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 9
       },
       "position": {
-        "x": 2290,
-        "y": 5220
+        "x": 1920,
+        "y": 6270
       }
     },
     {
       "data": {
         "id": "191",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3230,
-        "y": 6820
+        "x": 2860,
+        "y": 7870
       }
     },
     {
       "data": {
         "id": "223",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5470,
-        "y": 9070
+        "x": 5100,
+        "y": 10120
       }
     },
     {
       "data": {
         "id": "9",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 1380,
-        "y": 2840
+        "x": 1010,
+        "y": 3890
       }
     },
     {
       "data": {
         "id": "50",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1320,
-        "y": 4700
+        "x": 950,
+        "y": 5750
       }
     },
     {
       "data": {
         "id": "89",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 6
       },
       "position": {
-        "x": 740,
-        "y": 2220
+        "x": 370,
+        "y": 3270
       }
     },
     {
       "data": {
         "id": "258",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4240,
-        "y": 6380
+        "x": 3870,
+        "y": 7430
       }
     },
     {
       "data": {
         "id": "75",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 8
       },
       "position": {
-        "x": 3580,
-        "y": 6450
+        "x": 3210,
+        "y": 7500
       }
     },
     {
       "data": {
         "id": "117",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1430,
-        "y": 1430
+        "x": 1060,
+        "y": 2480
       }
     },
     {
       "data": {
         "id": "288",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1900,
-        "y": 7340
+        "x": 1530,
+        "y": 8390
       }
     },
     {
       "data": {
         "id": "87",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4250,
-        "y": 6180
+        "x": 3880,
+        "y": 7230
       }
     },
     {
       "data": {
         "id": "16",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1340,
-        "y": 4250
+        "x": 970,
+        "y": 5300
       }
     },
     {
       "data": {
         "id": "137",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2050,
-        "y": 2720
+        "x": 1680,
+        "y": 3770
       }
     },
     {
       "data": {
         "id": "195",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2070,
-        "y": 2100
+        "x": 1700,
+        "y": 3150
       }
     },
     {
       "data": {
         "id": "186",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 9
       },
       "position": {
-        "x": 2100,
-        "y": 1190
+        "x": 1730,
+        "y": 2240
       }
     },
     {
       "data": {
         "id": "254",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2520,
-        "y": 8650
+        "x": 2150,
+        "y": 9700
       }
     },
     {
       "data": {
         "id": "78",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 10
       },
       "position": {
-        "x": 3570,
-        "y": 6830
+        "x": 3200,
+        "y": 7880
       }
     },
     {
       "data": {
         "id": "56",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 650,
-        "y": 5250
+        "x": 280,
+        "y": 6300
       }
     },
     {
       "data": {
         "id": "157",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 6
       },
       "position": {
-        "x": 3000,
-        "y": 4080
+        "x": 2630,
+        "y": 5130
       }
     },
     {
       "data": {
         "id": "120",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2380,
-        "y": 2830
+        "x": 2010,
+        "y": 3880
       }
     },
     {
       "data": {
         "id": "214",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2260,
-        "y": 6550
+        "x": 1890,
+        "y": 7600
       }
     },
     {
       "data": {
         "id": "28",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 1650,
-        "y": 5010
+        "x": 1280,
+        "y": 6060
       }
     },
     {
       "data": {
         "id": "95",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1960,
-        "y": 5730
+        "x": 1590,
+        "y": 6780
       }
     },
     {
       "data": {
         "id": "424",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 12,
+        "incomingFlow": 12
       },
       "position": {
-        "x": 1770,
-        "y": 1420
+        "x": 1400,
+        "y": 2470
       }
     },
     {
       "data": {
         "id": "234",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 8,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1810,
-        "y": 220
+        "x": 1440,
+        "y": 1270
       }
     },
     {
       "data": {
         "id": "60",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2960,
-        "y": 5550
+        "x": 2590,
+        "y": 6600
       }
     },
     {
       "data": {
         "id": "105",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3570,
-        "y": 7150
+        "x": 3200,
+        "y": 8200
       }
     },
     {
       "data": {
         "id": "164",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 7
       },
       "position": {
-        "x": 4890,
-        "y": 7200
+        "x": 4520,
+        "y": 8250
       }
     },
     {
       "data": {
         "id": "352",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 290,
-        "y": 6480
+        "x": -80,
+        "y": 7530
       }
     },
     {
       "data": {
         "id": "125",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 1770,
-        "y": 1620
+        "x": 1400,
+        "y": 2670
       }
     },
     {
       "data": {
         "id": "51",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 3330,
-        "y": 4520
+        "x": 2960,
+        "y": 5570
       }
     },
     {
       "data": {
         "id": "67",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 3320,
-        "y": 4850
+        "x": 2950,
+        "y": 5900
       }
     },
     {
       "data": {
         "id": "84",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3290,
-        "y": 5830
+        "x": 2920,
+        "y": 6880
       }
     },
     {
       "data": {
         "id": "136",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2070,
-        "y": 2710
+        "x": 1700,
+        "y": 3760
       }
     },
     {
       "data": {
         "id": "179",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3860,
-        "y": 8690
+        "x": 3490,
+        "y": 9740
       }
     },
     {
       "data": {
         "id": "3",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 720,
-        "y": 3630
+        "x": 350,
+        "y": 4680
       }
     },
     {
       "data": {
         "id": "426",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 14,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 3520,
-        "y": 9010
+        "x": 3150,
+        "y": 10060
       }
     },
     {
       "data": {
         "id": "184",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 5530,
-        "y": 8150
+        "x": 5160,
+        "y": 9200
       }
     },
     {
       "data": {
         "id": "193",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 700,
-        "y": 4280
+        "x": 330,
+        "y": 5330
       }
     },
     {
       "data": {
         "id": "389",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 10,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3720,
-        "y": 2880
+        "x": 3350,
+        "y": 3930
       }
     },
     {
       "data": {
         "id": "93",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 3570,
-        "y": 7570
+        "x": 3200,
+        "y": 8620
       }
     },
     {
       "data": {
         "id": "406",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 12,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2750,
-        "y": 2270
+        "x": 2380,
+        "y": 3320
       }
     },
     {
       "data": {
         "id": "408",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 8,
+        "incomingFlow": 8
       },
       "position": {
-        "x": 2600,
-        "y": 6930
+        "x": 2230,
+        "y": 7980
       }
     },
     {
       "data": {
         "id": "180",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 4210,
-        "y": 8250
+        "x": 3840,
+        "y": 9300
       }
     },
     {
       "data": {
         "id": "42",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2720,
-        "y": 3250
+        "x": 2350,
+        "y": 4300
       }
     },
     {
       "data": {
         "id": "402",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 6,
+        "incomingFlow": 6
       },
       "position": {
-        "x": 960,
-        "y": 6610
+        "x": 590,
+        "y": 7660
       }
     },
     {
       "data": {
         "id": "252",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2370,
-        "y": 3900
+        "x": 2000,
+        "y": 4950
       }
     },
     {
       "data": {
         "id": "135",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3080,
-        "y": 2390
+        "x": 2710,
+        "y": 3440
       }
     },
     {
       "data": {
         "id": "34",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2710,
-        "y": 3620
+        "x": 2340,
+        "y": 4670
       }
     },
     {
       "data": {
         "id": "396",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 3,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 4870,
-        "y": 8360
+        "x": 4500,
+        "y": 9410
       }
     },
     {
       "data": {
         "id": "106",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2910,
-        "y": 7690
+        "x": 2540,
+        "y": 8740
       }
     },
     {
       "data": {
         "id": "273",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 23,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3680,
-        "y": 4320
+        "x": 3310,
+        "y": 5370
       }
     },
     {
       "data": {
         "id": "361",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 3,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 630,
-        "y": 6720
+        "x": 260,
+        "y": 7770
       }
     },
     {
       "data": {
         "id": "2",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 740,
-        "y": 3330
+        "x": 370,
+        "y": 4380
       }
     },
     {
       "data": {
         "id": "112",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1020,
-        "y": 4890
+        "x": 650,
+        "y": 5940
       }
     },
     {
       "data": {
         "id": "113",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 7
       },
       "position": {
-        "x": 1640,
-        "y": 6160
+        "x": 1270,
+        "y": 7210
       }
     },
     {
       "data": {
         "id": "92",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3570,
-        "y": 7770
+        "x": 3200,
+        "y": 8820
       }
     },
     {
       "data": {
         "id": "423",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 21,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4610,
-        "y": 6250
+        "x": 4240,
+        "y": 7300
       }
     },
     {
       "data": {
         "id": "199",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2970,
-        "y": 5920
+        "x": 2600,
+        "y": 6970
       }
     },
     {
       "data": {
         "id": "69",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3320,
-        "y": 5340
+        "x": 2950,
+        "y": 6390
       }
     },
     {
       "data": {
         "id": "383",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 4,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3290,
-        "y": 6280
+        "x": 2920,
+        "y": 7330
       }
     },
     {
       "data": {
         "id": "375",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 380,
-        "y": 4380
+        "x": 10,
+        "y": 5430
       }
     },
     {
       "data": {
         "id": "362",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 3,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4250,
-        "y": 7300
+        "x": 3880,
+        "y": 8350
       }
     },
     {
       "data": {
         "id": "188",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2140,
-        "y": 1040
+        "x": 1770,
+        "y": 2090
       }
     },
     {
       "data": {
         "id": "82",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3650,
-        "y": 5440
+        "x": 3280,
+        "y": 6490
       }
     },
     {
       "data": {
         "id": "46",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 690,
-        "y": 5050
+        "x": 320,
+        "y": 6100
       }
     },
     {
       "data": {
         "id": "227",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 960,
-        "y": 6930
+        "x": 590,
+        "y": 7980
       }
     },
     {
       "data": {
         "id": "291",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1830,
-        "y": 440
+        "x": 1460,
+        "y": 1490
       }
     },
     {
       "data": {
         "id": "74",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3640,
-        "y": 5880
+        "x": 3270,
+        "y": 6930
       }
     },
     {
       "data": {
         "id": "44",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1670,
-        "y": 5550
+        "x": 1300,
+        "y": 6600
       }
     },
     {
       "data": {
         "id": "103",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3940,
-        "y": 6860
+        "x": 3570,
+        "y": 7910
       }
     },
     {
       "data": {
         "id": "213",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2880,
-        "y": 9000
+        "x": 2510,
+        "y": 10050
       }
     },
     {
       "data": {
         "id": "1",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1070,
-        "y": 3680
+        "x": 700,
+        "y": 4730
       }
     },
     {
       "data": {
         "id": "334",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 470,
-        "y": 1920
+        "x": 100,
+        "y": 2970
       }
     },
     {
       "data": {
         "id": "301",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 18,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2660,
-        "y": 5750
+        "x": 2290,
+        "y": 6800
       }
     },
     {
       "data": {
         "id": "212",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2580,
-        "y": 8240
+        "x": 2210,
+        "y": 9290
       }
     },
     {
       "data": {
         "id": "53",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2330,
-        "y": 5810
+        "x": 1960,
+        "y": 6860
       }
     },
     {
       "data": {
         "id": "88",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 460,
-        "y": 2350
+        "x": 90,
+        "y": 3400
       }
     },
     {
       "data": {
         "id": "178",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 4220,
-        "y": 8680
+        "x": 3850,
+        "y": 9730
       }
     },
     {
       "data": {
         "id": "43",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2010,
-        "y": 5550
+        "x": 1640,
+        "y": 6600
       }
     },
     {
       "data": {
         "id": "222",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4280,
-        "y": 6950
+        "x": 3910,
+        "y": 8000
       }
     },
     {
       "data": {
         "id": "307",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4290,
-        "y": 6660
+        "x": 3920,
+        "y": 7710
       }
     },
     {
       "data": {
         "id": "351",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 10,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 360,
-        "y": 5610
+        "x": -10,
+        "y": 6660
       }
     },
     {
       "data": {
         "id": "422",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 13,
+        "incomingFlow": 11
       },
       "position": {
-        "x": 1030,
-        "y": 5350
+        "x": 660,
+        "y": 6400
       }
     },
     {
       "data": {
         "id": "20",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 2410,
-        "y": 3590
+        "x": 2040,
+        "y": 4640
       }
     },
     {
       "data": {
         "id": "47",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2380,
-        "y": 4570
+        "x": 2010,
+        "y": 5620
       }
     },
     {
       "data": {
         "id": "387",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 4,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2770,
-        "y": 2720
+        "x": 2400,
+        "y": 3770
       }
     },
     {
       "data": {
         "id": "29",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2690,
-        "y": 5210
+        "x": 2320,
+        "y": 6260
       }
     },
     {
       "data": {
         "id": "205",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 820,
-        "y": 1790
+        "x": 450,
+        "y": 2840
       }
     },
     {
       "data": {
         "id": "65",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 1030,
-        "y": 5530
+        "x": 660,
+        "y": 6580
       }
     },
     {
       "data": {
         "id": "111",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 9
       },
       "position": {
-        "x": 3260,
-        "y": 8080
+        "x": 2890,
+        "y": 9130
       }
     },
     {
       "data": {
         "id": "381",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5550,
-        "y": 8780
+        "x": 5180,
+        "y": 9830
       }
     },
     {
       "data": {
         "id": "353",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 8,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3950,
-        "y": 7190
+        "x": 3580,
+        "y": 8240
       }
     },
     {
       "data": {
         "id": "220",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3970,
-        "y": 6590
+        "x": 3600,
+        "y": 7640
       }
     },
     {
       "data": {
         "id": "391",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2120,
-        "y": 2510
+        "x": 1750,
+        "y": 3560
       }
     },
     {
       "data": {
         "id": "19",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1780,
-        "y": 2830
+        "x": 1410,
+        "y": 3880
       }
     },
     {
       "data": {
         "id": "411",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 29,
+        "incomingFlow": 18
       },
       "position": {
-        "x": 2450,
-        "y": 2550
+        "x": 2080,
+        "y": 3600
       }
     },
     {
       "data": {
         "id": "23",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 1120,
-        "y": 2840
+        "x": 750,
+        "y": 3890
       }
     },
     {
       "data": {
         "id": "11",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 790,
-        "y": 2860
+        "x": 420,
+        "y": 3910
       }
     },
     {
       "data": {
         "id": "8",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 1760,
-        "y": 3520
+        "x": 1390,
+        "y": 4570
       }
     },
     {
       "data": {
         "id": "243",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 390,
-        "y": 5030
+        "x": 20,
+        "y": 6080
       }
     },
     {
       "data": {
         "id": "369",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4000,
-        "y": 5760
+        "x": 3630,
+        "y": 6810
       }
     },
     {
       "data": {
         "id": "177",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4230,
-        "y": 8890
+        "x": 3860,
+        "y": 9940
       }
     },
     {
       "data": {
         "id": "248",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 21,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4020,
-        "y": 5160
+        "x": 3650,
+        "y": 6210
       }
     },
     {
       "data": {
         "id": "202",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1130,
-        "y": 2600
+        "x": 760,
+        "y": 3650
       }
     },
     {
       "data": {
         "id": "335",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3460,
-        "y": 2050
+        "x": 3090,
+        "y": 3100
       }
     },
     {
       "data": {
         "id": "173",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 970,
-        "y": 7650
+        "x": 600,
+        "y": 8700
       }
     },
     {
       "data": {
         "id": "270",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3080,
-        "y": 3700
+        "x": 2710,
+        "y": 4750
       }
     },
     {
       "data": {
         "id": "240",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1740,
-        "y": 4370
+        "x": 1370,
+        "y": 5420
       }
     },
     {
       "data": {
         "id": "30",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2710,
-        "y": 5030
+        "x": 2340,
+        "y": 6080
       }
     },
     {
       "data": {
         "id": "233",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2500,
-        "y": 1340
+        "x": 2130,
+        "y": 2390
       }
     },
     {
       "data": {
         "id": "380",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3250,
-        "y": 8820
+        "x": 2880,
+        "y": 9870
       }
     },
     {
       "data": {
         "id": "326",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3100,
-        "y": 3260
+        "x": 2730,
+        "y": 4310
       }
     },
     {
       "data": {
         "id": "311",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 650,
-        "y": 7540
+        "x": 280,
+        "y": 8590
       }
     },
     {
       "data": {
         "id": "320",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1180,
-        "y": 1350
+        "x": 810,
+        "y": 2400
       }
     },
     {
       "data": {
         "id": "211",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2780,
-        "y": 3080
+        "x": 2410,
+        "y": 4130
       }
     },
     {
       "data": {
         "id": "316",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 21,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3690,
-        "y": 5610
+        "x": 3320,
+        "y": 6660
       }
     },
     {
       "data": {
         "id": "412",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 29,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3720,
-        "y": 4710
+        "x": 3350,
+        "y": 5760
       }
     },
     {
       "data": {
         "id": "394",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 3,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 4070,
-        "y": 4120
+        "x": 3700,
+        "y": 5170
       }
     },
     {
       "data": {
         "id": "172",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 990,
-        "y": 7450
+        "x": 620,
+        "y": 8500
       }
     },
     {
       "data": {
         "id": "165",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 4990,
-        "y": 6350
+        "x": 4620,
+        "y": 7400
       }
     },
     {
       "data": {
         "id": "200",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1380,
-        "y": 5620
+        "x": 1010,
+        "y": 6670
       }
     },
     {
       "data": {
         "id": "83",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3360,
-        "y": 5740
+        "x": 2990,
+        "y": 6790
       }
     },
     {
       "data": {
         "id": "237",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 780,
-        "y": 3840
+        "x": 410,
+        "y": 4890
       }
     },
     {
       "data": {
         "id": "274",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 21,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3680,
-        "y": 6110
+        "x": 3310,
+        "y": 7160
       }
     },
     {
       "data": {
         "id": "161",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 4920,
-        "y": 8670
+        "x": 4550,
+        "y": 9720
       }
     },
     {
       "data": {
         "id": "328",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 8,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1560,
-        "y": 200
+        "x": 1190,
+        "y": 1250
       }
     },
     {
       "data": {
         "id": "132",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4090,
-        "y": 3740
+        "x": 3720,
+        "y": 4790
       }
     },
     {
       "data": {
         "id": "321",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2940,
-        "y": 8680
+        "x": 2570,
+        "y": 9730
       }
     },
     {
       "data": {
         "id": "300",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 23,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4070,
-        "y": 4380
+        "x": 3700,
+        "y": 5430
       }
     },
     {
       "data": {
         "id": "286",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5240,
-        "y": 9100
+        "x": 4870,
+        "y": 10150
       }
     },
     {
       "data": {
         "id": "261",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2490,
-        "y": 2210
+        "x": 2120,
+        "y": 3260
       }
     },
     {
       "data": {
         "id": "280",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1710,
-        "y": 5910
+        "x": 1340,
+        "y": 6960
       }
     },
     {
       "data": {
         "id": "410",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 23,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 2130,
-        "y": 3130
+        "x": 1760,
+        "y": 4180
       }
     },
     {
       "data": {
         "id": "329",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1140,
-        "y": 3110
+        "x": 770,
+        "y": 4160
       }
     },
     {
       "data": {
         "id": "143",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 3610,
-        "y": 8480
+        "x": 3240,
+        "y": 9530
       }
     },
     {
       "data": {
         "id": "253",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2030,
-        "y": 6260
+        "x": 1660,
+        "y": 7310
       }
     },
     {
       "data": {
         "id": "419",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 6,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 5590,
-        "y": 8550
+        "x": 5220,
+        "y": 9600
       }
     },
     {
       "data": {
         "id": "360",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3040,
-        "y": 5730
+        "x": 2670,
+        "y": 6780
       }
     },
     {
       "data": {
         "id": "241",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2410,
-        "y": 4790
+        "x": 2040,
+        "y": 5840
       }
     },
     {
       "data": {
         "id": "332",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1750,
-        "y": 4790
+        "x": 1380,
+        "y": 5840
       }
     },
     {
       "data": {
         "id": "235",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3000,
-        "y": 7010
+        "x": 2630,
+        "y": 8060
       }
     },
     {
       "data": {
         "id": "388",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 3,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3160,
-        "y": 2050
+        "x": 2790,
+        "y": 3100
       }
     },
     {
       "data": {
         "id": "371",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 9,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2960,
-        "y": 8310
+        "x": 2590,
+        "y": 9360
       }
     },
     {
       "data": {
         "id": "256",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3480,
-        "y": 2440
+        "x": 3110,
+        "y": 3490
       }
     },
     {
       "data": {
         "id": "147",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1830,
-        "y": 2400
+        "x": 1460,
+        "y": 3450
       }
     },
     {
       "data": {
         "id": "181",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4600,
-        "y": 8690
+        "x": 4230,
+        "y": 9740
       }
     },
     {
       "data": {
         "id": "249",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4020,
-        "y": 6190
+        "x": 3650,
+        "y": 7240
       }
     },
     {
       "data": {
         "id": "282",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2180,
-        "y": 1790
+        "x": 1810,
+        "y": 2840
       }
     },
     {
       "data": {
         "id": "41",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2460,
-        "y": 3400
+        "x": 2090,
+        "y": 4450
       }
     },
     {
       "data": {
         "id": "110",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2450,
-        "y": 3710
+        "x": 2080,
+        "y": 4760
       }
     },
     {
       "data": {
         "id": "268",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1450,
-        "y": 3990
+        "x": 1080,
+        "y": 5040
       }
     },
     {
       "data": {
         "id": "201",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3080,
-        "y": 4710
+        "x": 2710,
+        "y": 5760
       }
     },
     {
       "data": {
         "id": "15",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1120,
-        "y": 4040
+        "x": 750,
+        "y": 5090
       }
     },
     {
       "data": {
         "id": "81",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2750,
-        "y": 4710
+        "x": 2380,
+        "y": 5760
       }
     },
     {
       "data": {
         "id": "225",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5690,
-        "y": 5730
+        "x": 5320,
+        "y": 6780
       }
     },
     {
       "data": {
         "id": "354",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1390,
-        "y": 5910
+        "x": 1020,
+        "y": 6960
       }
     },
     {
       "data": {
         "id": "386",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 8,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 520,
-        "y": 2170
+        "x": 150,
+        "y": 3220
       }
     },
     {
       "data": {
         "id": "259",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4650,
-        "y": 7290
+        "x": 4280,
+        "y": 8340
       }
     },
     {
       "data": {
         "id": "331",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2120,
-        "y": 3800
+        "x": 1750,
+        "y": 4850
       }
     },
     {
       "data": {
         "id": "285",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4930,
-        "y": 8880
+        "x": 4560,
+        "y": 9930
       }
     },
     {
       "data": {
         "id": "244",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 420,
-        "y": 5360
+        "x": 50,
+        "y": 6410
       }
     },
     {
       "data": {
         "id": "413",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4100,
-        "y": 3920
+        "x": 3730,
+        "y": 4970
       }
     },
     {
       "data": {
         "id": "100",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 400,
-        "y": 6000
+        "x": 30,
+        "y": 7050
       }
     },
     {
       "data": {
         "id": "33",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 780,
-        "y": 4510
+        "x": 410,
+        "y": 5560
       }
     },
     {
       "data": {
         "id": "382",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1680,
-        "y": 7350
+        "x": 1310,
+        "y": 8400
       }
     },
     {
       "data": {
         "id": "409",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 27,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3020,
-        "y": 6780
+        "x": 2650,
+        "y": 7830
       }
     },
     {
       "data": {
         "id": "158",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 6
       },
       "position": {
-        "x": 3780,
-        "y": 3730
+        "x": 3410,
+        "y": 4780
       }
     },
     {
       "data": {
         "id": "14",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1790,
-        "y": 4050
+        "x": 1420,
+        "y": 5100
       }
     },
     {
       "data": {
         "id": "36",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2080,
-        "y": 5310
+        "x": 1710,
+        "y": 6360
       }
     },
     {
       "data": {
         "id": "304",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3280,
-        "y": 9090
+        "x": 2910,
+        "y": 10140
       }
     },
     {
       "data": {
         "id": "139",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3480,
-        "y": 3020
+        "x": 3110,
+        "y": 4070
       }
     },
     {
       "data": {
         "id": "182",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 4620,
-        "y": 8670
+        "x": 4250,
+        "y": 9720
       }
     },
     {
       "data": {
         "id": "152",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3160,
-        "y": 2740
+        "x": 2790,
+        "y": 3790
       }
     },
     {
       "data": {
         "id": "116",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 1210,
-        "y": 1750
+        "x": 840,
+        "y": 2800
       }
     },
     {
       "data": {
         "id": "189",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 12
       },
       "position": {
-        "x": 3370,
-        "y": 6470
+        "x": 3000,
+        "y": 7520
       }
     },
     {
       "data": {
         "id": "133",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2840,
-        "y": 2450
+        "x": 2470,
+        "y": 3500
       }
     },
     {
       "data": {
         "id": "312",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5300,
-        "y": 8110
+        "x": 4930,
+        "y": 9160
       }
     },
     {
       "data": {
         "id": "313",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2070,
-        "y": 5840
+        "x": 1700,
+        "y": 6890
       }
     },
     {
       "data": {
         "id": "230",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2530,
-        "y": 1830
+        "x": 2160,
+        "y": 2880
       }
     },
     {
       "data": {
         "id": "294",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1480,
-        "y": 3680
+        "x": 1110,
+        "y": 4730
       }
     },
     {
       "data": {
         "id": "166",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5040,
-        "y": 6000
+        "x": 4670,
+        "y": 7050
       }
     },
     {
       "data": {
         "id": "17",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1460,
-        "y": 4370
+        "x": 1090,
+        "y": 5420
       }
     },
     {
       "data": {
         "id": "344",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3410,
-        "y": 5410
+        "x": 3040,
+        "y": 6460
       }
     },
     {
       "data": {
         "id": "156",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 4040,
-        "y": 6370
+        "x": 3670,
+        "y": 7420
       }
     },
     {
       "data": {
         "id": "247",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 21,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3390,
-        "y": 6040
+        "x": 3020,
+        "y": 7090
       }
     },
     {
       "data": {
         "id": "401",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 20,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 5700,
-        "y": 6110
+        "x": 5330,
+        "y": 7160
       }
     },
     {
       "data": {
         "id": "80",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 860,
-        "y": 2560
+        "x": 490,
+        "y": 3610
       }
     },
     {
       "data": {
         "id": "141",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3810,
-        "y": 3310
+        "x": 3440,
+        "y": 4360
       }
     },
     {
       "data": {
         "id": "290",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4620,
-        "y": 8930
+        "x": 4250,
+        "y": 9980
       }
     },
     {
       "data": {
         "id": "48",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2780,
-        "y": 4550
+        "x": 2410,
+        "y": 5600
       }
     },
     {
       "data": {
         "id": "76",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1850,
-        "y": 2660
+        "x": 1480,
+        "y": 3710
       }
     },
     {
       "data": {
         "id": "407",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 20,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4100,
-        "y": 4610
+        "x": 3730,
+        "y": 5660
       }
     },
     {
       "data": {
         "id": "322",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 8,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1560,
-        "y": 1450
+        "x": 1190,
+        "y": 2500
       }
     },
     {
       "data": {
         "id": "6",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 1830,
-        "y": 3330
+        "x": 1460,
+        "y": 4380
       }
     },
     {
       "data": {
         "id": "267",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 12,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 530,
-        "y": 2680
+        "x": 160,
+        "y": 3730
       }
     },
     {
       "data": {
         "id": "355",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1200,
-        "y": 2390
+        "x": 830,
+        "y": 3440
       }
     },
     {
       "data": {
         "id": "333",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3100,
-        "y": 4970
+        "x": 2730,
+        "y": 6020
       }
     },
     {
       "data": {
         "id": "70",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1090,
-        "y": 5860
+        "x": 720,
+        "y": 6910
       }
     },
     {
       "data": {
         "id": "130",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 3460,
-        "y": 4080
+        "x": 3090,
+        "y": 5130
       }
     },
     {
       "data": {
         "id": "108",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4000,
-        "y": 7820
+        "x": 3630,
+        "y": 8870
       }
     },
     {
       "data": {
         "id": "101",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 750,
-        "y": 6180
+        "x": 380,
+        "y": 7230
       }
     },
     {
       "data": {
         "id": "296",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 18,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2820,
-        "y": 3450
+        "x": 2450,
+        "y": 4500
       }
     },
     {
       "data": {
         "id": "97",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1410,
-        "y": 6270
+        "x": 1040,
+        "y": 7320
       }
     },
     {
       "data": {
         "id": "194",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2120,
-        "y": 4780
+        "x": 1750,
+        "y": 5830
       }
     },
     {
       "data": {
         "id": "305",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4340,
-        "y": 7640
+        "x": 3970,
+        "y": 8690
       }
     },
     {
       "data": {
         "id": "338",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4690,
-        "y": 7090
+        "x": 4320,
+        "y": 8140
       }
     },
     {
       "data": {
         "id": "153",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3180,
-        "y": 2720
+        "x": 2810,
+        "y": 3770
       }
     },
     {
       "data": {
         "id": "399",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 26,
+        "incomingFlow": 13
       },
       "position": {
-        "x": 3350,
-        "y": 7690
+        "x": 2980,
+        "y": 8740
       }
     },
     {
       "data": {
         "id": "198",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 780,
-        "y": 5470
+        "x": 410,
+        "y": 6520
       }
     },
     {
       "data": {
         "id": "416",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3360,
-        "y": 7460
+        "x": 2990,
+        "y": 8510
       }
     },
     {
       "data": {
         "id": "398",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 14,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 3130,
-        "y": 4400
+        "x": 2760,
+        "y": 5450
       }
     },
     {
       "data": {
         "id": "377",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 12,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1460,
-        "y": 4990
+        "x": 1090,
+        "y": 6040
       }
     },
     {
       "data": {
         "id": "393",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 28,
+        "incomingFlow": 5
       },
       "position": {
-        "x": 2820,
-        "y": 3820
+        "x": 2450,
+        "y": 4870
       }
     },
     {
       "data": {
         "id": "155",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4400,
-        "y": 6050
+        "x": 4030,
+        "y": 7100
       }
     },
     {
       "data": {
         "id": "127",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1740,
-        "y": 6600
+        "x": 1370,
+        "y": 7650
       }
     },
     {
       "data": {
         "id": "210",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1140,
-        "y": 4720
+        "x": 770,
+        "y": 5770
       }
     },
     {
       "data": {
         "id": "246",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3380,
-        "y": 7000
+        "x": 3010,
+        "y": 8050
       }
     },
     {
       "data": {
         "id": "187",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1610,
-        "y": 450
+        "x": 1240,
+        "y": 1500
       }
     },
     {
       "data": {
         "id": "203",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 21,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3770,
-        "y": 5170
+        "x": 3400,
+        "y": 6220
       }
     },
     {
       "data": {
         "id": "277",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 760,
-        "y": 6320
+        "x": 390,
+        "y": 7370
       }
     },
     {
       "data": {
         "id": "347",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 8,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3330,
-        "y": 8600
+        "x": 2960,
+        "y": 9650
       }
     },
     {
       "data": {
         "id": "37",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2120,
-        "y": 5160
+        "x": 1750,
+        "y": 6210
       }
     },
     {
       "data": {
         "id": "302",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3020,
-        "y": 8010
+        "x": 2650,
+        "y": 9060
       }
     },
     {
       "data": {
         "id": "346",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 9,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2570,
-        "y": 1530
+        "x": 2200,
+        "y": 2580
       }
     },
     {
       "data": {
         "id": "232",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5670,
-        "y": 7920
+        "x": 5300,
+        "y": 8970
       }
     },
     {
       "data": {
         "id": "266",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 540,
-        "y": 3130
+        "x": 170,
+        "y": 4180
       }
     },
     {
       "data": {
         "id": "10",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 550,
-        "y": 2880
+        "x": 180,
+        "y": 3930
       }
     },
     {
       "data": {
         "id": "126",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 9
       },
       "position": {
-        "x": 1920,
-        "y": 1370
+        "x": 1550,
+        "y": 2420
       }
     },
     {
       "data": {
         "id": "323",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2400,
-        "y": 6970
+        "x": 2030,
+        "y": 8020
       }
     },
     {
       "data": {
         "id": "342",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 6,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1180,
-        "y": 3830
+        "x": 810,
+        "y": 4880
       }
     },
     {
       "data": {
         "id": "368",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 520,
-        "y": 3850
+        "x": 150,
+        "y": 4900
       }
     },
     {
       "data": {
         "id": "245",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3090,
-        "y": 6120
+        "x": 2720,
+        "y": 7170
       }
     },
     {
       "data": {
         "id": "21",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 2170,
-        "y": 3970
+        "x": 1800,
+        "y": 5020
       }
     },
     {
       "data": {
         "id": "0",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1200,
-        "y": 3330
+        "x": 830,
+        "y": 4380
       }
     },
     {
       "data": {
         "id": "397",
         "type": "Tavern",
-        "label": "T"
+        "label": "T",
+        "productionCapacity": 21,
+        "incomingFlow": 12
       },
       "position": {
-        "x": 2430,
-        "y": 6190
+        "x": 2060,
+        "y": 7240
       }
     },
     {
       "data": {
         "id": "343",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 790,
-        "y": 5850
+        "x": 420,
+        "y": 6900
       }
     },
     {
       "data": {
         "id": "336",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 23,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3840,
-        "y": 3490
+        "x": 3470,
+        "y": 4540
       }
     },
     {
       "data": {
         "id": "140",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3520,
-        "y": 3180
+        "x": 3150,
+        "y": 4230
       }
     },
     {
       "data": {
         "id": "86",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3780,
-        "y": 5380
+        "x": 3410,
+        "y": 6430
       }
     },
     {
       "data": {
         "id": "318",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 24,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2720,
-        "y": 7530
+        "x": 2350,
+        "y": 8580
       }
     },
     {
       "data": {
         "id": "359",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 2,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2900,
-        "y": 1950
+        "x": 2530,
+        "y": 3000
       }
     },
     {
       "data": {
         "id": "63",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1130,
-        "y": 5660
+        "x": 760,
+        "y": 6710
       }
     },
     {
       "data": {
         "id": "163",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 5320,
-        "y": 8910
+        "x": 4950,
+        "y": 9960
       }
     },
     {
       "data": {
         "id": "207",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2110,
-        "y": 6040
+        "x": 1740,
+        "y": 7090
       }
     },
     {
       "data": {
         "id": "192",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2460,
-        "y": 5450
+        "x": 2090,
+        "y": 6500
       }
     },
     {
       "data": {
         "id": "378",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 16,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3750,
-        "y": 6450
+        "x": 3380,
+        "y": 7500
       }
     },
     {
       "data": {
         "id": "364",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 3,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4050,
-        "y": 7430
+        "x": 3680,
+        "y": 8480
       }
     },
     {
       "data": {
         "id": "292",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1560,
-        "y": 2720
+        "x": 1190,
+        "y": 3770
       }
     },
     {
       "data": {
         "id": "171",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1100,
-        "y": 6760
+        "x": 730,
+        "y": 7810
       }
     },
     {
       "data": {
         "id": "134",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 2890,
-        "y": 2500
+        "x": 2520,
+        "y": 3550
       }
     },
     {
       "data": {
         "id": "297",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2540,
-        "y": 3110
+        "x": 2170,
+        "y": 4160
       }
     },
     {
       "data": {
         "id": "79",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 13
       },
       "position": {
-        "x": 3750,
-        "y": 6650
+        "x": 3380,
+        "y": 7700
       }
     },
     {
       "data": {
         "id": "319",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1800,
-        "y": 5680
+        "x": 1430,
+        "y": 6730
       }
     },
     {
       "data": {
         "id": "374",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2290,
-        "y": 790
+        "x": 1920,
+        "y": 1840
       }
     },
     {
       "data": {
         "id": "204",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 260,
-        "y": 2290
+        "x": -110,
+        "y": 3340
       }
     },
     {
       "data": {
         "id": "45",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 510,
-        "y": 4810
+        "x": 140,
+        "y": 5860
       }
     },
     {
       "data": {
         "id": "128",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 8
       },
       "position": {
-        "x": 2430,
-        "y": 6760
+        "x": 2060,
+        "y": 7810
       }
     },
     {
       "data": {
         "id": "18",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1550,
-        "y": 3330
+        "x": 1180,
+        "y": 4380
       }
     },
     {
       "data": {
         "id": "5",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 890,
-        "y": 3330
+        "x": 520,
+        "y": 4380
       }
     },
     {
       "data": {
         "id": "345",
         "type": "Brewery",
-        "label": "B"
+        "label": "B",
+        "productionCapacity": 5,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 480,
-        "y": 5800
+        "x": 110,
+        "y": 6850
       }
     },
     {
       "data": {
         "id": "58",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 830,
-        "y": 5240
+        "x": 460,
+        "y": 6290
       }
     },
     {
       "data": {
         "id": "146",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1930,
-        "y": 1920
+        "x": 1560,
+        "y": 2970
       }
     },
     {
       "data": {
         "id": "7",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
       },
       "position": {
-        "x": 1890,
-        "y": 3170
+        "x": 1520,
+        "y": 4220
       }
     },
     {
       "data": {
         "id": "271",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 17,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1490,
-        "y": 5340
+        "x": 1120,
+        "y": 6390
       }
     },
     {
       "data": {
         "id": "309",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2100,
-        "y": 6930
+        "x": 1730,
+        "y": 7980
       }
     },
     {
       "data": {
         "id": "49",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2850,
-        "y": 4190
+        "x": 2480,
+        "y": 5240
       }
     },
     {
       "data": {
         "id": "24",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 2210,
-        "y": 3560
+        "x": 1840,
+        "y": 4610
       }
     },
     {
       "data": {
         "id": "13",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 1
       },
       "position": {
-        "x": 1530,
-        "y": 4170
+        "x": 1160,
+        "y": 5220
       }
     },
     {
       "data": {
         "id": "317",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 940,
-        "y": 1980
+        "x": 570,
+        "y": 3030
       }
     },
     {
       "data": {
         "id": "264",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 11,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 4350,
-        "y": 8930
+        "x": 3980,
+        "y": 9980
       }
     },
     {
       "data": {
         "id": "162",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 6
       },
       "position": {
-        "x": 5350,
-        "y": 8670
+        "x": 4980,
+        "y": 9720
       }
     },
     {
       "data": {
         "id": "185",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2280,
-        "y": 1460
+        "x": 1910,
+        "y": 2510
       }
     },
     {
       "data": {
         "id": "151",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2880,
-        "y": 3370
+        "x": 2510,
+        "y": 4420
       }
     },
     {
       "data": {
         "id": "66",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 2810,
-        "y": 5550
+        "x": 2440,
+        "y": 6600
       }
     },
     {
       "data": {
         "id": "306",
         "type": "Farmland",
-        "label": "F"
+        "label": "F",
+        "productionCapacity": 15,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 3240,
-        "y": 2480
+        "x": 2870,
+        "y": 3530
       }
     },
     {
       "data": {
         "id": "22",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 2
       },
       "position": {
-        "x": 1200,
-        "y": 4310
+        "x": 830,
+        "y": 5360
       }
     },
     {
       "data": {
         "id": "73",
         "type": "Intersection",
-        "label": "I"
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 10
       },
       "position": {
-        "x": 3450,
-        "y": 6300
+        "x": 3080,
+        "y": 7350
+      }
+    },
+    {
+      "data": {
+        "id": "99",
+        "type": "Intersection",
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
+      },
+      "position": {
+        "x": 430,
+        "y": 7620
+      }
+    },
+    {
+      "data": {
+        "id": "357",
+        "type": "Brewery",
+        "label": "B",
+        "productionCapacity": 6,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 3170,
+        "y": 4610
+      }
+    },
+    {
+      "data": {
+        "id": "356",
+        "type": "Brewery",
+        "label": "B",
+        "productionCapacity": 1,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 3690,
+        "y": 8990
+      }
+    },
+    {
+      "data": {
+        "id": "226",
+        "type": "Farmland",
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 1730,
+        "y": 8330
+      }
+    },
+    {
+      "data": {
+        "id": "224",
+        "type": "Farmland",
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 4410,
+        "y": 7180
+      }
+    },
+    {
+      "data": {
+        "id": "64",
+        "type": "Intersection",
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
+      },
+      "position": {
+        "x": 800,
+        "y": 6480
+      }
+    },
+    {
+      "data": {
+        "id": "228",
+        "type": "Farmland",
+        "label": "F",
+        "productionCapacity": 19,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 410,
+        "y": 8330
+      }
+    },
+    {
+      "data": {
+        "id": "269",
+        "type": "Farmland",
+        "label": "F",
+        "productionCapacity": 7,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 510,
+        "y": 5240
+      }
+    },
+    {
+      "data": {
+        "id": "35",
+        "type": "Intersection",
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 2510,
+        "y": 4700
+      }
+    },
+    {
+      "data": {
+        "id": "216",
+        "type": "Farmland",
+        "label": "F",
+        "productionCapacity": 13,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 2220,
+        "y": 3450
+      }
+    },
+    {
+      "data": {
+        "id": "98",
+        "type": "Intersection",
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 3
+      },
+      "position": {
+        "x": 770,
+        "y": 7450
       }
     }
   ],
   "edges": [
     {
       "data": {
-        "label": "3/18",
-        "source": "99",
-        "target": "98"
-      }
-    },
-    {
-      "data": {
-        "label": "6/13",
-        "source": "357",
-        "target": "158"
-      }
-    },
-    {
-      "data": {
-        "label": "1/9",
-        "source": "356",
-        "target": "154"
-      }
-    },
-    {
-      "data": {
-        "label": "0/2",
-        "source": "226",
-        "target": "170"
-      }
-    },
-    {
-      "data": {
-        "label": "0/17",
-        "source": "224",
-        "target": "165"
-      }
-    },
-    {
-      "data": {
-        "label": "3/14",
-        "source": "64",
-        "target": "59"
-      }
-    },
-    {
-      "data": {
-        "label": "0/0",
-        "source": "64",
-        "target": "63"
-      }
-    },
-    {
-      "data": {
-        "label": "0/7",
-        "source": "228",
-        "target": "172"
-      }
-    },
-    {
-      "data": {
-        "label": "0/19",
-        "source": "269",
-        "target": "26"
-      }
-    },
-    {
-      "data": {
-        "label": "0/11",
-        "source": "35",
-        "target": "34"
-      }
-    },
-    {
-      "data": {
-        "label": "0/19",
-        "source": "216",
-        "target": "133"
-      }
-    },
-    {
-      "data": {
-        "label": "6/16",
-        "source": "98",
-        "target": "402"
-      }
-    },
-    {
-      "data": {
-        "label": "0/0",
-        "source": "98",
-        "target": "97"
-      }
-    },
-    {
-      "data": {
         "label": "0/16",
         "source": "221",
-        "target": "159"
+        "target": "159",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
-        "label": "4/5",
+        "label": "1/5",
         "source": "168",
-        "target": "127"
+        "target": "127",
+        "currentFlow": 1,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "3/10",
         "source": "168",
-        "target": "172"
+        "target": "172",
+        "currentFlow": 3,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "337",
-        "target": "162"
+        "target": "162",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "262",
-        "target": "177"
+        "target": "177",
+        "currentFlow": 0,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "4/15",
         "source": "154",
-        "target": "180"
+        "target": "180",
+        "currentFlow": 4,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "349",
-        "target": "191"
+        "target": "191",
+        "currentFlow": 2,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "231",
-        "target": "179"
+        "target": "179",
+        "currentFlow": 0,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "281",
-        "target": "116"
+        "target": "116",
+        "currentFlow": 0,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "5/18",
         "source": "68",
-        "target": "67"
+        "target": "67",
+        "currentFlow": 5,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "4",
-        "target": "2"
+        "target": "2",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "251",
-        "target": "102"
+        "target": "102",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "0/15",
         "source": "287",
-        "target": "164"
+        "target": "164",
+        "currentFlow": 0,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "5/17",
         "source": "376",
-        "target": "68"
+        "target": "68",
+        "currentFlow": 5,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "418",
-        "target": "106"
+        "target": "106",
+        "currentFlow": 0,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "1/1",
         "source": "373",
-        "target": "165"
+        "target": "165",
+        "currentFlow": 1,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "384",
-        "target": "3"
+        "target": "3",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "18/18",
         "source": "39",
-        "target": "411"
+        "target": "411",
+        "currentFlow": 18,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/1",
         "source": "417",
-        "target": "155"
+        "target": "155",
+        "currentFlow": 0,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "2/6",
         "source": "131",
-        "target": "130"
+        "target": "130",
+        "currentFlow": 2,
+        "repairCost": 21
       }
     },
     {
       "data": {
         "label": "3/6",
         "source": "124",
-        "target": "425"
+        "target": "425",
+        "currentFlow": 3,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "124",
-        "target": "122"
+        "target": "122",
+        "currentFlow": 0,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "0/1",
         "source": "219",
-        "target": "147"
+        "target": "147",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "149",
-        "target": "148"
+        "target": "148",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "341",
-        "target": "186"
-      }
-    },
-    {
-      "data": {
-        "label": "0/10",
-        "source": "148",
-        "target": "146"
+        "target": "186",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "148",
-        "target": "125"
+        "target": "125",
+        "currentFlow": 0,
+        "repairCost": 1
+      }
+    },
+    {
+      "data": {
+        "label": "0/10",
+        "source": "148",
+        "target": "146",
+        "currentFlow": 0,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "390",
-        "target": "187"
+        "target": "187",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "2/16",
         "source": "85",
-        "target": "74"
+        "target": "74",
+        "currentFlow": 2,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "107",
-        "target": "105"
+        "target": "105",
+        "currentFlow": 2,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "275",
-        "target": "69"
+        "target": "69",
+        "currentFlow": 0,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/14",
         "source": "52",
-        "target": "51"
+        "target": "51",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "308",
-        "target": "167"
+        "target": "167",
+        "currentFlow": 0,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "239",
-        "target": "9"
+        "target": "9",
+        "currentFlow": 0,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "218",
-        "target": "136"
+        "target": "136",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "263",
-        "target": "180"
+        "target": "180",
+        "currentFlow": 0,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "5/8",
         "source": "25",
-        "target": "28"
+        "target": "28",
+        "currentFlow": 5,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "54",
-        "target": "43"
+        "target": "43",
+        "currentFlow": 0,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "54",
-        "target": "53"
+        "target": "53",
+        "currentFlow": 0,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "348",
-        "target": "141"
+        "target": "141",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "11/16",
         "source": "59",
-        "target": "422"
+        "target": "422",
+        "currentFlow": 11,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "217",
-        "target": "135"
+        "target": "135",
+        "currentFlow": 0,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "340",
-        "target": "179"
+        "target": "179",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "4/8",
         "source": "109",
-        "target": "34"
+        "target": "34",
+        "currentFlow": 4,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "229",
-        "target": "174"
+        "target": "174",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "404",
-        "target": "30"
+        "target": "30",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "209",
-        "target": "108"
+        "target": "108",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "2/13",
         "source": "104",
-        "target": "103"
+        "target": "103",
+        "currentFlow": 2,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "115",
-        "target": "113"
+        "target": "113",
+        "currentFlow": 0,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "257",
-        "target": "140"
+        "target": "140",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
-        "label": "3/14",
+        "label": "4/14",
         "source": "40",
-        "target": "39"
+        "target": "39",
+        "currentFlow": 4,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "3/16",
         "source": "91",
-        "target": "116"
+        "target": "116",
+        "currentFlow": 3,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "379",
-        "target": "100"
+        "target": "100",
+        "currentFlow": 0,
+        "repairCost": 23
+      }
+    },
+    {
+      "data": {
+        "label": "5/5",
+        "source": "77",
+        "target": "23",
+        "currentFlow": 5,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "77",
-        "target": "11"
-      }
-    },
-    {
-      "data": {
-        "label": "2/5",
-        "source": "77",
-        "target": "23"
+        "target": "11",
+        "currentFlow": 0,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "2/14",
         "source": "123",
-        "target": "122"
+        "target": "122",
+        "currentFlow": 2,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "298",
-        "target": "46"
+        "target": "46",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "160",
-        "target": "159"
+        "target": "159",
+        "currentFlow": 0,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "90",
-        "target": "89"
+        "target": "89",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "196",
-        "target": "44"
+        "target": "44",
+        "currentFlow": 0,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "339",
-        "target": "165"
+        "target": "165",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "9/16",
         "source": "372",
-        "target": "126"
+        "target": "126",
+        "currentFlow": 9,
+        "repairCost": 21
       }
     },
     {
       "data": {
         "label": "2/12",
         "source": "129",
-        "target": "394"
+        "target": "394",
+        "currentFlow": 2,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "236",
-        "target": "1"
+        "target": "1",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "250",
-        "target": "100"
+        "target": "100",
+        "currentFlow": 0,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "4/5",
         "source": "350",
-        "target": "37"
+        "target": "37",
+        "currentFlow": 4,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "283",
-        "target": "140"
+        "target": "140",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "150",
-        "target": "80"
+        "target": "80",
+        "currentFlow": 2,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "9/10",
         "source": "118",
-        "target": "186"
+        "target": "186",
+        "currentFlow": 9,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "289",
-        "target": "180"
+        "target": "180",
+        "currentFlow": 0,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "61",
-        "target": "60"
+        "target": "60",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/15",
         "source": "102",
-        "target": "101"
+        "target": "101",
+        "currentFlow": 0,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "265",
-        "target": "189"
+        "target": "189",
+        "currentFlow": 0,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "206",
-        "target": "92"
+        "target": "92",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "327",
-        "target": "166"
+        "target": "166",
+        "currentFlow": 0,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "4/7",
         "source": "121",
-        "target": "120"
+        "target": "120",
+        "currentFlow": 4,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "325",
-        "target": "149"
-      }
-    },
-    {
-      "data": {
-        "label": "0/19",
-        "source": "27",
-        "target": "26"
+        "target": "149",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "2/7",
         "source": "27",
-        "target": "22"
+        "target": "22",
+        "currentFlow": 2,
+        "repairCost": 4
+      }
+    },
+    {
+      "data": {
+        "label": "0/19",
+        "source": "27",
+        "target": "26",
+        "currentFlow": 0,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "279",
-        "target": "113"
+        "target": "113",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "5/5",
         "source": "167",
-        "target": "401"
+        "target": "401",
+        "currentFlow": 5,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "62",
-        "target": "61"
+        "target": "61",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "9/10",
         "source": "119",
-        "target": "118"
+        "target": "118",
+        "currentFlow": 9,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "330",
-        "target": "10"
+        "target": "10",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "72",
-        "target": "50"
+        "target": "50",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "72",
-        "target": "59"
+        "target": "59",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "3/7",
         "source": "142",
-        "target": "143"
+        "target": "143",
+        "currentFlow": 3,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "183",
-        "target": "182"
+        "target": "182",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "1/2",
         "source": "183",
-        "target": "184"
+        "target": "184",
+        "currentFlow": 1,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "3/7",
         "source": "183",
-        "target": "396"
+        "target": "396",
+        "currentFlow": 3,
+        "repairCost": 21
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "366",
-        "target": "184"
-      }
-    },
-    {
-      "data": {
-        "label": "0/18",
-        "source": "176",
-        "target": "146"
+        "target": "184",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "176",
-        "target": "175"
+        "target": "175",
+        "currentFlow": 0,
+        "repairCost": 15
+      }
+    },
+    {
+      "data": {
+        "label": "0/18",
+        "source": "176",
+        "target": "146",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "208",
-        "target": "106"
+        "target": "106",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "238",
-        "target": "8"
+        "target": "8",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "303",
-        "target": "117"
+        "target": "117",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "315",
-        "target": "37"
+        "target": "37",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "1/16",
         "source": "144",
-        "target": "426"
+        "target": "426",
+        "currentFlow": 1,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "392",
-        "target": "53"
+        "target": "53",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "5/13",
         "source": "71",
-        "target": "65"
+        "target": "65",
+        "currentFlow": 5,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "71",
-        "target": "70"
+        "target": "70",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "293",
-        "target": "10"
+        "target": "10",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "276",
-        "target": "98"
+        "target": "98",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "215",
-        "target": "132"
+        "target": "132",
+        "currentFlow": 0,
+        "repairCost": 25
+      }
+    },
+    {
+      "data": {
+        "label": "1/9",
+        "source": "12",
+        "target": "21",
+        "currentFlow": 1,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "12",
-        "target": "8"
-      }
-    },
-    {
-      "data": {
-        "label": "2/9",
-        "source": "12",
-        "target": "21"
-      }
-    },
-    {
-      "data": {
-        "label": "1/17",
-        "source": "12",
-        "target": "13"
+        "target": "8",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "278",
-        "target": "111"
+        "target": "111",
+        "currentFlow": 0,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/14",
         "source": "324",
-        "target": "140"
+        "target": "140",
+        "currentFlow": 0,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "10/10",
         "source": "358",
-        "target": "159"
+        "target": "159",
+        "currentFlow": 10,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "284",
-        "target": "146"
+        "target": "146",
+        "currentFlow": 0,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "295",
-        "target": "14"
+        "target": "14",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "2/3",
         "source": "385",
-        "target": "21"
+        "target": "21",
+        "currentFlow": 2,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "272",
-        "target": "47"
+        "target": "47",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "310",
-        "target": "173"
+        "target": "173",
+        "currentFlow": 0,
+        "repairCost": 21
       }
     },
     {
       "data": {
         "label": "2/3",
         "source": "57",
-        "target": "56"
+        "target": "56",
+        "currentFlow": 2,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "255",
-        "target": "127"
+        "target": "127",
+        "currentFlow": 0,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "38",
-        "target": "37"
+        "target": "37",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "299",
-        "target": "48"
+        "target": "48",
+        "currentFlow": 0,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "5/17",
         "source": "32",
-        "target": "33"
+        "target": "33",
+        "currentFlow": 5,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "4/4",
         "source": "170",
-        "target": "168"
+        "target": "168",
+        "currentFlow": 4,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "197",
-        "target": "45"
+        "target": "45",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "3/3",
         "source": "145",
-        "target": "154"
+        "target": "154",
+        "currentFlow": 3,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "242",
-        "target": "41"
+        "target": "41",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "1/1",
         "source": "365",
-        "target": "171"
+        "target": "171",
+        "currentFlow": 1,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "174",
-        "target": "172"
+        "target": "172",
+        "currentFlow": 0,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "1/1",
         "source": "96",
-        "target": "70"
+        "target": "70",
+        "currentFlow": 1,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "169",
-        "target": "168"
+        "target": "168",
+        "currentFlow": 0,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "405",
-        "target": "49"
+        "target": "49",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "367",
-        "target": "187"
+        "target": "187",
+        "currentFlow": 0,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "400",
-        "target": "155"
+        "target": "155",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "114",
-        "target": "113"
+        "target": "113",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "12/19",
         "source": "190",
-        "target": "397"
+        "target": "397",
+        "currentFlow": 12,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/15",
         "source": "314",
-        "target": "4"
+        "target": "4",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "9/9",
         "source": "122",
-        "target": "111"
+        "target": "111",
+        "currentFlow": 9,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "1/15",
         "source": "122",
-        "target": "143"
+        "target": "143",
+        "currentFlow": 1,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "363",
-        "target": "132"
+        "target": "132",
+        "currentFlow": 0,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "260",
-        "target": "166"
+        "target": "166",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "4/4",
         "source": "370",
-        "target": "101"
+        "target": "101",
+        "currentFlow": 4,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "11/19",
         "source": "159",
-        "target": "165"
+        "target": "165",
+        "currentFlow": 11,
+        "repairCost": 10
+      }
+    },
+    {
+      "data": {
+        "label": "0/14",
+        "source": "31",
+        "target": "30",
+        "currentFlow": 0,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "9/9",
         "source": "31",
-        "target": "421"
-      }
-    },
-    {
-      "data": {
-        "label": "0/14",
-        "source": "31",
-        "target": "30"
+        "target": "421",
+        "currentFlow": 9,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "191",
-        "target": "189"
+        "target": "189",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "2/19",
         "source": "191",
-        "target": "409"
+        "target": "409",
+        "currentFlow": 2,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "223",
-        "target": "163"
+        "target": "163",
+        "currentFlow": 0,
+        "repairCost": 22
       }
     },
     {
       "data": {
-        "label": "0/6",
+        "label": "1/6",
         "source": "9",
-        "target": "0"
+        "target": "0",
+        "currentFlow": 1,
+        "repairCost": 6
       }
     },
     {
       "data": {
-        "label": "2/5",
+        "label": "4/5",
         "source": "9",
-        "target": "19"
-      }
-    },
-    {
-      "data": {
-        "label": "0/1",
-        "source": "50",
-        "target": "27"
+        "target": "19",
+        "currentFlow": 4,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "50",
-        "target": "25"
+        "target": "25",
+        "currentFlow": 0,
+        "repairCost": 2
+      }
+    },
+    {
+      "data": {
+        "label": "0/1",
+        "source": "50",
+        "target": "27",
+        "currentFlow": 0,
+        "repairCost": 28
+      }
+    },
+    {
+      "data": {
+        "label": "3/16",
+        "source": "89",
+        "target": "80",
+        "currentFlow": 3,
+        "repairCost": 18
+      }
+    },
+    {
+      "data": {
+        "label": "0/14",
+        "source": "89",
+        "target": "88",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "3/13",
         "source": "89",
-        "target": "91"
-      }
-    },
-    {
-      "data": {
-        "label": "0/16",
-        "source": "89",
-        "target": "80"
-      }
-    },
-    {
-      "data": {
-        "label": "0/14",
-        "source": "89",
-        "target": "88"
+        "target": "91",
+        "currentFlow": 3,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "258",
-        "target": "156"
+        "target": "156",
+        "currentFlow": 0,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "10/10",
         "source": "75",
-        "target": "73"
+        "target": "73",
+        "currentFlow": 10,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/14",
         "source": "117",
-        "target": "116"
+        "target": "116",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "288",
-        "target": "170"
+        "target": "170",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "87",
-        "target": "85"
+        "target": "85",
+        "currentFlow": 0,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "3/3",
         "source": "16",
-        "target": "22"
+        "target": "22",
+        "currentFlow": 3,
+        "repairCost": 21
       }
     },
     {
       "data": {
-        "label": "2/18",
+        "label": "1/18",
         "source": "16",
-        "target": "13"
-      }
-    },
-    {
-      "data": {
-        "label": "0/1",
-        "source": "137",
-        "target": "136"
+        "target": "13",
+        "currentFlow": 1,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "137",
-        "target": "76"
+        "target": "76",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/1",
         "source": "137",
-        "target": "120"
+        "target": "120",
+        "currentFlow": 0,
+        "repairCost": 24
+      }
+    },
+    {
+      "data": {
+        "label": "0/1",
+        "source": "137",
+        "target": "136",
+        "currentFlow": 0,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "195",
-        "target": "39"
+        "target": "39",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "13/13",
         "source": "186",
-        "target": "420"
+        "target": "420",
+        "currentFlow": 13,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "186",
-        "target": "185"
+        "target": "185",
+        "currentFlow": 0,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "254",
-        "target": "123"
+        "target": "123",
+        "currentFlow": 0,
+        "repairCost": 13
+      }
+    },
+    {
+      "data": {
+        "label": "2/2",
+        "source": "78",
+        "target": "105",
+        "currentFlow": 2,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "8/15",
         "source": "78",
-        "target": "75"
-      }
-    },
-    {
-      "data": {
-        "label": "2/2",
-        "source": "78",
-        "target": "105"
+        "target": "75",
+        "currentFlow": 8,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "56",
-        "target": "46"
+        "target": "46",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "56",
-        "target": "55"
+        "target": "55",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "2/6",
         "source": "56",
-        "target": "58"
+        "target": "58",
+        "currentFlow": 2,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "2/4",
         "source": "157",
-        "target": "131"
+        "target": "131",
+        "currentFlow": 2,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "4/15",
         "source": "157",
-        "target": "109"
+        "target": "109",
+        "currentFlow": 4,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "4/19",
         "source": "120",
-        "target": "134"
+        "target": "134",
+        "currentFlow": 4,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "214",
-        "target": "128"
+        "target": "128",
+        "currentFlow": 0,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "5/16",
         "source": "28",
-        "target": "37"
+        "target": "37",
+        "currentFlow": 5,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "95",
-        "target": "43"
+        "target": "43",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "95",
-        "target": "94"
+        "target": "94",
+        "currentFlow": 0,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "234",
-        "target": "187"
+        "target": "187",
+        "currentFlow": 0,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "4/6",
         "source": "105",
-        "target": "93"
+        "target": "93",
+        "currentFlow": 4,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "7/15",
         "source": "164",
-        "target": "395"
+        "target": "395",
+        "currentFlow": 7,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "352",
-        "target": "102"
+        "target": "102",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "125",
-        "target": "118"
+        "target": "118",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "12/13",
         "source": "125",
-        "target": "424"
+        "target": "424",
+        "currentFlow": 12,
+        "repairCost": 19
+      }
+    },
+    {
+      "data": {
+        "label": "0/19",
+        "source": "51",
+        "target": "48",
+        "currentFlow": 0,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "5/7",
         "source": "51",
-        "target": "398"
-      }
-    },
-    {
-      "data": {
-        "label": "0/19",
-        "source": "51",
-        "target": "48"
+        "target": "398",
+        "currentFlow": 5,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "5/5",
         "source": "67",
-        "target": "51"
+        "target": "51",
+        "currentFlow": 5,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "84",
-        "target": "83"
+        "target": "83",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "179",
-        "target": "178"
+        "target": "178",
+        "currentFlow": 0,
+        "repairCost": 12
       }
     },
     {
       "data": {
-        "label": "2/8",
+        "label": "0/8",
         "source": "3",
-        "target": "2"
+        "target": "2",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "1/6",
         "source": "184",
-        "target": "415"
+        "target": "415",
+        "currentFlow": 1,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "193",
-        "target": "33"
+        "target": "33",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "389",
-        "target": "139"
+        "target": "139",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "13/15",
         "source": "93",
-        "target": "399"
+        "target": "399",
+        "currentFlow": 13,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "93",
-        "target": "92"
+        "target": "92",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "3/17",
         "source": "180",
-        "target": "183"
+        "target": "183",
+        "currentFlow": 3,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "1/1",
         "source": "180",
-        "target": "178"
+        "target": "178",
+        "currentFlow": 1,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "42",
-        "target": "41"
+        "target": "41",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "252",
-        "target": "110"
+        "target": "110",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "135",
-        "target": "134"
+        "target": "134",
+        "currentFlow": 0,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "5/5",
         "source": "34",
-        "target": "393"
+        "target": "393",
+        "currentFlow": 5,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "106",
-        "target": "105"
+        "target": "105",
+        "currentFlow": 0,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/14",
         "source": "273",
-        "target": "52"
+        "target": "52",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "3/10",
         "source": "361",
-        "target": "99"
-      }
-    },
-    {
-      "data": {
-        "label": "2/8",
-        "source": "2",
-        "target": "5"
+        "target": "99",
+        "currentFlow": 3,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "112",
-        "target": "72"
+        "target": "72",
+        "currentFlow": 0,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "113",
-        "target": "97"
+        "target": "97",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "7/13",
         "source": "113",
-        "target": "127"
+        "target": "127",
+        "currentFlow": 7,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "423",
-        "target": "155"
+        "target": "155",
+        "currentFlow": 0,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "199",
-        "target": "62"
+        "target": "62",
+        "currentFlow": 0,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "69",
-        "target": "67"
+        "target": "67",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "383",
-        "target": "189"
+        "target": "189",
+        "currentFlow": 0,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "5/14",
         "source": "375",
-        "target": "32"
+        "target": "32",
+        "currentFlow": 5,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "2/17",
         "source": "362",
-        "target": "104"
+        "target": "104",
+        "currentFlow": 2,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "4/13",
         "source": "188",
-        "target": "186"
+        "target": "186",
+        "currentFlow": 4,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "3/3",
         "source": "46",
-        "target": "58"
+        "target": "58",
+        "currentFlow": 3,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "46",
-        "target": "45"
+        "target": "45",
+        "currentFlow": 0,
+        "repairCost": 21
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "227",
-        "target": "171"
+        "target": "171",
+        "currentFlow": 0,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "291",
-        "target": "187"
+        "target": "187",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "2/11",
         "source": "74",
-        "target": "73"
+        "target": "73",
+        "currentFlow": 2,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "44",
-        "target": "43"
+        "target": "43",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "103",
-        "target": "79"
+        "target": "79",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "2/4",
         "source": "103",
-        "target": "107"
+        "target": "107",
+        "currentFlow": 2,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "213",
-        "target": "124"
+        "target": "124",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "1",
-        "target": "0"
+        "target": "0",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "334",
-        "target": "90"
+        "target": "90",
+        "currentFlow": 0,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "301",
-        "target": "54"
+        "target": "54",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "212",
-        "target": "123"
+        "target": "123",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "178",
-        "target": "177"
+        "target": "177",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "1/2",
         "source": "178",
-        "target": "182"
+        "target": "182",
+        "currentFlow": 1,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/14",
         "source": "43",
-        "target": "36"
+        "target": "36",
+        "currentFlow": 0,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/14",
         "source": "222",
-        "target": "160"
+        "target": "160",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "307",
-        "target": "160"
+        "target": "160",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "351",
-        "target": "57"
+        "target": "57",
+        "currentFlow": 2,
+        "repairCost": 9
       }
     },
     {
       "data": {
-        "label": "1/11",
+        "label": "2/12",
         "source": "20",
-        "target": "21"
-      }
-    },
-    {
-      "data": {
-        "label": "3/12",
-        "source": "20",
-        "target": "24"
+        "target": "24",
+        "currentFlow": 2,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "1/1",
         "source": "20",
-        "target": "34"
+        "target": "34",
+        "currentFlow": 1,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "4/18",
         "source": "387",
-        "target": "121"
+        "target": "121",
+        "currentFlow": 4,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "205",
-        "target": "90"
+        "target": "90",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "3/9",
         "source": "65",
-        "target": "58"
+        "target": "58",
+        "currentFlow": 3,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "3/3",
         "source": "65",
-        "target": "64"
+        "target": "64",
+        "currentFlow": 3,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "9/17",
         "source": "111",
-        "target": "93"
+        "target": "93",
+        "currentFlow": 9,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "6/6",
         "source": "381",
-        "target": "162"
+        "target": "162",
+        "currentFlow": 6,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "353",
-        "target": "107"
+        "target": "107",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "220",
-        "target": "156"
+        "target": "156",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
-        "label": "15/15",
+        "label": "14/15",
         "source": "391",
-        "target": "39"
+        "target": "39",
+        "currentFlow": 14,
+        "repairCost": 3
       }
     },
     {
       "data": {
-        "label": "3/19",
+        "label": "4/19",
         "source": "19",
-        "target": "76"
+        "target": "76",
+        "currentFlow": 4,
+        "repairCost": 14
       }
     },
     {
       "data": {
-        "label": "2/14",
+        "label": "0/18",
+        "source": "19",
+        "target": "18",
+        "currentFlow": 0,
+        "repairCost": 8
+      }
+    },
+    {
+      "data": {
+        "label": "5/14",
         "source": "23",
-        "target": "9"
+        "target": "9",
+        "currentFlow": 5,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "11",
-        "target": "5"
+        "target": "5",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "11",
-        "target": "10"
+        "target": "10",
+        "currentFlow": 0,
+        "repairCost": 23
       }
     },
     {
       "data": {
-        "label": "3/3",
+        "label": "2/3",
         "source": "8",
-        "target": "6"
-      }
-    },
-    {
-      "data": {
-        "label": "1/14",
-        "source": "8",
-        "target": "24"
+        "target": "6",
+        "currentFlow": 2,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "243",
-        "target": "55"
+        "target": "55",
+        "currentFlow": 0,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "369",
-        "target": "85"
+        "target": "85",
+        "currentFlow": 2,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "248",
-        "target": "86"
+        "target": "86",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "202",
-        "target": "77"
+        "target": "77",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/15",
         "source": "335",
-        "target": "138"
+        "target": "138",
+        "currentFlow": 0,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "173",
-        "target": "172"
+        "target": "172",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "270",
-        "target": "35"
+        "target": "35",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "240",
-        "target": "13"
+        "target": "13",
+        "currentFlow": 0,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "30",
-        "target": "29"
+        "target": "29",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/1",
         "source": "233",
-        "target": "185"
+        "target": "185",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "3/7",
         "source": "380",
-        "target": "124"
+        "target": "124",
+        "currentFlow": 3,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "326",
-        "target": "151"
+        "target": "151",
+        "currentFlow": 0,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "311",
-        "target": "174"
+        "target": "174",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/14",
         "source": "320",
-        "target": "117"
+        "target": "117",
+        "currentFlow": 0,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "211",
-        "target": "121"
+        "target": "121",
+        "currentFlow": 0,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "0/1",
         "source": "316",
-        "target": "86"
+        "target": "86",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "412",
-        "target": "68"
+        "target": "68",
+        "currentFlow": 0,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "4/12",
         "source": "172",
-        "target": "414"
+        "target": "414",
+        "currentFlow": 4,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "7/7",
         "source": "165",
-        "target": "164"
+        "target": "164",
+        "currentFlow": 7,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "5/8",
         "source": "165",
-        "target": "167"
+        "target": "167",
+        "currentFlow": 5,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "200",
-        "target": "64"
-      }
-    },
-    {
-      "data": {
-        "label": "0/10",
-        "source": "83",
-        "target": "74"
+        "target": "64",
+        "currentFlow": 0,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "83",
-        "target": "82"
+        "target": "82",
+        "currentFlow": 0,
+        "repairCost": 7
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "83",
-        "target": "61"
+        "target": "61",
+        "currentFlow": 0,
+        "repairCost": 21
+      }
+    },
+    {
+      "data": {
+        "label": "0/10",
+        "source": "83",
+        "target": "74",
+        "currentFlow": 0,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "237",
-        "target": "3"
+        "target": "3",
+        "currentFlow": 0,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "274",
-        "target": "74"
+        "target": "74",
+        "currentFlow": 0,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "3/14",
         "source": "161",
-        "target": "182"
+        "target": "182",
+        "currentFlow": 3,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "1/6",
         "source": "161",
-        "target": "183"
+        "target": "183",
+        "currentFlow": 1,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "328",
-        "target": "187"
+        "target": "187",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "132",
-        "target": "130"
+        "target": "130",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/15",
         "source": "321",
-        "target": "122"
+        "target": "122",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "300",
-        "target": "52"
+        "target": "52",
+        "currentFlow": 0,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "286",
-        "target": "163"
+        "target": "163",
+        "currentFlow": 0,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "261",
-        "target": "176"
+        "target": "176",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "280",
-        "target": "115"
+        "target": "115",
+        "currentFlow": 0,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "329",
-        "target": "0"
+        "target": "0",
+        "currentFlow": 0,
+        "repairCost": 21
       }
     },
     {
       "data": {
         "label": "1/1",
         "source": "143",
-        "target": "144"
+        "target": "144",
+        "currentFlow": 1,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "3/11",
         "source": "143",
-        "target": "145"
+        "target": "145",
+        "currentFlow": 3,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "253",
-        "target": "115"
+        "target": "115",
+        "currentFlow": 0,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "360",
-        "target": "62"
+        "target": "62",
+        "currentFlow": 0,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "241",
-        "target": "38"
+        "target": "38",
+        "currentFlow": 0,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "332",
-        "target": "25"
+        "target": "25",
+        "currentFlow": 0,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "235",
-        "target": "191"
+        "target": "191",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "388",
-        "target": "138"
+        "target": "138",
+        "currentFlow": 0,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "371",
-        "target": "123"
+        "target": "123",
+        "currentFlow": 2,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "256",
-        "target": "138"
+        "target": "138",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "147",
-        "target": "146"
+        "target": "146",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "249",
-        "target": "87"
+        "target": "87",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "282",
-        "target": "118"
+        "target": "118",
+        "currentFlow": 0,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "41",
-        "target": "24"
+        "target": "24",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "110",
-        "target": "109"
+        "target": "109",
+        "currentFlow": 0,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "268",
-        "target": "12"
+        "target": "12",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "201",
-        "target": "67"
+        "target": "67",
+        "currentFlow": 0,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "4/4",
         "source": "15",
-        "target": "16"
+        "target": "16",
+        "currentFlow": 4,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "81",
-        "target": "48"
+        "target": "48",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "81",
-        "target": "30"
+        "target": "30",
+        "currentFlow": 0,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "225",
-        "target": "167"
+        "target": "167",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "7/7",
         "source": "354",
-        "target": "113"
+        "target": "113",
+        "currentFlow": 7,
+        "repairCost": 29
       }
     },
     {
       "data": {
-        "label": "3/12",
+        "label": "6/12",
         "source": "386",
-        "target": "89"
+        "target": "89",
+        "currentFlow": 6,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "259",
-        "target": "164"
+        "target": "164",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "331",
-        "target": "24"
+        "target": "24",
+        "currentFlow": 0,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "285",
-        "target": "161"
+        "target": "161",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "244",
-        "target": "56"
+        "target": "56",
+        "currentFlow": 0,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "413",
-        "target": "129"
-      }
-    },
-    {
-      "data": {
-        "label": "2/4",
-        "source": "33",
-        "target": "27"
+        "target": "129",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "3/19",
         "source": "33",
-        "target": "46"
+        "target": "46",
+        "currentFlow": 3,
+        "repairCost": 20
+      }
+    },
+    {
+      "data": {
+        "label": "2/4",
+        "source": "33",
+        "target": "27",
+        "currentFlow": 2,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "4/9",
         "source": "382",
-        "target": "170"
+        "target": "170",
+        "currentFlow": 4,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "6/8",
         "source": "158",
-        "target": "157"
+        "target": "157",
+        "currentFlow": 6,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "14",
-        "target": "13"
+        "target": "13",
+        "currentFlow": 0,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "36",
-        "target": "31"
+        "target": "31",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "304",
-        "target": "124"
+        "target": "124",
+        "currentFlow": 0,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "139",
-        "target": "138"
+        "target": "138",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "182",
-        "target": "181"
+        "target": "181",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "4/6",
         "source": "182",
-        "target": "403"
+        "target": "403",
+        "currentFlow": 4,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "152",
-        "target": "151"
+        "target": "151",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "152",
-        "target": "139"
+        "target": "139",
+        "currentFlow": 0,
+        "repairCost": 21
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "152",
-        "target": "134"
+        "target": "134",
+        "currentFlow": 0,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "3/3",
         "source": "116",
-        "target": "125"
+        "target": "125",
+        "currentFlow": 3,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "12/14",
         "source": "189",
-        "target": "190"
+        "target": "190",
+        "currentFlow": 12,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "312",
-        "target": "184"
+        "target": "184",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/15",
         "source": "313",
-        "target": "190"
+        "target": "190",
+        "currentFlow": 0,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "230",
-        "target": "176"
+        "target": "176",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "294",
-        "target": "12"
+        "target": "12",
+        "currentFlow": 0,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "166",
-        "target": "165"
+        "target": "165",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "17",
-        "target": "16"
+        "target": "16",
+        "currentFlow": 0,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "17",
-        "target": "13"
+        "target": "13",
+        "currentFlow": 0,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "344",
-        "target": "82"
+        "target": "82",
+        "currentFlow": 0,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "156",
-        "target": "155"
+        "target": "155",
+        "currentFlow": 0,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "1/2",
         "source": "156",
-        "target": "159"
+        "target": "159",
+        "currentFlow": 1,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "247",
-        "target": "84"
+        "target": "84",
+        "currentFlow": 0,
+        "repairCost": 22
       }
     },
     {
       "data": {
-        "label": "2/9",
+        "label": "5/9",
         "source": "80",
-        "target": "77"
+        "target": "77",
+        "currentFlow": 5,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "141",
-        "target": "139"
+        "target": "139",
+        "currentFlow": 0,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "290",
-        "target": "181"
+        "target": "181",
+        "currentFlow": 0,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "48",
-        "target": "47"
+        "target": "47",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
-        "label": "3/15",
+        "label": "4/15",
         "source": "76",
-        "target": "40"
+        "target": "40",
+        "currentFlow": 4,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "407",
-        "target": "52"
+        "target": "52",
+        "currentFlow": 0,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/1",
         "source": "322",
-        "target": "125"
+        "target": "125",
+        "currentFlow": 0,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "3/3",
         "source": "6",
-        "target": "7"
-      }
-    },
-    {
-      "data": {
-        "label": "1/3",
-        "source": "6",
-        "target": "8"
+        "target": "7",
+        "currentFlow": 3,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "267",
-        "target": "10"
+        "target": "10",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "355",
-        "target": "150"
+        "target": "150",
+        "currentFlow": 2,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "333",
-        "target": "67"
+        "target": "67",
+        "currentFlow": 0,
+        "repairCost": 28
       }
     },
     {
       "data": {
         "label": "1/19",
         "source": "70",
-        "target": "63"
+        "target": "63",
+        "currentFlow": 1,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "130",
-        "target": "129"
+        "target": "129",
+        "currentFlow": 2,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "0/15",
         "source": "108",
-        "target": "107"
-      }
-    },
-    {
-      "data": {
-        "label": "0/13",
-        "source": "101",
-        "target": "100"
+        "target": "107",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "1/13",
         "source": "101",
-        "target": "96"
+        "target": "96",
+        "currentFlow": 1,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "3/11",
         "source": "101",
-        "target": "98"
+        "target": "98",
+        "currentFlow": 3,
+        "repairCost": 25
+      }
+    },
+    {
+      "data": {
+        "label": "0/13",
+        "source": "101",
+        "target": "100",
+        "currentFlow": 0,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "296",
-        "target": "35"
+        "target": "35",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "97",
-        "target": "96"
+        "target": "96",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "194",
-        "target": "38"
+        "target": "38",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "305",
-        "target": "142"
+        "target": "142",
+        "currentFlow": 0,
+        "repairCost": 3
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "338",
-        "target": "164"
+        "target": "164",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "153",
-        "target": "152"
+        "target": "152",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "198",
-        "target": "58"
+        "target": "58",
+        "currentFlow": 0,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "416",
-        "target": "93"
+        "target": "93",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
         "label": "0/9",
         "source": "377",
-        "target": "72"
+        "target": "72",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "8/13",
         "source": "127",
-        "target": "128"
-      }
-    },
-    {
-      "data": {
-        "label": "3/5",
-        "source": "127",
-        "target": "168"
+        "target": "128",
+        "currentFlow": 8,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/1",
         "source": "210",
-        "target": "112"
+        "target": "112",
+        "currentFlow": 0,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "246",
-        "target": "78"
+        "target": "78",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "187",
-        "target": "186"
+        "target": "186",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "203",
-        "target": "86"
+        "target": "86",
+        "currentFlow": 0,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "277",
-        "target": "99"
+        "target": "99",
+        "currentFlow": 0,
+        "repairCost": 14
       }
     },
     {
       "data": {
         "label": "8/8",
         "source": "347",
-        "target": "122"
+        "target": "122",
+        "currentFlow": 8,
+        "repairCost": 22
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "37",
-        "target": "36"
+        "target": "36",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "9/14",
         "source": "37",
-        "target": "31"
+        "target": "31",
+        "currentFlow": 9,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "302",
-        "target": "111"
+        "target": "111",
+        "currentFlow": 0,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "9/17",
         "source": "346",
-        "target": "119"
+        "target": "119",
+        "currentFlow": 9,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "232",
-        "target": "184"
+        "target": "184",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/15",
         "source": "266",
-        "target": "4"
+        "target": "4",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "9/11",
         "source": "126",
-        "target": "125"
+        "target": "125",
+        "currentFlow": 9,
+        "repairCost": 20
       }
     },
     {
       "data": {
         "label": "0/6",
         "source": "323",
-        "target": "128"
+        "target": "128",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "4/7",
         "source": "342",
-        "target": "15"
+        "target": "15",
+        "currentFlow": 4,
+        "repairCost": 5
       }
     },
     {
       "data": {
-        "label": "2/15",
+        "label": "0/15",
         "source": "368",
-        "target": "3"
+        "target": "3",
+        "currentFlow": 0,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "245",
-        "target": "62"
+        "target": "62",
+        "currentFlow": 0,
+        "repairCost": 29
       }
     },
     {
       "data": {
-        "label": "1/9",
+        "label": "3/11",
         "source": "21",
-        "target": "12"
+        "target": "20",
+        "currentFlow": 3,
+        "repairCost": 2
       }
     },
     {
       "data": {
-        "label": "4/11",
-        "source": "21",
-        "target": "20"
-      }
-    },
-    {
-      "data": {
-        "label": "2/14",
+        "label": "1/14",
         "source": "0",
-        "target": "18"
+        "target": "18",
+        "currentFlow": 1,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "5/10",
         "source": "343",
-        "target": "71"
+        "target": "71",
+        "currentFlow": 5,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "336",
-        "target": "158"
+        "target": "158",
+        "currentFlow": 0,
+        "repairCost": 6
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "140",
-        "target": "139"
+        "target": "139",
+        "currentFlow": 0,
+        "repairCost": 23
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "86",
-        "target": "85"
+        "target": "85",
+        "currentFlow": 0,
+        "repairCost": 1
       }
     },
     {
       "data": {
         "label": "0/19",
         "source": "318",
-        "target": "106"
+        "target": "106",
+        "currentFlow": 0,
+        "repairCost": 18
       }
     },
     {
       "data": {
         "label": "0/10",
         "source": "359",
-        "target": "175"
+        "target": "175",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "1/13",
         "source": "63",
-        "target": "65"
+        "target": "65",
+        "currentFlow": 1,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "163",
-        "target": "161"
+        "target": "161",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "207",
-        "target": "94"
+        "target": "94",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "0/14",
         "source": "192",
-        "target": "29"
+        "target": "29",
+        "currentFlow": 0,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "13/18",
         "source": "378",
-        "target": "79"
+        "target": "79",
+        "currentFlow": 13,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "3/10",
         "source": "364",
-        "target": "142"
+        "target": "142",
+        "currentFlow": 3,
+        "repairCost": 13
       }
     },
     {
       "data": {
         "label": "0/17",
         "source": "292",
-        "target": "9"
+        "target": "9",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "1/19",
         "source": "171",
-        "target": "172"
-      }
-    },
-    {
-      "data": {
-        "label": "4/4",
-        "source": "134",
-        "target": "406"
+        "target": "172",
+        "currentFlow": 1,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/4",
         "source": "134",
-        "target": "133"
+        "target": "133",
+        "currentFlow": 0,
+        "repairCost": 7
+      }
+    },
+    {
+      "data": {
+        "label": "4/4",
+        "source": "134",
+        "target": "406",
+        "currentFlow": 4,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/18",
         "source": "297",
-        "target": "42"
-      }
-    },
-    {
-      "data": {
-        "label": "2/2",
-        "source": "79",
-        "target": "75"
+        "target": "42",
+        "currentFlow": 0,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "10/10",
         "source": "79",
-        "target": "78"
+        "target": "78",
+        "currentFlow": 10,
+        "repairCost": 9
       }
     },
     {
       "data": {
         "label": "1/17",
         "source": "79",
-        "target": "156"
+        "target": "156",
+        "currentFlow": 1,
+        "repairCost": 16
+      }
+    },
+    {
+      "data": {
+        "label": "2/2",
+        "source": "79",
+        "target": "75",
+        "currentFlow": 2,
+        "repairCost": 4
       }
     },
     {
       "data": {
         "label": "0/8",
         "source": "319",
-        "target": "114"
+        "target": "114",
+        "currentFlow": 0,
+        "repairCost": 24
       }
     },
     {
       "data": {
         "label": "4/11",
         "source": "374",
-        "target": "188"
+        "target": "188",
+        "currentFlow": 4,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/5",
         "source": "204",
-        "target": "88"
+        "target": "88",
+        "currentFlow": 0,
+        "repairCost": 27
       }
     },
     {
       "data": {
         "label": "8/14",
         "source": "128",
-        "target": "408"
+        "target": "408",
+        "currentFlow": 8,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "1/14",
         "source": "18",
-        "target": "6"
+        "target": "6",
+        "currentFlow": 1,
+        "repairCost": 27
       }
     },
     {
       "data": {
-        "label": "1/18",
-        "source": "18",
-        "target": "19"
-      }
-    },
-    {
-      "data": {
-        "label": "2/12",
+        "label": "0/8",
         "source": "5",
-        "target": "0"
+        "target": "2",
+        "currentFlow": 0,
+        "repairCost": 9
+      }
+    },
+    {
+      "data": {
+        "label": "0/12",
+        "source": "5",
+        "target": "0",
+        "currentFlow": 0,
+        "repairCost": 26
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "345",
-        "target": "100"
+        "target": "100",
+        "currentFlow": 0,
+        "repairCost": 25
       }
     },
     {
       "data": {
         "label": "8/17",
         "source": "58",
-        "target": "59"
+        "target": "59",
+        "currentFlow": 8,
+        "repairCost": 12
       }
     },
     {
       "data": {
         "label": "0/3",
         "source": "146",
-        "target": "118"
+        "target": "118",
+        "currentFlow": 0,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "3/17",
         "source": "7",
-        "target": "410"
+        "target": "410",
+        "currentFlow": 3,
+        "repairCost": 8
       }
     },
     {
       "data": {
         "label": "0/13",
         "source": "271",
-        "target": "44"
+        "target": "44",
+        "currentFlow": 0,
+        "repairCost": 15
       }
     },
     {
       "data": {
         "label": "0/16",
         "source": "309",
-        "target": "169"
+        "target": "169",
+        "currentFlow": 0,
+        "repairCost": 2
       }
     },
     {
       "data": {
         "label": "0/12",
         "source": "49",
-        "target": "48"
+        "target": "48",
+        "currentFlow": 0,
+        "repairCost": 6
       }
     },
     {
       "data": {
-        "label": "3/14",
+        "label": "2/14",
         "source": "24",
-        "target": "8"
+        "target": "8",
+        "currentFlow": 2,
+        "repairCost": 13
       }
     },
     {
       "data": {
-        "label": "1/12",
-        "source": "24",
-        "target": "20"
-      }
-    },
-    {
-      "data": {
-        "label": "2/17",
+        "label": "1/17",
         "source": "13",
-        "target": "12"
-      }
-    },
-    {
-      "data": {
-        "label": "1/18",
-        "source": "13",
-        "target": "16"
+        "target": "12",
+        "currentFlow": 1,
+        "repairCost": 5
       }
     },
     {
       "data": {
         "label": "0/2",
         "source": "317",
-        "target": "89"
+        "target": "89",
+        "currentFlow": 0,
+        "repairCost": 11
       }
     },
     {
       "data": {
         "label": "0/7",
         "source": "264",
-        "target": "181"
+        "target": "181",
+        "currentFlow": 0,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "4/9",
         "source": "162",
-        "target": "161"
+        "target": "161",
+        "currentFlow": 4,
+        "repairCost": 10
       }
     },
     {
       "data": {
         "label": "2/2",
         "source": "162",
-        "target": "419"
-      }
-    },
-    {
-      "data": {
-        "label": "0/12",
-        "source": "66",
-        "target": "54"
+        "target": "419",
+        "currentFlow": 2,
+        "repairCost": 17
       }
     },
     {
       "data": {
         "label": "0/11",
         "source": "66",
-        "target": "60"
+        "target": "60",
+        "currentFlow": 0,
+        "repairCost": 6
+      }
+    },
+    {
+      "data": {
+        "label": "0/12",
+        "source": "66",
+        "target": "54",
+        "currentFlow": 0,
+        "repairCost": 19
       }
     },
     {
       "data": {
         "label": "0/0",
         "source": "306",
-        "target": "153"
+        "target": "153",
+        "currentFlow": 0,
+        "repairCost": 16
       }
     },
     {
       "data": {
         "label": "5/9",
         "source": "22",
-        "target": "25"
+        "target": "25",
+        "currentFlow": 5,
+        "repairCost": 21
       }
     },
     {
       "data": {
         "label": "12/18",
         "source": "73",
-        "target": "189"
+        "target": "189",
+        "currentFlow": 12,
+        "repairCost": 10
+      }
+    },
+    {
+      "data": {
+        "label": "3/18",
+        "source": "99",
+        "target": "98",
+        "currentFlow": 3,
+        "repairCost": 1
+      }
+    },
+    {
+      "data": {
+        "label": "6/13",
+        "source": "357",
+        "target": "158",
+        "currentFlow": 6,
+        "repairCost": 4
+      }
+    },
+    {
+      "data": {
+        "label": "1/9",
+        "source": "356",
+        "target": "154",
+        "currentFlow": 1,
+        "repairCost": 8
+      }
+    },
+    {
+      "data": {
+        "label": "0/2",
+        "source": "226",
+        "target": "170",
+        "currentFlow": 0,
+        "repairCost": 20
+      }
+    },
+    {
+      "data": {
+        "label": "0/17",
+        "source": "224",
+        "target": "165",
+        "currentFlow": 0,
+        "repairCost": 24
+      }
+    },
+    {
+      "data": {
+        "label": "3/14",
+        "source": "64",
+        "target": "59",
+        "currentFlow": 3,
+        "repairCost": 27
+      }
+    },
+    {
+      "data": {
+        "label": "0/0",
+        "source": "64",
+        "target": "63",
+        "currentFlow": 0,
+        "repairCost": 1
+      }
+    },
+    {
+      "data": {
+        "label": "0/7",
+        "source": "228",
+        "target": "172",
+        "currentFlow": 0,
+        "repairCost": 18
+      }
+    },
+    {
+      "data": {
+        "label": "0/19",
+        "source": "269",
+        "target": "26",
+        "currentFlow": 0,
+        "repairCost": 24
+      }
+    },
+    {
+      "data": {
+        "label": "0/11",
+        "source": "35",
+        "target": "34",
+        "currentFlow": 0,
+        "repairCost": 13
+      }
+    },
+    {
+      "data": {
+        "label": "0/19",
+        "source": "216",
+        "target": "133",
+        "currentFlow": 0,
+        "repairCost": 10
+      }
+    },
+    {
+      "data": {
+        "label": "6/16",
+        "source": "98",
+        "target": "402",
+        "currentFlow": 6,
+        "repairCost": 21
+      }
+    },
+    {
+      "data": {
+        "label": "0/0",
+        "source": "98",
+        "target": "97",
+        "currentFlow": 0,
+        "repairCost": 28
       }
     },
     {
@@ -7861,7 +9545,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "205",
-        "target": "317"
+        "target": "317",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7869,7 +9555,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "317",
-        "target": "204"
+        "target": "204",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7877,7 +9565,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "204",
-        "target": "334"
+        "target": "334",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7885,7 +9575,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "334",
-        "target": "205"
+        "target": "205",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7893,7 +9585,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "303",
-        "target": "325"
+        "target": "325",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7901,7 +9595,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "325",
-        "target": "202"
+        "target": "202",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7909,7 +9605,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "202",
-        "target": "281"
+        "target": "281",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7917,7 +9615,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "281",
-        "target": "320"
+        "target": "320",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7925,7 +9625,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "320",
-        "target": "303"
+        "target": "303",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7933,7 +9635,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "267",
-        "target": "314"
+        "target": "314",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7941,7 +9645,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "314",
-        "target": "330"
+        "target": "330",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7949,7 +9655,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "330",
-        "target": "293"
+        "target": "293",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7957,7 +9665,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "293",
-        "target": "267"
+        "target": "267",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7965,7 +9675,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "329",
-        "target": "236"
+        "target": "236",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7973,7 +9685,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "236",
-        "target": "269"
+        "target": "269",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7981,7 +9695,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "269",
-        "target": "266"
+        "target": "266",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7989,7 +9705,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "266",
-        "target": "329"
+        "target": "329",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -7997,7 +9715,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "328",
-        "target": "234"
+        "target": "234",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8005,7 +9725,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "234",
-        "target": "284"
+        "target": "284",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8013,7 +9735,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "284",
-        "target": "322"
+        "target": "322",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8021,7 +9745,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "322",
-        "target": "328"
+        "target": "328",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8029,7 +9755,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "291",
-        "target": "341"
+        "target": "341",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8037,7 +9765,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "341",
-        "target": "261"
+        "target": "261",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8045,7 +9775,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "261",
-        "target": "195"
+        "target": "195",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8053,7 +9785,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "195",
-        "target": "291"
+        "target": "291",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8061,7 +9795,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "219",
-        "target": "239"
+        "target": "239",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8069,7 +9805,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "239",
-        "target": "268"
+        "target": "268",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8077,7 +9815,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "268",
-        "target": "292"
+        "target": "292",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8085,7 +9825,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "292",
-        "target": "219"
+        "target": "219",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8093,7 +9835,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "218",
-        "target": "242"
+        "target": "242",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8101,7 +9845,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "242",
-        "target": "252"
+        "target": "252",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8109,7 +9855,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "252",
-        "target": "331"
+        "target": "331",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8117,7 +9865,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "331",
-        "target": "238"
+        "target": "238",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8125,7 +9875,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "238",
-        "target": "218"
+        "target": "218",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8133,7 +9885,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "193",
-        "target": "244"
+        "target": "244",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8141,7 +9895,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "244",
-        "target": "197"
+        "target": "197",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8149,7 +9905,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "197",
-        "target": "193"
+        "target": "193",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8157,7 +9915,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "210",
-        "target": "271"
+        "target": "271",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8165,7 +9925,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "271",
-        "target": "200"
+        "target": "200",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8173,7 +9935,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "200",
-        "target": "198"
+        "target": "198",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8181,7 +9945,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "198",
-        "target": "298"
+        "target": "298",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8189,7 +9955,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "298",
-        "target": "210"
+        "target": "210",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8197,7 +9965,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "250",
-        "target": "277"
+        "target": "277",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8205,7 +9975,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "277",
-        "target": "228"
+        "target": "228",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8213,7 +9985,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "228",
-        "target": "311"
+        "target": "311",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8221,7 +9995,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "311",
-        "target": "250"
+        "target": "250",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8229,7 +10005,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "196",
-        "target": "310"
+        "target": "310",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8237,7 +10015,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "310",
-        "target": "229"
+        "target": "229",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8245,7 +10025,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "229",
-        "target": "227"
+        "target": "227",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8253,7 +10035,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "227",
-        "target": "196"
+        "target": "196",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8261,7 +10045,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "240",
-        "target": "315"
+        "target": "315",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8269,7 +10055,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "315",
-        "target": "319"
+        "target": "319",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8277,7 +10065,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "319",
-        "target": "332"
+        "target": "332",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8285,7 +10075,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "332",
-        "target": "240"
+        "target": "240",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8293,7 +10085,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "295",
-        "target": "241"
+        "target": "241",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8301,7 +10095,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "241",
-        "target": "192"
+        "target": "192",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8309,7 +10105,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "192",
-        "target": "313"
+        "target": "313",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8317,7 +10115,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "313",
-        "target": "295"
+        "target": "295",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8325,7 +10125,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "280",
-        "target": "253"
+        "target": "253",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8333,7 +10135,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "253",
-        "target": "288"
+        "target": "288",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8341,7 +10145,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "288",
-        "target": "255"
+        "target": "255",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8349,7 +10155,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "255",
-        "target": "280"
+        "target": "280",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8357,7 +10165,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "207",
-        "target": "323"
+        "target": "323",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8365,7 +10175,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "323",
-        "target": "226"
+        "target": "226",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8373,7 +10185,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "226",
-        "target": "309"
+        "target": "309",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8381,7 +10195,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "309",
-        "target": "207"
+        "target": "207",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8389,7 +10205,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "233",
-        "target": "216"
+        "target": "216",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8397,7 +10215,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "216",
-        "target": "297"
+        "target": "297",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8405,7 +10225,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "297",
-        "target": "233"
+        "target": "233",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8413,7 +10235,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "217",
-        "target": "306"
+        "target": "306",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8421,7 +10245,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "306",
-        "target": "257"
+        "target": "257",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8429,7 +10255,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "257",
-        "target": "326"
+        "target": "326",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8437,7 +10265,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "326",
-        "target": "211"
+        "target": "211",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8445,7 +10275,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "211",
-        "target": "217"
+        "target": "217",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8453,7 +10285,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "296",
-        "target": "301"
+        "target": "301",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8461,7 +10295,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "301",
-        "target": "272"
+        "target": "272",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8469,7 +10305,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "272",
-        "target": "299"
+        "target": "299",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8477,7 +10315,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "299",
-        "target": "296"
+        "target": "296",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8485,7 +10325,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "270",
-        "target": "333"
+        "target": "333",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8493,7 +10335,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "333",
-        "target": "245"
+        "target": "245",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8501,7 +10345,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "245",
-        "target": "199"
+        "target": "199",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8509,7 +10355,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "199",
-        "target": "270"
+        "target": "270",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8517,7 +10365,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "335",
-        "target": "256"
+        "target": "256",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8525,7 +10375,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "256",
-        "target": "275"
+        "target": "275",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8533,7 +10385,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "275",
-        "target": "283"
+        "target": "283",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8541,7 +10395,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "283",
-        "target": "335"
+        "target": "335",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8549,7 +10405,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "324",
-        "target": "215"
+        "target": "215",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8557,7 +10415,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "215",
-        "target": "300"
+        "target": "300",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8565,7 +10425,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "300",
-        "target": "273"
+        "target": "273",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8573,7 +10435,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "273",
-        "target": "324"
+        "target": "324",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8581,7 +10445,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "248",
-        "target": "274"
+        "target": "274",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8589,7 +10455,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "274",
-        "target": "247"
+        "target": "247",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8597,7 +10465,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "247",
-        "target": "203"
+        "target": "203",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8605,7 +10475,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "203",
-        "target": "248"
+        "target": "248",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8613,7 +10485,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "225",
-        "target": "308"
+        "target": "308",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8621,7 +10495,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "308",
-        "target": "224"
+        "target": "224",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8629,7 +10505,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "224",
-        "target": "327"
+        "target": "327",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8637,7 +10515,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "327",
-        "target": "225"
+        "target": "225",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8645,7 +10525,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "265",
-        "target": "208"
+        "target": "208",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8653,7 +10535,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "208",
-        "target": "318"
+        "target": "318",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8661,7 +10545,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "318",
-        "target": "265"
+        "target": "265",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8669,7 +10555,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "249",
-        "target": "220"
+        "target": "220",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8677,7 +10565,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "220",
-        "target": "206"
+        "target": "206",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8685,7 +10575,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "206",
-        "target": "246"
+        "target": "246",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8693,7 +10585,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "246",
-        "target": "249"
+        "target": "249",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8701,7 +10595,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "302",
-        "target": "321"
+        "target": "321",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8709,7 +10605,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "321",
-        "target": "213"
+        "target": "213",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8717,7 +10615,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "213",
-        "target": "254"
+        "target": "254",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8725,7 +10625,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "254",
-        "target": "212"
+        "target": "212",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8733,7 +10635,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "212",
-        "target": "302"
+        "target": "302",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8741,7 +10645,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "278",
-        "target": "340"
+        "target": "340",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8749,7 +10655,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "340",
-        "target": "262"
+        "target": "262",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8757,7 +10665,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "262",
-        "target": "304"
+        "target": "304",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8765,7 +10675,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "304",
-        "target": "278"
+        "target": "278",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8773,7 +10685,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "258",
-        "target": "307"
+        "target": "307",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8781,7 +10695,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "307",
-        "target": "305"
+        "target": "305",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8789,7 +10705,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "305",
-        "target": "222"
+        "target": "222",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8797,7 +10715,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "222",
-        "target": "258"
+        "target": "258",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8805,7 +10725,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "339",
-        "target": "287"
+        "target": "287",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8813,7 +10735,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "287",
-        "target": "259"
+        "target": "259",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8821,7 +10745,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "259",
-        "target": "338"
+        "target": "338",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8829,7 +10755,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "338",
-        "target": "221"
+        "target": "221",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8837,7 +10765,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "221",
-        "target": "339"
+        "target": "339",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8845,7 +10775,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "263",
-        "target": "285"
+        "target": "285",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8853,7 +10785,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "285",
-        "target": "290"
+        "target": "290",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8861,7 +10795,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "290",
-        "target": "264"
+        "target": "264",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8869,7 +10805,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "264",
-        "target": "289"
+        "target": "289",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8877,7 +10815,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "289",
-        "target": "263"
+        "target": "263",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8885,7 +10825,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "232",
-        "target": "223"
+        "target": "223",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8893,7 +10835,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "223",
-        "target": "286"
+        "target": "286",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8901,7 +10845,9 @@
         "label": "P",
         "type": "Polygon",
         "source": "286",
-        "target": "312"
+        "target": "312",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     },
     {
@@ -8909,8 +10855,12 @@
         "label": "P",
         "type": "Polygon",
         "source": "312",
-        "target": "232"
+        "target": "232",
+        "currentFlow": 0,
+        "repairCost": 0
       }
     }
-  ]
-}
+  ],
+  "maxFlow": 153,
+  "roadsRepairCost": 2281
+};
