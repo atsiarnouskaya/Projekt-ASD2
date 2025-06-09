@@ -1,5 +1,6 @@
 package FlowNetwork;
 
+import FlowNetwork.Visualization.VisualizationGenerator;
 import com.google.gson.*;
 
 import java.awt.geom.Point2D;
@@ -23,7 +24,6 @@ public class Main {
         beerFlowBeforeDamage(S2, data, quadrants);
         barleyFlowAfterDamage(S2, data, quadrants);
         beerFlowAfterDamage(S2, data, quadrants);
-        List<Point2D> intersections = data.getIntersections();
 
         for (int i = 0; i < quadrants.size(); i++) {
             Quadrant q = quadrants.get(i);
@@ -52,7 +52,8 @@ public class Main {
         //S.printGraph();
 
         System.out.println("Max barley flow before damaging roads: " + maxBarleyFlowBeforeDamage + " with repair cost: " + S.getFlowRepairCost());
-        generateSVGfile(S, "BARLEY FLOW BEFORE DAMAGING", "barleyFlowBeforeDamage.svg", maxBarleyFlowBeforeDamage, quadrants);
+        //generateSVGfile(S, "BARLEY FLOW BEFORE DAMAGING", "barleyFlowBeforeDamage.svg", maxBarleyFlowBeforeDamage, quadrants);
+        VisualizationGenerator.GenerateCytoscapeJSONfile(S, quadrants, "barleyFlowBeforeDamage", maxBarleyFlowBeforeDamage, S.getFlowRepairCost(), "data1");
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
@@ -72,9 +73,9 @@ public class Main {
 
         int maxBeerFlowBeforeDamage = S.BFSMaxFlow(src, sink);
         //S.printGraph();
-
         System.out.println("Max beer flow before damaging roads: " + maxBeerFlowBeforeDamage + " with repair cost: " + S.getFlowRepairCost());
-        generateSVGfile(S, "BEER FLOW BEFORE DAMAGING", "beerFlowBeforeDamage.svg", maxBeerFlowBeforeDamage, quadrants);
+        //generateSVGfile(S, "BEER FLOW BEFORE DAMAGING", "beerFlowBeforeDamage.svg", maxBeerFlowBeforeDamage, quadrants);
+        VisualizationGenerator.GenerateCytoscapeJSONfile(S, quadrants, "beerFlowBeforeDamage", maxBeerFlowBeforeDamage, S.getFlowRepairCost(), "data3");
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
@@ -91,7 +92,8 @@ public class Main {
         //S.printGraph();
 
         System.out.println("Max barley flow after damaging roads: " + maxBarleyFlowAfterDamage + " with repair cost: " + S.getFlowRepairCost());
-        generateSVGfile(S, "BARLEY FLOW AFTER DAMAGING", "barleyFlowAfterDamage.svg", maxBarleyFlowAfterDamage, quadrants);
+        //generateSVGfile(S, "BARLEY FLOW AFTER DAMAGING", "barleyFlowAfterDamage.svg", maxBarleyFlowAfterDamage, quadrants);
+        VisualizationGenerator.GenerateCytoscapeJSONfile(S, quadrants, "barleyFlowAfterDamage", maxBarleyFlowAfterDamage, S.getFlowRepairCost(), "data2");
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
@@ -111,9 +113,9 @@ public class Main {
 
         int maxBeerFlowAfterDamage = S.minCostMaxFlow(src, sink);
         //S.printGraph();
-
         System.out.println("Max beer flow after damaging roads: " + maxBeerFlowAfterDamage + " with repair cost: " + S.getFlowRepairCost());
-        generateSVGfile(S, "BEER FLOW AFTER DAMAGING", "beerFlowAfterDamage.svg", maxBeerFlowAfterDamage, quadrants);
+        //generateSVGfile(S, "BEER FLOW AFTER DAMAGING", "beerFlowAfterDamage.svg", maxBeerFlowAfterDamage, quadrants);
+        VisualizationGenerator.GenerateCytoscapeJSONfile(S, quadrants, "beerFlowAfterDamage", maxBeerFlowAfterDamage, S.getFlowRepairCost(), "data4");
 
         S.deleteSourceVertex(src);
         S.deleteSinkVertex(sink);
@@ -131,7 +133,6 @@ public class Main {
         for (var farmland : data.farmlands) {
             Vertex v = S2.addVertex((int) farmland.getX(), (int) farmland.getY());
             v.setType("Farmland");
-            //v.setCapacity(farmland.getProductionCapacity());
             v.setCapacity(farmland.getQuadrant().getProductionPerPlot());
         }
 
