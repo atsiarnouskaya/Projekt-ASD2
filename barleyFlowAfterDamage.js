@@ -5,7 +5,7 @@ const data2 = {
         "id": "221",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 20,
         "incomingFlow": 0
       },
       "position": {
@@ -31,7 +31,7 @@ const data2 = {
         "id": "337",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -44,7 +44,7 @@ const data2 = {
         "id": "262",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -83,7 +83,7 @@ const data2 = {
         "id": "231",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -96,7 +96,7 @@ const data2 = {
         "id": "281",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 5,
         "incomingFlow": 0
       },
       "position": {
@@ -148,7 +148,7 @@ const data2 = {
         "id": "251",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 6,
         "incomingFlow": 0
       },
       "position": {
@@ -161,7 +161,7 @@ const data2 = {
         "id": "287",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 20,
         "incomingFlow": 0
       },
       "position": {
@@ -253,7 +253,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 14
+        "incomingFlow": 13
       },
       "position": {
         "x": 1910,
@@ -304,7 +304,7 @@ const data2 = {
         "id": "219",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 18,
         "incomingFlow": 0
       },
       "position": {
@@ -330,7 +330,7 @@ const data2 = {
         "id": "341",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -408,7 +408,7 @@ const data2 = {
         "id": "275",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -447,7 +447,7 @@ const data2 = {
         "id": "308",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -460,7 +460,7 @@ const data2 = {
         "id": "239",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 18,
         "incomingFlow": 0
       },
       "position": {
@@ -473,7 +473,7 @@ const data2 = {
         "id": "218",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -486,7 +486,7 @@ const data2 = {
         "id": "263",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -551,7 +551,7 @@ const data2 = {
         "id": "217",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -577,7 +577,7 @@ const data2 = {
         "id": "340",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -629,7 +629,7 @@ const data2 = {
         "id": "229",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 5,
+        "productionCapacity": 21,
         "incomingFlow": 0
       },
       "position": {
@@ -668,7 +668,7 @@ const data2 = {
         "id": "209",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 17,
         "incomingFlow": 0
       },
       "position": {
@@ -707,7 +707,7 @@ const data2 = {
         "id": "257",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -760,7 +760,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 7
+        "incomingFlow": 2
       },
       "position": {
         "x": 600,
@@ -824,7 +824,7 @@ const data2 = {
         "id": "196",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 5,
+        "productionCapacity": 21,
         "incomingFlow": 0
       },
       "position": {
@@ -837,7 +837,7 @@ const data2 = {
         "id": "339",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 20,
         "incomingFlow": 0
       },
       "position": {
@@ -876,7 +876,7 @@ const data2 = {
         "id": "236",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -889,7 +889,7 @@ const data2 = {
         "id": "250",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 6,
         "incomingFlow": 0
       },
       "position": {
@@ -915,7 +915,7 @@ const data2 = {
         "id": "283",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -954,7 +954,7 @@ const data2 = {
         "id": "289",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -981,7 +981,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 16
+        "incomingFlow": 6
       },
       "position": {
         "x": 170,
@@ -993,7 +993,7 @@ const data2 = {
         "id": "265",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -1006,7 +1006,7 @@ const data2 = {
         "id": "206",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 17,
         "incomingFlow": 0
       },
       "position": {
@@ -1019,7 +1019,7 @@ const data2 = {
         "id": "327",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -1045,7 +1045,7 @@ const data2 = {
         "id": "325",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 5,
         "incomingFlow": 0
       },
       "position": {
@@ -1071,7 +1071,7 @@ const data2 = {
         "id": "279",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -1098,7 +1098,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 7
+        "incomingFlow": 8
       },
       "position": {
         "x": 2830,
@@ -1201,7 +1201,7 @@ const data2 = {
         "id": "208",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -1214,7 +1214,7 @@ const data2 = {
         "id": "238",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -1240,7 +1240,7 @@ const data2 = {
         "id": "303",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 5,
         "incomingFlow": 0
       },
       "position": {
@@ -1318,7 +1318,7 @@ const data2 = {
         "id": "276",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 5,
+        "productionCapacity": 21,
         "incomingFlow": 0
       },
       "position": {
@@ -1331,7 +1331,7 @@ const data2 = {
         "id": "215",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 23,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -1370,7 +1370,7 @@ const data2 = {
         "id": "278",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -1383,7 +1383,7 @@ const data2 = {
         "id": "324",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 23,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -1409,7 +1409,7 @@ const data2 = {
         "id": "284",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 8,
+        "productionCapacity": 15,
         "incomingFlow": 0
       },
       "position": {
@@ -1422,7 +1422,7 @@ const data2 = {
         "id": "295",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 14,
         "incomingFlow": 0
       },
       "position": {
@@ -1448,7 +1448,7 @@ const data2 = {
         "id": "272",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 18,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -1461,7 +1461,7 @@ const data2 = {
         "id": "310",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 5,
+        "productionCapacity": 21,
         "incomingFlow": 0
       },
       "position": {
@@ -1487,7 +1487,7 @@ const data2 = {
         "id": "255",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -1513,7 +1513,7 @@ const data2 = {
         "id": "299",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 18,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -1540,7 +1540,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 14
+        "incomingFlow": 10
       },
       "position": {
         "x": 1500,
@@ -1552,7 +1552,7 @@ const data2 = {
         "id": "197",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -1578,7 +1578,7 @@ const data2 = {
         "id": "242",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -1760,7 +1760,7 @@ const data2 = {
         "id": "260",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -1825,7 +1825,7 @@ const data2 = {
         "id": "223",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -1877,7 +1877,7 @@ const data2 = {
         "id": "258",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 19,
         "incomingFlow": 0
       },
       "position": {
@@ -1916,7 +1916,7 @@ const data2 = {
         "id": "288",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -1968,7 +1968,7 @@ const data2 = {
         "id": "195",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -1994,7 +1994,7 @@ const data2 = {
         "id": "254",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -2059,7 +2059,7 @@ const data2 = {
         "id": "214",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -2111,7 +2111,7 @@ const data2 = {
         "id": "234",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 8,
+        "productionCapacity": 15,
         "incomingFlow": 0
       },
       "position": {
@@ -2163,8 +2163,8 @@ const data2 = {
         "id": "352",
         "type": "Brewery",
         "label": "B",
-        "productionCapacity": 16,
-        "incomingFlow": 16
+        "productionCapacity": 6,
+        "incomingFlow": 6
       },
       "position": {
         "x": -80,
@@ -2293,7 +2293,7 @@ const data2 = {
         "id": "193",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -2397,7 +2397,7 @@ const data2 = {
         "id": "252",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -2462,7 +2462,7 @@ const data2 = {
         "id": "273",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 23,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -2553,7 +2553,7 @@ const data2 = {
         "id": "199",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -2657,7 +2657,7 @@ const data2 = {
         "id": "227",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 5,
+        "productionCapacity": 21,
         "incomingFlow": 0
       },
       "position": {
@@ -2670,7 +2670,7 @@ const data2 = {
         "id": "291",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -2722,7 +2722,7 @@ const data2 = {
         "id": "213",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -2748,7 +2748,7 @@ const data2 = {
         "id": "334",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -2761,7 +2761,7 @@ const data2 = {
         "id": "301",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 18,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -2774,7 +2774,7 @@ const data2 = {
         "id": "212",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -2839,7 +2839,7 @@ const data2 = {
         "id": "222",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 19,
         "incomingFlow": 0
       },
       "position": {
@@ -2852,7 +2852,7 @@ const data2 = {
         "id": "307",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 19,
         "incomingFlow": 0
       },
       "position": {
@@ -2943,7 +2943,7 @@ const data2 = {
         "id": "205",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -3008,7 +3008,7 @@ const data2 = {
         "id": "220",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 17,
         "incomingFlow": 0
       },
       "position": {
@@ -3021,8 +3021,8 @@ const data2 = {
         "id": "391",
         "type": "Brewery",
         "label": "B",
-        "productionCapacity": 14,
-        "incomingFlow": 14
+        "productionCapacity": 13,
+        "incomingFlow": 13
       },
       "position": {
         "x": 1750,
@@ -3074,7 +3074,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 0
+        "incomingFlow": 2
       },
       "position": {
         "x": 420,
@@ -3099,7 +3099,7 @@ const data2 = {
         "id": "243",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -3138,7 +3138,7 @@ const data2 = {
         "id": "248",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 21,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -3151,7 +3151,7 @@ const data2 = {
         "id": "202",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 5,
         "incomingFlow": 0
       },
       "position": {
@@ -3164,7 +3164,7 @@ const data2 = {
         "id": "335",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -3190,7 +3190,7 @@ const data2 = {
         "id": "270",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -3229,7 +3229,7 @@ const data2 = {
         "id": "233",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 15,
         "incomingFlow": 0
       },
       "position": {
@@ -3255,7 +3255,7 @@ const data2 = {
         "id": "326",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -3268,7 +3268,7 @@ const data2 = {
         "id": "311",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 6,
         "incomingFlow": 0
       },
       "position": {
@@ -3281,7 +3281,7 @@ const data2 = {
         "id": "320",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 5,
         "incomingFlow": 0
       },
       "position": {
@@ -3294,7 +3294,7 @@ const data2 = {
         "id": "211",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -3307,7 +3307,7 @@ const data2 = {
         "id": "316",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 21,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -3398,7 +3398,7 @@ const data2 = {
         "id": "237",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -3411,7 +3411,7 @@ const data2 = {
         "id": "274",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 21,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -3425,7 +3425,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 5
+        "incomingFlow": 7
       },
       "position": {
         "x": 4550,
@@ -3437,7 +3437,7 @@ const data2 = {
         "id": "328",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 8,
+        "productionCapacity": 15,
         "incomingFlow": 0
       },
       "position": {
@@ -3463,7 +3463,7 @@ const data2 = {
         "id": "321",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -3476,7 +3476,7 @@ const data2 = {
         "id": "300",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 23,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -3489,7 +3489,7 @@ const data2 = {
         "id": "286",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -3502,7 +3502,7 @@ const data2 = {
         "id": "261",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -3515,7 +3515,7 @@ const data2 = {
         "id": "280",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -3541,7 +3541,7 @@ const data2 = {
         "id": "329",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -3567,7 +3567,7 @@ const data2 = {
         "id": "253",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -3606,7 +3606,7 @@ const data2 = {
         "id": "241",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 14,
         "incomingFlow": 0
       },
       "position": {
@@ -3632,7 +3632,7 @@ const data2 = {
         "id": "235",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -3671,7 +3671,7 @@ const data2 = {
         "id": "256",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -3710,7 +3710,7 @@ const data2 = {
         "id": "249",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 17,
         "incomingFlow": 0
       },
       "position": {
@@ -3723,7 +3723,7 @@ const data2 = {
         "id": "282",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -3762,7 +3762,7 @@ const data2 = {
         "id": "268",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 18,
         "incomingFlow": 0
       },
       "position": {
@@ -3775,7 +3775,7 @@ const data2 = {
         "id": "201",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -3814,7 +3814,7 @@ const data2 = {
         "id": "225",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -3853,7 +3853,7 @@ const data2 = {
         "id": "259",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 20,
         "incomingFlow": 0
       },
       "position": {
@@ -3866,7 +3866,7 @@ const data2 = {
         "id": "331",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 10,
         "incomingFlow": 0
       },
       "position": {
@@ -3879,7 +3879,7 @@ const data2 = {
         "id": "285",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -3892,7 +3892,7 @@ const data2 = {
         "id": "244",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -3919,7 +3919,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 10
+        "incomingFlow": 6
       },
       "position": {
         "x": 30,
@@ -4009,7 +4009,7 @@ const data2 = {
         "id": "304",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -4049,7 +4049,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 10
+        "incomingFlow": 9
       },
       "position": {
         "x": 2790,
@@ -4088,7 +4088,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 2
+        "incomingFlow": 3
       },
       "position": {
         "x": 2470,
@@ -4100,7 +4100,7 @@ const data2 = {
         "id": "312",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -4113,7 +4113,7 @@ const data2 = {
         "id": "313",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 14,
         "incomingFlow": 0
       },
       "position": {
@@ -4126,7 +4126,7 @@ const data2 = {
         "id": "230",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 15,
         "incomingFlow": 0
       },
       "position": {
@@ -4139,7 +4139,7 @@ const data2 = {
         "id": "294",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 18,
         "incomingFlow": 0
       },
       "position": {
@@ -4204,7 +4204,7 @@ const data2 = {
         "id": "247",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 21,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -4256,7 +4256,7 @@ const data2 = {
         "id": "290",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -4308,7 +4308,7 @@ const data2 = {
         "id": "322",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 8,
+        "productionCapacity": 15,
         "incomingFlow": 0
       },
       "position": {
@@ -4360,7 +4360,7 @@ const data2 = {
         "id": "333",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -4413,7 +4413,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 2
+        "incomingFlow": 7
       },
       "position": {
         "x": 380,
@@ -4425,7 +4425,7 @@ const data2 = {
         "id": "296",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 18,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -4451,7 +4451,7 @@ const data2 = {
         "id": "194",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 14,
         "incomingFlow": 0
       },
       "position": {
@@ -4464,7 +4464,7 @@ const data2 = {
         "id": "305",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 19,
         "incomingFlow": 0
       },
       "position": {
@@ -4477,7 +4477,7 @@ const data2 = {
         "id": "338",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 20,
         "incomingFlow": 0
       },
       "position": {
@@ -4491,7 +4491,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 10
+        "incomingFlow": 9
       },
       "position": {
         "x": 2810,
@@ -4620,7 +4620,7 @@ const data2 = {
         "id": "246",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 17,
         "incomingFlow": 0
       },
       "position": {
@@ -4634,7 +4634,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 7
+        "incomingFlow": 10
       },
       "position": {
         "x": 1240,
@@ -4646,7 +4646,7 @@ const data2 = {
         "id": "203",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 21,
+        "productionCapacity": 7,
         "incomingFlow": 0
       },
       "position": {
@@ -4659,7 +4659,7 @@ const data2 = {
         "id": "277",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 6,
         "incomingFlow": 0
       },
       "position": {
@@ -4698,7 +4698,7 @@ const data2 = {
         "id": "302",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 17,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -4724,7 +4724,7 @@ const data2 = {
         "id": "232",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -4737,7 +4737,7 @@ const data2 = {
         "id": "266",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -4751,7 +4751,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 0
+        "incomingFlow": 2
       },
       "position": {
         "x": 180,
@@ -4776,7 +4776,7 @@ const data2 = {
         "id": "323",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -4815,7 +4815,7 @@ const data2 = {
         "id": "245",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -4880,7 +4880,7 @@ const data2 = {
         "id": "336",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 23,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -4907,7 +4907,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 6
+        "incomingFlow": 7
       },
       "position": {
         "x": 3410,
@@ -4919,7 +4919,7 @@ const data2 = {
         "id": "318",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 24,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -4959,7 +4959,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 5
+        "incomingFlow": 7
       },
       "position": {
         "x": 4950,
@@ -4971,7 +4971,7 @@ const data2 = {
         "id": "207",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -4984,7 +4984,7 @@ const data2 = {
         "id": "192",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 14,
         "incomingFlow": 0
       },
       "position": {
@@ -5023,7 +5023,7 @@ const data2 = {
         "id": "292",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 18,
         "incomingFlow": 0
       },
       "position": {
@@ -5050,7 +5050,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 2
+        "incomingFlow": 3
       },
       "position": {
         "x": 2520,
@@ -5062,7 +5062,7 @@ const data2 = {
         "id": "297",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 15,
         "incomingFlow": 0
       },
       "position": {
@@ -5114,7 +5114,7 @@ const data2 = {
         "id": "204",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -5244,7 +5244,7 @@ const data2 = {
         "id": "309",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -5296,7 +5296,7 @@ const data2 = {
         "id": "317",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 14,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -5309,7 +5309,7 @@ const data2 = {
         "id": "264",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 11,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
@@ -5323,7 +5323,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 11
+        "incomingFlow": 9
       },
       "position": {
         "x": 4980,
@@ -5336,7 +5336,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 9
+        "incomingFlow": 2
       },
       "position": {
         "x": 1910,
@@ -5374,7 +5374,7 @@ const data2 = {
         "id": "306",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 15,
+        "productionCapacity": 9,
         "incomingFlow": 0
       },
       "position": {
@@ -5452,7 +5452,7 @@ const data2 = {
         "id": "226",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -5465,7 +5465,7 @@ const data2 = {
         "id": "224",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 8,
         "incomingFlow": 0
       },
       "position": {
@@ -5491,7 +5491,7 @@ const data2 = {
         "id": "228",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 19,
+        "productionCapacity": 6,
         "incomingFlow": 0
       },
       "position": {
@@ -5504,7 +5504,7 @@ const data2 = {
         "id": "269",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 7,
+        "productionCapacity": 13,
         "incomingFlow": 0
       },
       "position": {
@@ -5530,7 +5530,7 @@ const data2 = {
         "id": "216",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 13,
+        "productionCapacity": 15,
         "incomingFlow": 0
       },
       "position": {
@@ -5544,7 +5544,7 @@ const data2 = {
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 3
+        "incomingFlow": 4
       },
       "position": {
         "x": 770,
@@ -5573,10 +5573,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "11/17",
+        "label": "9/17",
         "source": "337",
         "target": "162",
-        "currentFlow": 11,
+        "currentFlow": 9,
         "repairCost": 16
       }
     },
@@ -5645,10 +5645,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "16/17",
+        "label": "6/17",
         "source": "251",
         "target": "102",
-        "currentFlow": 16,
+        "currentFlow": 6,
         "repairCost": 24
       }
     },
@@ -5690,10 +5690,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "14/15",
+        "label": "13/15",
         "source": "39",
         "target": "391",
-        "currentFlow": 14,
+        "currentFlow": 13,
         "repairCost": 3
       }
     },
@@ -6095,15 +6095,6 @@ const data2 = {
     },
     {
       "data": {
-        "label": "0/15",
-        "source": "77",
-        "target": "11",
-        "currentFlow": 0,
-        "repairCost": 13
-      }
-    },
-    {
-      "data": {
         "label": "0/11",
         "source": "123",
         "target": "122",
@@ -6176,10 +6167,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "10/16",
+        "label": "6/16",
         "source": "250",
         "target": "100",
-        "currentFlow": 10,
+        "currentFlow": 6,
         "repairCost": 4
       }
     },
@@ -6230,10 +6221,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "16/16",
+        "label": "6/16",
         "source": "102",
         "target": "352",
-        "currentFlow": 16,
+        "currentFlow": 6,
         "repairCost": 24
       }
     },
@@ -6536,19 +6527,19 @@ const data2 = {
     },
     {
       "data": {
-        "label": "0/7",
+        "label": "2/7",
         "source": "293",
         "target": "10",
-        "currentFlow": 0,
+        "currentFlow": 2,
         "repairCost": 2
       }
     },
     {
       "data": {
-        "label": "0/12",
+        "label": "4/12",
         "source": "276",
         "target": "98",
-        "currentFlow": 0,
+        "currentFlow": 4,
         "repairCost": 16
       }
     },
@@ -6959,10 +6950,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "14/14",
+        "label": "10/14",
         "source": "288",
         "target": "170",
-        "currentFlow": 14,
+        "currentFlow": 10,
         "repairCost": 3
       }
     },
@@ -7013,10 +7004,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "14/16",
+        "label": "13/16",
         "source": "195",
         "target": "39",
-        "currentFlow": 14,
+        "currentFlow": 13,
         "repairCost": 3
       }
     },
@@ -7036,15 +7027,6 @@ const data2 = {
         "target": "118",
         "currentFlow": 0,
         "repairCost": 12
-      }
-    },
-    {
-      "data": {
-        "label": "7/10",
-        "source": "186",
-        "target": "187",
-        "currentFlow": 7,
-        "repairCost": 25
       }
     },
     {
@@ -7148,10 +7130,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "8/10",
+        "label": "10/10",
         "source": "234",
         "target": "187",
-        "currentFlow": 8,
+        "currentFlow": 10,
         "repairCost": 10
       }
     },
@@ -7454,10 +7436,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "7/13",
+        "label": "8/13",
         "source": "199",
         "target": "62",
-        "currentFlow": 7,
+        "currentFlow": 8,
         "repairCost": 10
       }
     },
@@ -7733,11 +7715,11 @@ const data2 = {
     },
     {
       "data": {
-        "label": "0/5",
+        "label": "2/15",
         "source": "11",
-        "target": "10",
-        "currentFlow": 0,
-        "repairCost": 23
+        "target": "77",
+        "currentFlow": 2,
+        "repairCost": 13
       }
     },
     {
@@ -7760,19 +7742,19 @@ const data2 = {
     },
     {
       "data": {
-        "label": "6/16",
+        "label": "7/16",
         "source": "248",
         "target": "86",
-        "currentFlow": 6,
+        "currentFlow": 7,
         "repairCost": 14
       }
     },
     {
       "data": {
-        "label": "7/7",
+        "label": "5/7",
         "source": "202",
         "target": "77",
-        "currentFlow": 7,
+        "currentFlow": 5,
         "repairCost": 16
       }
     },
@@ -7823,10 +7805,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "9/18",
+        "label": "2/18",
         "source": "233",
         "target": "185",
-        "currentFlow": 9,
+        "currentFlow": 2,
         "repairCost": 14
       }
     },
@@ -7868,10 +7850,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "9/9",
+        "label": "7/9",
         "source": "316",
         "target": "86",
-        "currentFlow": 9,
+        "currentFlow": 7,
         "repairCost": 2
       }
     },
@@ -7985,19 +7967,19 @@ const data2 = {
     },
     {
       "data": {
-        "label": "5/9",
+        "label": "7/9",
         "source": "161",
         "target": "162",
-        "currentFlow": 5,
+        "currentFlow": 7,
         "repairCost": 10
       }
     },
     {
       "data": {
-        "label": "8/19",
+        "label": "13/19",
         "source": "328",
         "target": "187",
-        "currentFlow": 8,
+        "currentFlow": 13,
         "repairCost": 29
       }
     },
@@ -8030,10 +8012,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "5/15",
+        "label": "7/15",
         "source": "286",
         "target": "163",
-        "currentFlow": 5,
+        "currentFlow": 7,
         "repairCost": 9
       }
     },
@@ -8201,10 +8183,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "3/19",
+        "label": "0/19",
         "source": "201",
         "target": "67",
-        "currentFlow": 3,
+        "currentFlow": 0,
         "repairCost": 28
       }
     },
@@ -8305,15 +8287,6 @@ const data2 = {
         "target": "379",
         "currentFlow": 3,
         "repairCost": 23
-      }
-    },
-    {
-      "data": {
-        "label": "2/2",
-        "source": "100",
-        "target": "101",
-        "currentFlow": 2,
-        "repairCost": 20
       }
     },
     {
@@ -8498,10 +8471,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "2/6",
+        "label": "3/6",
         "source": "133",
         "target": "134",
-        "currentFlow": 2,
+        "currentFlow": 3,
         "repairCost": 7
       }
     },
@@ -8705,10 +8678,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "0/17",
+        "label": "3/17",
         "source": "333",
         "target": "67",
-        "currentFlow": 0,
+        "currentFlow": 3,
         "repairCost": 28
       }
     },
@@ -8759,6 +8732,15 @@ const data2 = {
     },
     {
       "data": {
+        "label": "2/2",
+        "source": "101",
+        "target": "100",
+        "currentFlow": 2,
+        "repairCost": 20
+      }
+    },
+    {
+      "data": {
         "label": "0/13",
         "source": "296",
         "target": "35",
@@ -8804,10 +8786,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "10/14",
+        "label": "9/14",
         "source": "153",
         "target": "152",
-        "currentFlow": 10,
+        "currentFlow": 9,
         "repairCost": 1
       }
     },
@@ -8885,6 +8867,15 @@ const data2 = {
     },
     {
       "data": {
+        "label": "0/10",
+        "source": "187",
+        "target": "186",
+        "currentFlow": 0,
+        "repairCost": 25
+      }
+    },
+    {
+      "data": {
         "label": "15/15",
         "source": "187",
         "target": "390",
@@ -8903,10 +8894,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "0/12",
+        "label": "1/12",
         "source": "203",
         "target": "86",
-        "currentFlow": 0,
+        "currentFlow": 1,
         "repairCost": 20
       }
     },
@@ -8984,6 +8975,15 @@ const data2 = {
     },
     {
       "data": {
+        "label": "2/5",
+        "source": "10",
+        "target": "11",
+        "currentFlow": 2,
+        "repairCost": 23
+      }
+    },
+    {
+      "data": {
         "label": "9/13",
         "source": "126",
         "target": "372",
@@ -9011,10 +9011,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "4/11",
+        "label": "3/11",
         "source": "245",
         "target": "62",
-        "currentFlow": 4,
+        "currentFlow": 3,
         "repairCost": 29
       }
     },
@@ -9083,10 +9083,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "5/13",
+        "label": "7/13",
         "source": "163",
         "target": "161",
-        "currentFlow": 5,
+        "currentFlow": 7,
         "repairCost": 16
       }
     },
@@ -9128,10 +9128,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "2/5",
+        "label": "3/5",
         "source": "134",
         "target": "152",
-        "currentFlow": 2,
+        "currentFlow": 3,
         "repairCost": 5
       }
     },
@@ -9371,10 +9371,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "9/13",
+        "label": "2/13",
         "source": "185",
         "target": "186",
-        "currentFlow": 9,
+        "currentFlow": 2,
         "repairCost": 7
       }
     },
@@ -9398,10 +9398,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "10/10",
+        "label": "9/10",
         "source": "306",
         "target": "153",
-        "currentFlow": 10,
+        "currentFlow": 9,
         "repairCost": 16
       }
     },
@@ -9443,10 +9443,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "3/18",
+        "label": "7/18",
         "source": "226",
         "target": "170",
-        "currentFlow": 3,
+        "currentFlow": 7,
         "repairCost": 20
       }
     },
@@ -9515,10 +9515,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "2/4",
+        "label": "3/4",
         "source": "216",
         "target": "133",
-        "currentFlow": 2,
+        "currentFlow": 3,
         "repairCost": 10
       }
     },
@@ -9533,10 +9533,10 @@ const data2 = {
     },
     {
       "data": {
-        "label": "3/15",
+        "label": "7/15",
         "source": "98",
         "target": "101",
-        "currentFlow": 3,
+        "currentFlow": 7,
         "repairCost": 25
       }
     },
@@ -10861,6 +10861,6 @@ const data2 = {
       }
     }
   ],
-  "maxFlow": 384,
-  "roadsRepairCost": 2109
+  "maxFlow": 373,
+  "roadsRepairCost": 2158
 };

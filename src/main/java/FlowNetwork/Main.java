@@ -49,7 +49,7 @@ public class Main {
             S.setMaxFlow(road.getMaxBarleyFlow(), (int) road.x1, (int) road.y1, (int) road.x2, (int) road.y2);
 
         int maxBarleyFlowBeforeDamage = S.BFSMaxFlow(src, sink);
-        //S.printGraph();
+        S.printGraph();
 
         System.out.println("Max barley flow before damaging roads: " + maxBarleyFlowBeforeDamage + " with repair cost: " + S.getFlowRepairCost());
         //generateSVGfile(S, "BARLEY FLOW BEFORE DAMAGING", "barleyFlowBeforeDamage.svg", maxBarleyFlowBeforeDamage, quadrants);

@@ -94,6 +94,8 @@ public class Main {
             for (Farmland farmland : farmlands) {
                 writer.println("<circle cx=\"" + String.format("%.0f", farmland.getX()) + "\" cy=\"" + String.format("%.0f", farmland.getY()) + "\" r=\"4.1\" fill=\"#FFC300\"  style=\"opacity:0.7; \"/>");
                 writer.println("<text x=\"" + String.format("%.0f", farmland.getX()) + "\" y=\"" + String.format("%.0f", farmland.getY()) + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-size=\"3.2\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"end\">F</text>");
+                writer.println("<text x=\"" + String.format("%.0f", farmland.getX()) + "\" y=\"" + String.format("%.0f", (farmland.getY() + 2.5)) + "\" fill=\"white\" font-family=\"Arial, sans-serif\" font-size=\"2.5\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"start\">" + farmland.getProductionCapacity() + "</text>");
+
             }
 
             for (Brewery brewery : breweries) {

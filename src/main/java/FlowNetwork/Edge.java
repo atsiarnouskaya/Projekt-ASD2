@@ -18,14 +18,14 @@ public class Edge {
         this.residualFlow = maxFlow;
         this.currentFlow = 0;
         this.maxFlow = maxFlow;
-        this.repairCost= repairCost;
+        this.repairCost = repairCost;
     }
 
     public Edge(int maxFlow, int currentFlow, int repairCost) {
         this.maxFlow = maxFlow;
         this.currentFlow = currentFlow;
         this.residualFlow = maxFlow - currentFlow;
-        this.repairCost= repairCost;
+        this.repairCost = repairCost;
     }
 
     public int getMaxFlow() {

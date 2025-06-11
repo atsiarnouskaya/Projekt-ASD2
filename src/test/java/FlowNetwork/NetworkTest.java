@@ -303,7 +303,7 @@ public class NetworkTest {
         }
 
         @Test
-        void GivenSimplePathExist_WhenRunningBFS_ThenReturnsTrue() {
+        void GivenSimplePathExists_WhenRunningBFS_ThenReturnsTrue() {
             /*
              Graph looks like 0 — 1 — 2 — 3 — 4 — 5 — 6 — 7
             */
@@ -314,6 +314,7 @@ public class NetworkTest {
             network.addEdge(10, 6, 4, 4, 5, 5);
             network.addEdge(10, 7, 5, 5, 6, 6);
             network.addEdge(10, 8, 6, 6, 7, 7);
+
             Assertions.assertTrue(network.BFS(src, dest));
         }
 
@@ -357,6 +358,43 @@ public class NetworkTest {
             network.addEdge(10, 6, 4, 4, 5, 5);
             network.addEdge(10, 7, 5, 5, 6, 6);
             network.addEdge(10, 8, 6, 6, 7, 7);
+            Assertions.assertFalse(network.BFS(src, dest));
+        }
+
+        @Test
+        void GivenSimpleGraphWith0MaxFlow_WhenCallingBFS_ThenReturnsFalse() {
+             /*
+             Graph looks like 0 — 1 — 2 — 3 — 4 — 5 — 6 — 7
+            */
+            network.addEdge(0, 2, 0, 0, 1,1);
+            network.addEdge(0, 3, 1,1,2,2);
+            network.addEdge(0, 4, 2,2,3,3);
+            network.addEdge(0, 5, 3,3,4,4);
+            network.addEdge(0, 6,4,4, 5, 5);
+            network.addEdge(0, 7, 5, 5, 6, 6);
+            network.addEdge(0, 8, 6, 6, 7, 7);
+            Assertions.assertFalse(network.BFS(src, dest));
+        }
+
+        @Test
+        void GivenComplicatedGraphWith0MaxFlow_WhenCallingBFS_ThenReturnsFalse() {
+             /*
+                                    1 — 4 ———
+                                  /   /       \
+                Graph looks like 0 — 2         7
+                                  \   \       /
+                                    3 — 5 — 6
+             */
+            network.addEdge(0, 2, 0, 0, 1,1);
+            network.addEdge(0, 3, 0,0,2,2);
+            network.addEdge(0, 4, 0,0,3,3);
+            network.addEdge(0, 6,3, 3, 5,5);
+            network.addEdge(0, 5, 1,1,4,4);
+            network.addEdge(0, 6,2, 2, 4,4);
+            network.addEdge(0, 6,2, 2, 5,5);
+            network.addEdge(0, 7, 5, 5, 6, 6);
+            network.addEdge(0, 8, 4, 4, 7, 7);
+            network.addEdge(0, 8, 6, 6, 7, 7);
             Assertions.assertFalse(network.BFS(src, dest));
         }
 
