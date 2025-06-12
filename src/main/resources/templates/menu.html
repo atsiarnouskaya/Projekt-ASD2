@@ -1,21 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8" xmlns:th="http:/thymeleaf.org">
+  <meta charset="UTF-8">
   <title>Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    .menu-button {
+      display: block;
+      width: 250px;
+      padding: 15px 30px;
+      margin: 15px auto;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    input[type="hidden"] {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-<form th:action="@{/sent}"
-      th:object="${userChoice}"
-      method="post">
-  <p> Choose what you want to do
-    <select th:field="*{choice}">
-      <option th:value="'Generate new map'" th:text="'Generate new map'"></option>
-      <option th:value="'Show logs'" th:text="'Show logs'"></option>
-      <option th:value="'Find words in logs'" th:text="'Find words in logs'"></option>
-      <option th:value="'Calculate flows'" th:text="'Calculate flows'"></option>
-    </select></p>
-  <input type="submit" value="Submit">
+<h1>Choose what you want to do</h1>
+
+<form id="menuForm" th:action="@{/sent}" th:object="${userChoice}" method="post">
+  <input type="hidden" th:field="*{choice}" id="choiceInput" />
+
+  <button type="button" class="menu-button" onclick="submitWithChoice('Generate new map')">Generate new map</button>
+  <button type="button" class="menu-button" onclick="submitWithChoice('Calculate flows')">Calculate flows</button>
+  <button type="button" class="menu-button" onclick="submitWithChoice('Show logs')">Show logs</button>
+  <button type="button" class="menu-button" onclick="submitWithChoice('Find words in logs')">Find words in logs</button>
 </form>
+
+<script>
+  function submitWithChoice(choice) {
+    document.getElementById('choiceInput').value = choice;
+    document.getElementById('menuForm').submit();
+  }
+</script>
 </body>
 </html>

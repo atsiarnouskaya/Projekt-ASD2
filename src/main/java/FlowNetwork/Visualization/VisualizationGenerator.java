@@ -99,7 +99,7 @@ public class VisualizationGenerator {
 
         resultData.edges.addAll(pedges);
 
-        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName+".js"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("src/generatedGraph/" + fileName + ".js"))) {
             Gson gson = new GsonBuilder()
                     .setPrettyPrinting()
                     .create();

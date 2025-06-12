@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-public class Main {
-    public static void main(String[] args) {
+public class FlowNetworkMain {
+    public static void run() {
         Data data = readFile();
         ArrayList<Farmland> farmlands = new ArrayList<>();
         farmlands.addAll(data.farmlands);
