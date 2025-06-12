@@ -2,7 +2,7 @@
 [OK]  Data is saved to JSON file without errors
 [OK] Quadrants: 1 were created
 Quadrant 1
-Production per plot: 24
+Production per plot: 19
 Hull points: 
 (46.0, 382.0)
 (186.0, 413.0)
