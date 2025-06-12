@@ -1,10 +1,7 @@
 package DataGenerator;
 
 import java.awt.geom.Point2D;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -17,17 +14,30 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class DataGeneratorMain {
+    private static final FileWriter writer;
 
-    public static void run() {
-        //Generator generator = new Generator(3, 300, 150, 50, 35);
-        Generator generator = new Generator(2, 5, 4, 2, 4);
-        Data data = generator.generate();
-        //Data data = readFile();
-        //generateSVGfile(data.roads, data.farmlands, data.breweries, data.taverns);
-        generateJSONfile(data);
+    static {
+        try {
+            writer = new FileWriter("src/logs/output.txt", true);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public static void generateJSONfile(Data data) {
+    public static void run() throws IOException {
+            //Generator generator = new Generator(3, 300, 150, 50, 35);
+            Generator generator = new Generator(2, 5, 4, 2, 4);
+            Data data = generator.generate();
+            writer.write("[OK]  Data is generated without errors\n");
+            writer.flush();
+            //Data data = readFile();
+            //generateSVGfile(data.roads, data.farmlands, data.breweries, data.taverns);
+            generateJSONfile(data);
+            writer.write("[OK]  Data is saved to JSON file without errors\n");
+            writer.flush();
+    }
+
+    public static void generateJSONfile(Data data) throws IOException {
         try (PrintWriter writer = new PrintWriter(new FileWriter("data.json"))) {
             Gson gson = new GsonBuilder()
                     .setPrettyPrinting()
@@ -35,6 +45,8 @@ public class DataGeneratorMain {
             String json = gson.toJson(data);
             writer.write(json);
         } catch (IOException e) {
+            writer.write("An error occurred while saving to the file: " + e.getMessage() + "\n");
+            writer.flush();
             System.err.println("An error occurred while saving to the file: " + e.getMessage());
         }
     }

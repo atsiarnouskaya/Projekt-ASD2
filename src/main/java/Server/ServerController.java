@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
+
 @Controller
 public class ServerController {
     private boolean dataIsEmpty = true;
@@ -21,7 +23,7 @@ public class ServerController {
     }
 
     @PostMapping("/sent")
-    public String sent(@ModelAttribute UserChoice userChoice) {
+    public String sent(@ModelAttribute UserChoice userChoice) throws IOException {
         return switch (userChoice.getChoice()) {
             case "Generate new map" -> {
                 DataGeneratorMain.run();

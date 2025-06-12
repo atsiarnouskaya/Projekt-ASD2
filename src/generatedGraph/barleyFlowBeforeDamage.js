@@ -18,7 +18,7 @@ const data1 = {
         "id": "8",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -57,7 +57,7 @@ const data1 = {
         "id": "10",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -109,7 +109,7 @@ const data1 = {
         "id": "9",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
@@ -148,7 +148,7 @@ const data1 = {
         "id": "7",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 16,
+        "productionCapacity": 24,
         "incomingFlow": 0
       },
       "position": {
