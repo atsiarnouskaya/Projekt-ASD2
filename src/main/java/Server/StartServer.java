@@ -10,7 +10,7 @@ import java.io.IOException;
 public class StartServer {
     public static void main(String[] args) throws IOException {
         FileWriter fw = new FileWriter("src/logs/output.txt", false);
-        fw.write("");
+        fw.write("[OK]  Server started\n");
         fw.close();
         SpringApplication.run(StartServer.class, args);
     }

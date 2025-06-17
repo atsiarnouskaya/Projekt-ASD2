@@ -11,4 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class UserChoice {
     private String choice;
+    private int type; //1 - word in the text, 2 - word in logs, 3 - word in own file
 }

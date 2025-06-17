@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .result-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .result-container h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .result-container p {
+            font-size: 20px;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+<div class="result-container">
+    <h2>Search Completed</h2>
+    <h3>In the text: </h3>
+    <p th:text="${text}"></p>
+    <p th:text="${result}" style="white-space: pre-line;"></p>
+    <a href="menu">Go back to menu</a>
+</div>
+
+
+
+
+</body>
+</html>
