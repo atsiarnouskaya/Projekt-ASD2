@@ -72,7 +72,22 @@
     <label for="providedWord">Word to find:</label>
     <input type="text" id="providedWord" th:field="*{word}" />
 
-    <button type="submit">Search</button>
+    <label for="algorithmChoice">Choose an algorithm:</label>
+    <input type="hidden" id="algorithmChoice" th:field="*{algorithmChoice}" />
+
+    <input type="hidden" th:field="*{type}" id="type" />
+
+    <button type="button" class="menu-button" onclick="submitWithChoice('1')">Knuth-Morris-Pratt algorithm</button>
+    <button type="button" class="menu-button" onclick="submitWithChoice('2')">Boyer-Moore algorithm</button>
+    <button type="button" class="menu-button" onclick="submitWithChoice('3')">Both</button>
+
+    <script>
+        function submitWithChoice(algorithmChoice) {
+            document.getElementById('algorithmChoice').value = algorithmChoice;
+            document.getElementById('type').value = 2;
+            document.getElementById('menuForm').submit();
+        }
+    </script>
 </form>
 </body>
 </html>

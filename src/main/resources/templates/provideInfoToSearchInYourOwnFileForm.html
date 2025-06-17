@@ -68,14 +68,30 @@
 <body>
 <h1>Enter your text and a word you want to find</h1>
 
-<form id="menuForm" th:action="@{/processText}" th:object="${userWordToSearch}" method="post">
+<form id="menuForm" th:action="@{/processText}" enctype="multipart/form-data"
+      th:object="${userWordToSearch}" method="post">
     <label for="providedWord">Word to find:</label>
     <input type="text" id="providedWord" th:field="*{word}" />
 
     <label for="fileInput">Upload a file:</label>
     <input type="file" id="fileInput" name="file" th:field="*{file}"/>
 
-    <button type="submit">Search</button>
+    <input type="hidden" th:field="*{type}" id="type" />
+
+    <label for="algorithmChoice">Choose an algorithm:</label>
+    <input type="hidden" id="algorithmChoice" th:field="*{algorithmChoice}" />
+
+    <button type="button" class="menu-button" onclick="submitWithChoice('1')">Knuth-Morris-Pratt algorithm</button>
+    <button type="button" class="menu-button" onclick="submitWithChoice('2')">Boyer-Moore algorithm</button>
+    <button type="button" class="menu-button" onclick="submitWithChoice('3')">Both</button>
+
+    <script>
+        function submitWithChoice(algorithmChoice) {
+            document.getElementById('algorithmChoice').value = algorithmChoice;
+            document.getElementById('type').value = 3;
+            document.getElementById('menuForm').submit();
+        }
+    </script>
 </form>
 </body>
 </html>

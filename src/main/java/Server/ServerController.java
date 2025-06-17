@@ -8,13 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 @Controller
 public class ServerController {
     private boolean dataIsEmpty = true;
-    private int choice; //1 - word in the text, 2 - word in logs, 3 - word in own file
 
     @RequestMapping("/menu")
     public String menu(Model model) {
@@ -47,7 +49,7 @@ public class ServerController {
                 FlowNetworkMain.run();
                 yield "redirect:/graph.html";
             }
-            case "Search words in text" -> "WordSearchForm";
+            case "Search words in text" -> "wordSearchForm";
             case "Show logs" -> "showLogs";
             case "Provide text" -> {
                 UserWordToSearch userWordToSearch = new UserWordToSearch();
@@ -81,6 +83,32 @@ public class ServerController {
                 model.addAttribute("result", menu.getAlg().getResult().getResult(option));
                 model.addAttribute("text", userWordToSearch.getText());
                 yield "wordSearchResult";
+            }
+            case 2 -> {
+                File file = new File("src/logs/output.txt");
+                String option = userWordToSearch.getAlgorithmChoice();
+                Menu menu = new Menu(file, option);
+                menu.move("1", userWordToSearch.getWord());
+                model.addAttribute("result", menu.getAlg().getResult().getResult(option));
+                model.addAttribute("text", "");
+                yield "wordSearchResult";
+            }
+            case 3 -> {
+                MultipartFile file = userWordToSearch.getFile();
+                String option = userWordToSearch.getAlgorithmChoice();
+                try {
+                    String fileContent = new String(file.getBytes(), StandardCharsets.UTF_8);
+                    Menu menu = new Menu(fileContent, option);
+                    menu.move("2", userWordToSearch.getWord());
+                    model.addAttribute("result", menu.getAlg().getResult().getResult(option));
+                    model.addAttribute("text", fileContent);
+                    yield "wordSearchResult";
+                } catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+                yield "wordSearchResult";
+
             }
              default -> "error";
          };
