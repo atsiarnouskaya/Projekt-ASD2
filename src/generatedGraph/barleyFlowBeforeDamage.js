@@ -2,377 +2,398 @@ const data1 = {
   "nodes": [
     {
       "data": {
-        "id": "0",
+        "id": "36",
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 2
+        "incomingFlow": 10
       },
       "position": {
-        "x": 830,
-        "y": 4380
+        "x": 8240,
+        "y": 5030
       }
     },
     {
       "data": {
-        "id": "8",
+        "id": "33",
+        "type": "Intersection",
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 9
+      },
+      "position": {
+        "x": 7820,
+        "y": 4950
+      }
+    },
+    {
+      "data": {
+        "id": "35",
+        "type": "Intersection",
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 9
+      },
+      "position": {
+        "x": 7550,
+        "y": 5020
+      }
+    },
+    {
+      "data": {
+        "id": "32",
+        "type": "Intersection",
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 6
+      },
+      "position": {
+        "x": 8620,
+        "y": 4520
+      }
+    },
+    {
+      "data": {
+        "id": "40",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 23,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
-        "x": 1860,
-        "y": 4130
+        "x": 8680,
+        "y": 4320
       }
     },
     {
       "data": {
-        "id": "15",
+        "id": "45",
         "type": "Tavern",
         "label": "T",
-        "productionCapacity": 11,
+        "productionCapacity": 25,
         "incomingFlow": 0
       },
       "position": {
-        "x": 990,
-        "y": 4260
+        "x": 7670,
+        "y": 5240
       }
     },
     {
       "data": {
-        "id": "2",
+        "id": "37",
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
-        "incomingFlow": 2
+        "incomingFlow": 10
       },
       "position": {
-        "x": 1080,
-        "y": 3720
+        "x": 8050,
+        "y": 4990
       }
     },
     {
       "data": {
-        "id": "10",
-        "type": "Farmland",
-        "label": "F",
-        "productionCapacity": 23,
-        "incomingFlow": 0
-      },
-      "position": {
-        "x": 560,
-        "y": 4840
-      }
-    },
-    {
-      "data": {
-        "id": "14",
-        "type": "Tavern",
-        "label": "T",
-        "productionCapacity": 15,
-        "incomingFlow": 0
-      },
-      "position": {
-        "x": 110,
-        "y": 4720
-      }
-    },
-    {
-      "data": {
-        "id": "4",
-        "type": "Intersection",
-        "label": "I",
-        "productionCapacity": 0,
-        "incomingFlow": 2
-      },
-      "position": {
-        "x": 400,
-        "y": 4060
-      }
-    },
-    {
-      "data": {
-        "id": "12",
+        "id": "41",
         "type": "Brewery",
         "label": "B",
-        "productionCapacity": 19,
-        "incomingFlow": 2
+        "productionCapacity": 15,
+        "incomingFlow": 4
       },
       "position": {
-        "x": 1120,
-        "y": 3510
+        "x": 8780,
+        "y": 4760
       }
     },
     {
       "data": {
-        "id": "9",
-        "type": "Farmland",
-        "label": "F",
-        "productionCapacity": 23,
+        "id": "34",
+        "type": "Intersection",
+        "label": "I",
+        "productionCapacity": 0,
+        "incomingFlow": 5
+      },
+      "position": {
+        "x": 6860,
+        "y": 4780
+      }
+    },
+    {
+      "data": {
+        "id": "44",
+        "type": "Tavern",
+        "label": "T",
+        "productionCapacity": 4,
         "incomingFlow": 0
       },
       "position": {
-        "x": 460,
-        "y": 3820
+        "x": 6650,
+        "y": 4890
       }
     },
     {
       "data": {
-        "id": "5",
+        "id": "31",
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
         "incomingFlow": 2
       },
       "position": {
-        "x": 370,
-        "y": 4380
+        "x": 8210,
+        "y": 4860
       }
     },
     {
       "data": {
-        "id": "6",
-        "type": "Intersection",
-        "label": "I",
-        "productionCapacity": 0,
-        "incomingFlow": 0
-      },
-      "position": {
-        "x": 350,
-        "y": 4680
-      }
-    },
-    {
-      "data": {
-        "id": "7",
+        "id": "38",
         "type": "Farmland",
         "label": "F",
-        "productionCapacity": 23,
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
-        "x": 510,
-        "y": 4200
+        "x": 8300,
+        "y": 5270
       }
     },
     {
       "data": {
-        "id": "3",
+        "id": "30",
         "type": "Intersection",
         "label": "I",
         "productionCapacity": 0,
+        "incomingFlow": 2
+      },
+      "position": {
+        "x": 8460,
+        "y": 4810
+      }
+    },
+    {
+      "data": {
+        "id": "39",
+        "type": "Farmland",
+        "label": "F",
+        "productionCapacity": 12,
         "incomingFlow": 0
       },
       "position": {
-        "x": 700,
+        "x": 8620,
+        "y": 4970
+      }
+    },
+    {
+      "data": {
+        "id": "42",
+        "type": "Brewery",
+        "label": "B",
+        "productionCapacity": 8,
+        "incomingFlow": 5
+      },
+      "position": {
+        "x": 7020,
+        "y": 4650
+      }
+    },
+    {
+      "data": {
+        "id": "47",
+        "type": "Tavern",
+        "label": "T",
+        "productionCapacity": 10,
+        "incomingFlow": 0
+      },
+      "position": {
+        "x": 7670,
         "y": 4730
       }
     },
     {
       "data": {
-        "id": "1",
-        "type": "Intersection",
-        "label": "I",
-        "productionCapacity": 0,
-        "incomingFlow": 2
+        "id": "46",
+        "type": "Tavern",
+        "label": "T",
+        "productionCapacity": 14,
+        "incomingFlow": 0
       },
       "position": {
-        "x": 1620,
-        "y": 4380
+        "x": 8100,
+        "y": 5190
       }
     },
     {
       "data": {
-        "id": "11",
+        "id": "43",
         "type": "Brewery",
         "label": "B",
-        "productionCapacity": 13,
-        "incomingFlow": 2
+        "productionCapacity": 24,
+        "incomingFlow": 9
       },
       "position": {
-        "x": 1770,
-        "y": 4550
-      }
-    },
-    {
-      "data": {
-        "id": "16",
-        "type": "Tavern",
-        "label": "T",
-        "productionCapacity": 12,
-        "incomingFlow": 0
-      },
-      "position": {
-        "x": 1610,
-        "y": 4130
-      }
-    },
-    {
-      "data": {
-        "id": "13",
-        "type": "Tavern",
-        "label": "T",
-        "productionCapacity": 27,
-        "incomingFlow": 0
-      },
-      "position": {
-        "x": 500,
-        "y": 4640
+        "x": 7310,
+        "y": 5050
       }
     }
   ],
   "edges": [
     {
       "data": {
-        "label": "2/14",
-        "source": "0",
-        "target": "2",
-        "currentFlow": 2,
-        "repairCost": 1
+        "label": "10/14",
+        "source": "36",
+        "target": "37",
+        "currentFlow": 10,
+        "repairCost": 9
       }
     },
     {
       "data": {
-        "label": "2/8",
-        "source": "8",
-        "target": "1",
+        "label": "5/5",
+        "source": "33",
+        "target": "34",
+        "currentFlow": 5,
+        "repairCost": 19
+      }
+    },
+    {
+      "data": {
+        "label": "9/13",
+        "source": "33",
+        "target": "35",
+        "currentFlow": 9,
+        "repairCost": 21
+      }
+    },
+    {
+      "data": {
+        "label": "9/9",
+        "source": "35",
+        "target": "43",
+        "currentFlow": 9,
+        "repairCost": 14
+      }
+    },
+    {
+      "data": {
+        "label": "2/14",
+        "source": "32",
+        "target": "31",
         "currentFlow": 2,
+        "repairCost": 12
+      }
+    },
+    {
+      "data": {
+        "label": "4/4",
+        "source": "32",
+        "target": "41",
+        "currentFlow": 4,
+        "repairCost": 22
+      }
+    },
+    {
+      "data": {
+        "label": "6/6",
+        "source": "40",
+        "target": "32",
+        "currentFlow": 6,
+        "repairCost": 22
+      }
+    },
+    {
+      "data": {
+        "label": "0/17",
+        "source": "45",
+        "target": "35",
+        "currentFlow": 0,
+        "repairCost": 26
+      }
+    },
+    {
+      "data": {
+        "label": "9/9",
+        "source": "37",
+        "target": "33",
+        "currentFlow": 9,
         "repairCost": 20
       }
     },
     {
       "data": {
-        "label": "0/14",
-        "source": "15",
-        "target": "0",
-        "currentFlow": 0,
-        "repairCost": 24
-      }
-    },
-    {
-      "data": {
-        "label": "2/2",
-        "source": "2",
-        "target": "12",
-        "currentFlow": 2,
-        "repairCost": 14
-      }
-    },
-    {
-      "data": {
-        "label": "0/18",
-        "source": "10",
-        "target": "6",
-        "currentFlow": 0,
-        "repairCost": 7
-      }
-    },
-    {
-      "data": {
-        "label": "0/16",
-        "source": "14",
-        "target": "6",
-        "currentFlow": 0,
+        "label": "1/1",
+        "source": "37",
+        "target": "31",
+        "currentFlow": 1,
         "repairCost": 22
       }
     },
     {
       "data": {
-        "label": "2/4",
-        "source": "4",
-        "target": "5",
-        "currentFlow": 2,
-        "repairCost": 18
-      }
-    },
-    {
-      "data": {
-        "label": "2/17",
-        "source": "9",
-        "target": "4",
-        "currentFlow": 2,
-        "repairCost": 17
-      }
-    },
-    {
-      "data": {
-        "label": "2/9",
-        "source": "5",
-        "target": "0",
-        "currentFlow": 2,
-        "repairCost": 2
-      }
-    },
-    {
-      "data": {
-        "label": "0/14",
-        "source": "6",
-        "target": "5",
-        "currentFlow": 0,
-        "repairCost": 14
-      }
-    },
-    {
-      "data": {
-        "label": "0/19",
-        "source": "7",
-        "target": "5",
-        "currentFlow": 0,
+        "label": "5/13",
+        "source": "34",
+        "target": "42",
+        "currentFlow": 5,
         "repairCost": 6
       }
     },
     {
       "data": {
-        "label": "0/9",
-        "source": "3",
-        "target": "0",
+        "label": "0/6",
+        "source": "44",
+        "target": "34",
         "currentFlow": 0,
-        "repairCost": 3
+        "repairCost": 0
       }
     },
     {
       "data": {
-        "label": "0/13",
-        "source": "1",
-        "target": "0",
-        "currentFlow": 0,
-        "repairCost": 18
-      }
-    },
-    {
-      "data": {
-        "label": "2/2",
-        "source": "1",
-        "target": "11",
-        "currentFlow": 2,
-        "repairCost": 15
-      }
-    },
-    {
-      "data": {
-        "label": "0/0",
-        "source": "16",
-        "target": "1",
-        "currentFlow": 0,
+        "label": "5/5",
+        "source": "31",
+        "target": "33",
+        "currentFlow": 5,
         "repairCost": 22
       }
     },
     {
       "data": {
-        "label": "0/9",
-        "source": "13",
-        "target": "3",
-        "currentFlow": 0,
-        "repairCost": 13
+        "label": "10/18",
+        "source": "38",
+        "target": "36",
+        "currentFlow": 10,
+        "repairCost": 6
       }
     },
     {
       "data": {
-        "label": "P",
-        "type": "Polygon",
-        "source": "9",
-        "target": "8",
+        "label": "2/7",
+        "source": "30",
+        "target": "31",
+        "currentFlow": 2,
+        "repairCost": 0
+      }
+    },
+    {
+      "data": {
+        "label": "2/17",
+        "source": "39",
+        "target": "30",
+        "currentFlow": 2,
+        "repairCost": 0
+      }
+    },
+    {
+      "data": {
+        "label": "0/17",
+        "source": "47",
+        "target": "33",
+        "currentFlow": 0,
+        "repairCost": 12
+      }
+    },
+    {
+      "data": {
+        "label": "0/7",
+        "source": "46",
+        "target": "36",
         "currentFlow": 0,
         "repairCost": 0
       }
@@ -381,8 +402,8 @@ const data1 = {
       "data": {
         "label": "P",
         "type": "Polygon",
-        "source": "8",
-        "target": "10",
+        "source": "40",
+        "target": "39",
         "currentFlow": 0,
         "repairCost": 0
       }
@@ -391,13 +412,23 @@ const data1 = {
       "data": {
         "label": "P",
         "type": "Polygon",
-        "source": "10",
-        "target": "9",
+        "source": "39",
+        "target": "38",
+        "currentFlow": 0,
+        "repairCost": 0
+      }
+    },
+    {
+      "data": {
+        "label": "P",
+        "type": "Polygon",
+        "source": "38",
+        "target": "40",
         "currentFlow": 0,
         "repairCost": 0
       }
     }
   ],
-  "maxFlow": 4,
-  "roadsRepairCost": 87
+  "maxFlow": 18,
+  "roadsRepairCost": 195
 };

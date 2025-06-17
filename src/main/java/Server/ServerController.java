@@ -36,11 +36,15 @@ public class ServerController {
     public String sent(@ModelAttribute UserChoice userChoice, Model model) throws IOException {
         return switch (userChoice.getChoice()) {
             case "Generate new map" -> {
-                DataGeneratorMain.run();
-                System.out.println("Generated data");
-                dataIsEmpty = false;
-                yield "success";
+                DataForGenerator dataForGenerator = new DataForGenerator();
+                model.addAttribute("dataForGenerator", dataForGenerator);
+                yield "dataForMapForm";
             }
+                //                DataGeneratorMain.run();
+                //                System.out.println("Generated data");
+                //                dataIsEmpty = false;
+                //                yield "success";
+
             case "Calculate flows" -> {
                 if (dataIsEmpty) {
                     DataGeneratorMain.run();
@@ -73,8 +77,21 @@ public class ServerController {
         };
     }
 
+    @PostMapping("/generate")
+    public String generate(@ModelAttribute DataForGenerator dataForGenerator, Model model) throws IOException {
+        DataGeneratorMain.run(dataForGenerator.getSeed(),
+                dataForGenerator.getRoadsCount(),
+                dataForGenerator.getFarmlandsCount(),
+                dataForGenerator.getBreweriesCount(),
+                dataForGenerator.getTavernsCount());
+        System.out.println("Generated data");
+        dataIsEmpty = false;
+        return "success";
+    }
+
+
     @PostMapping("/processText")
-    public String processText(@ModelAttribute UserWordToSearch userWordToSearch, Model model) throws IOException {
+    public String processText(@ModelAttribute UserWordToSearch userWordToSearch, Model model) {
          return switch (userWordToSearch.getType()) {
             case 1 -> {
                 String option = userWordToSearch.getAlgorithmChoice();

@@ -25,7 +25,6 @@ public class DataGeneratorMain {
     }
 
     public static void run() throws IOException {
-            //Generator generator = new Generator(3, 300, 150, 50, 35);
             Generator generator = new Generator(2, 5, 4, 2, 4);
             Data data = generator.generate();
             writer.write("[OK]  Data is generated without errors\n");
@@ -35,6 +34,15 @@ public class DataGeneratorMain {
             generateJSONfile(data);
             writer.write("[OK]  Data is saved to JSON file without errors\n");
             writer.flush();
+    }
+    public static void run(int seed, int roadsCount, int farmlandsCount, int breweriesCount, int tavernsCount) throws IOException {
+        Generator generator = new Generator(seed, roadsCount, farmlandsCount, breweriesCount, tavernsCount);
+        Data data = generator.generate();
+        writer.write("[OK]  Data is generated without errors\n");
+        writer.flush();
+        generateJSONfile(data);
+        writer.write("[OK]  Data is saved to JSON file without errors\n");
+        writer.flush();
     }
 
     public static void generateJSONfile(Data data) throws IOException {
