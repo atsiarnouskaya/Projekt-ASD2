@@ -1,7 +1,5 @@
-package test.FlowNetwork;
+package FlowNetwork;
 
-import FlowNetwork.Network;
-import FlowNetwork.Vertex;
 import org.junit.jupiter.api.*;
 
 public class NetworkTest {
@@ -26,30 +24,31 @@ public class NetworkTest {
         }
 
         @Test
-        void updateEdgeTestNormalFlow() {
+        void GivenNetworkAndNormalFlow_WhenCallingUpdateEdge_ThenUpdateEdgeWithAppropriateFlow() {
             network.addEdge(10, 3, 1, 1, 2, 2);
             network.updateEdge(4, v1, v2);
             Assertions.assertEquals(6, network.getEdge(v1, v2).getResidualFlow());
-            Assertions.assertEquals(10, network.getEdge(v1, v2).getReverseEdge().getResidualFlow());
+            Assertions.assertEquals(14, network.getEdge(v1, v2).getReverseEdge().getResidualFlow());
         }
 
         @Test
-        void updateEdgeTestNegativeFlow() {
+        void GivenNetworkAndNegativeFlow_WhenCallingUpdateEdge_ThenUpdateEdgeWithZeroFlow() {
             network.addEdge(10, 3, 1, 1, 2, 2);
             network.updateEdge(-4, v1, v2);
             Assertions.assertEquals(0, network.getEdge(v1, v2).getCurrentFlow());
             Assertions.assertEquals(10, network.getEdge(v1, v2).getResidualFlow());
         }
 
+
         @Test
-        void updateEdgeTestIncorrectVertexes() {
+        void GivenEdgeWithWrongVertexes_WhenCallingAddEdge_ThenThrowsException() {
             network.addEdge(10, 3, 1, 1, 2, 2);
             Assertions.assertThrows(IllegalArgumentException.class, () -> network.updateEdge(4, v1, v3));
             Assertions.assertThrows(IllegalArgumentException.class, () -> network.updateEdge(4, v1, v1));
         }
 
         @Test
-        void addEdgeTestNormalParams() {
+        void GivenEdgeWithNormalFlowAndCost_WhenCallingAddEdge_ThenAddsEdgeWithAppropriateFlowAndCost() {
             network.addEdge(10, 3, 1, 1, 2, 2);
             Assertions.assertEquals(10, network.getEdge(v1, v2).getMaxFlow());
             Assertions.assertEquals(0, network.getEdge(v1, v2).getCurrentFlow());
@@ -58,7 +57,7 @@ public class NetworkTest {
         }
 
         @Test
-        void addEdgeTestNegativeFlowAndRepairCostParams() {
+        void GivenEdgeWithNegativeFlowAndCost_WhenCallingAddEdge_ThenAddsEdgeWithZeroFlowAndCost() {
             network.addEdge(-10, -3, 1, 1, 2, 2);
             Assertions.assertEquals(0, network.getEdge(v1, v2).getMaxFlow());
             Assertions.assertEquals(0, network.getEdge(v1, v2).getCurrentFlow());
@@ -67,7 +66,7 @@ public class NetworkTest {
         }
 
         @Test
-        void setMaxFlowTestNormalFlow() {
+        void GivenNetworkAndNormalFlow_WhenCallingSetMaxFlow_UpdatesTheEdgeWithAppropriateFlow() {
             network.addEdge(10, 3, 1, 1, 2, 2);
             network.setMaxFlow(3, 1, 1, 2, 2);
             Assertions.assertEquals(3, network.getEdge(v1, v2).getMaxFlow());
@@ -79,7 +78,7 @@ public class NetworkTest {
         }
 
         @Test
-        void setMaxFlowTestNegativeFlow() {
+        void GivenNetworkAndNegativeFlow_WhenCallingSetMaxFlow_UpdatesTheEdgeWithZeroFlow() {
             network.addEdge(10, 3, 1, 1, 2, 2);
             network.setMaxFlow(-3, 1, 1, 2, 2);
             Assertions.assertEquals(0, network.getEdge(v1, v2).getMaxFlow());
@@ -131,7 +130,7 @@ public class NetworkTest {
         }
 
         @Test
-        void addSourceVertexTest() {
+        void GivenNetwork_WhenCallingAddSourceVertex_ThenAddsSourceVertexesCorrect() {
             Vertex srcFarm = network.addSourceVertex("Farm");
             Assertions.assertEquals(2, network.getGraph().get(srcFarm).size());
             Assertions.assertEquals(5, network.getEdge(srcFarm, v1).getMaxFlow());
@@ -162,7 +161,7 @@ public class NetworkTest {
         }
 
         @Test
-        void addSinkVertexTest() {
+        void GivenNetwork_WhenCallingAddSinkVertex_ThenAddsSinkVertexesCorrect() {
             Vertex sinkFarm = network.addSinkVertex("Farm");
             Assertions.assertEquals(2, network.getGraph().get(sinkFarm).size());
             Assertions.assertEquals(5, network.getEdge(sinkFarm, v1).getMaxFlow());
@@ -238,7 +237,7 @@ public class NetworkTest {
         }
 
         @Test
-        void deleteSourceVertexTest() {
+        void GivenNetworkWithSourceFarmAndIntersectionVertex_WhenCallingDeleteSource_ThenDeletesSource() {
             network.deleteSourceVertex(srcFarm);
             Assertions.assertFalse(network.getGraph().containsKey(srcFarm));
             for (var e : network.getGraph().values()) {
@@ -257,7 +256,7 @@ public class NetworkTest {
         }
 
         @Test
-        void deleteSinkVertexTest() {
+        void GivenNetworkWithSinkBreweryAndSinkTavernVertexes_WhenCallingDeleteSinkVertex_ThenDeletesSink() {
             network.deleteSinkVertex(sinkBrewery);
             Assertions.assertFalse(network.getGraph().containsKey(sinkBrewery));
             for (var e : network.getGraph().values()) {
@@ -366,13 +365,13 @@ public class NetworkTest {
              /*
              Graph looks like 0 — 1 — 2 — 3 — 4 — 5 — 6 — 7
             */
-            network.addEdge(0, 2, 0, 0, 1,1);
+            network.addEdge(1, 2, 0, 0, 1,1);
             network.addEdge(0, 3, 1,1,2,2);
-            network.addEdge(0, 4, 2,2,3,3);
-            network.addEdge(0, 5, 3,3,4,4);
-            network.addEdge(0, 6,4,4, 5, 5);
-            network.addEdge(0, 7, 5, 5, 6, 6);
-            network.addEdge(0, 8, 6, 6, 7, 7);
+            network.addEdge(2, 4, 2,2,3,3);
+            network.addEdge(1, 5, 3,3,4,4);
+            network.addEdge(3, 6,4,4, 5, 5);
+            network.addEdge(4, 7, 5, 5, 6, 6);
+            network.addEdge(4, 8, 6, 6, 7, 7);
             Assertions.assertFalse(network.BFS(src, dest));
         }
 
@@ -388,13 +387,13 @@ public class NetworkTest {
             network.addEdge(0, 2, 0, 0, 1,1);
             network.addEdge(0, 3, 0,0,2,2);
             network.addEdge(0, 4, 0,0,3,3);
-            network.addEdge(0, 6,3, 3, 5,5);
-            network.addEdge(0, 5, 1,1,4,4);
-            network.addEdge(0, 6,2, 2, 4,4);
-            network.addEdge(0, 6,2, 2, 5,5);
-            network.addEdge(0, 7, 5, 5, 6, 6);
-            network.addEdge(0, 8, 4, 4, 7, 7);
-            network.addEdge(0, 8, 6, 6, 7, 7);
+            network.addEdge(1, 6,3, 3, 5,5);
+            network.addEdge(2, 5, 1,1,4,4);
+            network.addEdge(3, 6,2, 2, 4,4);
+            network.addEdge(4, 6,2, 2, 5,5);
+            network.addEdge(5, 7, 5, 5, 6, 6);
+            network.addEdge(6, 8, 4, 4, 7, 7);
+            network.addEdge(7, 8, 6, 6, 7, 7);
             Assertions.assertFalse(network.BFS(src, dest));
         }
 

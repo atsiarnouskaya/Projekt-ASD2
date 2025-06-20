@@ -1,4 +1,4 @@
-package test.FlowNetwork;
+package FlowNetwork;
 
 import FlowNetwork.Network;
 import FlowNetwork.Vertex;

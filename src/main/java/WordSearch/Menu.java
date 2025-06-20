@@ -3,6 +3,8 @@ package WordSearch;
 import lombok.Getter;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 @Getter
@@ -12,6 +14,15 @@ public class Menu {
     private final String inputText;
     private final String algorithmChoice;
     private final Algorithms alg = new Algorithms();
+    private static final FileWriter writer;
+
+    static {
+        try {
+            writer = new FileWriter("src/logs/output.txt", true);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public Menu(File inputFile, String algorithmChoice) {
        this.file = inputFile;
@@ -32,7 +43,7 @@ public class Menu {
                 "3. Exit;");
     }
 
-    public boolean move(String input, String pattern) {
+    public boolean move(String input, String pattern) throws IOException {
         System.out.println("Enter action: (0 - Show menu)");
         //String input = scanner.nextLine().trim();
         switch (input) {
@@ -43,6 +54,8 @@ public class Menu {
 //                System.out.println("Enter file name: ");
 //                String name = scanner.nextLine();
 //                ReadFile file = new ReadFile();
+                writer.write("Searching in the file \n");
+                writer.flush();
                 ReadFile readFile = new ReadFile();
                 String text = readFile.reading(file);
                 if (text.isEmpty())
@@ -52,6 +65,8 @@ public class Menu {
             case "2":
 //                System.out.println("Enter your own text: ");
 //                String nText = scanner.nextLine();
+                writer.write("Searching in the text \n");
+                writer.flush();
                 choiceAlgorithm(inputText, pattern, algorithmChoice);
                 return true;
             case "3":
@@ -63,7 +78,7 @@ public class Menu {
         return true;
     }
 
-    public void choiceAlgorithm(String text,  String pattern, String algorithmChoice) {
+    public void choiceAlgorithm(String text,  String pattern, String algorithmChoice) throws IOException {
         boolean cycle = true;
         while (cycle) {
 //            System.out.println("Enter pattern: ");
@@ -82,16 +97,22 @@ public class Menu {
             String input = algorithmChoice;
             switch (input) {
                 case "1":
+                    writer.write("Knuth-Morris-Pratt algorithm was chosen \n");
+                    writer.flush();
                     System.out.println("Knuth-Morris-Pratt algorithm:");
                     alg.KMP(text, pattern);
                     //break;
                     return;
                 case "2":
                     System.out.println("Boyer-Moore algorithm:");
+                    writer.write("Boyer-Moore algorithm was chosen \n");
+                    writer.flush();
                     alg.BM(text, pattern);
                     //break;
                     return;
                 case "3":
+                    writer.write("Both algorithms were chosen \n");
+                    writer.flush();
                     System.out.println("Knuth-Morris-Pratt algorithm:");
                     alg.KMP(text, pattern);
                     System.out.println("*****");

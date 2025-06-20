@@ -40,11 +40,6 @@ public class ServerController {
                 model.addAttribute("dataForGenerator", dataForGenerator);
                 yield "dataForMapForm";
             }
-                //                DataGeneratorMain.run();
-                //                System.out.println("Generated data");
-                //                dataIsEmpty = false;
-                //                yield "success";
-
             case "Calculate flows" -> {
                 if (dataIsEmpty) {
                     DataGeneratorMain.run();
@@ -91,7 +86,7 @@ public class ServerController {
 
 
     @PostMapping("/processText")
-    public String processText(@ModelAttribute UserWordToSearch userWordToSearch, Model model) {
+    public String processText(@ModelAttribute UserWordToSearch userWordToSearch, Model model) throws IOException {
          return switch (userWordToSearch.getType()) {
             case 1 -> {
                 String option = userWordToSearch.getAlgorithmChoice();
