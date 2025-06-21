@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Showing logs</title>
+  <style>
+    #log {
+      white-space: pre-wrap;
+      font-family: monospace;
+      background: #111;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 6px;
+      max-height: 800px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+<a href="menu">Get back to menu</a>
+<h2>Saved logs:</h2>
+<div id="log"></div>
+
+<script>
+  fetch('output.txt')
+          .then(response => response.text())
+          .then(text => {
+            document.getElementById('log').textContent = text;
+          })
+          .catch(err => {
+            document.getElementById('log').textContent = 'Error: ' + err;
+          });
+</script>
+</body>
+</html>

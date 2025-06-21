@@ -1,0 +1,19 @@
+[OK]  Server started
+Searching in the text 
+Both algorithms were chosen 
+Started KMP algorithm 
+Pattern occurs in the text 
+Pattern occurs in the text 
+Pattern occurs in the text 
+Pattern occurs in the text 
+Pattern occurs in the text 
+Started BM algorithm 
+Pattern occurs in the text 
+Pattern occurs in the text 
+Pattern occurs in the text 
+Pattern occurs in the text 
+Pattern occurs in the text 
+Searching in the text 
+Boyer-Moore algorithm was chosen 
+Started BM algorithm 
+Pattern does not occur in the text 
