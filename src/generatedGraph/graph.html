@@ -178,7 +178,7 @@
               style: {
                 "label": "",
                 "text-margin-y": 1,
-                "line-color": "#806f5b",
+                "line-color": "#30271c",
                 "target-arrow-shape": "none",
                 "width": 8,
                 "curve-style": "bezier",
@@ -213,7 +213,7 @@
             }
           ]
         });
-
+        cy.nodes().ungrabify();
         updateEdgeLabels();
         updateNodeLabels();
         updateEdges();
@@ -244,10 +244,10 @@
             const flow = edge.data('currentFlow');
             if (flow > 0) {
                 edge.style({
-                 'line-color': flowVisible ? '#30271c' : '#806f5b',
+                 'line-color': flowVisible ? '#806f5b' : '#30271c',
                  'width': flowVisible ? 20 : 8,
                  'target-arrow-shape': flowVisible? 'triangle' : 'none',
-                 'target-arrow-color': '#30271c',
+                 'target-arrow-color': '#806f5b',
                 });
             }
         });
