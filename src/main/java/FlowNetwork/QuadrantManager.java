@@ -1,6 +1,7 @@
 package FlowNetwork;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.Random;
 import java.util.Stack;
 /*
@@ -35,6 +36,8 @@ public class QuadrantManager {
     }
     //graham algorithm to make a hull from a set of points
     public ArrayList<Point2D> grahamAlgorithm(ArrayList<Point2D> points) {
+        LinkedHashSet<Point2D> uniquePoints = new LinkedHashSet<>(points); // dont want any duplicates
+        points = new ArrayList<>(uniquePoints);
         if (points.size() < 3) {
             return new ArrayList<>(points); //return all points if there is less than 3 points (otherwise hull wont build)
         }
@@ -77,7 +80,7 @@ public class QuadrantManager {
      * division work by sorting X and Y coordinates at each recursion levels.
      * k must is power of 2!!! to ensure balanced splitting
      * */
-    private ArrayList<ArrayList<Farmland>> dividePoints(ArrayList<Farmland> points, int k, boolean divideByX) {
+    public ArrayList<ArrayList<Farmland>> dividePoints(ArrayList<Farmland> points, int k, boolean divideByX) {
         ArrayList<ArrayList<Farmland>> result = new ArrayList<>();
         if (k == 1) { //no further division needed
             result.add(points);
@@ -100,6 +103,7 @@ public class QuadrantManager {
     // creates quadrant by farmland points and making a hull for each area. Also assings random production capacity to each quadrant
     //so farmlands in each quadrant produce the same amount of barley
     public ArrayList<Quadrant> createQuadrants() {
+        if(farmlands.isEmpty()) return new ArrayList<>();
         ArrayList<ArrayList<Farmland>> clusters = dividePoints(farmlands, k, true);
         ArrayList<Quadrant> quadrants = new ArrayList<>();
         Random rand = new Random();
