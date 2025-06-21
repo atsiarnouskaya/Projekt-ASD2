@@ -1,7 +1,5 @@
 package FlowNetwork;
 
-import FlowNetwork.Network;
-import FlowNetwork.Vertex;
 import org.junit.jupiter.api.*;
 
 import java.util.HashMap;
