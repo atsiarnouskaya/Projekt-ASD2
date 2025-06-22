@@ -1,36 +1,50 @@
 [OK]  Server started
 [OK]  Data is generated without errors
 [OK]  Data is saved to JSON file without errors
-[OK] Quadrants: 1 were created
+[OK] Quadrants: 2 were created
 Quadrant 1
-Production per plot: 15
+Production per plot: 11
 Hull points: 
-(46.0, 382.0)
-(186.0, 413.0)
-(56.0, 484.0)
+(55.0, 639.0)
+(70.0, 784.0)
+(17.0, 698.0)
 Farmlands in this quadrant:
-(51.0, 420.0)
-(186.0, 413.0)
-(46.0, 382.0)
-(56.0, 484.0)
+(17.0, 698.0)
+(55.0, 639.0)
+(58.0, 728.0)
+(58.0, 676.0)
+(70.0, 784.0)
+Quadrant 2
+Production per plot: 21
+Hull points: 
+(135.0, 669.0)
+(173.0, 671.0)
+(169.0, 702.0)
+(106.0, 746.0)
+Farmlands in this quadrant:
+(106.0, 746.0)
+(135.0, 669.0)
+(146.0, 717.0)
+(169.0, 702.0)
+(173.0, 671.0)
 [OK] The network was created without errors
 [OK]  Source vertex for farmlands was created
 [OK]  Sink vertex for breweries was created
-[BARLEY FLOW BEFORE DAMAGING] 4
+[BARLEY FLOW BEFORE DAMAGING] 32
 [OK]  Source vertex for farmlands was deleted
 [OK]  Sink vertex for breweries was deleted
 [OK]  Source vertex for breweries was created
 [OK]  Sink vertex for taverns was created
-[BEER FLOW BEFORE DAMAGING] 4
+[BEER FLOW BEFORE DAMAGING] 17
 [OK]  Source vertex for breweries was deleted
 [OK]  Sink vertex for taverns was deleted
 [OK]  Source vertex for farmlands was created
 [OK]  Sink vertex for breweries was created
-[BARLEY FLOW AFTER DAMAGING] 4
+[BARLEY FLOW AFTER DAMAGING] 32
 [OK]  Source vertex for farmlands was deleted
 [OK]  Sink vertex for breweries was deleted
 [OK]  Source vertex for breweries was created
 [OK]  Sink vertex for taverns was created
-[BEER FLOW AFTER DAMAGING] 4
+[BEER FLOW AFTER DAMAGING] 17
 [OK]  Source vertex for breweries was deleted
 [OK]  Sink vertex for taverns was deleted

@@ -16,7 +16,7 @@ public class QuadrantManager {
     private final ArrayList<Farmland> farmlands; //farmlands points that will be divided
 
     public QuadrantManager(ArrayList<Farmland> farmlands) {
-        this.farmlands = farmlands;
+        this.farmlands = new ArrayList<>(new LinkedHashSet<>(farmlands)); //farmlands will have no duplicates
         this.k = computeK(farmlands.size());
     }
     /*
@@ -36,10 +36,8 @@ public class QuadrantManager {
     }
     //graham algorithm to make a hull from a set of points
     public ArrayList<Point2D> grahamAlgorithm(ArrayList<Point2D> points) {
-        LinkedHashSet<Point2D> uniquePoints = new LinkedHashSet<>(points); // dont want any duplicates
-        points = new ArrayList<>(uniquePoints);
         if (points.size() < 3) {
-            return new ArrayList<>(points); //return all points if there is less than 3 points (otherwise hull wont build)
+            return new ArrayList<>(points); //return all points if there is less than 3 points (otherwise hull won't build)
         }
         p0 = points.getFirst();
         //finding the lowest point(with smallest y, x if y are the same)
@@ -125,5 +123,53 @@ public class QuadrantManager {
             quadrants.add(q);
         }
         return quadrants;
+    }
+    public static void main(String[] args) {
+
+        // Tworzymy listę farmlands
+        ArrayList<Farmland> farmlands = new ArrayList<>();
+        farmlands.add(new Farmland(2, 5));
+        farmlands.add(new Farmland(2, 5));
+        farmlands.add(new Farmland(2, 5));
+        farmlands.add(new Farmland(3, 7));
+        farmlands.add(new Farmland(5, 12));
+        farmlands.add(new Farmland(4, 4));
+        farmlands.add(new Farmland(6, 9));
+        farmlands.add(new Farmland(7, 10));
+        farmlands.add(new Farmland(-7, 10));
+        farmlands.add(new Farmland(-1, 4));
+        farmlands.add(new Farmland(-3, 6));
+        farmlands.add(new Farmland(-5, 9));
+        farmlands.add(new Farmland(-6, -8));
+        farmlands.add(new Farmland(-8, -6));
+        farmlands.add(new Farmland(-9, -11));
+        farmlands.add(new Farmland(-4, -7));
+        farmlands.add(new Farmland(7, -10));
+        farmlands.add(new Farmland(9, -6));
+        farmlands.add(new Farmland(5, -5));
+
+        // Uruchamiamy managera
+        QuadrantManager manager = new QuadrantManager(farmlands);
+
+        // Tworzymy kwadranty
+        ArrayList<Quadrant> quadrants = manager.createQuadrants();
+
+        // Wypisujemy zawartość każdego kwadrantu
+        for (int i = 0; i < quadrants.size(); i++) {
+            Quadrant q = quadrants.get(i);
+            System.out.println("Quadrant #" + (i + 1) + " (production per plot = " + q.getProductionPerPlot() + "):");
+
+            System.out.println("  Farmlands:");
+            for (Farmland f : q.getFarmlands()) {
+                System.out.printf("    (%.1f, %.1f)\n", f.getX(), f.getY());
+            }
+
+            System.out.println("  Convex Hull:");
+            for (Point2D p : q.getHull()) {
+                System.out.printf("    (%.1f, %.1f)\n", p.getX(), p.getY());
+            }
+
+            System.out.println();
+        }
     }
 }

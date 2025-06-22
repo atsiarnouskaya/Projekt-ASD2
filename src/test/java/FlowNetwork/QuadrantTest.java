@@ -103,22 +103,6 @@ public class QuadrantTest {
             Assertions.assertTrue(hull.contains(new Point2D.Double(0, 0)));
             Assertions.assertTrue(hull.contains(new Point2D.Double(3, 3)));
         }
-        @Test
-        void GivenDuplicatePoints_WhenRunningGrahamAlgorithm_ThenReturnsCorrectHullWithoutDuplicates() {
-            ArrayList<Point2D> points = new ArrayList<>();
-            points.add(new Point2D.Double(0, 0));
-            points.add(new Point2D.Double(0.5, 0.5));
-            points.add(new Point2D.Double(1, 1));
-            points.add(new Point2D.Double(1, 1));
-            ArrayList<Point2D> hull = manager.grahamAlgorithm(points);
-
-            System.out.println("Input points:");
-            points.forEach(System.out::println);
-            System.out.println("Hull points:");
-            hull.forEach(System.out::println);
-
-            Assertions.assertEquals(3, hull.size());
-        }
     }
     @Nested
     @DisplayName("Tests for dividing points")
