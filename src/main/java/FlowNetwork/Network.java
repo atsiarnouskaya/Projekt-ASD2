@@ -31,7 +31,7 @@ public class Network {
         List<Edge> roads= getRoads();
         for(var road: roads){
             if(road.getCurrentFlow()>0)
-                result+=road.getRepairCost();
+                result+=(road.getCurrentFlow()*road.getRepairCost());
         }
         return result;
     }
