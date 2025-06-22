@@ -7,25 +7,51 @@
         body {
             font-family: Arial, sans-serif;
             background: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            margin: 0;
+            padding-bottom: 80px;
         }
+
         .result-container {
             background: white;
             padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             text-align: center;
         }
+
         .result-container h2 {
             color: #2c3e50;
             margin-bottom: 20px;
         }
+
         .result-container p {
             font-size: 20px;
             color: #34495e;
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-link:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -35,11 +61,10 @@
     <h3>In the text: </h3>
     <p th:text="${text}"></p>
     <p th:text="${result}" style="white-space: pre-line;"></p>
-    <a href="menu">Go back to menu</a>
 </div>
 
-
-
-
+<div class="button-container">
+    <a href="menu" class="button-link">Get back to menu</a>
+</div>
 </body>
 </html>

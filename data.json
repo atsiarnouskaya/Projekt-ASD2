@@ -1,298 +1,204 @@
 {
   "roads": [
     {
-      "maxBeerFlow": 1,
-      "maxBarleyFlow": 8,
-      "repairCost": 0,
-      "x1": 649.0,
-      "y1": 319.0,
-      "x2": 649.0,
-      "y2": 291.0
-    },
-    {
-      "maxBeerFlow": 9,
-      "maxBarleyFlow": 11,
-      "repairCost": 2,
-      "x1": 649.0,
-      "y1": 291.0,
-      "x2": 649.0,
-      "y2": 195.0
-    },
-    {
-      "maxBeerFlow": 4,
-      "maxBarleyFlow": 10,
-      "repairCost": 5,
-      "x1": 633.0,
-      "y1": 267.0,
-      "x2": 649.0,
-      "y2": 291.0
-    },
-    {
-      "maxBeerFlow": 5,
-      "maxBarleyFlow": 15,
-      "repairCost": 24,
-      "x1": 649.0,
-      "y1": 291.0,
-      "x2": 683.0,
-      "y2": 344.0
-    },
-    {
-      "maxBeerFlow": 18,
-      "maxBarleyFlow": 3,
-      "repairCost": 4,
-      "x1": 673.0,
-      "y1": 294.0,
-      "x2": 649.0,
-      "y2": 291.0
-    },
-    {
-      "maxBeerFlow": 0,
-      "maxBarleyFlow": 8,
-      "repairCost": 1,
-      "x1": 703.0,
-      "y1": 364.0,
-      "x2": 683.0,
-      "y2": 344.0
-    },
-    {
-      "maxBeerFlow": 18,
-      "maxBarleyFlow": 17,
-      "repairCost": 9,
-      "x1": 662.0,
-      "y1": 345.0,
-      "x2": 683.0,
-      "y2": 344.0
-    },
-    {
-      "maxBeerFlow": 2,
-      "maxBarleyFlow": 7,
-      "repairCost": 11,
-      "x1": 625.0,
-      "y1": 218.0,
-      "x2": 649.0,
-      "y2": 195.0
+      "maxBeerFlow": 7,
+      "maxBarleyFlow": 13,
+      "repairCost": 18,
+      "x1": 83.0,
+      "y1": 438.0,
+      "x2": 162.0,
+      "y2": 438.0
     },
     {
       "maxBeerFlow": 14,
-      "maxBarleyFlow": 17,
-      "repairCost": 28,
-      "x1": 661.0,
-      "y1": 366.0,
-      "x2": 683.0,
-      "y2": 344.0
-    },
-    {
-      "maxBeerFlow": 17,
-      "maxBarleyFlow": 19,
-      "repairCost": 15,
-      "x1": 629.0,
-      "y1": 314.0,
-      "x2": 649.0,
-      "y2": 291.0
-    },
-    {
-      "maxBeerFlow": 7,
       "maxBarleyFlow": 14,
-      "repairCost": 6,
-      "x1": 666.0,
-      "y1": 209.0,
-      "x2": 649.0,
-      "y2": 195.0
-    },
-    {
-      "maxBeerFlow": 4,
-      "maxBarleyFlow": 9,
-      "repairCost": 26,
-      "x1": 626.0,
-      "y1": 187.0,
-      "x2": 649.0,
-      "y2": 195.0
-    },
-    {
-      "maxBeerFlow": 1,
-      "maxBarleyFlow": 0,
-      "repairCost": 28,
-      "x1": 672.0,
-      "y1": 267.0,
-      "x2": 649.0,
-      "y2": 291.0
-    },
-    {
-      "maxBeerFlow": 9,
-      "maxBarleyFlow": 15,
-      "repairCost": 29,
-      "x1": 671.0,
-      "y1": 176.0,
-      "x2": 649.0,
-      "y2": 195.0
-    },
-    {
-      "maxBeerFlow": 18,
-      "maxBarleyFlow": 4,
-      "repairCost": 9,
-      "x1": 609.0,
-      "y1": 282.0,
-      "x2": 633.0,
-      "y2": 267.0
+      "repairCost": 1,
+      "x1": 108.0,
+      "y1": 372.0,
+      "x2": 83.0,
+      "y2": 438.0
     },
     {
       "maxBeerFlow": 3,
-      "maxBarleyFlow": 15,
-      "repairCost": 4,
-      "x1": 635.0,
-      "y1": 247.0,
-      "x2": 633.0,
-      "y2": 267.0
+      "maxBarleyFlow": 9,
+      "repairCost": 3,
+      "x1": 83.0,
+      "y1": 438.0,
+      "x2": 70.0,
+      "y2": 473.0
     },
     {
-      "maxBeerFlow": 8,
-      "maxBarleyFlow": 17,
-      "repairCost": 0,
-      "x1": 638.0,
-      "y1": 171.0,
-      "x2": 649.0,
-      "y2": 195.0
+      "maxBeerFlow": 16,
+      "maxBarleyFlow": 4,
+      "repairCost": 18,
+      "x1": 40.0,
+      "y1": 406.0,
+      "x2": 37.0,
+      "y2": 438.0
     },
     {
       "maxBeerFlow": 1,
-      "maxBarleyFlow": 7,
-      "repairCost": 12,
-      "x1": 608.0,
-      "y1": 244.0,
-      "x2": 633.0,
-      "y2": 267.0
+      "maxBarleyFlow": 14,
+      "repairCost": 14,
+      "x1": 37.0,
+      "y1": 438.0,
+      "x2": 35.0,
+      "y2": 468.0
     },
     {
-      "maxBeerFlow": 11,
-      "maxBarleyFlow": 11,
-      "repairCost": 12,
-      "x1": 692.0,
-      "y1": 325.0,
-      "x2": 683.0,
-      "y2": 344.0
+      "maxBeerFlow": 18,
+      "maxBarleyFlow": 9,
+      "repairCost": 2,
+      "x1": 37.0,
+      "y1": 438.0,
+      "x2": 83.0,
+      "y2": 438.0
+    },
+    {
+      "maxBeerFlow": 8,
+      "maxBarleyFlow": 19,
+      "repairCost": 6,
+      "x1": 51.0,
+      "y1": 420.0,
+      "x2": 37.0,
+      "y2": 438.0
+    },
+    {
+      "maxBeerFlow": 6,
+      "maxBarleyFlow": 8,
+      "repairCost": 20,
+      "x1": 186.0,
+      "y1": 413.0,
+      "x2": 162.0,
+      "y2": 438.0
+    },
+    {
+      "maxBeerFlow": 3,
+      "maxBarleyFlow": 17,
+      "repairCost": 17,
+      "x1": 46.0,
+      "y1": 382.0,
+      "x2": 40.0,
+      "y2": 406.0
     },
     {
       "maxBeerFlow": 7,
-      "maxBarleyFlow": 8,
-      "repairCost": 18,
-      "x1": 642.0,
-      "y1": 341.0,
-      "x2": 649.0,
-      "y2": 319.0
+      "maxBarleyFlow": 18,
+      "repairCost": 7,
+      "x1": 56.0,
+      "y1": 484.0,
+      "x2": 35.0,
+      "y2": 468.0
     },
     {
-      "maxBeerFlow": 5,
-      "maxBarleyFlow": 15,
-      "repairCost": 4,
-      "x1": 705.0,
-      "y1": 343.0,
-      "x2": 683.0,
-      "y2": 344.0
+      "maxBeerFlow": 8,
+      "maxBarleyFlow": 2,
+      "repairCost": 15,
+      "x1": 177.0,
+      "y1": 455.0,
+      "x2": 162.0,
+      "y2": 438.0
     },
     {
-      "maxBeerFlow": 5,
+      "maxBeerFlow": 16,
+      "maxBarleyFlow": 2,
+      "repairCost": 14,
+      "x1": 112.0,
+      "y1": 351.0,
+      "x2": 108.0,
+      "y2": 372.0
+    },
+    {
+      "maxBeerFlow": 11,
       "maxBarleyFlow": 9,
-      "repairCost": 1,
-      "x1": 682.0,
-      "y1": 364.0,
-      "x2": 683.0,
-      "y2": 344.0
+      "repairCost": 13,
+      "x1": 50.0,
+      "y1": 464.0,
+      "x2": 70.0,
+      "y2": 473.0
+    },
+    {
+      "maxBeerFlow": 16,
+      "maxBarleyFlow": 16,
+      "repairCost": 22,
+      "x1": 11.0,
+      "y1": 472.0,
+      "x2": 35.0,
+      "y2": 468.0
+    },
+    {
+      "maxBeerFlow": 12,
+      "maxBarleyFlow": 14,
+      "repairCost": 24,
+      "x1": 99.0,
+      "y1": 426.0,
+      "x2": 83.0,
+      "y2": 438.0
+    },
+    {
+      "maxBeerFlow": 8,
+      "maxBarleyFlow": 0,
+      "repairCost": 22,
+      "x1": 161.0,
+      "y1": 413.0,
+      "x2": 162.0,
+      "y2": 438.0
     }
   ],
   "farmlands": [
     {
       "productionCapacity": 0,
-      "x": 673.0,
-      "y": 294.0
+      "x": 51.0,
+      "y": 420.0
     },
     {
       "productionCapacity": 0,
-      "x": 703.0,
-      "y": 364.0
+      "x": 186.0,
+      "y": 413.0
     },
     {
       "productionCapacity": 0,
-      "x": 662.0,
-      "y": 345.0
+      "x": 46.0,
+      "y": 382.0
     },
     {
       "productionCapacity": 0,
-      "x": 625.0,
-      "y": 218.0
-    },
-    {
-      "productionCapacity": 0,
-      "x": 661.0,
-      "y": 366.0
-    },
-    {
-      "productionCapacity": 0,
-      "x": 629.0,
-      "y": 314.0
+      "x": 56.0,
+      "y": 484.0
     }
   ],
   "breweries": [
     {
-      "productionCapacity": 23,
-      "x": 666.0,
-      "y": 209.0
+      "productionCapacity": 13,
+      "x": 177.0,
+      "y": 455.0
     },
     {
-      "productionCapacity": 20,
-      "x": 626.0,
-      "y": 187.0
-    },
-    {
-      "productionCapacity": 2,
-      "x": 672.0,
-      "y": 267.0
-    },
-    {
-      "productionCapacity": 27,
-      "x": 671.0,
-      "y": 176.0
-    },
-    {
-      "productionCapacity": 11,
-      "x": 609.0,
-      "y": 282.0
-    },
-    {
-      "productionCapacity": 24,
-      "x": 635.0,
-      "y": 247.0
+      "productionCapacity": 19,
+      "x": 112.0,
+      "y": 351.0
     }
   ],
   "taverns": [
     {
-      "consumptionCapacity": 16,
-      "x": 638.0,
-      "y": 171.0
+      "consumptionCapacity": 27,
+      "x": 50.0,
+      "y": 464.0
     },
     {
-      "consumptionCapacity": 7,
-      "x": 608.0,
-      "y": 244.0
+      "consumptionCapacity": 15,
+      "x": 11.0,
+      "y": 472.0
     },
     {
-      "consumptionCapacity": 5,
-      "x": 692.0,
-      "y": 325.0
+      "consumptionCapacity": 11,
+      "x": 99.0,
+      "y": 426.0
     },
     {
-      "consumptionCapacity": 9,
-      "x": 642.0,
-      "y": 341.0
-    },
-    {
-      "consumptionCapacity": 29,
-      "x": 705.0,
-      "y": 343.0
-    },
-    {
-      "consumptionCapacity": 6,
-      "x": 682.0,
-      "y": 364.0
+      "consumptionCapacity": 12,
+      "x": 161.0,
+      "y": 413.0
     }
   ]
 }

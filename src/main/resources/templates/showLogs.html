@@ -14,10 +14,21 @@
       max-height: 800px;
       overflow-y: auto;
     }
+    .button-link {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
   </style>
 </head>
 <body>
-<a href="menu">Get back to menu</a>
+
 <h2>Saved logs:</h2>
 <div id="log"></div>
 
@@ -31,5 +42,7 @@
             document.getElementById('log').textContent = 'Error: ' + err;
           });
 </script>
+
+<a href="menu" class="button-link">Get back to menu</a>
 </body>
 </html>
