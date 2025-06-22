@@ -104,9 +104,9 @@
 </div>
 <select id="dataSwitch">
     <option value="data1">Barley flow</option>
-    <option value="data2">Barley flow with cheapest repair cost</option>
+    <option value="data2">Barley flow with the cheapest repair cost</option>
     <option value="data3">Beer flow</option>
-    <option value="data4">Beer flow with cheapest repair cost</option>
+    <option value="data4">Beer flow with the cheapest repair cost</option>
 </select>
 <script>
     let cy;
@@ -120,7 +120,7 @@
         cy=cytoscape({
           container: document.getElementById("cy"),
           elements: data,
-          layout: { name: "preset" },
+          layout: { name: "preset"},
           wheelSensitivity: 0.1,
           style: [
             {

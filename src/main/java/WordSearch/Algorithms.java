@@ -1,3 +1,5 @@
+package WordSearch;
+
 import lombok.Getter;
 
 import java.io.FileWriter;
@@ -86,7 +88,6 @@ public class Algorithms {
                 writer.write("Pattern occurs in the text \n");
                 writer.flush();
 
-                System.out.println("Pattern \"" + pattern + "\" with length " + pattern.length() + " occurs at position " + (i - pattern.length() + 1));
                 result.addKMPResult("\n[KMP] Pattern \"" + pattern + "\" with length " + pattern.length() + " occurs at position " + (i - pattern.length() + 1));
                 q = pi[q - 1];
                 exist = true;
@@ -95,7 +96,7 @@ public class Algorithms {
         if (!exist) {
             writer.write("Pattern does not occur in the text \n");
             writer.flush();
-            System.out.println("Pattern does not occur");
+
             result.addKMPResult("\n[KMP] Pattern does not occur");
         }
     }
@@ -103,6 +104,7 @@ public class Algorithms {
     public void BM(String text, String pattern) throws IOException {
         writer.write("Started BM algorithm \n");
         writer.flush();
+
         int[] LAST = createLAST(pattern);
         int[] BMNext = createBMNext(pattern);
         boolean exist = false;
@@ -118,16 +120,18 @@ public class Algorithms {
             else {
                 writer.write("Pattern occurs in the text \n");
                 writer.flush();
+
                 exist = true;
-                System.out.println("Pattern \"" + pattern + "\" with length " + pattern.length() + " occurs at position " + i);
+
                 result.addBMResult("\n[BM] Pattern \"" + pattern + "\" with length " + pattern.length() + " occurs at position " + i);
+
                 i += BMNext[0];
             }
         }
         if (!exist) {
             writer.write("Pattern does not occur in the text \n");
             writer.flush();
-            System.out.println("Pattern does not occur");
+
             result.addBMResult("\n[BM] Pattern does not occur");
         }
     }

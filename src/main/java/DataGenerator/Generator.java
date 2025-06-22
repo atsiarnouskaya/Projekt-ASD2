@@ -4,11 +4,9 @@ import FlowNetwork.*;
 
 import java.awt.geom.Point2D;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
+
 
 public class Generator {
     private int minDistanceBetweenPoints = 20;
@@ -21,14 +19,6 @@ public class Generator {
     private int farmlandsCount;
     private int breweriesCount;
     private int tavernsCount;
-
-    public Generator(int seed) {
-        random = new Random(seed);
-        farmlandsCount = 2;
-        breweriesCount = 2;
-        tavernsCount = 2;
-        roadsCount = 2;
-    }
 
     public Generator(int seed, int roadsCount, int farmlandsCount, int breweriesCount, int tavernsCount) {
         random = new Random(seed);

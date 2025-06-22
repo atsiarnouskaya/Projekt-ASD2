@@ -17,13 +17,11 @@ public class ReadFile {
         }
     }
     public String reading(File file) throws IOException {
-    //public String reading(String name) {
         writer.write("Started reading a file");
         writer.flush();
+
         String text = "";
         try {
-//            File myObj = new File(name);
-//            Scanner myReader = new Scanner(myObj);
             Scanner myReader = new Scanner(file);
             StringBuilder sb = new StringBuilder();
             while (myReader.hasNextLine()) {
@@ -34,14 +32,13 @@ public class ReadFile {
             if (text.isEmpty()) {
                 writer.write("File is empty");
                 writer.flush();
-                System.out.println("File is empty");
             }
         }
         catch (FileNotFoundException e) {
             writer.write("File with such name does not exist");
             writer.flush();
-            System.out.println("File with such name does not exist");
         }
+
         writer.write("File is read");
         writer.flush();
         return text;

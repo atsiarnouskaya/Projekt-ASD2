@@ -44,18 +44,14 @@ public class Menu {
     }
 
     public boolean move(String input, String pattern) throws IOException {
-        System.out.println("Enter action: (0 - Show menu)");
-        //String input = scanner.nextLine().trim();
         switch (input) {
             case "0":
                 list();
                 break;
             case "1":
-//                System.out.println("Enter file name: ");
-//                String name = scanner.nextLine();
-//                ReadFile file = new ReadFile();
                 writer.write("Searching in the file \n");
                 writer.flush();
+
                 ReadFile readFile = new ReadFile();
                 String text = readFile.reading(file);
                 if (text.isEmpty())
@@ -63,17 +59,14 @@ public class Menu {
                 choiceAlgorithm(text, pattern, algorithmChoice);
                 break;
             case "2":
-//                System.out.println("Enter your own text: ");
-//                String nText = scanner.nextLine();
                 writer.write("Searching in the text \n");
                 writer.flush();
+
                 choiceAlgorithm(inputText, pattern, algorithmChoice);
                 return true;
-            case "3":
-                System.out.println("Have a nice day !");
-                return false;
             default:
-                System.out.println("This option does not exist");
+                writer.write("This option does not exist \n");
+                writer.flush();
         }
         return true;
     }
@@ -81,63 +74,35 @@ public class Menu {
     public void choiceAlgorithm(String text,  String pattern, String algorithmChoice) throws IOException {
         boolean cycle = true;
         while (cycle) {
-//            System.out.println("Enter pattern: ");
-//            String pattern = scanner.nextLine();
             if (pattern.isEmpty()){
-                System.out.println("Pattern is empty");
+                writer.write("Pattern is empty \n");
+                writer.flush();
+
                 break;
             }
-            System.out.println("Choose which algorithm you want to use:\n" +
-                    "1. KMP;\n" +
-                    "2. BM;\n" +
-                    "3. Both;");
-
-//            String input = scanner.nextLine().trim();
-//            Algorithms alg = new Algorithms();
-            String input = algorithmChoice;
-            switch (input) {
+            switch (algorithmChoice) {
                 case "1":
                     writer.write("Knuth-Morris-Pratt algorithm was chosen \n");
                     writer.flush();
-                    System.out.println("Knuth-Morris-Pratt algorithm:");
+
                     alg.KMP(text, pattern);
-                    //break;
                     return;
                 case "2":
-                    System.out.println("Boyer-Moore algorithm:");
                     writer.write("Boyer-Moore algorithm was chosen \n");
                     writer.flush();
+
                     alg.BM(text, pattern);
-                    //break;
                     return;
                 case "3":
                     writer.write("Both algorithms were chosen \n");
                     writer.flush();
-                    System.out.println("Knuth-Morris-Pratt algorithm:");
+
                     alg.KMP(text, pattern);
-                    System.out.println("*****");
-                    System.out.println("Boyer-Moore algorithm:");
                     alg.BM(text, pattern);
-                    //break;
                     return;
                 default:
-                    System.out.println("This option does not exist");
-            }
-            System.out.println("_____\n" +
-                    "Choose next action:\n" +
-                    "0. Menu;\n" +
-                    "1. Change pattern and continue working with this text");
-            String output = scanner.nextLine();
-            switch (output) {
-                case "0":
-                    list();
-                    cycle = false;
-                    break;
-                case "1":
-                    break;
-                default:
-                    System.out.println("This option does not exist");
-                    return;
+                    writer.write("This option does not exist \n");
+                    writer.flush();
             }
         }
     }

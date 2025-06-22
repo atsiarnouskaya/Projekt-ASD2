@@ -1,7 +1,12 @@
 package FlowNetwork;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Getter
+@Setter
 public class Vertex {
     static int count = 0;
     private int localId;
@@ -10,7 +15,6 @@ public class Vertex {
     private String type;
     private int capacity;
     private int gottenFlow;
-
 
     public Vertex(int x, int y) {
         this.x = x;
@@ -25,50 +29,6 @@ public class Vertex {
         this.type = type;
         this.gottenFlow = 0;
         this.localId = count++;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public int getLocalId() {
-        return localId;
-    }
-
-    public int getGottenFlow() {
-        return gottenFlow;
-    }
-
-    public void setGottenFlow(int gottenFlow) {
-        this.gottenFlow = gottenFlow;
     }
 
     public void addGottenFlow(int n) {

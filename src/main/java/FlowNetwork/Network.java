@@ -1,8 +1,13 @@
 package FlowNetwork;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Getter
+@Setter
 public class Network {
     private final Map<Vertex, HashMap<Vertex, Edge>> graph;
     private final Map<String, Vertex> vertexByCoord;
@@ -14,24 +19,16 @@ public class Network {
         this.previousElements = new HashMap<>();
     }
 
-    public Map<String, Vertex> getVertexByCoord() {
-        return vertexByCoord;
-    }
-
-    public Map<Vertex, HashMap<Vertex, Edge>> getGraph() {
-        return this.graph;
-    }
-
     public List<Edge> getRoads() {
         return this.graph.values().stream().flatMap(e->e.values().stream()).toList();
     }
 
     public int getFlowRepairCost(){
-        int result=0;
-        List<Edge> roads= getRoads();
-        for(var road: roads){
+        int result = 0;
+        List<Edge> roads = getRoads();
+        for(var road : roads){
             if(road.getCurrentFlow()>0)
-                result+=(road.getCurrentFlow()*road.getRepairCost());
+                result += (road.getCurrentFlow() * road.getRepairCost());
         }
         return result;
     }
@@ -49,15 +46,6 @@ public class Network {
         return vertexByCoord.get(x + "," + y);
     }
 
-    // Dodajemy krawędź od a do b oraz od b do a.
-    // Żeby krawędź była dwukierunkowa, maksymalny przepływ (maxFlow) w obie strony musi być taki sam.
-    // Na przykład, jeśli z a do b maxFlow = 5, to z b do a też będzie 5.
-    // Gdy puścimy przepływ np. currentFlow = 3, to w sieci rezydualnej:
-    //    z a do b zostanie 2 (czyli 5 - 3),
-    //    a z b do a będzie można „cofnąć” 3 (czyli to, co już przeszło).
-    // Ale jeśli te dwie krawędzie są zsynchronizowane i mają wspólną przepustowość,
-    //    to zostaje tylko 2 w którąkolwiek stronę.
-    // Czyli całkowita przepustowość to 5 — i ona się nigdy nie zmienia.
     public void addEdge(int maxFlow, int repairCost, int x1, int y1, int x2, int y2) {
         if (maxFlow < 0) {
             System.out.println("flow is negative");
@@ -129,7 +117,6 @@ public class Network {
         currentBackwardEdge.setCurrentFlow(currentBackwardEdge.getCurrentFlow() - flow);
         currentBackwardEdge.setResidualFlow(currentBackwardEdge.getResidualFlow() + flow);
     }
-
 
     public Vertex addSourceVertex(String sourceName) {
         Vertex source = new Vertex(Integer.MIN_VALUE, Integer.MIN_VALUE, "source");
