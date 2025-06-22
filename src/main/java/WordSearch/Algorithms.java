@@ -1,5 +1,3 @@
-package WordSearch;
-
 import lombok.Getter;
 
 import java.io.FileWriter;
@@ -31,6 +29,33 @@ public class Algorithms {
             pi[i] = k;
         }
         return pi;
+    }
+
+    public int[] createBMNext(String pattern) {
+        int[] PI = new int[pattern.length() + 1];
+        int[] BMNext = new int[pattern.length() + 1];
+        int i = pattern.length();
+        int b = pattern.length() + 1;
+        PI[i] = b;
+        while (i > 0) {
+            while (b <= pattern.length() && pattern.charAt(i - 1) != pattern.charAt(b - 1)) {
+                if (BMNext[b] == 0) {
+                    BMNext[b] = b - i;
+                }
+                b = PI[b];
+            }
+            i--;
+            b--;
+            PI[i] = b;
+        }
+        b = PI[0];
+        for (i = 0; i <= pattern.length(); i++) {
+            if (BMNext[i] == 0)
+                BMNext[i] = b;
+            if (i == b)
+                b = PI[b];
+        }
+        return BMNext;
     }
 
     public int[] createLAST(String pattern){
@@ -79,6 +104,7 @@ public class Algorithms {
         writer.write("Started BM algorithm \n");
         writer.flush();
         int[] LAST = createLAST(pattern);
+        int[] BMNext = createBMNext(pattern);
         boolean exist = false;
         int i = 0;
         while (i <= text.length() - pattern.length()) {
@@ -86,8 +112,8 @@ public class Algorithms {
             while (j >= 0 && pattern.charAt(j) == text.charAt(i + j)) {
                 j--;
             }
-            if (j > -1)
-                i += Math.max(1, j - LAST[text.charAt(i + j)]);
+            if (j >= 0)
+                i += Math.max(BMNext[j + 1], j - LAST[text.charAt(i + j)]);
 
             else {
                 writer.write("Pattern occurs in the text \n");
@@ -95,13 +121,13 @@ public class Algorithms {
                 exist = true;
                 System.out.println("Pattern \"" + pattern + "\" with length " + pattern.length() + " occurs at position " + i);
                 result.addBMResult("\n[BM] Pattern \"" + pattern + "\" with length " + pattern.length() + " occurs at position " + i);
-                i++;
+                i += BMNext[0];
             }
         }
         if (!exist) {
             writer.write("Pattern does not occur in the text \n");
             writer.flush();
-            System.out.println("Pattern does not occur/automatic exit to main menu");
+            System.out.println("Pattern does not occur");
             result.addBMResult("\n[BM] Pattern does not occur");
         }
     }
